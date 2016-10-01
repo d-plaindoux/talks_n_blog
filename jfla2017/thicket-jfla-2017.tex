@@ -1,0 +1,301 @@
+\documentclass[twoside,a4paper]{article}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{Thicket}
+{
+  morekeywords={
+    adapter, module,from, import, export,
+    type, enum, trait, model, class, 
+    def, let, in, if, for, yield, 
+    new, with
+  },
+  sensitive=true, % keywords are not case-sensitive
+  morecomment=[l]{//}, % l is for line comment
+  morecomment=[s]{/*}{*/}, % s is for start and end delimiter
+  morestring=[b]" % defines that strings are enclosed in double quotes
+}
+
+\lstset{
+  numbers=left,
+  stepnumber=1,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\ttfamily},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=false,
+  tabsize=4
+}
+
+\lstset{language=Html}
+\lstset{
+ morekeywords={ adapter, module,from, import, export,
+    typedef, type, trait, model, class, 
+    def, let, in, if, for, yield, 
+    new, with}
+}
+
+\lstset{
+    literate={~} {$\sim$}{1}
+}
+
+\usepackage[utf8]{inputenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{actes}
+\usepackage[french]{babel}
+\title{ Du Web fonctionnel avec le langage Thicket }
+\author{D. Plaindoux$^1$}
+% les titres de haut de pages
+\titlehead{Titre de l'article en quelques mots}%  a droite (page impaire)
+\authorhead{D. Plaindoux}% a gauche (page paire)
+\affiliation{\begin{tabular}{rr} 
+    \\ 1:  Fungus, Le village 31430 Gratens, France
+    \\     {\tt d.plaindoux@fungus.fr}
+\end{tabular}}
+
+\begin{document}
+
+\setcounter{page}{1}
+\maketitle
+
+Nous  pouvons  -  enfin  -   constater  un  fort  engouement  pour  la
+programmation  fonctionnelle.  Par  contre cela  ne concerne  non plus
+seulement  une approche  dite  traditionnelle  d'application voire  de
+librairies  comme  cela peut  être  le  cas avec  OCaml  \cite{OCaml},
+Haskell \cite{Haskell}  et autres, mais  cela concerne aussi  de façon
+plus significative  le développement  d'applications dites Web  par le
+biais  de  ``nouveaux''  langages fonctionnels  fortement  typés  e.g.
+Eml\cite{eml},  Purescript\cite{purescript},  ScalaJS  \cite{scalajs}.
+Ces derniers propose notamment une adaptation du schéma de compilation
+par une  phase de  transpilation vers Javascript  \cite{javascript} et
+ainsi ne pas obligatoirement embracé le paradigme fonctionnel dans son
+entriereté et notamment ent terme de compilation.
+
+Le langage Thicket s'incrit dans cette mouvance tout en y intégrant le
+concept de machine  abstraite pour son execution mais  aussi la notion
+de document  web pour  la représentation tout  comme le  propose React
+\cite{React}.
+
+\section{Introduction}
+
+Cette dernière approche soulève cependant plusieurs problèmatiques. La
+première  concerne l'expressivité  du langage  et notamment  lorsqu'il
+s'agit de manipuler  le DOM \cite{dom}. En effet, a  l'instar de React
+\cite{reacjs} ou Angular  \cite{angular2} qui sont centrés  sur le DOM
+et sa manipulation,  la plupart des solutions  proposées procédent par
+une  approche  fonctionnelle  des  balises HTML  rendant  de  ce  fait
+difficile le design. Le second problème concerne le modèle d'éxécution
+qui  passe  par  la  plupart  du  temps  par  une  transpilation  vers
+Javascript.
+
+Lors de l'élaboration  du langage Thicket ces  deux problèmatiques ont
+été   particulièrement  ciblées   afin  d'étudier   l'expressivité  et
+l'intégration dans le monde des applications dites Web.
+
+\section{Survol du langage}
+
+Thicket  est  un  langage  fonctionnel  fortement  typé  à  évaluation
+paresseuse  intégrant  le  paradigme  objet par  l'apport  des  traits
+\cite{trait} et  d'un principe de  séparation entre les classes  et le
+modèle quelle dénote.
+
+\subsection{Modèle de données}
+
+Toute  information que  ce  soit  peut être  dénotée  par un  ensemble
+spécifique  comme cela  est  le  cas dans  le  cas des  enregistrement
+\cite{RecordCalculus}.  On distingue  alors  deux types  de données  a
+savoir les simple ayant une formulation  unique et les unions quand un
+type de données peut avoir plusieurs formes de représentations.
+
+\subsubsection{Donnée simple}
+
+Une   données  est   représentée  par   un  ensemble   nommé  attribué
+\cite{Cardelli} \cite{Haskell}. 
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  model Humain {  // : string -> string Humain
+    nom:string   
+  }
+\end{lstlisting}
+
+Une  fonction  de génération  pour  le  type  {\tt Humain}  est  alors
+synthétisée avec  une signature  calquant le  type des  attributs dans
+l'ordre de  spécification.  Construire  une donnée correspond  alors à
+appliquer cette fonction.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  Humain "Anakin Skywalker" // : Humain
+\end{lstlisting}
+
+\subsubsection{Type union}
+
+Une données peut prendre tour à  tour plusieurs formes. Pour cela soit
+on procède par héritage si nous  sommes en présence d'un langage objet
+de  l'école scandinave.  S'inpirant  plutôt des  types injectifs  nous
+sommes  en mesure  d'énumerer  l'ensemble des  représentations par  la
+définition d'un jeu de modeles.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  enum Option[a] { 
+    model Some { _:a } // : [a] a -> Option[a]
+    model None           // : [a] Option[a]
+  }
+\end{lstlisting}
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  Some 1 // : Option[number]
+\end{lstlisting}
+
+\subsection{Manipulation des données}
+
+\subsubsection{Les fonctions} 
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  def stringOfHumain : Humain -> string = Humain::nom
+\end{lstlisting}
+
+\subsubsection{Les classes}
+
+Le langage a  été bati autour des concepts de  traits \cite{traits} et
+classes. Cependant la  notion de classe reposant sur  des états mutable
+n'est  pas  celle adoptée.   En  effet  souhaitant  un langage  ou  la
+mutabilité est tout simplemenet proscrite  la notion d'état d'un objet
+peut être  revisité.  Pour  ce faire  nous avons  repris la  notion de
+classe comme générateur prenant en paramètre une expression et propose
+en retour  une base  de connaissance dans  laquelle {\tt  self} dénote
+cette même base au même titre que {\tt this} dans Scala.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  class humain this:Humain { // : Humain -> humain
+    nom:string
+  } {
+    def nom = this.nom
+  }
+\end{lstlisting}
+
+Cette  approche permet  de séparer le  model du  controlleur ou  plus
+généralement  ce ``qu'il  est'' de  ``ce  qu'il fait''.  Ceci va  nous
+permettre d'avoir plusieurs niveaux d'interpétation d'une même donnée.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  humain (Humain "Anakin Skywalker") // : humain
+\end{lstlisting}
+
+\subsubsection{Polymorphisme et type union}
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  class option[a] this:Option[a] { // : [a] Option[a] -> option[a]
+    map: [b] (a -> b) -> M[b]
+  } {
+    def None.map _ = option None
+    def Some.map f = option $ Some $ f this._
+  }
+\end{lstlisting}
+
+\subsection{Immutabilité et système évolutif}
+
+Un  des principes  de base  concerne l'immutabilité.   En effet  toute
+donnée est considérée  comme immutable et ne peut  être alors modifiée
+directement. L'unique approche consiste à proposer un système basé sur
+l'évolution de donnée. Cette approche  existe de facto dans Haskell ou
+OCaml (sans  le mutable)  mais aussi dans  des langages  récents comme
+Swift \cite{Swift}  avec la notion  de structure et de  mutabilité par
+copie partielle.
+
+Il est possible de produire un nouvelle version de données par le bien
+d'une structure  de contrôle  spécifique comme le  montre le  code qui
+suit.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  new Humain "Anakin Skywalker" with nom="Darth Vader"
+\end{lstlisting}
+
+Cette  même  structure  de  contrôle permet  aussi  d'opérér  sur  une
+instance de  classe et  permettre ainsi  de faire  évoluer la  base de
+connaissance d'une instance dans le temps.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  new humain $ Humain "Anakin Skywalker" with nom="Darth Vader"
+\end{lstlisting}
+
+\section{Expressivité et DOM}
+
+\subsection{Génération de fragment de DOM}
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  def humainVue : Humain -> dom = h -> <p> h.nom </p>
+\end{lstlisting}
+
+\subsection{Manipulation de fragment du DOM}
+
+\section{Une intégration Web sur mesure}
+
+L'intégrtion dans  le monde du  Web permet d'executer du  code Thicket
+comme tout langage de script dans les pages HTML. Ceci peut être alors
+obtenu de  deux façons différentes.  La première classique  consiste à
+encapsluer du code directement dans un balise script au même titre que
+Javascript. Le seconde adoptée par la pluparts des languages consiste 
+à compiler voire transpiler le code.
+
+\subsection{Script Thicket et HTML}
+
+\lstset{language=Html}
+\begin{lstlisting}
+  <html lang="en">
+    <head>
+      <script src="/thicket/build/thicket-web-lang.min.js"></script>    
+      <script type="application/javascript">
+        function onLoad() { require('thicket')('/thicket/site').boot(); }
+      </script>
+
+      <script type="application/thicket+package" data-src="Client"></script>
+      <script type="application/thicket">
+        model Humain { nom:string }
+        def humainVue : Humain -> dom = h -> <p> h.nom </p>
+
+        documentRenderer <~ <div id="hv"> (humainVue $ Humain "A. Skywalker") </div>
+      </script>
+    </head>        
+    <body onload="onLoad()">
+      <div id='hv'/>
+    </body>
+  </html>
+\end{lstlisting}
+
+
+
+\subsection{Vers une compilation à froid}
+
+\subsection{Application Web et immutabilité}
+
+\subsection{Modèle de distribution}
+
+\section{Conclusion et perspectives}
+
+\bibliographystyle{abbrv}
+\bibliography{mesreferences}
+
+\end{document}
