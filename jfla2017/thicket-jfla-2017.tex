@@ -40,6 +40,7 @@
 }
 
 \lstset{language=Html}
+
 \lstset{
  morekeywords={ adapter, module,from, import, export,
     typedef, type, trait, model, class, 
@@ -48,7 +49,7 @@
 }
 
 \lstset{
-    literate={~} {$\sim$}{1}
+literate={~} {$\sim$}{1}
 }
 
 \usepackage[utf8]{inputenc}
@@ -97,8 +98,8 @@ de compilation dit à la volée.
 
 Malgré l'existence  de langages  tels que  OCaml \cite{ocaml}  ou bien
 Haskell \cite{haskell}, les principaux vecteurs de cet engouement sont
-des  langages   hybrides  comme   Scala  \cite{scala}  ou   bien  Java
-\cite{java8} avec son adoption des lambdas.
+des  langages hybrides  comme  Scala \cite{scala}  ou bien  Java
+\cite{java} avec son adoption des lambdas.
 
 Cependant cet  engouement se trouve  aussi bien  porté par le  Web qui
 accentue cette  mouvance. Ceci  est le  fait de  langages fonctionnels
@@ -126,99 +127,122 @@ Lors de l'élaboration  du langage Thicket ces  deux problèmatiques ont
 été   particulièrement  ciblées   afin  d'étudier   l'expressivité  et
 l'intégration dans le monde des applications dites Web.
 
-\section{Survol rapide du langage Thicket}
+\section{Survol très rapide du langage}
+
+Nous  proposons  un survol  très  rapide  du  langage en  couvrant  la
+représentation des  données et  leur manipulation. Un  point important
+concerne l'abscence d'effet de bord conferant au langage une propriété
+dite d'immutabilité.  Ce dernier  point est important  notamment quand
+sera abordé le cycle de vie d'une application dite Web.
 
 Thicket  est  un  langage  fonctionnel  fortement  typé  à  évaluation
 paresseuse  intégrant  le  paradigme  objet par  l'apport  des  traits
-\cite{trait} et  d'un principe de  séparation entre les classes  et le
-modèle quelle dénote.
+\cite{trait}  et reposant  sur  un principe  de  séparation entre  les
+classes et les modèles quelles dénotent.
 
-\subsection{Modèle pour la représentation de données}
+\subsection{Modèle de données}
 
-Toute  information plus  ou moins  complexe peut  être dénotée  par un
-ensemble spécifique  de données et  un mode de représentation  tel que
-l'enregistrement  \cite{RecordCalculus}  est  un  bon  candidats.   On
-distingue alors  deux types de données  a savoir les simple  ayant une
-formulation unique et  les unions quand un type de  données peut avoir
-plusieurs formes de représentations.
-
-\subsubsection{Modèle de donnée}
-
-Une  données  est  représentée   par  un  ensemble  d'attributs  nommé
-\cite{Cardelli} \cite{Haskell}.
+Une donnée  va être dénoté  par une expression de  type enregistrement
+\cite{recordcalculus}.   Ainsi  toute   donnée  secondaire  est  alors
+accessible  par le  nom associé.  Une données  est représentée  par un
+ensemble d'attributs typés comme suit:
 
 \lstset{language=Thicket}
 \begin{lstlisting}
-  model Humain {  // : string -> number -> Humain
-    nom : string   
-    age : number
+  model Personne {  
+    nom: string   
+    age: number
   }
 \end{lstlisting}
 
-Une  fonction  de génération  pour  le  type  {\tt Humain}  est  alors
-synthétisée avec  une signature  calquant le  type des  attributs dans
-l'ordre de  spécification.  Construire  une donnée correspond  alors à
-appliquer cette fonction.
+Une générateur pour le type {\tt Personne} est alors synthétisé avec une
+signature   calquant   le  type   des   attributs   dans  l'ordre   de
+spécification.   Construire une  donnée correspond  alors à  appliquer
+cette fonction.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
-  Humain "Anakin Skywalker" 1 // : Humain
+  Personne "Anakin Skywalker" 1 
 \end{lstlisting}
 
-Le langage propose aussi la définition  de donnée a multiple forme par
-énumération  au  même  tire   que  les  types  injectifs  \cite{Ocaml}
-\cite{Haskell} ou les {\it case class} \cite{Scala}.
+De  cette donnée  il  est  alors aisé  d'extraire  une information  en
+procédant par le nommage spécifique de la propriété souhaitée 
+\footnote{Au  même  titre que  Scala  la  formulation  {\tt o  m}  est
+  équivalement à {\tt o.m} dans le cadre d'utilisation des objets mais
+  aussi des classes.}.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  (Personne "Anakin Skywalker" 1) nom
+\end{lstlisting}
+
+
+Le langage  repose aussi  sur la définition  de donnée  pouvants avoir
+plusieurs  formes par  leurs énumération  au même  tire que  les types
+injectifs  \cite{ocaml}   \cite{haskell}  ou  les  {\it   case  class}
+\cite{scala}.   Par contre  le  filtrage de  forme  simple repose  sur
+l'application de catamorphismes \cite{catamorphismes} spécifiques.
 
 \subsection{Manipulation des données}
 
-Le  langage  a été  bati  autour  des  concepts de  fonctions,  traits
-\cite{traits} et classes.  Cependant la notion de  classe reposant sur
-des états  mutable n'est  pas celle adoptée.   En effet  souhaitant un
-langage  ou la  mutabilité est  tout simplemenet  proscrite la  notion
-d'état d'un objet peut être revisité.  Pour ce faire nous avons repris
-la  notion  de  classe  comme  générateur  prenant  en  paramètre  une
-expression et propose en retour une base de connaissance dans laquelle
-{\tt self}  dénote cette même base  au même titre que  {\tt this} dans
-Scala.
+Une classe  est un générateur  prenant en paramètre une  expression et
+proposant en retour une base  de connaissance dans laquelle {\tt self}
+dénote cette même  base.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
-  class jedi this:Humain { // : Humain -> jedi
-    nom : string
-    grade : string
+  class jedi this:Personne {
+    nom: string
+    grade: string
   } {
+    def nom = this.nom
     def grade = this.age ?> 19 fold "Maitre" "Padawan"
   }
 \end{lstlisting}
 
-% CF these
-
-Cette  approche permet  de séparer le  model du  controlleur ou  plus
-généralement  ce ``qu'il  est'' de  ``ce  qu'il fait''.  Ceci va  nous
-permettre d'avoir plusieurs niveaux d'interpétation d'une même donnée.
+La création  d'une instance  de classe consiste  alors à  appliquer le
+générateur associé.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
-  jedi (Humain "Anakin Skywalker" 1) // : jedi
+  jedi (Personne "Anakin Skywalker" 1)
 \end{lstlisting}
+
+Finalement l'activation  d'une méthode consiste tout  simplement en un
+envoi de message à l'instance.
+
+\lstset{language=Thicket}
+\begin{lstlisting}
+  jedi (Personne "Anakin Skywalker" 1) grade
+\end{lstlisting}
+
+Cette  approche permet  de séparer  le modèle  du controlleur  ou plus
+généralement le signifiant du signifier. Ce principe induit un système
+avec lequel  plusieurs niveaux d'interpétation d'une  même donnée peut
+être simplement élaboré.
 
 \subsection{Immutabilité et système évolutif}
 
-Un  des principes  de base  concerne l'immutabilité.   En effet  toute
-donnée est considérée  comme immutable et ne peut  être alors modifiée
-directement. L'unique approche consiste à proposer un système basé sur
-l'évolution de donnée. Cette approche  existe de facto dans Haskell ou
-OCaml (sans  le mutable)  mais aussi dans  des langages  récents comme
-Swift \cite{Swift}  avec la notion  de structure et de  mutabilité par
-copie partielle.
+Un  des principes  de base  adopté lors  de l'élaborarion  du language
+concerne  l'immutabilité. Pour  ce faire  toute donnée  est considérée
+comme constante et ne peut donc être alors modifiée.
 
-Il est possible de produire un nouvelle version de données par le bien
-d'une structure  de contrôle  spécifique comme le  montre le  code qui
-suit.
+L'unique approche consiste à proposer  un système basé sur l'évolution
+de donnée via un jeu de fonctions dites anamorphiques ou de {\em lens}
+\cite{catamorphismes}.   Cette  approche  existe  de  facto  dans  les
+langages fonctionnels comme  Haskell ou OCaml privé  du {\tt mutable}.
+Dans des langages  récents comme Swift \cite{swift} il  est proposé la
+notion  de structure  pour laquelle  un  objet peut  évolué par  copie
+partielle impliquant aussi cette  notion d'évolution sans modification
+de l'objet primaire.
+
+Afin  de  faciliter l'expression  d'une  telle  transformation ll  est
+possible de produire un nouvelle version de données par le biais d'une
+structure de contrôle spécifique comme le montre le code qui suit.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
-  new Humain "Anakin Skywalker" with nom="Darth Vader"
+  new Personne "Anakin Skywalker" 19 with nom="Darth Vader"
 \end{lstlisting}
 
 Cette  même  structure  de  contrôle permet  aussi  d'opérér  sur  une
@@ -227,23 +251,30 @@ connaissance d'une instance dans le temps.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
-  class jedi humain:Humain {
-    humain : string
-    grade : string
-    anniversaire : jedi
+  class jedi humain:Personne {
+    nom: string
+    grade: string
+    anniversaire:  jedi
   } {
-    def nom = humain.nom
-    def grade = humain.age ?> 19 fold "Maitre" "Padawan"
-    def anniversaire = jedi new humain with age=(humain.age+1)
+    def nom = humain nom
+    def grade = humain age ?> 19 fold "Maitre" "Padawan"
+    def anniversaire = jedi new humain with age=(humain age + 1)
   }
 \end{lstlisting}
 
-\subsection{Client Web et DOM}
+Par ce  survol rapide nous  avons exposer  les principes de  bases qui
+nous  ont  conduit à  la  définition  et  à l'élaboration  du  langage
+Thicket. A noter qu'il repose sur des concepts parfaitement maîtrisés.
+
+Le point qui va nous  intéressé maintenant concerne l'intégration d'un
+tel langage dans le monde des applications dites Web.
+
+\subsection{Cas de la manipulation du DOM}
 
 Dans la  majorité des  solutions la  mise en forme  et la  création de
 document  sont   prisent  en  charge   par  des  librairies   pour  la
 construction de termes  pour le DOM. Il existe  cependant une approche
-descriptive  par  opposition  à   une  approche  calculée  qui  permet
+descriptive  par opposition  à  une approche  constructive qui  permet
 d'exprimer des  fragments et ce  de manière plus intuitive  comme cela
 est  notamment  le  cas   dans  AngularJS  \cite{angularjs}  et  React
 \cite{react}.
@@ -251,18 +282,18 @@ est  notamment  le  cas   dans  AngularJS  \cite{angularjs}  et  React
 \subsubsection{Expression de la structure d'un fragment}
 
 Notre approche est sensiblement différente  car elle propose un modèle
-d'expression qui est  transformé en expression fonctionnel  lors de la
+d'expression qui est transformé en expression fonctionnelle lors de la
 phase de  compilation. Une telle  approche permet de combiner  une vue
-plus  intuitive  de la  construction  de  document sans  corrompre  le
-système complet.
+plus intuitive de la construction de document sans rompre le système.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
   def vue : jedi -> dom = h -> <p> j.grade " " j.nom </p> 
 \end{lstlisting}
 
-\noindent Cette expression peut-être transcrite par le biais des librairies actuelles
-de la façon suivante:
+\noindent Bien  évidemment au même  titre que les langages  comme Elm,
+Purescript   etc.    cette    expression   peut-être   remplacée   par
+l'utilisation des librairies de la façon suivante:
 
 \begin{lstlisting}
   def vue : jedi -> dom = h -> {
@@ -270,13 +301,14 @@ de la façon suivante:
   }
 \end{lstlisting}
 
-\subsubsection{Définition d'un système réactif}
+\subsubsection{Vers un système réactif}
 
-Par contre contrairement à ce que propose HTML le comportement associé
-à un noeud  du dom est séparé de la  représentation.  Il devient alors
-ainsi facile de  concevoir des systèmes réactifs par la  mise en place
-de  points  d'appels.  Il  devient ainsi  plus  aisé  d'appéhender  la
-structure du document mais aussi les comportements associées.
+Le deuxième  aspect de la  manipulation de DOM  concerne l'interaction
+avec l'extérieur.   Dans notre approche  le comportement associé  à un
+noeud du DOM est séparé de  la représentation.  Il devient alors ainsi
+facile de  concevoir des  systèmes réactifs  par la  mise en  place de
+points d'appels  permettant de  ce fait  d'appéhender la  structure du
+document et des comportements associées.
 
 \begin{lstlisting}
   def vue : jedi -> dom = j -> {
@@ -285,15 +317,28 @@ structure du document mais aussi les comportements associées.
   }
 \end{lstlisting}
 
+La combinaison  de cette forme  réactive avec l'approche  évolutive va
+nous  permettre  de  modéliser  simplement  les  applications  Web  en
+invoquant le  moteur de rendu  par le biais d'un  composant spécifique
+{\tt documentRenderer}.
 
-\section{Une intégration Web sur mesure}
+\begin{lstlisting}
+  def vue : jedi -> dom = j -> {
+    <p id="jedi"> j.grade " "  j.nom </p> 
+    onMouseEvent MouseClick $ _ -> documentRenderer <~ (vue $ j anniversaire)
+  }
+\end{lstlisting}
 
-L'intégrtion dans  le monde du  Web permet d'executer du  code Thicket
+\section{Vers une intégration Web sur mesure}
+
+L'intégration dans le  monde du Web permet d'executer  du code Thicket
 comme tout langage de script dans les pages HTML. Ceci peut être alors
-obtenu de  deux façons différentes.  La première classique  consiste à
-encapsluer du code directement dans un balise script au même titre que
-Javascript. Le seconde adoptée par la pluparts des languages consiste 
+obtenu de deux  façons différentes.  La première  classique consiste à
+encapsuler du code directement dans un balise script au même titre que
+Javascript. Le seconde adoptée par  la pluparts des languages consiste
 à compiler voire transpiler le code.
+
+\subsection{Prise en charge du langage}
 
 \subsection{Page HTML, Application et Thicket}
 
@@ -309,12 +354,14 @@ Javascript. Le seconde adoptée par la pluparts des languages consiste
     <script type="application/thicket+package" data-src="Client"></script>
     <script type="application/thicket+package" data-src="Jedi"></script>
     <script type="application/thicket">
+      import Jedi
+
       def vue : jedi -> dom = j -> {
         <p id="jedi"> j.grade " "  j.nom </p> 
         onMouseEvent MouseClick $ _ -> documentRenderer <~ (vue $ j anniversaire)
       }
 
-      documentRenderer <~ $ jedi $ Humain "Obi-Wan Kenobi" 1
+      documentRenderer <~ $ vue $ jedi $ Personne "Obi-Wan Kenobi" 1
     </script>
   </head>        
     <body onload="onLoad()">
@@ -322,10 +369,6 @@ Javascript. Le seconde adoptée par la pluparts des languages consiste
   </body>
   </html>
 \end{lstlisting}
-
-\subsection{Le modèle de compilation}
-
-\subsection{Application Web et immutabilité}
 
 \subsection{Modèle de distribution}
 
