@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Java & le Pattern Matching</title>
+    
+    <meta name="description" content="How can we mimic le Pattern Matching">
+    <meta name="author" content="Didier Plaindoux">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+    
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <style>
+      .kern {
+        letter-spacing: -0.2em;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  
+  <body>
+    <div class="reveal">
+
+      <div class="slides">
+	
+	<section>
+	  <h2>Java & <br> le "Pattern Matching"</h2>
+	  <br/>
+	  <div class="p" style="text-align:middle"><span> 4 Novembre 2015 </span></div>
+	  <div class="p" style="text-align:middle"><span><b> Toulouse JUG </b></span></div>
+	  <div class="p" style="text-align:middle">
+	    <span>
+	      <a href="http://d.plaindoux.free.fr">Didier Plaindoux</a>
+	      (<a href="http://twitter.com/dplaindoux">@dplaindoux</a>)
+	    </span> 
+	  </div>
+	</section>
+
+	<section>
+	  <table>
+	    <tr>
+	      <td align="center"><b>Freelance</b></td>
+	      <td align="center"><b>Computer scientist</b></td>
+	    </tr>
+	    <tr>
+	      <td width="50%" align="center"><img src="images/fungus.png" width='55%'></img></td>
+	      <td width="50%" align="center"><span style="font-size:650%">&lambda;</span></td>
+	    </tr>
+	    </tr>
+	  </table>
+	</section>
+
+	<section>
+	  <h3>Pattern Matching</h3>
+	  <div class="p">
+	    Principe reposant sur la vérification de la présence de <br> constituants d'un motif par un programme informatique
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Illustration: Expression (simple)</h3>
+	  <div class="p" style="text-align:middle">
+	    <table>
+	      <tr><td>Expr = &lceil;Natural&rfloor; | Expr &#8853; Expr <br><br>
+		  <span class="kern">[[</span> _<span class="kern">]]</span> : Expr &longrightarrow; Natural <br>
+		  <span class="kern">[[</span> &lceil;n&rfloor;<span class="kern">]]</span> = n <br>
+		  <span class="kern">[[</span> a &#8853; b<span class="kern">]]</span> = 
+		  <span class="kern">[[</span> a<span class="kern">]]</span> +<span class="kern">[[</span> b<span class="kern">]]</span> 
+	      </td></tr>
+	    </table>
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Expression en OCaml</h3>
+	  <pre><code class="OCaml">
+  type expr = 
+    | Nat of int 
+    | Add of expr * expr
+
+  let rec evaluate : expr &longrightarrow; int = function
+    | Nat n     &longrightarrow; n
+    | Add (l,r) &longrightarrow; (evaluate l) + (evaluate r)
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Expression en Haskell</h3>
+	  <pre><code class="Haskell">
+  data Expr = 
+    | Nat Integer 
+    | Add Expr Expr
+ 
+  evaluate :: Expr &longrightarrow; Integer  
+
+  evaluate (Nat i)   = i
+  evaluate (Add l r) = (evaluate l) + (evaluate r)
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Expression en Scala</h3>
+	  <pre><code class="Scala">
+  sealed trait Expr
+  case class Nat(i:Int) extends Expr
+  case class Add(l1:Expr, l2:Expr) extends Expr
+
+  def evaluate(e:Expr):Int = e match {
+    case Nat(n)   &rArr; n
+    case Add(l,r) &rArr; evaluate(l) + evaluate(r)
+  }
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Et en Java ?</h3>
+	  <div class="p">
+	    Pas de construction dédiée dans le langage.
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Expression en Java 1/2</h3>
+	  <pre><code class="Java">
+  public interface Expr {}
+
+  public class Nat implements Expr {
+    private final int val;
+    public Nat(int val) { this.val = val; }
+  }
+
+  public class Add implements Expr {
+    private final Expr left,right;
+    public Add(Expr l,Expr r) { this.left = l; this.right = r; }
+  }
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Expression en Java 2/2</h3>
+	  <pre><code class="Java">
+  public class Evaluator {
+    public static int eval(Expr e) {
+      if (e instanceof Nat) {
+        return (Nat.class.cast(e).val;
+      } if (e instanceof Add) {
+        final Add add = Add.class.cast(e);
+        return eval(add.left) + eval(add.right);
+      } else {
+        throw new IllegalArgumentException();
+      }
+    }
+  }
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Bad! Quid du typage ? </h3>
+	  <p>
+	    <img with="30%" src="images/bad.pgn"></img>
+	  </p>
+	</section>
+
+	<section>
+	  <h3>"Gang of four"</h3>
+	  <img src="images/design-pattern.jpg"></img>
+	</section>
+
+	<section>
+	  <h3> Le Visiteur </h3>
+	  <img src="images/visitor.png"></img>
+	</section>
+
+	<section>
+	  <h3>Expression en Java & le visiteur 1/3</h3>
+	  <pre><code class="Java">
+  public interface ExprVisitor&lt;T> {
+    T visit(Nat val);
+    T visit(Add add);
+  } 
+ 
+</code><code class="fragment">  public interface Expr {
+    &lt;T> T visit(ExprVisitor&lt;T> visitor)
+  }
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Expression en Java & le visiteur 2/3</h3>
+	  <pre><code class="Java">
+  public class Nat implements Expr {
+    public final int val;
+    public Nat(int val) { this.val = val; }
+    public &lt;T> T visit(ExprVisitor&lt;T> visitor) { 
+      return visitor.visit(this); 
+    }
+  }
+
+</code><code class="fragment">  public class Add implements Expr {
+    public final Expr left,return;
+    public Add(Expr l,Expr r) { this.left = l; this.right = r; }
+    public &lt;T> T visit(ExprVisitor&lt;T> visitor) { 
+      return visitor.visit(this); 
+    }
+  }
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Expression en Java & le visiteur 3/3</h3>
+	  <pre><code class="Java">
+  public class Evaluator implements ExprVisitor&lt;Integer> {
+    public Integer visit(Nat expr) {
+      return expr.val;
+    }
+    public Integer visit(Add expr) {
+      return expr.right.visit(this) + expr.left.visit(this);
+    }
+  }
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Ugly? Humm ... </h3>
+	  <img src="images/hugly.png"></img>
+	</section>
+	
+	<section>
+	  <h3>Approche Fonctionnelle</h3>
+	  <div class="p" style="text-align:middle">
+	    "Structural Pattern Matching en Java" par R&uacute;nar Óli.
+	  </div>
+	</section>
+	
+	<section>
+	  <h3>Approche Fonctionnelle & Java 1/3</h3>
+	  <pre><code class="Java">
+  public class Either&lt;A,B> {
+    private A left; private B right;
+    private Either(A a, B b) { left = a; right = b; }
+    public static &lt;A,B> Either&lt;A,B> left(A a) {
+      return new Either&lt;>(a,null);
+    }
+    public static &lt;A,B> Either&lt;A,B> right(B b) {
+      return new Either&lt;>(null,b);
+    }
+
+</code><code class="Java fragment">    public &lt;R> R fold(Function&lt;A,R> ifLeft, Function&lt;B,R> ifRight) {
+      return Optional.ofNullable(left).map(_ &longrightarrow; ifLeft.apply(left))
+                     .orElse(() &longrightarrow; ifRight.apply(right));
+    } // &rArr; Catamorphisme
+  }
+	    </Code></pre>
+	  <div class="p fragment">
+	    <span>"Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire" par Erik Meijer</span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Approche Fonctionnelle & Java 2/3</h3>
+	  <pre><code class="Java">
+  public interface Expr { Either&lt;Nat,Add> toEither(); }
+
+</code><code class="Java fragment">  public class Nat implements Expr {
+    public final int val;
+    public Nat(int val) { this.val = val; }
+    public Either&lt;Nat,Add> toEither() { return Either.left(this); }
+  }
+
+</code><code class="Java fragment">  public class Add implements Expr {
+    public final Expr left,right;
+    public Add(Expr l,Expr r) { this.left = l; this.right = r; }
+    public Either&lt;Nat,Add> toEither() { return Either.right(this); }
+  }
+	    </Code></pre>
+	</section>
+
+	<section>
+	  <h3>Approche Fonctionnelle & Java 3/3</h3>
+	  <pre><code class="Java">
+  public class Evaluator {
+    public static int evalNat(Nat v) { 
+      return v.val; 
+    }
+
+</code><code class="fragment">    public static int evalAdd(Add a) { 
+      return eval(a.left.toEither()) + eval(a.right.toEither()); 
+    }  
+
+</code><code class="fragment">    public static int eval(Either&lt;Nat,Add> e) {
+      return e.fold(Evaluator::evalNat, Evaluator::evalAdd);
+    }
+  }
+	    </Code></pre>
+	</section>
+
+	<section>
+	  <h3>Good? Oui mais Either&lt;...,Either&lt;...,...>></h3>
+	  <img src="images/good.png"></img>
+	</section>
+
+	<section>
+	  <h3>Définition d'un DSL interne</h3>
+	  <div class="p" style="text-align:middle">
+	    "Internal DSLs are a particular form of API in a host general purpose language" Martin Fowler
+	  </div>	  
+	</section>
+
+	<section>
+	  <h3>Une première proposition</h3>
+	  <div class="p" style="text-align:middle">
+	    <span>"Towards Pattern Matching in Java" par François Sarradin </span>
+	  </div>
+	  <pre><code class="Java">
+  static PatternMatching pm = new PatternMatching(
+    inCaseOf(Var.class, x &longrightarrow; x.val),
+    inCaseOf(Add.class, x &longrightarrow; pm(x.left)+pm(x.right))
+  );	      
+
+  static int pm(Expr expr) { return pm.matchFor(expr); }
+	  </code></pre>
+
+	  <div class="p fragment"><span>Typage dynamique et casts ... mais cela reste une étude</span></div>
+
+	</section>
+
+	<section>
+	  <h3>Le projet Derive4j</h3>
+	  <div class="p" style="text-align:middle">
+	    <span>"Java 8 annotation processor for deriving pattern-matching" par J.B. Giraudeau</span>
+	  </div>
+	  <br/>
+	  <div class="p fragment" style="text-align:middle">	    
+	    <span>Généralisation de l'approche fonctionnelle</span>
+	  </div>
+	  <div class="p fragment" style="text-align:middle">
+	    <span>Répose sur la JSR-269 pour tout ce qui est "Boiler Plate"</span>
+	  </div>
+	  <br/>
+	  <div class="p fragment" style="text-align:middle">	    
+	    <span>Extension au Lens pour l'évolution des objets</span>
+	  </div>
+	</section>
+ 	
+	<section>
+	  <h3>Expression avec Derive4j</h3>
+	  <pre><code class="Java">
+  @Data
+  public abstract class Expr {
+    interface Cases&lt;R> {
+      R Nat(int value);
+      R Add(Expr left, Expr right);
+    }
+  }
+ 
+</code><code class="fragment">  public class Evaluator {
+    static int eval(Expr expr) { return eval.apply(expr); }
+
+    static Function&lt;Expr,Integer> eval = 
+      Exprs.cases().Nat((v)   &longrightarrow; v)
+                   .Add((l,r) &longrightarrow; eval(l) + eval(r));
+  }
+	  </code></pre>
+	</section>
+ 	
+	<section>
+	  <h3>Les "Extractor Objects" dans Scala 1/2</h3>
+	  <div class="p" style="text-align:middle">
+	    En Scala il est possible de décorréler <br> "pattern" et "case classes"
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Les "Extractor Objects" dans Scala 2/2</h3>
+	  <pre><code class="Scala">
+  object Zero {
+    def unapply(n:Int):Option[Int] = if (n==0) then Some(0) else None 
+  }
+
+  object Succ { 
+    def unapply(n:Int):Option[Int] = if (n>0) then Some(n-1) else None 
+  } 
+
+  object Peano extends App {
+    23 match { case Zero(_) => true case Succ(_) => false }
+  }
+        </code></pre>
+	</section>
+
+ 	<section>
+	  <h3>La librairie SuitCase</h3>
+	  <div class="p" style="text-align:middle">
+	    Un DSL au service du Pattern Matching
+	  </div>
+	</section>
+
+
+ 	<section>
+	  <h3>Principes et constructions</h3>
+	  <pre><code class="Java fragment">
+  Matcher&ltI,O> matcher = Matcher.create();
+  
+</code><code class="Java fragment">  // Reconnaissance pure i.e. WithoutCapture
+  matcher.caseOf( (? &leq; I) &longrightarrow; () ).then( () &longrightarrow; O );
+  matcher.caseOf( (? &leq; I) &longrightarrow; () ).when( () &longrightarrow; bool ).then( () &longrightarrow; O );
+
+</code><code class="Java fragment">  // Reconnaissance par décomposition structurelle i.e WithCapture&lt;C>
+  matcher.caseOf( (? &leq; I) &longrightarrow; C ).then( C &longrightarrow; O );
+  matcher.caseOf( (? &leq; I) &longrightarrow; C ).when( C &longrightarrow; bool ).then( C &longrightarrow; O );
+	    </code></pre>
+	  <div class="p fragment" style="text-align:middle">
+	    <span>Le Matcher est un objet donc ... extensible etc.</span>
+	  </div>
+	</section>
+
+	<Section>
+	  <h3>Pattern Matching par typage dynamique</h3>
+	  <pre><code class="Java">
+  Matcher&ltExpr,Boolean> isNat = Matcher.create();
+
+</code><code class="Java fragment">  isNat.caseOf(typeOf(Nat.class)) // Nat &longrightarrow; ()
+       .then(() -> true);         // () &longrightarrow; Boolean
+
+</code><code class="Java fragment">  isNat.caseOf(Add.class)         // Add &longrightarrow; ()
+       .then(false);              // () &longrightarrow; Boolean
+	  </code></pre>
+	</section>
+
+	<Section>
+	  <h3>Pattern Matching par capture</h3>
+	  <pre><code class="Java">
+  Matcher&ltExpr,Boolean> isNat = Matcher.create();
+  isNat.caseOf(var())                // Expr &longrightarrow; Expr
+       .then(e &longrightarrow; e instanceof Nat); // Expr &longrightarrow; Boolean
+
+</code>
+<code class="Java fragment">
+  Matcher&ltExpr,Boolean> isNatZero = Matcher.create();
+
+  isNatZero.caseOf(var(Nat.class))   // Nat &longrightarrow; Nat
+           .then(e &longrightarrow; e.val == 0);   // Nat &longrightarrow; Boolean
+
+  isNatZero.caseOf(__)               // Add &longrightarrow; ()
+           .then(false);             // () &longrightarrow; Boolean
+	  </code></pre>
+	</section>
+
+	<Section>
+	  <h3>Expression en Java &amp; SuitCase v1</h3>
+	  <pre><code class="Java">
+  Matcher&ltExpr,Integer> eval = Matcher.create();
+
+</code><code class="Java fragment">  eval.caseOf(var(Nat.class))
+      .then(e &longrightarrow; e.val);                          
+
+</code><code class="Java fragment">  eval.caseOf(var(Add.class))
+      .then(e &longrightarrow; eval.match(e.left) + eval.match(e.right));
+	    </code></pre>
+	</section>
+
+	<section>
+	  <h3>Bad Again?</h3>
+	  <img src="images/bad.pgn"></img>
+	</section>
+
+	<section>
+	  <h3>les classes Case</h3>
+	  <pre><code class="Java">
+  public interface Case&lt;I,C> { 
+    Optional&lt;C> unapply(I t); 
+  }
+	    </code></pre>
+	  <div class="p">
+	    <span><span>Deux sous-types <tt>WithCapture&lt;?></tt> et <tt>WithoutCapture</tt></span></span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3><tt>Nat(_)</tt> classe Case</h3>
+	  <pre><code class="Java"> 
+  static TypeCase1&lt;Expr, Nat, Integer> Nat = 
+    new TypeCase1&lt;>(Nat.class, (e -> e.val));
+
+  static WithoutCapture&lt;Expr> Nat(WithoutCapture&lt;Integer> aCase) {
+    return Nat.of(aCase);
+  }
+
+  static &lt;C> WithCapture&lt;Expr, C> Nat(WithCapture&lt;Integer, C> aCase) {
+    return Nat.of(aCase);
+  }
+	    </code></pre>
+	  <div class="p">
+	    <span  class="fragment"><span>Idem pour le <b><tt>Add(_,_)</tt></b></span></span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Expression en Java &amp; SuitCase v2</h3>
+	  <pre><code class="Java">
+  Matcher&ltExpr,Integer> eval = Matcher.create();
+
+</code><code class="fragment">  eval.caseOf(Nat(var()))       // Nat &longrightarrow; Integer
+      .then(e &longrightarrow; e);
+
+</code><code class="fragment">  eval.caseOf(Add(var(),var())) // Add &longrightarrow; Pair&lt;Expr,Expr>
+      .then(p &longrightarrow; eval.match(p._1) + eval.match(p._2)); 
+	    </code></pre>
+	  <div class="p">
+	    <span class="fragment"><span>Reconnaissance par décomposition structurelle <br> &rArr; en profondeur</span></span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Not so ... Bad!</h3>
+	  <img src="images/good.png"></img>
+	</section>
+
+	<section>
+	  <h3>Retour sur le typage 1/2</h3>
+	  <div class="p">
+	    <span>Le type entrant et le type sortant sont vérifiés naturellement</span><br>
+	    <span class="fragment">Le type des données capturées est synthétisé</span><br>
+	  </div>
+	  <br>
+	  <div class="p fragment">
+	    <span><b>Repose sur un typage fort</b></span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Retour sur le typage 2/2</h3>
+	  <pre><code>
+  Matcher&ltExpr,Integer> eval = Matcher.create();
+
+  eval.caseOf(Nat(var())).then((String e) &longrightarrow; 0);
+	    </code></pre>
+	  <div class="p fragment" style="text-align:middle">
+	    <span>"Incompatible parameter types in lambda expression"</span><br>
+	    <span class="fragment">Erreur notifiée dans les IDEs lors de l'écriture</span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3>Conclusion & Perspective</h3>
+	  <div class="p" style="text-align:middle">
+	    <span>Librairie simple, ouverte et expressive </span>
+	  </div>
+	  <br>
+	  <div class="p" style="text-align:middle">
+	    <span class="Java fragment"><span>Refonte complète en cours avec la version 0.3</span></span><br>
+	    <span class="Java fragment"><Span>Recours à la JSR-269 pour tout ce qui est "Boiler Plate" ?</span></span>
+	  </div>
+	</section>
+
+	<section>
+	  <img src="images/suitcase.png" width="80%"></img>
+	</section>
+
+	<section>
+	  <h3>Questions ?</h3>
+	</section>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      
+      transition: 'default', // none/fade/slide/convex/concave/zoom
+      
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', 
+      async: true, 
+      condition: function() { return !!document.querySelector( 'pre code' ); }, 
+      callback: function() { hljs.initHighlightingOnLoad(); } 
+      },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+      });     
+    </script>    
+  </body>
+</html>

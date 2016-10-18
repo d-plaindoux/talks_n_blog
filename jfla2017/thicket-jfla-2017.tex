@@ -98,57 +98,57 @@ de compilation dit à la volée.
 
 \section{Introduction}
 
-L'existence de  langages tels que  OCaml \cite{ocaml} ou  bien Haskell
-\cite{haskell}   a    permis   d'étendre   l'adoption    de   langages
-fonctionnels. Cependant  ces dernières années ont  vu une accélération
+Des   langages   tels  que   OCaml   \cite{ocaml}   ou  bien   Haskell
+\cite{haskell}   ont   permis   d'étendre   l'adoption   de   langages
+fonctionnels. Cependant, ces dernières  années ont vu une accélération
 de cette adoption  via des langages hybrides  comme Scala \cite{scala}
 ou bien Java \cite{java} et son extension aux lambdas.
 
-En parallèle cet engouement se trouve  aussi bien porté par le Web qui
+En parallèle,  cet engouement  se trouve  aussi porté  par le  Web qui
 accentue cette  mouvance. Ceci  est le  fait de  langages fonctionnels
 fortement typés tels que  Eml \cite{elm}, Purescript \cite{purescript}
-ou  ScalaJS  \cite{scalajs}  pour   ne  citer  qu’eux. 
+ou ScalaJS \cite{scalajs} pour ne citer qu’eux.
 
-Ces  approches soulèvent  deux problématiques.   La première  concerne
-l'expressivité du  langage et notamment lorsqu'il  s'agit de manipuler
-le  DOM \cite{dom}.   En effet,  a l'instar  de React  \cite{react} ou
-Angular  \cite{angularjs}   qui  sont  centrés   sur  le  DOM   et  sa
-manipulation,  la plupart  des solutions  proposées procédants  par une
-approche fonctionnelle des  balises HTML rendant de  ce fait difficile
-la conception.  La seconde problème concerne le modèle d'exécution qui
-passe par  la plupart du  temps par une transpilation  vers Javascript
-\cite{javascript}.  Malgré  les étapes d’optimisation mises  en oeuvre
-comme le  traitement spécifique de  la recursion terminale,  une telle
-transformation ne permet pas d’avoir une maitrise totale du langage et
-de son  exécution comme cela  peut être le  cas avec le  support d’une
-machine SECD spécifique.
+Ces dernières  approches soulèvent cependant deux  problématiques.  La
+première  concerne l'expressivité  du langage  et notamment  lorsqu'il
+s'agit de manipuler le DOM \cite{dom}.   En effet, à l'instar de React
+\cite{react} ou Angular  \cite{angularjs} qui sont centrés  sur le DOM
+et sa  manipulation, la plupart  des solutions proposent  une approche
+fonctionnelle de la  construction des balises HTML rendant  de ce fait
+difficile la  conception.  La  seconde concerne le  modèle d'exécution
+qui nécessite la  plupart du temps une  transpilation vers Javascript.
+Malgré les étapes  d’optimisation mises en oeuvre  comme le traitement
+spécifique  de la  récursion  terminale, une  telle transformation  ne
+permet pas d’avoir une maîtrise totale  du langage et de son exécution
+comme  cela peut  être  le  cas avec  le  support  d’une machine  SECD
+spécifique.
 
 Lors  de  l'élaboration du  langage  Thicket  \cite{thicket} ces  deux
 problématiques  ont   été  particulièrement  ciblées   afin  d'étudier
 l'expressivité et  l'intégration dans le monde  des applications dites
-Web.  Dans un  premier temps nous faisons un  présentation très rapide
-du  langage.   Cela  couvre   l'expressivité  et   notamment  l'aspect
-déclaratif pour les elements visuels.  L'intégration dans un processus
-d'application Web sera finalement abordé.
+Web.  Dans un premier temps  nous faisons une présentation très rapide
+du  langage.    Cela  couvre  l'expressivité  et   notamment  l'aspect
+déclaratif pour les éléments visuels.  L'intégration dans un processus
+d'élaboration d'application Web sera finalement abordée.
 
 \section{Survol (très rapide) du langage}
 
 Thicket  est  un  langage  fonctionnel  fortement  typé  à  évaluation
-paresseuse non-strict  intégrant le  paradigme objet par  l'apport des
+paresseuse non-stricte  intégrant le paradigme objet  par l'apport des
 traits \cite{trait}  et reposant sur  un principe de  séparation entre
 les classes et les modèles quelles dénotent.
 
 Nous  proposons  un survol  très  rapide  du  langage en  couvrant  la
-représentation des  données et  leur manipulation. Un  point important
-concerne l'absence d'effet de bord conférant au langage une propriété
-dite d'immutabilité.  Ce dernier  point est important  notamment quand
+représentation des données et  leurs manipulations. Un point important
+concerne l'absence d'effet de bord  conférant au langage une propriété
+dite d'immutabilité.   Ce dernier point est  important notamment quand
 sera abordé le cycle de vie d'une application dite Web.
 
 \subsection{Modèle de données}
 
-Une donnée va être dénoté par  une expression de type enregistrement.
-Ainsi  toute  donnée  secondaire  est  alors  accessible  par  le  nom
-associé.  Finalement,  une données  est  représentée  par un  ensemble
+Une  donnée est  dénotée par  une expression  de type  enregistrement.
+Ainsi,  toute  donnée  secondaire  est alors  accessible  par  le  nom
+associé.   Une   données  est   ainsi  représentée  par   un  ensemble
 d'attributs typés comme suit:
 
 \lstset{language=Thicket}
@@ -159,7 +159,7 @@ d'attributs typés comme suit:
   }
 \end{lstlisting}
 
-Une générateur  pour le  type {\tt  Personne} est  alors naturellement
+Un  générateur pour  le type  {\tt Personne}  est alors  naturellement
 synthétisé  avec une  signature calquant  le type  des attributs  dans
 l'ordre  de  spécification.   Construire   une  donnée  de  type  {\tt
   Personne} correspond  alors à  appliquer cette fonction.   Une telle
@@ -172,28 +172,27 @@ avec enregistrements en Haskell \cite{haskell}.
 \end{lstlisting}
 
 De  cette donnée  il  est  alors aisé  d'extraire  une information  en
-procédant par le nommage spécifique de la propriété souhaitée 
-\footnote{Au  même  titre que  Scala  la  formulation  {\tt o  m}  est
-  équivalent à {\tt o.m} dans le cadre de selection d'attributes des
-  modèles et des méthodes de classes.}.
+procédant    par   le    nommage    spécifique    de   la    propriété
+souhaitée \footnote{Au même  titre que Scala la formulation  {\tt o m}
+  est équivalent à {\tt o.m} dans  le cadre de la selection d'attribut
+  des modèle et de méthode de classe.}.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
   Personne "Anakin Skywalker" 1 nom
 \end{lstlisting}
 
-Le  langage  propose aussi  la  définition  de donnée  pouvants  avoir
-plusieurs formes  par leurs  énumérations au même  tire que  les types
+Le  langage propose  aussi  la définition  de  données pouvants  avoir
+plusieurs formes  par leurs énumérations  au même titre que  les types
 injectifs  \cite{ocaml}   \cite{haskell}  ou  les  {\it   case  class}
-\cite{scala}.   Par contre  le  filtrage de  forme  simple repose  sur
+\cite{scala}.  Par  contre, le filtrage  de formes simples  repose sur
 l'application     de    catamorphismes     \cite{meijer1991functional}
 spécifiques.
 
 \subsection{Manipulation des données}
 
 Une classe  est un générateur  prenant en paramètre une  expression et
-proposant en retour une base de connaissances dans laquelle {\tt self}
-dénote cette même base. 
+proposant en retour une base de connaissances.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
@@ -214,7 +213,7 @@ générateur associé à une donnée de type {\tt Personne}.
   jedi (Personne "Anakin Skywalker" 1)
 \end{lstlisting}
 
-Finalement l'activation d'une méthode consiste  en un envoi de message
+Finalement, l'activation d'une méthode consiste en un envoi de message
 à l'instance.
 
 \lstset{language=Thicket}
@@ -222,31 +221,29 @@ Finalement l'activation d'une méthode consiste  en un envoi de message
   jedi (Personne "Anakin Skywalker" 1) grade
 \end{lstlisting}
 
-Cette  approche permet  de séparer  le modèle  du controleur  ou plus
-généralement le signifiant du signifier. Ce principe induit un système
-avec lequel  plusieurs niveaux d'interprétation d'une  même donnée peut
+Cette  approche permet  de séparer  le  modèle du  contrôleur ou  plus
+généralement le signifiant du signifié.  Ce principe induit un système
+avec lequel plusieurs niveaux  d'interprétation d'une même donnée peut
 être simplement élaboré.
-
-%% HERE
 
 \subsection{Immutabilité et système évolutif}
 
-Un  des principes  de base  adopté lors  de l'élaboration  du language
+Un  des principes  de base  adopté  lors de  l'élaboration du  langage
 concerne  l'immutabilité. Pour  ce faire  toute donnée  est considérée
 comme constante et ne peut donc être alors modifiée. L'unique approche
 possible en terme de manipulation  consiste à proposer un système basé
-sur l'évolution de donnée via  un jeu de fonctions dites anamorphiques
-ou de  {\em lens} \cite{meijer1991functional}.  Cette  approche existe
-naturellement dans  les langages  fonctionnels comme Haskell  ou OCaml
-privé  du  {\tt  mutable}.   Dans des  langages  récents  comme  Swift
-\cite{swift} il  est proposé la  notion de structure pour  laquelle un
-objet peut  évolué par copie  partielle impliquant aussi  cette notion
-d'évolution sans modification de l'objet primaire.
+sur l'évolution de données via un jeu de fonctions dites anamorphiques
+\cite{meijer1991functional}.  Cette  approche peut  être naturellement
+exprimée dans les  langages fonctionnels comme Haskell  ou OCaml privé
+du {\tt mutable}.  Dans des  langages récents comme Swift \cite{swift}
+il est  aussi proposé une notion  de structure pour laquelle  un objet
+peut  évoluer par  copie partielle  impliquant ainsi  cette notion  de
+changement sans modification de l'objet de départ.
 
 Dans Thicket afin de faciliter l'expression d'une telle transformation
-ll est  possible de  produire un  nouvelle version  de données  par le
-biais d'une structure  de contrôle spécifique comme le  montre le code
-qui suit.
+il est  possible de produire  une nouvelle  version de données  par le
+biais d'une structure  de contrôle spécifique comme  cela est illustré
+dans le code suivant.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
@@ -254,8 +251,9 @@ qui suit.
 \end{lstlisting}
 
 Cette   même  structure   de  contrôle   permet  aussi   d'opérer  sur
-l'expression  dénotée par  instance de  classe et  permettre ainsi  de
-faire évoluer la base de connaissance d'une instance dans le temps.
+l'expression dénotée  par une  instance de classe  et permet  ainsi de
+faire évoluer le comportement associé à une base de connaissance d'une
+instance dans le temps.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
@@ -270,65 +268,62 @@ faire évoluer la base de connaissance d'une instance dans le temps.
   }
 \end{lstlisting}
 
-Par le  biais de ce survol  rapide nous avons exposé  les principes de
-bases  qui nous  ont conduit  à la  définition et  à l'élaboration  du
-langage Thicket.  A  noter qu'il repose sur  des concepts parfaitement
-maîtrisés concernant le typage mais aussi pour l'aspect fonctionnel.
+Par ce survol rapide nous avons exposé les principes de bases qui nous
+ont conduit à la définition et  à l'élaboration du langage Thicket.  A
+noter qu'il repose sur  des concepts parfaitement maîtrisés concernant
+le typage mais aussi l'aspect fonctionnel.
 
 \subsection{Cas de la manipulation du DOM}
 
 Le point qui va nous intéresser maintenant concerne l'intégration d'un
-tel langage  dans le  monde des applications  dites Web.   Cela couvre
-deux aspects. Le premier porte  sur la representation des données pour
-le support HTML via le DOM  \cite{dom}. En effet, dans la majorité des
-solutions la mise en forme et  la création de document sont prisent en
-charge par des librairies fonctionnelles  manipulant des termes du DOM
-\cite{dom}.
+tel langage dans  le monde des applications dites  Web.  Cela concerne
+la  représentation  des  données  pour  le support  HTML  via  le  DOM
+\cite{dom}. En effet, dans la majorité  des solutions la mise en forme
+et la création de documents sont  prisent en charge par des librairies
+fonctionnelles manipulant des termes du DOM \cite{dom}.
 
 Il existe  cependant une approche  déclarative - par opposition  à une
-approche constructive -  permettant d'exprimer des fragments  et ce de
+approche constructive -  permettant d'exprimer des fragments  et ce, de
 manière plus intuitive comme cela  est notamment le cas dans AngularJS
 \cite{angularjs} et React \cite{react}.
 
 \subsubsection{Expression de la structure d'un fragment}
 
-Notre  approche repose  sur  une approche  déclarative  qui alors  est
+Notre  approche repose  sur  une approche  déclarative  qui est  alors
 transformée  en   expression  fonctionnelle   lors  de  la   phase  de
 compilation.   Une telle  approche  permet de  combiner  une vue  plus
-intuitive de la construction de  document sans corrompre le système de
-typage.
+intuitive de la  construction de modèle de document  sans corrompre le
+système de typage.
 
 \lstset{language=Thicket}
 \begin{lstlisting}
   def vueJedi : jedi -> dom = j -> <p  id="jedi"> j.grade " " j.nom </p> 
 \end{lstlisting}
 
-Bien évidemment au  même titre que les langages  comme Elm, Purescript
-etc.   cette  expression  peut-être remplacée  par  l'utilisation  des
-librairies dédiées de la façon suivante:
+Bien évidemment au même titre que des langages fonctionnels1 comme Elm
+et  Purescript   cette  aspect  déclaratif  peut   être  remplacé  par
+l'utilisation des librairies dédiées de la façon suivante:
 
 \begin{lstlisting}
   def vueJedi : jedi -> dom = j -> {
       document "p" create 
                      addAttribute "id" "jedi" 
-                     addChild j.grade 
-                     addChild " " 
-                     addChild j.nom
+                     addChild j.grade addChild " " addChild j.nom
   }
 \end{lstlisting}
 
-Cette forme de  fonction permet de créer un element  du DOM sans qu'il
-soit nécessairement  rattaché au document courant.   Cela permet ainsi
-de construire  virtuellement l'ensemble  des vues nécessaire  avant des
-les appliquer.
+Cette  approche fonctionnel  permet de  créer un  élément du  DOM sans
+qu'il soit  nécessairement rattaché au document  courant.  Cela permet
+ainsi  de construire  virtuellement  l'ensemble  des vues  nécessaires
+avant des les appliquer.
 
 \subsubsection{Manipulation et système réactif}
 
-Le deuxième  aspect de la  manipulation de DOM  concerne l'interaction
+Un deuxième  aspect de la  manipulation de DOM  concerne l'intéraction
 avec l'extérieur.   Dans notre approche  le comportement associé  à un
 noeud du DOM est séparé de  sa représentation.  Il devient alors ainsi
 aisé de concevoir des systèmes réactifs par la mise en place de points
-d'appels permettants de ce fait  d'appréhender la structure du document
+d'appels permettant de ce fait  d'appréhender la structure du document
 et des comportements associées.
 
 \begin{lstlisting}
@@ -342,8 +337,8 @@ La combinaison  de cette forme  réactive avec l'approche  évolutive va
 nous  permettre  de  modéliser  simplement  les  applications  Web  en
 proposant     une     approche    architecturale     unidirectionnelle
 \cite{unidirectionnal} en  y intégrant  la réception et  le traitement
-des interactions  en terme d'évolution  de données qui  sera finaliser
-par la phase rendu.
+des intéractions en  terme de changement de données  qui sera finalisé
+par la phase rendue.
  
 Dans notre exemple,  ceci peut être simplement mis en  évidence par la
 combinaison  d'un  élément  visuel,  d'un capteur  d'évènement  et  la 
@@ -357,44 +352,43 @@ fonction de traitement associée.
 \end{lstlisting}
 
 L'élément clé dans l'exemple précédent  concerne la phase de rendu qui
-permet  par appel  récursif  de  lier un  contexte  d'execution et  la
-représentation visuelle  associé.  Ainsi  à chaque interaction  via la
-souris un nouvelle élément visuel est produit pour un {\tt jedi} ayant
-fêter un nouvelle anniversaire.
+permet  par appel  récursif  de  lier un  contexte  d'exécution et  la
+représentation  visuelle  associée.   Ainsi à  chaque  intéraction  un
+nouvel élément  visuel est produit pour  un {\tt jedi} ayant  fêter un
+nouvel anniversaire.
 
 \section{Une intégration Web sur mesure}
 
-Afin de proposer un intégration fine  dans le monde du Web, la version
-initiale du compilateur  a été écrit en Javascript  contrairement à la
-plupart  des   transpileurs  qui   sont  eux  en   Haskell  \cite{elm}
-\cite{purescript}. Cette  approche nous  permet dès le  départ d'avoir
-une prise  en charge  du langage  quasi-naturelle. Conjointement  à ce
-choix le modèle  d'execution proposé ne repose pas  sur une traduction
-du langage vers le langage cible à savoir Javascript pour le moment et
-WebAssembly \cite{rossberg2016webassembly} plus  tard probablement. 
+Afin de  proposer une  intégration dans  le monde  du Web,  la version
+initiale du  compilateur a été  écrite en Javascript.   Cette approche
+nous  permet dès  le départ  d'avoir une  prise en  charge du  langage
+quasi-naturelle.   Conjointement  à  ce choix  le  modèle  d'exécution
+proposé ne  repose pas sur une  traduction du langage vers  le langage
+cible   à   savoir   Javascript   pour  le   moment   et   WebAssembly
+\cite{rossberg2016webassembly} plus tard probablement.
 
 Concernant le  langage Thicket,  le choix est  bien au  contraire plus
-traditionnel car le  code va dans un premier temps  - après les passes
-de validations - être transformé en code objet. Ce même code est alors
-pris en  charge par  une machine  de Krivine  \cite{krivine:2007}.  Le
-choix  d'un  langage paresseux  non-strict  nous  a diriger  vers  une
-solution plus spécifique qui s'inspire  du jeu d'instruction de la Zinc
-Abstract Machine \cite{zinc}  étendu aux objets et  à l'évaluation par
-nécessité.
+classique car le code  va dans un premier temps -  après les phases de
+validations -  être transformé en code  objet. Ce même code  objet est
+alors pris en  charge par une machine  de Krivine \cite{krivine:2007}.
+Le  choix d'un  langage paresseux  non-strict nous  a dirigé  vers une
+solution  plus spécifique  qui s'inspire  du jeu  d'instruction de  la
+"Zinc  Abstract   Machine"  \cite{zinc}   étendue  aux  objets   et  à
+l'évaluation par nécessité.
 
 Cette approche offre - comparativement à la transpilation - l'avantage
-de  découpler   l'execution  du   code  de  l'infrastructure   qui  la
+de  découpler   l'exécution  du   code  de  l'infrastructure   qui  la
 porte. Cele  permet ainsi d'avoir une  main mise totale sur  le modèle
 d'exécution et de l'outillage associé.
 
 \subsection{Analyse, compilation à la volée et exécution}
 
-En  terme  d'élaboration  d'application   le  code  source  peut  être
+En  terme  d'élaboration  d'application,  le  code  source  peut  être
 directement   embarqué   au   même   titre  qu'un   code   source   en
 Javascript. Une  telle approche permet  d'avoir le même  apport qu'une
 boucle d'évaluation  à savoir offrir un  prototypage rapide. Cependant
 la contre-partie est  une compilation à la volée et  donc une phase de
-validation pouvant lever des erreurs.
+validation pouvant lever des erreurs dans le client.
 
 \lstset{language=Html}
 \begin{lstlisting}
@@ -415,37 +409,36 @@ validation pouvant lever des erreurs.
   </html>
 \end{lstlisting}
 
-Une application Web consiste dans  un premier temps à spécifier (ligne
-3) le paquetages utilisés ainsi que  le programme à exécuter (lignes 5
-et 6).  Pour la prise en charge du langage (ligne 9) le compilateur et
-l'exécuteur sont  chargés et finalement quand  l'application est prête
-l'analyse peut être enclenchée (ligne 11).
+Une application Web  consiste alors dans un premier  temps à spécifier
+le  paquetage utilisé  (ligne 3)  ainsi  que le  programme à  exécuter
+(lignes 5  et 6).   Pour la prise  en charge du  langage (ligne  9) le
+compilateur   et  l'exécuteur   sont  chargés   et  finalement   quand
+l'application est prête, l'analyse peut être enclenchée (ligne 11).
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.45]{repl} 
-\caption{Schémas de compilation et execution}
+\caption{Schémas de compilation et exécution}
 \label{repl}
 \end{figure}
 
 L'exécution repose sur  trois phases. La première  consiste à analyser
 le DOM pour la détection des paquetages à charger et les blocs de code
-source à compiler et exécuter. Le seconde étape consiste à compiler et
+source à compiler et exécuter. La seconde étape consiste à compiler et
 charger  les  codes  objets  générés.  Finalement  la  dernière  étape
-consiste à exécuter chacun des  code binaires à savoir les expressions
-au  plus haut  niveau comme  celle ligne  6 de  notre exemple.  
+consiste à exécuter chacun des codes binaires à savoir les expressions
+au plus haut niveau i.e. ligne 6 de notre exemple.
 
 La figure \ref{repl}  met en évidence une compilation dite  à la volée
-mais  aussi  trois  étapes  clairement identifiée  avec  un  périmètre
+mais  aussi  trois étapes  clairement  identifiées  avec un  périmètre
 délimité permettant de mettre en oeuvre  de bout en bout l'analyse, la
-compilation  et l'exécution  du  code. 
+compilation et l'exécution du code.
 
 Un point qui n'est pas abordé  ici concerne la notion de paquetage qui
-est une unité de distribution contenant l'ensemble des specifications,
-et le code objet associé. De  plus l'ensemble des des dépendances avec
-d'autres paquetage  est aussi  specifiée.  Finalement tout  code natif
-javascript référencé est aussi embarqué permettant au final de définir
-une unité de distribution consistante.
+est une unité de distribution contenant l'ensemble des spécifications,
+le  code  objet associé  ainsi  que  l'ensemble des  dépendances  avec
+d'autres paquetages.   Tout code natif javascript  référencé est aussi
+embarqué permettant de définir une unité de distribution consistante.
 
 \subsection{Analyse et exécution}
 
@@ -473,16 +466,17 @@ Ainsi  la  phase d'analyse  peut  être  revisitée  afin de  mettre  en
   </html>
 \end{lstlisting}
 
-L'élaboration de  l'application repose non  seulement par la  phase de
+L'élaboration   de   l'application    nécessite   non   seulement   la
 spécification  de paquetages  nécessaires  pour la  mise oeuvre  d'une
-application (line  3) mais aussi par  la mise en évidence  des codes à
+application  (line 3)  mais  aussi la  mise en  évidence  des codes  à
 exécuter lors du démarrage de l'application (ligne 4). Ainsi l'analyse
-présentée précédemment  est capable  d'identifier les  paquetages, les
-code objets à  exécuter et finalement les codes sources  à compiler et
-exécuter.
+présentée précédemment  est capable  d'identifier les  paquetages mais
+aussi les codes objets à exécuter.  Pour la prise en charge du langage
+(ligne   6)  seul   l'exécuteur  est   chargéx  et   finalement  quand
+l'application est prête, l'analyse peut être enclenchée (ligne 8).
 
 La   figure  \ref{execute}   met  en   évidence  l'identification   et
-l'exécution par de la machine virtuelle associée.
+l'exécution de tels codes par la machine virtuelle associée.
 
 \begin{figure}[h]
 \centering
@@ -500,11 +494,11 @@ relatives à la compilation mais aussi à l'exécution.
 
 Lors de  l'élaboration d'application l'injection de  code Thicket dans
 toute page  HTML est pris  en charge dynamiquement. Cependant  lors du
-passage  au  déploiement une  telle  technique  n'est pas  adaptée  et
-peut-être couteuse. La  phase de compilation existante  dans un client
-Web peut être alors reprise et  intégrée dans une phase de compilation
-afin de proposer une version compilée  et donc optimale comme cela est
-illustré dans la figure \ref{precompile}.
+passage au déploiement  une telle technique n'est pas  adaptée et peut
+être couteuse.  La phase de  compilation existante dans un  client Web
+peut être  alors reprise et intégrée  dans une phase de  compilation à
+priori afin de  proposer une version optimale comme  cela est illustré
+dans la figure \ref{precompile}.
 
 \begin{figure}[h]
 \centering
@@ -518,35 +512,36 @@ d'assemblage comme Bower \cite{bower} dans le monde du Web.
 
 \subsection{Sécurisation du code objet}
 
-Avec la maitrise de cette problématique d'execution et de distribution
+Avec la maîtrise de cette problématique d'exécution et de distribution
 l'aspect sécurité peut être entre autres revisité par la mise en place
-de  système de  certification de  code objet  et de  paquetage par  la
-signature.  Cette technique  doit permettre  de garantir  que le  code
-objet n'a pas été altéré et peut être exécuté du fait de ce contrat de
-confiance.
+de  système  de  signature  de  code objet  et  de  paquetage.   Cette
+technique doit permettre de garantir l'intégrité du code objet.
 
 \subsection{Paquetage et distribution}
 
-Le  dernier aspect  concerne la  mise à  disposition de  paquetage. En
-effet  les  deux  schéma  mettent  en  évidence  un  mecanisme  lié  à
-l'utilisation de paquetage.  Couplé avec la sécurisation du code objet
-des solutions  modernes basées  sur la dissimination  par le  biais de
+Un  dernier aspect  concerne la  mise à  disposition de  paquetage. En
+effet,  les  deux schémas  mettent  en  évidence  un mécanisme  lié  à
+l'utilisation de tels paquetages.  Couplé avec la sécurisation du code
+objet,  des solutions  basées sur  la  dissimination par  le biais  de
 réseau de  diffusion de contenu  (CDN) peuvent être  envisagées.  Ceci
-permet de mettre en place forme pervasive du support du langage que ce
-soit en terme de module  pour l'analyse, la compilation et l'exécution
-mais aussi en terme de code objet disponible pour tous.
+doit permettre  de mettre en place  une forme pervasive du  support du
+langage que ce soit en terme  de module pour l'analyse, la compilation
+et l'exécution  mais aussi en terme  de code objet disponibles  sur le
+réseau.
 
 \section{Conclusion}
 
 Une  telle expérimentation  nous  permet d'explorer  non seulement  le
-domaine des langages mais aussi chose aussi importante son intégration
-dans des écosystèmes distribués.  Cela couvre notamment la capacité du
-language  à supporter  l'élaboration  d'application  dites riche  mais
-aussi  le  mode  de  prise  en  charge  en  terme  d'execution  et  de
-distribution à travers  le réseau par la gestion des  paquetages et de
-leur distribution.
+domaine des langages d'un point de  vue formel mais aussi, chose aussi
+importante  son intégration  dans  des  écosystèmes distribués.   Cela
+couvre  notamment la  capacité du  language à  supporter l'élaboration
+d'applications  dites riches  ainsi que  la prise  en charge  en terme
+d'exécution et de distribution à travers  le réseau par la gestion des
+paquetages.
 
 \bibliographystyle{abbrv}
 \bibliography{mesreferences}
 
 \end{document}
+
+

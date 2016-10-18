@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>De Java à Swift en 2 temps trois mouvements</title>
+    
+    <meta name="description" content="Présentation du langage Swift avec comme repère Java">
+    <meta name="author" content="Didier Plaindoux">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+     
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <style>
+      .kern {
+        letter-spacing: -0.2em;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  
+  <body>
+    <div class="reveal">      
+      <div class="slides">
+	<img style="position:fixed;top:15px;left:15px" class="plain" src="images/logo DevFest 2016.png" width='15%'>
+	
+	<section>
+	  <h2>De Java à Swift <br> en 2 temps <br> trois mouvements</h2>
+	  <br/>
+	  <div class="p" style="text-align:middle">3 octobre 2016</div>
+	  <div class="p" style="text-align:middle">
+	    <span>
+	      <a href="http://d.plaindoux.free.fr">Didier Plaindoux</a>
+	      (<a href="http://twitter.com/dplaindoux">@dplaindoux</a>)
+	    </span> 
+	  </div>
+	</section>
+
+	<section>
+	  <table>
+	    <tr>
+	      <td align="center"><b>Computer scientist</b></td>
+	      <td align="center"><b>Freelance</b></td>
+	    </tr>
+	    <tr>
+	      <td width="50%" align="center"><span style="font-size:700%">&lambda;</span></td>
+	      <td width="50%" align="center"><img class="plain" src="images/fungus.png" width='55%'></img></td>
+	    </tr>
+	  </table>
+	</section>
+
+	<section>
+	  <h3>Historique de Swift</h3>
+
+	  Développement lancé en 2010 par Chris Lattner
+
+	  <ul>
+	    <li><div class="fragment"> <b>v1.0</b>: publication de la version à la WWDC 2014 </div>
+	    <li><div class="fragment"> <b>v2.0</b>: Apple publie et ouvre le compilateur en 2015</div>
+	    <li><div class="fragment"> <b>v3.0</b>: publication de la version en septembre 2016</div>
+	  </ul>
+	</section>
+	
+	<section data-markdown>
+### Sources d'inspiration
+
+* Object-Oriented programming (`Objective-C`, `C#`)
+* ??: `Ruby` &amp; `Python`
+* Functional programming (`Haskell`, `OCaml`)
+	</section>
+	
+	<section>
+	  <h3>Ou Exécuter Swift ?</h3>
+
+	  <table width='100%'>
+	    <tr>
+	      <td width="33%" align="center" valign="middle"><img class="plain fragment" width="80%" src="images/ubuntu-logo14.png"></img></td>
+	      <td width="33%" align="center" valign="middle"><img class="plain" src="images/apple-logo.png"></img></td>
+	      <td width="33%" align="center" valign="middle"><img class="plain fragment" width="50%" src="images/ibm-swift-sandbox.png"></img></td>
+	    </tr>
+	  </table>
+
+	</section>
+	
+	<section>
+	  <h3>Ma Permière Classe</h3>
+
+	  <pre><code class="Swift">class Personne {
+ var nom : String = "Anonyme"
+ var age : Int    = 0
+}
+</code><code class="Swift fragment">var personne = Personne()
+personne.nom = "John Doe"
+personne.age = 42</code></pre>
+
+	  <div class="fragment">
+	    <p> Type synthétisé pour la variable <tt>personne</tt> </p>
+	    <p> Attributs <u>nom</u> et <u>age</u> sont modifiables </p>
+	  </div>
+
+	</section>
+
+	<section>
+	  <h3>Constructeur de classe</h3>
+
+	  <pre><code class="Swift">class Personne {
+ let nom : String
+ var age : Int
+</code><code class="Swift fragment">
+ init(nom:String, age:Int) {
+  self.nom = nom
+  self.age = age
+ }
+}
+</code><code class="Swift fragment">var personne = Personne(nom:"John Doe", age:42)</code></pre>
+
+	  <div class="fragment">Attribut <u>nom</u> est immutable </div>
+	</section>
+	
+	<section>
+	  <h3>Chainage de constructeurs</h3>
+
+	  <pre><code class="Swift">class Personne {
+ let nom : String
+ var age : Int
+
+ init(nom:String, age:Int) {
+  self.nom = nom
+  self.age = age
+ } 
+</code><code class="Swift fragment">
+ convenience init(nom:String, année:Int) {
+  self.init(nom:nom, age:annéeCourante() - année)
+ }
+}</code></pre>
+	</section>
+	
+	<section>
+	  <h3>Constructeur et cas limite</h3>
+
+	  <pre><code class="Swift">class Personne {
+ let nom : String
+ var age : Int
+
+ init(nom:String, age:Int) {
+  self.nom = nom
+  self.age = age
+ } 
+</code><code class="Swift fragment">
+ convenience init?(nom:String, année:Int) {
+  if components.year - année < 0 { return nil }
+
+  self.init(nom:nom, age:annéeCourante() - année)
+ }
+}</code></pre>
+	</section>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	
+	<script>
+	  
+	  // More info https://github.com/hakimel/reveal.js#configuration
+	  Reveal.initialize({
+	  controls: true,
+	  progress: true,
+	  history: true,
+	  center: true,
+	  
+	  transition: 'slide', // none/fade/slide/convex/concave/zoom
+	  
+	  // More info https://github.com/hakimel/reveal.js#dependencies
+	  dependencies: [
+	  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	  { src: 'plugin/zoom-js/zoom.js', async: true },
+	  { src: 'plugin/notes/notes.js', async: true }
+	  ]
+	  });	  
+	</script>
+</body>
+</html>
+
+
