@@ -17,10 +17,13 @@ class Personne {
         self.age = age
     }
     
-    convenience init(_ nom:String, année: Int) {
+    convenience init?(_ nom:String, année: Int) {
+        if annéeCourante() - année < 0 {
+            return nil
+        }
+        
         self.init(nom:nom, age:annéeCourante() - année)
     }
 }
 
 var personne = Personne("John Doe", année:1944)
-personne.age

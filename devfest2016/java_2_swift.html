@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
      
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
     
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -38,9 +38,10 @@
   
   <body>
     <div class="reveal">      
+      <img style="position:fixed;top:15px;left:15px" class="plain" src="images/logo DevFest 2016.png" width='10%'>
+      <div style="position:fixed;bottom:15px;right:15px;font-size:20%"><b>De Java à Swift en 2 temps trois mouvements</b> D. Plaindoux</div>
+
       <div class="slides">
-	<img style="position:fixed;top:15px;left:15px" class="plain" src="images/logo DevFest 2016.png" width='15%'>
-	
 	<section>
 	  <h2>De Java à Swift <br> en 2 temps <br> trois mouvements</h2>
 	  <br/>
@@ -72,18 +73,30 @@
 	  Développement lancé en 2010 par Chris Lattner
 
 	  <ul>
-	    <li><div class="fragment"> <b>v1.0</b>: publication de la version à la WWDC 2014 </div>
-	    <li><div class="fragment"> <b>v2.0</b>: Apple publie et ouvre le compilateur en 2015</div>
-	    <li><div class="fragment"> <b>v3.0</b>: publication de la version en septembre 2016</div>
+	    <li><div class="fragment"> <b>v1.0</b>: publication de la version à la WWDC 2014 </div> </li>
+	    <li><div class="fragment"> <b>v2.0</b>: Apple publie et ouvre le compilateur en 2015</div> </li>
+	    <li><div class="fragment"> <b>v3.0</b>: publication de la version en septembre 2016</div> </li>
 	  </ul>
 	</section>
 	
-	<section data-markdown>
-### Sources d'inspiration
+	<section>
+	  <h3>Langage Multi-Paradigme</h3>
 
-* Object-Oriented programming (`Objective-C`, `C#`)
-* ??: `Ruby` &amp; `Python`
-* Functional programming (`Haskell`, `OCaml`)
+	  <br>
+
+	  <table width='100%'>
+	    <tr>
+	      <td width="33%" align="center" valign="middle" class="plain fragment">
+		Orienté Objet<hr>Objective-C<br>C#
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="plain fragment">
+		Fonctionnel<hr>Haskell<br>OCaml
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="plain fragment">
+		Dynamique<hr>Ruby<br>Python
+	      </td>
+	    </tr>
+	  </table>
 	</section>
 	
 	<section>
@@ -91,12 +104,60 @@
 
 	  <table width='100%'>
 	    <tr>
-	      <td width="33%" align="center" valign="middle"><img class="plain fragment" width="80%" src="images/ubuntu-logo14.png"></img></td>
-	      <td width="33%" align="center" valign="middle"><img class="plain" src="images/apple-logo.png"></img></td>
-	      <td width="33%" align="center" valign="middle"><img class="plain fragment" width="50%" src="images/ibm-swift-sandbox.png"></img></td>
+	      <td width="33%" align="center" valign="middle"><img class="plain fragment" src="images/apple-logo.png"></img></td>
+	      <td width="33%" align="center" valign="middle"><img class="plain fragment" src="images/ubuntu-logo14.png"></img></td>
+	      <td width="33%" align="center" valign="middle"><img class="plain fragment" width="70%" src="images/ibm-swift-sandbox.png"></img></td>
 	    </tr>
 	  </table>
 
+	</section>
+	
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Constantes </h4>
+	  <p style="opacity:0.15"> Fonction </p>
+	  <p style="opacity:0.10"> Structure </p>
+	  <p style="opacity:0.05"> Classe </p>
+	</section>
+	
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Fonction </h4>
+	  <p style="opacity:0.15"> Structure </p>
+	  <p style="opacity:0.10"> Classe </p>
+	  <p style="opacity:0.05"> Prototype </p>
+	</section>
+	
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Structure </h4>
+	  <p style="opacity:0.15"> Classe </p>
+	  <p style="opacity:0.10"> Prototype </p>
+	  <p style="opacity:0.05"> Générique </p>
+	</section>
+
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Classe </h4>
+	  <p style="opacity:0.15"> Prototype </p>
+	  <p style="opacity:0.10"> Générique </p>
+	  <p>&nbsp;</p>
+	</section>
+
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Prototype </h4>
+	  <p style="opacity:0.15"> Générique </p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	</section>
+	
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Générique </h4>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
 	</section>
 	
 	<section>
@@ -133,9 +194,28 @@ personne.age = 42</code></pre>
 
 	  <div class="fragment">Attribut <u>nom</u> est immutable </div>
 	</section>
+
+	<section>
+	  <h3>Constructeurs de classe</h3>
+
+	  <pre><code class="Swift">class Personne {
+ let nom : String
+ var age : Int
+</code><code class="Swift fragment">
+ init(nom:String, age:Int) {
+  self.nom = nom
+  self.age = age
+ }
+</code><code class="Swift fragment">
+ init(nom:String, année:Int) {
+  self.nom = nom
+  self.age = age:annéeCourante() - année
+ }
+</code></pre>
+	</section>
 	
 	<section>
-	  <h3>Chainage de constructeurs</h3>
+	  <h3>Chaînage de constructeurs</h3>
 
 	  <pre><code class="Swift">class Personne {
  let nom : String
@@ -165,11 +245,18 @@ personne.age = 42</code></pre>
  } 
 </code><code class="Swift fragment">
  convenience init?(nom:String, année:Int) {
-  if components.year - année < 0 { return nil }
-
+  if annéeCourante() - année < 0 { return nil }
   self.init(nom:nom, age:annéeCourante() - année)
  }
 }</code></pre>
+	</section>
+
+	<section>
+	  <h3>Donnée optionnelle</h3>
+
+	  <pre><code class="Swift">let johnDoe  = Personne(nom:"John Doe", année:1974)
+</code><code class="Swift fragment">let personne = Personne(nom:"John Doe", année:4030)
+</code></pre>
 	</section>
 
 	<script src="lib/js/head.min.js"></script>
@@ -179,12 +266,12 @@ personne.age = 42</code></pre>
 	  
 	  // More info https://github.com/hakimel/reveal.js#configuration
 	  Reveal.initialize({
-	  controls: true,
+	  controls: false,
 	  progress: true,
-	  history: true,
+	  history: false,
 	  center: true,
 	  
-	  transition: 'slide', // none/fade/slide/convex/concave/zoom
+	  transition: 'none', // none/fade/slide/convex/concave/zoom
 	  
 	  // More info https://github.com/hakimel/reveal.js#dependencies
 	  dependencies: [
