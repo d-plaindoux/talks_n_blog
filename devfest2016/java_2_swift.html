@@ -19,10 +19,17 @@
     
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
-    
+
     <style>
-      .kern {
-        letter-spacing: -0.2em;
+      .alert {
+      font-size:60% !important;
+      position:fixed;
+      bottom:100px;
+      left:10%;
+      height:30px;
+      width:80%;
+      color:white;
+      background-color:#AA2211;
       }
     </style>
 
@@ -37,15 +44,15 @@
   </head>
   
   <body>
-    <div class="reveal">      
-      <img style="position:fixed;top:15px;left:15px" class="plain" src="images/logo DevFest 2016.png" width='10%'>
-      <div style="position:fixed;bottom:15px;right:15px;font-size:20%"><b>De Java à Swift en 2 temps trois mouvements</b> D. Plaindoux</div>
+    <div class="reveal">
+      <img style="position:fixed;top:15px;left:15px" class="plain" src="images/logo DevFest 2016.png" width='15%'>
+      <div style="position:fixed;bottom:15px;right:15px;font-size:30%"><b>De Java à Swift en 2 temps trois mouvements</b> D. Plaindoux</div>
 
       <div class="slides">
 	<section>
 	  <h2>De Java à Swift <br> en 2 temps <br> trois mouvements</h2>
 	  <br/>
-	  <div class="p" style="text-align:middle">3 octobre 2016</div>
+	  <div class="p" style="text-align:middle">3 novembre 2016</div>
 	  <div class="p" style="text-align:middle">
 	    <span>
 	      <a href="http://d.plaindoux.free.fr">Didier Plaindoux</a>
@@ -82,8 +89,6 @@
 	<section>
 	  <h3>Langage Multi-Paradigme</h3>
 
-	  <br>
-
 	  <table width='100%'>
 	    <tr>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
@@ -104,12 +109,356 @@
 
 	  <table width='100%'>
 	    <tr>
-	      <td width="33%" align="center" valign="middle"><img class="plain fragment" src="images/apple-logo.png"></img></td>
-	      <td width="33%" align="center" valign="middle"><img class="plain fragment" src="images/ubuntu-logo14.png"></img></td>
-	      <td width="33%" align="center" valign="middle"><img class="plain fragment" width="70%" src="images/ibm-swift-sandbox.png"></img></td>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" src="images/apple-logo.png"></img>
+		<br>
+		iPhone, iPad, OSX
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" src="images/ubuntu-logo14.png"></img>
+		<br>
+		Version 14.04+ 
+		<br>
+		(Docker)
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" width="70%" src="images/ibm-swift-sandbox.png"></img>
+		<br>
+		Cloud 
+		<br>
+		(LinuxOne)
+	      </td>
 	    </tr>
 	  </table>
 
+	</section>
+
+	<section>
+	  <h3> Metamorphose d'une classe Java </h3>
+	  <pre><code data-trim data-noescape class="Java">
+public class Personne {
+  private final String nom;
+  private int age;
+
+  public Personne(String nom, int age) {
+    this.nom = nom;
+    this.age = age;
+  }
+
+  public String aPourNom() { 
+    return this.nom; 
+  }
+  
+  public void anniversaire() {
+    this.age += 1;
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Séparateurs </h3>
+	  <pre><code data-trim data-noescape class="Java">
+public class Personne {
+  private final String nom<u> ; </u>
+  private int age<u> ; </u>
+
+  public Personne(String nom, int age) {
+    this.nom = nom<u> ; </u>
+    this.age = age<u> ; </u>
+  }
+
+  public String aPourNom() { 
+    return this.nom<u> ; </u> 
+  }
+  
+  public void anniversaire() {
+    this.age += 1<u> ; </u>
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Séparateurs </h3>
+	  <pre><code data-trim data-noescape class="Java">
+public class Personne {
+  private final String nom
+  private int age
+
+  public Personne(String nom, int age) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+  
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Attributs </h3>
+	  <pre><code data-trim data-noescape class="Java Swift">
+public class Personne {
+  private <u>final String nom</u>
+  private <u>Int age</u>
+
+  public Personne(String nom, int age) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Attributs </h3>
+	  <pre><code data-trim data-noescape class="Java Swift">
+public class Personne {
+  private let nom:String // Immutable
+  private var age:Int    // Modifiable
+
+  public Personne(String nom, int age) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Paramètres </h3>
+	  <pre><code data-trim data-noescape class="Java Swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public Personne(<u>String nom, Int age</u>) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Paramètres </h3>
+	  <pre><code data-trim data-noescape class="Java Swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public Personne(nom:String, age:Int) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Constructeur </h3>
+	  <pre><code data-trim data-noescape class="Java Swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public <u>Personne</u>(nom:String, age:Int) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+  
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Constructeur </h3>
+	  <pre><code data-trim data-noescape class="Java Swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public String aPourNom() { 
+    return this.nom 
+  }
+  
+  public void anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Fonction </h3>
+	  <pre><code data-trim data-noescape class="Swift Java">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public <u>String aPourNom()</u> { 
+    return this.nom 
+  }
+  
+  public <u>void anniversaire()</u> {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Fonction </h3>
+	  <pre><code data-trim data-noescape class="Swift Java">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public func aPourNom() -> String { 
+    return this.nom 
+  }
+  
+  public func anniversaire() -> Void {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Fonction </h3>
+	  <pre><code data-trim data-noescape class="Swift Java">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    this.nom = nom
+    this.age = age
+  }
+
+  public func aPourNom() -> String { 
+    return this.nom 
+  }
+  
+  public func anniversaire() {
+    this.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3>  This &rightarrow; Self </h3>
+	  <pre><code data-trim data-noescape class="Swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    <u>this</u>.nom = nom
+    <u>this</u>.age = age
+  }
+
+  public func aPourNom() -> String { 
+    return <u>this</u>.nom 
+  }
+
+  public func anniversaire() {
+    <u>this</u>.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h3> Une classe Swift </h3>
+	  <pre><code data-trim data-noescape class="Swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    self.nom = nom
+    self.age = age
+  }
+
+  public func aPourNom() -> String { 
+    return self.nom 
+  }
+
+  public func anniversaire() {
+    self.age += 1
+  }
+}
+	  </code></pre>
+	</section>
+
+	<section>
+	  <h2> Merci </h2>
+	  <h4> Questions ? </h4>
+	</section>
+	
+	<section>
+	  <img class="plain" width="45%" src="images/swift.png">	  
 	</section>
 	
 	<section>
@@ -117,20 +466,112 @@
 	  <h4> Constantes </h4>
 	  <p style="opacity:0.15"> Fonction </p>
 	  <p style="opacity:0.10"> Structure </p>
-	  <p style="opacity:0.05"> Classe </p>
+	  <p style="opacity:0.05"> Enumération </p>
 	</section>
 	
 	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
 	  <h4> Fonction </h4>
 	  <p style="opacity:0.15"> Structure </p>
+	  <p style="opacity:0.10"> Enumération </p>
+	  <p style="opacity:0.05"> Classe </p>
+	</section>
+	
+	<section>
+	    <h4> Fonction </h4>
+	    <pre><code data-noescape class="swift">
+  func [Nom]([Paramètres]) -> [Type Retour] { [Corps de la fonction] }	    	 
+	    </code></pre>
+	</section>
+		
+	<section>
+	    <h4> Fonction :: Paramètres</h4>
+	    <pre><code data-trim data-noescape class="swift">
+func multiplier(a:Int, b:Int) -> Int { 
+  return a * b 
+}
+	      </code></pre>
+
+	    <div class="fragment" style="font-size:60%">
+	      Le nom de paramètres capturent les valeurs lors de l'appel
+	    </div>
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+multiplier(a:2, b:3)
+	    </code></pre>
+
+	    <div class="fragment" style="font-size:60%">
+	      Le nom de paramètres servent de marques pour les arguments
+	    </div>
+
+	    <div class="b fragment alert">
+	      Nommage obligatoire mais permutation des arguments interdite
+	    </div>
+	</section>
+		
+	<section>
+	    <h4> Fonction :: Nommage des Paramètres</h4>
+
+	    Nom externe vs. Nom interne
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+func multiplier(a:Int, <b>par</b> b:Int) -> Int { 
+  return a * b 
+}
+	    </code></pre>
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+multiplier(a:2, par:3)
+	    </code></pre>
+
+	    <div class="fragment">Aucun nom externe</div>
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+func multiplier(_ a:Int, par b:Int) -> Int { 
+  return a * b 
+}
+	    </code></pre>
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+multiplier(2, par:3)
+	    </code></pre>
+
+	</section>
+	
+	<section>
+	    <h4> Fonction :: Paramètres &amp; Init</h4>
+	    <pre><code data-trim data-noescape class="swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    self.nom = nom
+    self.age = age
+  }<div class="fragment">
+  public init(nom:String, anneeDeNaissance annee:Int) {
+    self.nom = nom
+    self.age = anneeCourante() - annee
+  }</div>}
+	    </code></pre>
+
+	    <div class="b fragment alert">
+	      Invalide le Type Driven Design
+	    </div>
+
+	</section>
+	
+	<section>
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h4> Structure </h4>
+	  <p style="opacity:0.15"> Enumération </p>
 	  <p style="opacity:0.10"> Classe </p>
 	  <p style="opacity:0.05"> Prototype </p>
 	</section>
 	
 	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
-	  <h4> Structure </h4>
+	  <h4> Enumération </h4>
 	  <p style="opacity:0.15"> Classe </p>
 	  <p style="opacity:0.10"> Prototype </p>
 	  <p style="opacity:0.05"> Générique </p>
@@ -161,6 +602,8 @@
 	</section>
 	
 	<section>
+	  <div style="position:fixed;top:15px;right:15px;font-size:40%;text-align:center"> Classe </div>
+
 	  <h3>Ma Permière Classe</h3>
 
 	  <pre><code class="Swift">class Personne {
@@ -267,8 +710,8 @@ personne.age = 42</code></pre>
 	  // More info https://github.com/hakimel/reveal.js#configuration
 	  Reveal.initialize({
 	  controls: false,
-	  progress: true,
-	  history: false,
+	  progress: false,
+	  history: true,
 	  center: true,
 	  
 	  transition: 'none', // none/fade/slide/convex/concave/zoom
