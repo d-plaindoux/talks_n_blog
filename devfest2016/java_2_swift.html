@@ -23,13 +23,17 @@
     <style>
       .alert {
       font-size:70% !important;
-      position:fixed;
-      bottom:100px;
-      left:10%;
-      width:80%;
       color:white;
+      text-align:middle !important;
       background-color:#AA2211;
-      margin:10px !important;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+      }
+      .remark {
+      color:white;
+      text-align:middle !important;
+      background-color:#1122AA;
+      padding: 1em 0em 1em 0em !important;
       Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
       }
     </style>
@@ -114,18 +118,24 @@
 	</section>
 	
 	<section>
-	  <h3>Langage Multi-Paradigme</h3>
+	  <h3> Langage inspiré par ... </h3>
 
 	  <table width='100%'>
 	    <tr>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
-		Orienté Objet<hr>Objective-C<br>C#
+		Objective-C<br>C#
+		<hr>
+		Orienté Objet
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
-		Fonctionnel<hr>Haskell<br>OCaml
+		Haskell<br>OCaml
+		<hr>		
+		Fonctionnel
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
-		Dynamique<hr>Ruby<br>Python
+		Ruby<br>Python
+		<hr>
+		Expressivité
 	      </td>
 	    </tr>
 	  </table>
@@ -455,20 +465,106 @@ public class Personne {
 
 	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
-
-	  <h3> Merci ! </h3>
+	  <h5> Introduction au langage </h5>
 	</section>
 
-	<!-- Les Fonctions -->
+	<!-- Données et Types initiaux -->
 
 	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
 	  <h4> Données et Types initiaux </h4>
 	  <p style="opacity:0.15"> Le Fonctionnel </p>
 	  <p style="opacity:0.10"> Les Objets </p>
-	  <p style="opacity:0.05"> Objets et Fonctionnel </p>
 	</section>
 
+	<section>
+	    <h4> Variables ou Constantes </h4>
+
+	    <table width="100%">
+	      <tr>
+		<td width="50%">
+		  <h5>Java</h5>
+		  <pre><code class="Java"> int age </code></pre>
+		  <pre><code class="Java"> final String nom </code></pre>
+		</td>
+		<td class="fragment">
+		  <h5>Swift</h5>
+		  <pre><code class="swift"> var age:Int </code></pre>
+		  <pre><code class="swift"> let nom:String </code></pre>
+		</td>
+	      </tr>
+	    </table>
+
+	</section>
+	    
+	<section>
+	    <h4> Tuples </h4>
+	    
+	    <table width="100%">
+	      <tr>
+		<td width="30%">
+		  <h5>Java</h5>
+		  &emptyset;
+		</td> 
+		<td class="fragment">	   
+		  <h5>Swift</h5>
+		  <pre><code data-trim data-noescape class="swift">
+(42, "John Doe") // (Int, String)
+(42, "John Doe").1 == "John Doe"
+		  </code></pre>
+
+		  <div class="fragment">
+		    <div style="font-size:70%"> Index explicite ... </div>
+		    <pre><code data-trim data-noescape class="swift">
+(42, nom:"John Doe") // (Int, String)
+(42, nom:"John Doe").1   == "John Doe"
+(42, nom:"John Doe").nom == "John Doe"
+		    </code></pre>
+		  </div>
+		</td>
+	      </tr>
+	    </table>
+
+	</section>
+	    
+	<section>
+	    <h4> Donnée Optionnelle </h4>
+
+	    <table width="100%">
+	      <tr>
+		<td width="100%">
+		  <h5>Java</h5>
+		  <pre><code data-trim data-noescape class="java">
+final Optional&lt;String> nom = Optional.of("John Doe");
+final Optional&lt;Integer> tailleOpt = nom.map(n -> n.length());
+if (tailleOpt.isPresent()) { /* tailleOpt.get(); */ } // Beurk !
+		  </code></pre>
+		</td>
+	      </tr>
+	      <tr>
+		<td class="fragment">
+		  <h5>Swift</h5>
+		  <pre><code data-trim data-noescape class="swift">
+let nom:String? = "John Doe"
+let tailleOpt:Int? = nom?.characters.count 
+if let taille = tailleOpt { /* taille est définie */ } // Pattern !
+
+		  </code></pre>
+		</td>
+	      </tr>
+	    </table>
+
+	    <div style="font-size:70%" class="fragment">
+	      Fonctions disponibles map, flatMap, filter etc.
+	    </div>
+	    
+	    <br>
+
+	    <div style="font-size:70%" class="fragment alert">
+	      Donnée optionnelle "portée" par le typage uniquement. Non structurel ! 
+	    </div>
+
+	</section>
 	<!-- Les Fonctions -->
 
 	<section>
@@ -476,9 +572,45 @@ public class Personne {
 	  <p style="opacity:0.15"> Données et Types initiaux </p>
 	  <h4> Le Fonctionnel </h4>
 	  <p style="opacity:0.15"> Les Objets </p>
-	  <p style="opacity:0.10"> Objets et Fonctionnel </p>
 	</section>
 	
+	<section>
+	    <h4> Type Fonctionnel </h4>
+
+	    <table width="100%">
+	      <tr>
+		<td width="50%">
+		  <h5>Java</h5>
+		  <pre><code data-trim data-noescape class="java"> 
+Function&lt;A,B> 
+Supplier&lt;B> 
+Consumer&lt;A> 
+Predicate&lt;A>
+		  </code></pre>
+		</td>
+		<td class="fragment">
+		  <h5>Swift</h5>
+		  <pre><code data-trim data-noescape class="swift"> 
+(A) -> B 
+()  -> B
+(A) -> ()
+(A) -> Bool
+		  </code></pre>
+
+		  <div class="fragment">
+		    <div style="font-size:70%">
+		      Type aliasing
+		    </div>
+		    <pre><code data-trim data-noescape class="swift"> 
+typealias Supplier&lt;B> = () -> B
+		    </code></pre>
+		  </div>
+		</td>
+	      </tr>
+	    </table>
+	   
+	</section>
+		
 	<section>
 	    <h4> Fonction </h4>
 	    <pre><code data-noescape class="swift">
@@ -506,8 +638,10 @@ multiplier(a:2, b:3)
 	      En externe les noms de paramètre servent de marques pour les arguments
 	    </div>
 
+	    <br>
+
 	    <div class="b fragment alert">
-	      Nommage lors de l'appel obligatoire <br> mais permutation des arguments interdite
+	      Nommage lors de l'appel obligatoire. Permutation des arguments interdite
 	    </div>
 	</section>
 		
@@ -527,7 +661,7 @@ multiplier(a:2, par:3)
 	    </code></pre>
 
 	    <div class="fragment" style="font-size:70%">
-	      Aucun nom externe
+	      Spécification afin de ne pas avoir de nom externe
 	    </div>
 
 	    <pre class="fragment"><code data-trim data-noescape class="swift">
@@ -543,17 +677,33 @@ multiplier(2, par:3)
 	</section>
 			
 	<section>
-	    <h4> <span style="text-transform: lowercase;">&lambda;</span> abstraction </h4>
+	    <h4> Closure </h4>
 
-	    <pre><code class="swift">
-  { [Parametres] -> [Type Retour] in [Corps De La Fonction] }
-	    </code></pre>
+	    <table width="100%">
+	      <tr>
+		<td width="100%">
+		  <h5>Java</h5>
+		  <pre><code data-trim data-noescape class="java"> 
+[Parametres] -> [Corps De La Fonction]
+		  </code></pre>
+		</td>
+	      </tr>
+	      <tr>
+		<td class="fragment">
+		  <h5>Swift</h5>
+		  <pre><code data-trim data-noescape class="swift"> 
+{ [Parametres] -> [Type Retour] in [Corps De La Fonction] }
+		  </code></pre>
+	      </tr>
+	    </table>
 
-	    <div style="font-size:70%" class="fragment">Fonction: Objet de Première Classe</div>	    
+	    <div style="font-size:70%" class="remark fragment">
+	      Objet de Première Classe
+	    </div>	    
 	</section>
 
 	<section>
-	    <h4> <span style="text-transform: lowercase;">&lambda;</span> abstraction :: Exemples </h4>
+	    <h4> Closure :: Exemples </h4>
 
 	    <pre><code data-trim data-noescape class="swift">
 let multiplier = { (a:Int, b:Int) -> Int in a * b }
@@ -568,7 +718,7 @@ multiplier(2,3)
 	</section>
 
 	<section>
-	    <h4> <span style="text-transform: lowercase;">&lambda;</span> abstraction :: Type & Mise en oeuvre </h4>
+	    <h4> Closure :: Type & Mise en oeuvre </h4>
 
 	    <div style="font-size:70%">
 	      Séparation de la Spécification de la mise en oeuvre
@@ -580,7 +730,7 @@ let multiplier : (Int,Int) -> Int = { a,b in a * b }
 	</section>
 
 	<section>
-	    <h4> <span style="text-transform: lowercase;">&lambda;</span> abstraction :: Synthèse de Type </h4>
+	    <h4> Closure :: Synthèse de Type </h4>
 	    <pre><code data-trim data-noescape class="swift">
 let multiplier = { (a:Int,b:Int) -> Int in a * b }
 	    </code></pre>
@@ -618,13 +768,13 @@ let multiplier = { a,b in a * b }
 	    </div>
 
 	    <pre><code data-trim data-noescape class="swift">
-let appliquer = { (f:(Int) -> Int, a:Int) -> Int in f(a) }
-	    </code></pre>
-
-	    <pre><code data-trim data-noescape class="swift">
 func appliquer(_ f:(Int) -> Int, _ a:Int) -> Int {
   return f(a)
 }
+	    </code></pre>
+
+	    <pre><code data-trim data-noescape class="swift">
+let appliquer = { (f:(Int) -> Int, a:Int) -> Int in f(a) }
 	    </code></pre>
 
 	    <pre class="fragment"><code data-trim data-noescape class="swift">
@@ -640,7 +790,7 @@ appliquer(multiplier(2),3)
 	    </div>
 
 	    <pre class="fragment"><code data-trim data-noescape class="swift">
-func f&lt;A>(_ a:A) -> A { return a } // Identité
+func id&lt;A>(_ a:A) -> A { return a } // Identité
 	    </code></pre>
 
 	    <pre class="fragment"><code data-trim data-noescape class="swift">
@@ -650,10 +800,10 @@ func apply&lt;A,B>(_ f : (A) -> B, a:A) -> B { return f(a) }
 	</section>
 
 	<section>
-	    <h4> Fonction :: Exemple </h4>
+	    <h4> Exemple d'Ordre Supèrieur & Généricité </h4>
 
 	    <div style="font-size:70%">
-	      Curryfication: Transforme une fonction à plusieurs arguments <br> en une fonction à un argument qui retourne un fonction
+	      Transformation de fonction par curryfication et son inverse
 	    </div>	    
 
 	    <pre><code data-trim data-noescape class="swift">
@@ -661,7 +811,7 @@ func curry&lt;A,B,C>(_ f: @escaping (A,B) -> C) -> (A) -> (B) -> C {
    return { a in { b in f(a,b) } } 
 }
 
-func uncurry<A,B,C>(_ f: @escaping (A) -> (B) -> C) -> (A,B) -> C {
+func uncurry&lt;A,B,C>(_ f: @escaping (A) -> (B) -> C) -> (A,B) -> C {
    return { a,b in f(a)(b) }
 }	    </code></pre>
 
@@ -669,10 +819,49 @@ func uncurry<A,B,C>(_ f: @escaping (A) -> (B) -> C) -> (A,B) -> C {
 let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier) 
 let multiplierUncurry : (Int,Int) -> Int = uncurry(multiplierCurry) 
 	    </code></pre>
+
+	    <br>
+
+	    <div class="fragment alert" style="font-size:70%">
+	      Instrumentation <tt>@escaping</tt> pour la gestion mémoire
+	    </div>	    	    
+
 	</section>
 
 	<section>
-	    <h4> Fonction :: <span style="text-transform: lowercase;">&eta;</span>-Conversion </h4>
+	    <h4> Fontions :: Incohérence & Pièces manquantes </h4>
+	</section>
+
+	<section>
+	    <h4> <span style="text-transform: lowercase;">&eta;</span>-Conversion </h4>
+
+	    <pre><code data-noescape class="swift">
+  { a in f(a) } &equiv; f 
+	    </code></pre>
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+{ a in multiplierCurry(2)(a) } &equiv; multiplierCurry(2)
+	    </code></pre>
+
+	    <br>
+	    
+	    <div style="font-size:70%" class="fragment alert">
+	      Principe non préservé lors de l'utilisation de nom externe d'argument
+	    </div>	    
+
+	</section>
+
+	<section>
+	    <h4> Fonction récursive terminal </h4>
+
+	    <div style="font-size:70%" class="fragment alert">
+	      TCO - Tail Compilation Optimization
+	    </div>	    
+
+	</section>
+
+	<section>
+	    <h4> <tt>for</tt> Compréhension </h4>
 
 	    <pre><code data-noescape class="swift">
   { a in f(a) } &equiv; f 
@@ -695,15 +884,64 @@ let multiplierUncurry : (Int,Int) -> Int = uncurry(multiplierCurry)
 	  <p style="opacity:0.10"> Données et Types initiaux </p>
 	  <p style="opacity:0.15"> Le Fonctionnel </p>
 	  <h4> Les Objets </h4>
-	  <p style="opacity:0.15"> Objets et Fonctionnel </p>
 	</section>
 
 	<section>
 	  <h3> Les Objets </h3>
-	  <p>Lignée des langages de l'Ecole Scandinave</p>
-	  <p style="font-size:70%"> Simula, C++, Objective-C, Eiffel, Java, C# ... Swift </p>
+	  <div class="remark">
+	    <p>Lignée des langages de l'Ecole Scandinave</p>
+	    <p style="font-size:70%"> Simula, C++, Objective-C, Eiffel, Java, C# ... Swift </p>
+	  </div>
 	  <p>Abstraction de donnée &leftrightarrow; Classe &leftrightarrow; Type</p>
 	  <p style="font-size:70%">Repose sur un Typage Statique</p>
+	</section>
+	
+	<section>
+	  <h4> Paradigme Objet </h4>
+
+	    <table width="100%">
+	      <tr>
+		<td width="50%">
+		  <h5>Java</h5>		 
+		</td>
+		<td>
+		  <h5>Swift</h5>
+		</td>
+	      </tr>
+	      <tr>
+		<td width="50%">
+		  Classe
+		</td>
+		<td>
+		  Classe
+		</td>
+	      </tr>
+	      <tr class="fragment">
+		<td width="50%">
+		  Interface
+		</td>
+		<td>
+		  Prototype
+		</td>
+	      </tr>
+	      <tr class="fragment">
+		<td width="50%">
+		  Enumération
+		</td>
+		<td>
+		  Enumération
+		</td>
+	      </tr>
+	      <tr class="fragment">
+		<td width="50%">
+		  &emptyset;
+		</td>
+		<td>
+		  Structure
+		</td>
+	      </tr>
+	    </table>
+
 	</section>
 	
 	<section>
@@ -781,17 +1019,29 @@ public class Personne {
 	    </div>	
 	</section>
 	
-	<!-- Objets et Fonctionnel -->
-	
 	<section>
-	  <img class="plain" width="15%" src="images/swift.png">	  
-	  <p style="opacity:0.05"> Données et Types initiaux </p>
-	  <p style="opacity:0.10"> Le Fonctionnel </p>
-	  <p style="opacity:0.15"> Les Objets </p>
-	  <h4> Objets et Fonctionnel </h4>
+	    <h4> Classe :: Initialisation optionnelle </h4>
+	    <pre><code data-trim data-noescape class="swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+  public init(nom:String, age:Int) {
+    self.nom = nom
+    self.age = age
+  }<div class="fragment">
+  convenience public init?(nom:String, anneeDeNaissance:Int) {
+    if anneeCourante() < anneeDeNaissance { return nil }
+    self.init(nom:nom, age:anneeCourante() - anneeDeNaissance)
+  }</div>}
+	    </code></pre>
+
+	    <pre class="fragment"><code data-trim data-noescape class="swift">
+let personne:Personne? = Personne(nom:"J. Doe", anneeDeNaissance:1974)
+	    </code></pre>
+
 	</section>
 	
-
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
 	

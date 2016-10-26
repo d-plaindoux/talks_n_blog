@@ -175,11 +175,14 @@ body {
 .reveal table th {
   font-weight: bold; }
 
-.reveal table th,
+.reveal table th {
+  text-align: center;
+  border-bottom: 0px solid; }
+
 .reveal table td {
-  text-align: left;
+  text-align: center;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid; }
+  border-bottom: 0px solid; }
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
