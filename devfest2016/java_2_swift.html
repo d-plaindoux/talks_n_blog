@@ -102,6 +102,28 @@
 	</section>
 	
 	<section>
+	  <h4>Developper des applications Swift</h4>
+
+	  <table width='100%'>
+	    <tr>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" src="images/apple-logo.png"></img>
+		<br>
+		XCode
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" width="50%" src="images/jetbrains.jpg"></img>
+		<br>
+		CLion
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img width="50%" src="images/hipster.png"></img>
+		<br>
+		(Vi, Emacs)
+	      </td>
+	    </tr>
+	  </table>
+
+	</section>
+	
+	<section>
 	  <h4>Ou Exécuter Swift ?</h4>
 
 	  <table width='100%'>
@@ -333,7 +355,7 @@ public class Personne {
 	</section>
 
 	<section>
-	  <h4> Constructeur </h4>
+	  <h4> Initialisation </h4>
 	  <pre><code data-trim data-noescape class="Java Swift">
 public class Personne {
   private let nom:String
@@ -944,21 +966,16 @@ func isEqual&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b }
 	    <h4> Exemple d'Ordre Supèrieur & Généricité </h4>
 
 	    <div style="font-size:70%">
-	      Transformation de fonction par curryfication et son inverse
+	      Transformation de fonction par curryfication
 	    </div>	    
 
 	    <pre><code data-trim data-noescape class="swift">
 func curry&lt;A,B,C>(_ f: @escaping (A,B) -> C) -> (A) -> (B) -> C {
    return { a in { b in f(a,b) } } 
-}
-
-func uncurry&lt;A,B,C>(_ f: @escaping (A) -> (B) -> C) -> (A,B) -> C {
-   return { a,b in f(a)(b) }
-}	    </code></pre>
+}    </code></pre>
 
 	    <pre class="fragment"><code data-trim data-noescape class="swift">
 let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier) 
-let multiplierUncurry : (Int,Int) -> Int = uncurry(multiplierCurry) 
 	    </code></pre>
 
 	    <br>
@@ -970,14 +987,13 @@ let multiplierUncurry : (Int,Int) -> Int = uncurry(multiplierCurry)
 	</section>
 
 	<section>
-	    <h4> Incohérence & Pièces manquantes </h4>
+	    <h4> Inconsistance & Pièces manquantes </h4>
 
 	  <table width="100%">
 	    <tr>
 	      <td width="40%">
 		<pre><code data-trim data-noescape class="swift">   
 { x in f(x)   } &equiv;? f
-{ x in f(n:x) } &equiv;? f 
 		</code></pre>
 	      </td>
 	      <td>
@@ -1118,25 +1134,6 @@ Personne(nom:"John Doe", age:42)
 	</section>
 	
 	<section>
-	    <h4> Classe :: Initialisation & Definition multiple</h4>
-	    <pre><code data-trim data-noescape class="swift">
-public class Personne {
-  private let nom:String
-  private var age:Int
-
-&plusb; public init(nom:String, age:Int) <span class="close">{ ... }</span><div class="fragment">
-  public init(nom:String, anneeDeNaissance:Int) {
-    self.nom = nom
-    self.age = anneeCourante() - anneeDeNaissance
-  }</div>}
-	    </code></pre>
-
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
-Personne(nom:"John Doe", anneeDeNaissance:1974)
-	    </code></pre>
-	</section>
-	
-	<section>
 	    <h4> Classe :: Initialisation & Chaînage </h4>
 	    <pre><code data-trim data-noescape class="swift">
 public class Personne {
@@ -1150,7 +1147,7 @@ public class Personne {
 	    </code></pre>
 
 	    <div style="font-size:70%" class="fragment">
-	      Un initialiseur dit <u><tt>convenience</tt></u> doit toujours appeler un <tt>self.init(...)</tt>
+	      Un <tt>init</tt> dit <u><tt>convenience</tt></u> doit toujours appeler un <tt>self.init(...)</tt>
 	    </div>	
 	</section>
 	
@@ -1313,10 +1310,6 @@ protocol Liste {
 }
 	  </Code></pre>	  
 
-	  <div class="fragment" style="font-size:70%">
-	    Assimilable aux <tt>default</tt> d'interface dans Java 8
-	  </div>
-
 	  <br>
 
 	  <div class="alert">
@@ -1429,17 +1422,10 @@ switch s {
 public enum Maybe&lt;T> {
   case Some(value:T), None
 
-  <span class="fragment">public func isPresent() -> Bool {
+  <span class="fragment">public func get(_ defaultValue:T) -> T {
      switch self {
-       case .Some(_): return true
-       case .None:    return false
-     }
-  }</span>
-
-  <span class="fragment">public func map&lt;R>(_ f:(T) -> R) -> Maybe&ltR> {
-     switch self {
-       case .Some(let v): return .Some(value:f(v))
-       case .None:        return .None
+       case .Some(let v): return v
+       case _:            return defaultValue
      }
   }</span>
 }</Code></pre>	  	  
@@ -1447,24 +1433,87 @@ public enum Maybe&lt;T> {
 	</section>
 
 	<section> 
-	  <div class="remark"> Cas du <s>self</s> Self </div>
+	  <div class="remark"> Cas du <b>self</b> et du <b>Self</b> </div>
+	</section>
+
+	<section> 
+	  <h4> <span style="text-transform: lowercase;">self</span> : <span style="text-transform: capitalize;">Self</span> </h4>
+
+	  <pre><code data-trim data-noescape class="swift">
+public class Personne {
+  private let nom:String
+  private var age:Int
+
+&plusb;  public init(nom:String) <span class="close">{ ... }</span>
+
+  <span class="fragment">public func anniversaire() -> Self {
+    self.age += 1
+    return self
+  }</span>
+}
+	  </Code></pre>	  
+
+	    <div class="fragment" style="font-size:70%">
+	      Le type Self dénote le type de l'objet courant à savoir ... self
+	    </div>
+
 	</section>
 
 	<section> 
 	  <h4> Dénotation du type courant </h4>
 
+	    <table width="100%">
+	      <tr>
+		<td width="60%">
+		  <h5>Java</h5>
+		  <pre><code data-trim data-noescape class="java">
+interface 
+  Copiable&lt;Self extends Copiable&ltSelf>> 
+{
+  Self copie();
+}
+		  </code></pre>
+		</td> 
+		<td class="fragment">	   
+		  <h5>Swift</h5>
+		  <pre><code data-trim data-noescape class="swift">
+protocol Copiable {
+  func copie() -> Self
+}
+		  </code></pre>
+		</td>
+	      </tr>
+	    </table>	    
+	    
+	    <div class="fragment" style="font-size:70%">
+	      "F-Bounded quantification polymorphism"
+	    </div>
+
+	</section>
+
+	<section> 
+	  <h4> Self :: Copiable </h4>
+
 	  <pre><code data-trim data-noescape class="swift">
-protocol Liste {
-  associatedtype E
-  
-  func tete() -> E?
-  <span class="fragment">func queue() -> Self?</span>
+class Personne : Copiable {
+  private let nom:String
+  private var age:Int
+
+  <span class="fragment">func copie() -> Self {
+     return type(of:self).init(nom:self.nom, age:self.age)
+  }</span>
+
+  <span class="fragment">required init(nom:String, age:Int) {
+    self.nom = nom
+    self.age = 0
+  }</span>
 }
 	  </Code></pre>	  
 
-	    <div class="fragment remark" style="font-size:70%">
-	      Donnée homogène
-	    </div>
+	    <div style="font-size:70%" class="fragment">
+	      <tt>required</tt> force la définition dans les sous-classes
+	    </div>	
+
 	</section>
 
 	<section> 
@@ -1472,20 +1521,19 @@ protocol Liste {
 
 	  <pre><code data-trim data-noescape class="swift">
 class Personne {
-  required init(nom:String) {
+  private let nom:String
+  private var age:Int
+
+  required init(nom:String, age:Int) {
     self.nom = nom
     self.age = 0
   }
 
-  <span class="fragment">class func new(nom:String) -> Self {
-     return self.init(nom:nom)
-  }</span>
+  class func new(nom:String) -> Self {
+     return self.init(nom:nom, age:0) // self &equiv; Personne
+  }
 }
 	  </Code></pre>	  
-	  
-	  <div class="fragment" style="font-size:70%">
-	    Seul <tt>self</tt> produit un objet de type <tt>Self</tt> !
-	  </div>
 
 	</section>
 
