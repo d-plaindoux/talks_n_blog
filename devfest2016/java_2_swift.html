@@ -90,7 +90,7 @@
 	</section>
 
 	<section>
-	  <h4>Historique de Swift</h4>
+	  <h4> Historique de Swift </h4>
 
 	  Développement lancé en 2010 par Chris Lattner
 
@@ -102,7 +102,7 @@
 	</section>
 	
 	<section>
-	  <h4>Developper des applications Swift</h4>
+	  <h4> Développer avec Swift </h4>
 
 	  <table width='100%'>
 	    <tr>
@@ -114,7 +114,7 @@
 		<br>
 		CLion
 	      </td>
-	      <td width="33%" align="center" valign="middle" class="fragment"><img width="50%" src="images/hipster.png"></img>
+	      <td width="33%" align="center" valign="middle" class="fragment"><img width="48%" src="images/hipster.png"></img>
 		<br>
 		(Vi, Emacs)
 	      </td>
@@ -124,13 +124,13 @@
 	</section>
 	
 	<section>
-	  <h4>Ou Exécuter Swift ?</h4>
+	  <h4> Exécuter Swift </h4>
 
 	  <table width='100%'>
 	    <tr>
 	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" src="images/apple-logo.png"></img>
 		<br>
-		iPhone, iPad, OSX
+		iOS, OSX
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="fragment"><img class="plain" src="images/ubuntu-logo14.png"></img>
 		<br>
@@ -182,35 +182,8 @@ public class Personne {
     this.age = age;
   }
 
-  public String aPourNom() { 
-    return this.nom; 
-  }
-  
   public void anniversaire() {
     this.age += 1;
-  }
-}
-	  </code></pre>
-	</section>
-
-	<section>
-	  <h4> Séparateurs </h4>
-	  <pre><code data-trim data-noescape class="Java">
-public class Personne {
-  private final String nom<u> ; </u>
-  private int age<u> ; </u>
-
-  public Personne(String nom, int age) {
-    this.nom = nom<u> ; </u>
-    this.age = age<u> ; </u>
-  }
-
-  public String aPourNom() { 
-    return this.nom<u> ; </u> 
-  }
-  
-  public void anniversaire() {
-    this.age += 1<u> ; </u>
   }
 }
 	  </code></pre>
@@ -227,10 +200,6 @@ public class Personne {
     this.nom = nom
     this.age = age
   }
-
-  public String aPourNom() { 
-    return this.nom 
-  }
   
   public void anniversaire() {
     this.age += 1
@@ -243,62 +212,12 @@ public class Personne {
 	  <h4> Attributs </h4>
 	  <pre><code data-trim data-noescape class="Java Swift">
 public class Personne {
-  private <u>final String nom</u>
-  private <u>Int age</u>
+  private let nom:String // Constant
+  private var age:Int    // Variable
 
   public Personne(String nom, int age) {
     this.nom = nom
     this.age = age
-  }
-
-  public String aPourNom() { 
-    return this.nom 
-  }
-
-  public void anniversaire() {
-    this.age += 1
-  }
-}
-	  </code></pre>
-	</section>
-
-	<section>
-	  <h4> Attributs </h4>
-	  <pre><code data-trim data-noescape class="Java Swift">
-public class Personne {
-  private let nom:String // Immutable
-  private var age:Int    // Modifiable
-
-  public Personne(String nom, int age) {
-    this.nom = nom
-    this.age = age
-  }
-
-  public String aPourNom() { 
-    return this.nom 
-  }
-
-  public void anniversaire() {
-    this.age += 1
-  }
-}
-	  </code></pre>
-	</section>
-
-	<section>
-	  <h4> Paramètres </h4>
-	  <pre><code data-trim data-noescape class="Java Swift">
-public class Personne {
-  private let nom:String
-  private var age:Int
-
-  public Personne(<u>String nom, Int age</u>) {
-    this.nom = nom
-    this.age = age
-  }
-
-  public String aPourNom() { 
-    return this.nom 
   }
 
   public void anniversaire() {
@@ -320,33 +239,6 @@ public class Personne {
     this.age = age
   }
 
-  public String aPourNom() { 
-    return this.nom 
-  }
-
-  public void anniversaire() {
-    this.age += 1
-  }
-}
-	  </code></pre>
-	</section>
-
-	<section>
-	  <h4> Constructeur </h4>
-	  <pre><code data-trim data-noescape class="Java Swift">
-public class Personne {
-  private let nom:String
-  private var age:Int
-
-  public <u>Personne</u>(nom:String, age:Int) {
-    this.nom = nom
-    this.age = age
-  }
-
-  public String aPourNom() { 
-    return this.nom 
-  }
-  
   public void anniversaire() {
     this.age += 1
   }
@@ -366,10 +258,6 @@ public class Personne {
     this.age = age
   }
 
-  public String aPourNom() { 
-    return this.nom 
-  }
-  
   public void anniversaire() {
     this.age += 1
   }
@@ -389,33 +277,6 @@ public class Personne {
     this.age = age
   }
 
-  public <u>String aPourNom()</u> { 
-    return this.nom 
-  }
-  
-  public <u>void anniversaire()</u> {
-    this.age += 1
-  }
-}
-	  </code></pre>
-	</section>
-
-	<section>
-	  <h4> Fonction </h4>
-	  <pre><code data-trim data-noescape class="Swift Java">
-public class Personne {
-  private let nom:String
-  private var age:Int
-
-  public init(nom:String, age:Int) {
-    this.nom = nom
-    this.age = age
-  }
-
-  public func aPourNom() -> String { 
-    return this.nom 
-  }
-  
   public func anniversaire() -> Void {
     this.age += 1
   }
@@ -435,35 +296,8 @@ public class Personne {
     this.age = age
   }
 
-  public func aPourNom() -> String { 
-    return this.nom 
-  }
-  
   public func anniversaire() {
     this.age += 1
-  }
-}
-	  </code></pre>
-	</section>
-
-	<section>
-	  <h4>  This &rightarrow; Self </h4>
-	  <pre><code data-trim data-noescape class="Swift">
-public class Personne {
-  private let nom:String
-  private var age:Int
-
-  public init(nom:String, age:Int) {
-    <u>this</u>.nom = nom
-    <u>this</u>.age = age
-  }
-
-  public func aPourNom() -> String { 
-    return <u>this</u>.nom 
-  }
-
-  public func anniversaire() {
-    <u>this</u>.age += 1
   }
 }
 	  </code></pre>
@@ -481,10 +315,6 @@ public class Personne {
     self.age = age
   }
 
-  public func aPourNom() -> String { 
-    return self.nom 
-  }
-
   public func anniversaire() {
     self.age += 1
   }
@@ -494,7 +324,7 @@ public class Personne {
 
 	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
-	  <h5> Introduction au langage </h5>
+	  <h5> Survol du langage </h5>
 	</section>
 
 	<!-- Données et Types initiaux -->
@@ -625,7 +455,7 @@ if let taille = t {
 		  </code></pre>
 
 		  <div class="fragment">
-		    <div style="font-size:70%"> Index explicite ... </div>
+		    <div style="font-size:70%"> Index &leftrightarrow; Nom  </div>
 		    <pre><code data-trim data-noescape class="swift">
 (42, nom:"John Doe") // (Int, String)
 (42, nom:"John Doe").1   == "John Doe"
@@ -668,10 +498,9 @@ Garde pour les optionnels
 		<pre><code data-trim data-noescape class="swift">   
 guard let valeur = expression else {
    // valeur n'est pas définie
-   // bloc avec un exit/break 
 }
 
-// variable v est définie
+// valeur est définie
 		</code></pre>
 	      </td>
 	    </tr>
@@ -776,11 +605,13 @@ multiplier(a:2, b:3)
 	</section>
 		
 	<section>
-	    <h4> Fonction :: Nom externe des Paramètres</h4>
+	    <h4> Fonction :: Nom externe spécifique de Paramètre</h4>
 
-	    <div style="font-size:70%"> Nom externe vs. Nom interne </div>
+	    <div style="font-size:70%"> 
+	      Spécification d'un nom externe différent
+	    </div>
 
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
+	    <pre><code data-trim data-noescape class="swift">
 func multiplier(a:Int, <span class="close"> par </span> b:Int) -> Int { 
   return multiplier(a:a, b:b)
 }
@@ -790,11 +621,16 @@ func multiplier(a:Int, <span class="close"> par </span> b:Int) -> Int {
 multiplier(a:2, par:3)
 	    </code></pre>
 
-	    <div class="fragment" style="font-size:70%">
+	</section>
+
+	<section>
+	    <h4> Fonction :: Aucun Nom externe de Paramètre</h4>
+
+	    <div style="font-size:70%">
 	      Spécification afin de ne pas avoir de nom externe
 	    </div>
 
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
+	    <pre><code data-trim data-noescape class="swift">
 func multiplier(<span class="close b"> _ </span> a:Int, par b:Int) -> Int { 
   return multiplier(a:a, b:b)
 }
@@ -807,7 +643,7 @@ multiplier(2, par:3)
 	</section>
 			
 	<section>
-	    <h4> Closure </h4>
+	    <h4> Fonction anonyme :: Closure </h4>
 
 	    <table width="100%">
 	      <tr>
@@ -842,12 +678,14 @@ multiplier(2, par:3)
 let multiplier = { (a:Int, b:Int) -> Int in a * b }
 	    </code></pre>
 
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
+	    <div class="fragment">
+	      <pre><code data-trim data-noescape class="swift">
 multiplier(2,3)
-	    </code></pre>
+	      </code></pre>
 
-	    <div style="font-size:70%" class="fragment">
-	      Pas de séléction par nommage des paramètres car inutile !
+	      <div style="font-size:70%">
+		Pas de séléction par nommage des paramètres car inutile !
+	      </div>	    
 	    </div>	    
 
 	</section>
@@ -855,38 +693,8 @@ multiplier(2,3)
 	<section>
 	    <h4> Closure :: Synthèse de Type </h4>
 	    <pre><code data-trim data-noescape class="swift">
-let multiplier = { (a:Int,b:Int) -> Int in a * b }
-
-// (Int, Int) -> Int
-	    </code></pre>
-	</section>
-	<section>
-	    <h4> Closure :: Synthèse de Type </h4>
-	    <pre><code data-trim data-noescape class="swift">
 let multiplier = { (a:Int,b:Int) in a * b }
-
-// (Int, Int) -> Int
-	    </code></pre>
-	</section>
-	<section>
-	    <h4> Closure :: Synthèse de Type </h4>
-	    <pre><code data-trim data-noescape class="swift">
-let multiplier = { (a:Int,b) in a * b }
-
-// (Int, Int) -> Int
-	    </code></pre>
-	</section>
-	<section>
-	    <h4> Closure :: Synthèse de Type </h4>
-	    <pre><code data-trim data-noescape class="swift">
 let multiplier = { (a,b:Int) in a * b }
-
-// (Int, Int) -> Int
-	    </code></pre>
-	</section>
-	<section>
-	    <h4> Closure :: Synthèse de Type </h4>
-	    <pre><code data-trim data-noescape class="swift">
 let multiplier = { a,b -> Int in a * b }
 
 // (Int, Int) -> Int
@@ -900,7 +708,7 @@ let multiplier = { a,b in a * b }
 <mark>error</mark> ambiguous use of operator '*'
 	    </code></pre>
 
-	    <div style="font-size:70%" class="fragment">Int ? Float ? Double ? ...</div>	    
+	    <div style="font-size:70%">Int ? Float ? Double ? ...</div>	    
 	</section>
 
 	<section>
@@ -910,7 +718,7 @@ let multiplier = { a,b in a * b }
 let multiplier : (Int,Int) -> Int = { a,b in a * b }
 	    </code></pre>
 
-	    <div class="fragment" style="font-size:70%">
+	    <div style="font-size:70%">
 	      Séparation de la Spécification de la mise en oeuvre
 	    </div>	    
 	</section>
@@ -919,7 +727,7 @@ let multiplier : (Int,Int) -> Int = { a,b in a * b }
 	    <h4> Fonction :: Ordre Supérieur </h4>
 
 	    <div style="font-size:70%">
-	      Fonction que prend une fonction comme entrée ou renvoie une fonction.
+	      Fonction qui manipule une fonction
 	    </div>
 
 	    <pre><code data-trim data-noescape class="swift">
@@ -928,12 +736,6 @@ func appliquer(_ f:(Int) -> Int, _ a:Int) -> Int {
 }
 // appliquer(f,a) &longrightarrow;* f(a)
 	    </Code></pre>
-
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
-let double : (Int) -> Int = { a in multiplier(2,a) }
-
-appliquer(double,3) 
-	    </code></pre>
 	</section>
 
 	<section>
@@ -943,10 +745,8 @@ appliquer(double,3)
 	      Syntaxe "similaire" à celle adoptée par C++, Java et C#
 	    </div>
 
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
-func identite&lt;A>(_ a:A) -> A { return a }
-
-func apply&lt;A,B>(_ f:(A) -> B, _ a:A) -> B { return f(a) } 
+	    <pre><code data-trim data-noescape class="swift">
+func appliquer&lt;A,B>(_ f:(A) -> B, _ a:A) -> B { return f(a) } 
 	    </code></pre>
 
 	    <div class="fragment">
@@ -954,7 +754,7 @@ func apply&lt;A,B>(_ f:(A) -> B, _ a:A) -> B { return f(a) }
 		Possibilité de spécifier des contraintes
 	      </div>
 
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
+	    <pre><code data-trim data-noescape class="swift">
 func isEqual&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b } 
 	    </code></pre>
 
@@ -962,11 +762,14 @@ func isEqual&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b }
 
 	</section>
 
+	<div style="visibility:hidden">
 	<section>
 	    <h4> Exemple d'Ordre Supèrieur & Généricité </h4>
 
 	    <div style="font-size:70%">
-	      Transformation de fonction par curryfication
+	      Transformation de fonction par curryfication 
+	      <br>
+	      (A,B) -> C &rightarrow; (A) -> (B) -> C
 	    </div>	    
 
 	    <pre><code data-trim data-noescape class="swift">
@@ -985,6 +788,7 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	    </div>	    	    
 
 	</section>
+	</div>
 
 	<section>
 	    <h4> Inconsistance & Pièces manquantes </h4>
@@ -993,7 +797,7 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	    <tr>
 	      <td width="40%">
 		<pre><code data-trim data-noescape class="swift">   
-{ x in f(x)   } &equiv;? f
+{ x in f(x) } &equiv;? f
 		</code></pre>
 	      </td>
 	      <td>
@@ -1062,18 +866,18 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	      </tr>
 	      <tr class="fragment">
 		<td width="50%">
-		  Classe
-		</td>
-		<td>
-		  Classe
-		</td>
-	      </tr>
-	      <tr class="fragment">
-		<td width="50%">
 		  Interface
 		</td>
 		<td>
 		  Protocol
+		</td>
+	      </tr>
+	      <tr class="fragment">
+		<td width="50%">
+		  Classe
+		</td>
+		<td>
+		  Classe
 		</td>
 	      </tr>
 	      <tr class="fragment">
@@ -1093,6 +897,75 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 		</td>
 	      </tr>
 	    </table>
+
+	</section>
+
+	<section>
+	  <h4> Protocole </h4>
+	  
+	  <ul>
+	    <li> Base de connaissance	  
+	    <li> Extension de Protocoles
+	  </ul>
+
+	</section>
+
+	<section>
+	  <h4> Protocole :: Base de connaissance </h4>
+	  
+	    <pre><code data-trim data-noescape class="swift">
+public protocol Monde {
+  func vivants() -> [Personne]
+  func recherche(nom:String) -> Personne?
+}
+	    </code></pre>	  
+
+	</section>
+
+	<section>
+	  <h4> Protocole :: Extension </h4>	 
+	  
+	  <pre><code data-trim data-noescape class="swift">
+extension Monde {
+  func recherche(nom:String) -> Personne? {
+     return vivants().filter{ p in p.nom == nom }.first
+  }
+}
+	  </code></pre>	  
+
+	  <div class="fragment" style="font-size:70%">
+	    Assimilable aux <tt>default</tt> d'interface dans Java 8
+	  </div>
+
+	  <br>
+
+	  <div class="remark fragment">
+	    Principe d'extension généralisé (Class, Struct etc.)
+	  </div>
+
+	</section>
+
+	<section>
+	  <h4> Protocole :: Généricité </h4>	 
+
+	  <pre><code data-trim data-noescape class="swift">
+protocol Liste {
+  associatedtype E
+  
+  <span class="fragment">func tete() -> E?</span>
+  <span class="fragment">func queue&lt;L:Liste where L.E == E>() -> L?</span>
+}
+	  </Code></pre>	  
+
+	  <br>
+
+	  <div class="alert">
+	    Spécification de Type Membre (!&equiv; Paramétrisation)
+	  </div>	
+
+	  <div class="alert fragment">
+	    Spécialisation par le <tt>typealias</tt> 
+	  </div>	
 
 	</section>
 
@@ -1131,24 +1004,6 @@ Personne(nom:"John Doe", age:42)
 		Pas de mot clé <tt>new</tt>
 	      </div>	    
 	    </div>	    
-	</section>
-	
-	<section>
-	    <h4> Classe :: Initialisation & Chaînage </h4>
-	    <pre><code data-trim data-noescape class="swift">
-public class Personne {
-  private let nom:String
-  private var age:Int
-
-&plusb; public init(nom:String, age:Int) <span class="close">{ ... }</span><div class="fragment">
-  convenience public init(nom:String, anneeDeNaissance:Int) {
-    self.init(nom:nom, age:anneeCourante() - anneeDeNaissance)
-  }</div>}
-	    </code></pre>
-
-	    <div style="font-size:70%" class="fragment">
-	      Un <tt>init</tt> dit <u><tt>convenience</tt></u> doit toujours appeler un <tt>self.init(...)</tt>
-	    </div>	
 	</section>
 	
 	<section>
@@ -1254,85 +1109,6 @@ let personne2 = personne1
 	</section>
 
 	<section>
-	  <h4> Protocole </h4>
-	  
-	  <ul>
-	    <li> Base de connaissance	  
-	    <li> Extension de Protocoles
-	  </ul>
-
-	</section>
-
-	<section>
-	  <h4> Protocole :: Base de connaissance </h4>
-	  
-	    <pre><code data-trim data-noescape class="swift">
-public protocol Monde {
-  func vivants() -> [Personne]
-  func recherche(nom:String) -> Personne?
-}
-	    </code></pre>	  
-
-	</section>
-
-	<section>
-	  <h4> Protocole :: Extension </h4>	 
-	  
-	  <pre><code data-trim data-noescape class="swift">
-extension Monde {
-  func recherche(nom:String) -> Personne? {
-     return vivants().filter{ p in p.nom == nom }.first
-  }
-}
-	  </code></pre>	  
-
-	  <div class="fragment" style="font-size:70%">
-	    Assimilable aux <tt>default</tt> d'interface dans Java 8
-	  </div>
-
-	  <br>
-
-	  <div class="remark fragment">
-	    Principe d'extension généralisé (Class, Struct etc.)
-	  </div>
-
-	</section>
-
-	<section>
-	  <h4> Protocole :: Généricité </h4>	 
-
-	  <pre><code data-trim data-noescape class="swift">
-protocol Liste {
-  associatedtype E
-  
-  <span class="fragment">func tete() -> E?</span>
-  <span class="fragment">func queue&lt;L:Liste where L.E == E>() -> L?</span>
-}
-	  </Code></pre>	  
-
-	  <br>
-
-	  <div class="alert">
-	    Spécification de Type Membre (!&equiv; Paramétrisation)
-	  </div>	
-
-	</section>
-
-	<section>
-	  <h4> Protocole :: Spécialisation </h4>	 
-
-	  <pre><code data-trim data-noescape class="swift">
-class ListeVide&lt;A>: Liste {
-  typealias E = A
-  
-  func tete() -> A? { return nil }
-  func queue&lt;L:Liste where L.E == A>() -> L? { return nil }
-}
-	  </Code></pre>	  
-
-	</section>
-
-	<section>
 	  <h4> Structure </h4>
 
 	  <ul>
@@ -1342,6 +1118,7 @@ class ListeVide&lt;A>: Liste {
 	  </ul>
 
 	</section>
+
 
 	<section>
 	  <h4> Structure :: Initialisation </h4>
@@ -1391,20 +1168,20 @@ personne1.age += 1
 	</section>
 
 	<section>
-	  <h4> Structure :: Spécification de formes </h4>
+	  <h4> Enumération :: Spécification de formes </h4>
 
 	  <pre><code data-trim data-noescape class="swift">
-public enum Status {
+public enum StadePersonne {
   case Enfant, Adolescent, Adulte
 }
 	  </Code></pre>	  	  
 
 	  <pre><code data-trim data-noescape class="swift">
-let s : Status = ...
+let s : StadePersonne = ...
 switch s {
-  case Status.Enfant: // ...
-  case Status.Adolescent: // ...
-  case Status.Adulte: // ...
+  case StadePersonne.Enfant: // ...
+  case StadePersonne.Adolescent: // ...
+  case StadePersonne..Adulte: // ...
 }
 	  </Code></pre>	  	  
 
@@ -1416,7 +1193,7 @@ switch s {
 
 
 	<section>
-	  <h4> Structure :: <tt>Pattern Matching</tt> </h4>
+	  <h4> Enumération :: <tt>Pattern Matching</tt> </h4>
 
 	  <pre><code data-trim data-noescape class="swift">
 public enum Maybe&lt;T> {
@@ -1529,16 +1306,40 @@ class Personne {
     self.age = 0
   }
 
-  class func new(nom:String) -> Self {
+  <span class="fragment">class func new(nom:String) -> Self {
      return self.init(nom:nom, age:0) // self &equiv; Personne
-  }
+  }</span>
 }
 	  </Code></pre>	  
+
+	    <div style="font-size:70%">
+	      Le <tt>new</tt> de Perl !
+	    </div>		  
 
 	</section>
 
 	<section> 
-	  <h4> Tour d'horizon partiel ! </h4>
+	  <h5> Un tour d'horizon (trop) rapide ! </h5>
+	  <ul>
+	    <li> "Subscripts" </li>
+	    <li> Gestion des erreurs </li>
+	    <li> Structure et mutation </li>
+	    <li> Notion de module </li>
+	    <li> etc ... </li>
+	</section>
+
+	<section> 
+	  <h5> Quelques références </h5>
+	  <ul>
+	    <li> <a href="https://swift.org"> Site officiel </a> </li>
+	    <li> <a href="https://github.com/vsouza/awesome-ios"> A curated list of awesome iOS ecosystem </a> </li>
+	    <li> Votre curiosité ! </li>
+	  </ul>
+	</section>
+
+	<section> 
+	  <h3> Merci </h3>
+	  <h4> Questions ? </h4>
 	</section>
 
 	<script src="lib/js/head.min.js"></script>
