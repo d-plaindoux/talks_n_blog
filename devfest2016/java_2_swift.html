@@ -61,7 +61,7 @@
   <body>
     <div class="reveal">
       <img style="position:fixed;top:15px;left:15px" class="plain" src="images/logo DevFest 2016.png" width='15%'>
-      <div style="position:fixed;bottom:15px;right:15px;font-size:30%"><b>#DevFestToulouse</b>x</div>
+      <img style="position:fixed;bottom:15px;right:15px" class="plain" width="4%" src="images/swift.png">	  
 
       <div class="slides">
 	<section>
@@ -95,9 +95,9 @@
 	  Développement lancé en 2010 par Chris Lattner
 
 	  <ul>
-	    <li><div class="fragment"> <b>v1.0</b>: publication de la version à la WWDC 2014 </div> </li>
-	    <li><div class="fragment"> <b>v2.0</b>: Apple publie et ouvre le compilateur en 2015</div> </li>
-	    <li><div class="fragment"> <b>v3.0</b>: publication de la version en septembre 2016</div> </li>
+	    <li><div class="fragment"> <b>v1.0</b>: Dévoilé durant la WWDC en 2014 </div> </li>
+	    <li><div class="fragment"> <b>v2.0</b>: Ouverture du compilateur en 2015</div> </li>
+	    <li><div class="fragment"> <b>v3.0</b>: Publication en septembre 2016</div> </li>
 	  </ul>
 	</section>
 	
@@ -171,7 +171,7 @@
 	</section>
 
 	<section>
-	  <h4> Metamorphose d'une classe Java </h4>
+	  <h4> Métamorphose d'une classe Java </h4>
 	  <pre><code data-trim data-noescape class="Java">
 public class Personne {
   private final String nom;
@@ -412,7 +412,7 @@ if (t.isPresent()) {
 		<td class="fragment">	   
 		  <h5>Swift</h5>
 		  <pre><code data-trim data-noescape class="swift">
-let n:String? = "A"
+let n:String? = "A"  // ou nil
 
 
 let t:Int? = 
@@ -585,7 +585,7 @@ func multiplier(a:Int, b:Int) -> Int { return a * b }
 	      </code></pre>
 
 	    <div class="fragment" style="font-size:70%">
-	      En interne les noms de paramètre capturent les valeurs lors de l'appel
+	      En interne les noms des paramètres capturent les valeurs lors de l'appel
 	    </div>
 
 	    <pre class="fragment"><code data-trim data-noescape class="swift">
@@ -593,19 +593,18 @@ multiplier(a:2, b:3)
 	    </code></pre>
 
 	    <div class="fragment" style="font-size:70%">
-	      En externe les noms de paramètre servent de marques pour les arguments
+	      En externe les noms des paramètres servent de "marques" pour les arguments
 	    </div>
 
 	    <br>
 
 	    <div class="b fragment alert">
-	      Nommage lors de l'appel obligatoire. 
-	      Permutation des arguments interdite
+	      Nommage obligatoire à l'appel. Permutation des arguments interdite
 	    </div>
 	</section>
 		
 	<section>
-	    <h4> Fonction :: Nom externe spécifique de Paramètre</h4>
+	    <h4> Fonction :: Nom externe spécifique </h4>
 
 	    <div style="font-size:70%"> 
 	      Spécification d'un nom externe différent
@@ -624,7 +623,7 @@ multiplier(a:2, par:3)
 	</section>
 
 	<section>
-	    <h4> Fonction :: Aucun Nom externe de Paramètre</h4>
+	    <h4> Fonction :: Aucun Nom externe </h4>
 
 	    <div style="font-size:70%">
 	      Spécification afin de ne pas avoir de nom externe
@@ -719,7 +718,7 @@ let multiplier : (Int,Int) -> Int = { a,b in a * b }
 	    </code></pre>
 
 	    <div style="font-size:70%">
-	      Séparation de la Spécification de la mise en oeuvre
+	      Spécification vs. Mise en oeuvre
 	    </div>	    
 	</section>
 
@@ -742,7 +741,7 @@ func appliquer(_ f:(Int) -> Int, _ a:Int) -> Int {
 	    <h4> Fonction :: Généricité </h4>
 
 	    <div style="font-size:70%">
-	      Syntaxe "similaire" à celle adoptée par C++, Java et C#
+	      Paramétrisation à la C++, Java, C#
 	    </div>
 
 	    <pre><code data-trim data-noescape class="swift">
@@ -757,38 +756,9 @@ func appliquer&lt;A,B>(_ f:(A) -> B, _ a:A) -> B { return f(a) }
 	    <pre><code data-trim data-noescape class="swift">
 func isEqual&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b } 
 	    </code></pre>
-
 	    </div>	    
 
 	</section>
-
-	<div style="visibility:hidden">
-	<section>
-	    <h4> Exemple d'Ordre Supèrieur & Généricité </h4>
-
-	    <div style="font-size:70%">
-	      Transformation de fonction par curryfication 
-	      <br>
-	      (A,B) -> C &rightarrow; (A) -> (B) -> C
-	    </div>	    
-
-	    <pre><code data-trim data-noescape class="swift">
-func curry&lt;A,B,C>(_ f: @escaping (A,B) -> C) -> (A) -> (B) -> C {
-   return { a in { b in f(a,b) } } 
-}    </code></pre>
-
-	    <pre class="fragment"><code data-trim data-noescape class="swift">
-let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier) 
-	    </code></pre>
-
-	    <br>
-
-	    <div class="fragment alert" style="font-size:70%">
-	      Instrumentation <tt>@escaping</tt> pour la gestion mémoire
-	    </div>	    	    
-
-	</section>
-	</div>
 
 	<section>
 	    <h4> Inconsistance & Pièces manquantes </h4>
@@ -809,12 +779,12 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	    <tr class="fragment">
 	      <td width="40%">
 		<div style="font-size:70%">
-		  Recursion Terminal
+		  Récursivité terminale
 		</div>
 	      </td>
 	      <td>
 		<div style="font-size:70%" class="alert">
-		  Non garanti par le compilateur
+		  Non garantie par le compilateur
 		</div>
 	      </td>
 	    </tr>
@@ -845,7 +815,7 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	<section>
 	  <h4> Les Objets </h4>
 	  <div class="remark">
-	    <p>L'Ecole Scandinave</p>
+	    <p>Ecole Scandinave</p>
 	    <p style="font-size:70%"> Simula, C++, Objective-C, Eiffel, Java, C# ... <b> Swift </b> </p>
 	  </div>
 	  <p>Abstraction de donnée &leftrightarrow; Classe &leftrightarrow; Type</p>
@@ -882,18 +852,18 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	      </tr>
 	      <tr class="fragment">
 		<td width="50%">
-		  Enumération
-		</td>
-		<td>
-		  Enumération
-		</td>
-	      </tr>
-	      <tr class="fragment">
-		<td width="50%">
 		  &emptyset;
 		</td>
 		<td>
 		  Structure
+		</td>
+	      </tr>
+	      <tr class="fragment">
+		<td width="50%">
+		  Enumération
+		</td>
+		<td>
+		  Enumération
 		</td>
 	      </tr>
 	    </table>
@@ -904,14 +874,14 @@ let multiplierCurry   : (Int) -> (Int) -> Int = curry(multiplier)
 	  <h4> Protocole </h4>
 	  
 	  <ul>
-	    <li> Base de connaissance	  
-	    <li> Extension de Protocoles
+	    <li> Base de connaissances	</li>
+	    <li> Extension de Protocoles </li>
 	  </ul>
 
 	</section>
 
 	<section>
-	  <h4> Protocole :: Base de connaissance </h4>
+	  <h4> Protocole :: Base de connaissances </h4>
 	  
 	    <pre><code data-trim data-noescape class="swift">
 public protocol Monde {
@@ -923,7 +893,7 @@ public protocol Monde {
 	</section>
 
 	<section>
-	  <h4> Protocole :: Extension </h4>	 
+	  <h4> Protocole :: Mise en oeuvre </h4>	 
 	  
 	  <pre><code data-trim data-noescape class="swift">
 extension Monde {
@@ -934,13 +904,13 @@ extension Monde {
 	  </code></pre>	  
 
 	  <div class="fragment" style="font-size:70%">
-	    Assimilable aux <tt>default</tt> d'interface dans Java 8
+	    Assimilable au "<tt>default</tt>" des interfaces dans Java 8
 	  </div>
 
 	  <br>
 
 	  <div class="remark fragment">
-	    Principe d'extension généralisé (Class, Struct etc.)
+	    Idem pour les classes, structures et enumérations
 	  </div>
 
 	</section>
@@ -949,19 +919,20 @@ extension Monde {
 	  <h4> Protocole :: Généricité </h4>	 
 
 	  <pre><code data-trim data-noescape class="swift">
-protocol Liste {
+protocol Copiable {
   associatedtype E
   
-  <span class="fragment">func tete() -> E?</span>
-  <span class="fragment">func queue&lt;L:Liste where L.E == E>() -> L?</span>
+  <span class="fragment">func copier&lt;C:Copiable where C.E == E>() -> C? // 0_o </span>
 }
 	  </Code></pre>	  
 
 	  <br>
 
 	  <div class="alert">
-	    Spécification de Type Membre (!&equiv; Paramétrisation)
+	    Spécification de Type Membre &nequiv; Paramétrisation
 	  </div>	
+
+	  <br>
 
 	  <div class="alert fragment">
 	    Spécialisation par le <tt>typealias</tt> 
@@ -974,7 +945,7 @@ protocol Liste {
 
 	  <ul>
 	    <li> Etat interne </li>
-	    <li> Base de connaissance </li>
+	    <li> Base de connaissances </li>
 	    <li> Héritage simple </li>
 	    <li> Mise en oeuvre de Protocoles </li>
 	  </ul>
@@ -982,7 +953,7 @@ protocol Liste {
 	</section>
 
 	<section>
-	  <h4> Classe :: Initialisation & Création </h4>
+	  <h4> Classe :: Etat interne & Initialisation </h4>
 	    <pre><code data-trim data-noescape class="swift">
 public class Personne {
   private let nom:String
@@ -1000,7 +971,7 @@ public class Personne {
 Personne(nom:"John Doe", age:42)
 	      </code></pre>
 
-	      <div class="alert fragment">
+	      <div class="alert">
 		Pas de mot clé <tt>new</tt>
 	      </div>	    
 	    </div>	    
@@ -1034,13 +1005,13 @@ let personne:Personne? = Personne(nom:"John Doe", age:-1)
 	</section>
 
 	<section>
-	    <h4> Classe :: Base de connaissance </h4>
+	    <h4> Classe :: Base de connaissances </h4>
 
 	  <table width="100%">
 	    <tr class="fragment">
 	      <td width="30%">
 		<div style="font-size:70%">
-Méthodes d'instance (surchargeables)
+Méthode d'instance (surchargeable)
 		</div>
 	      </td>
 	      <td>
@@ -1055,7 +1026,7 @@ class Personne {
 	    <tr class="fragment">
 	      <td width="30%">
 		<div style="font-size:70%">
-Méthodes statique (non surchargeables)
+Méthode statique (non surchargeable)
 		</div>
 	      </td>
 	      <td>
@@ -1070,7 +1041,7 @@ class Personne {
 	    <tr class="fragment">
 	      <td width="30%">
 		<div style="font-size:70%">
-Méthodes de classe (surchargeables)
+Méthode de classe (surchargeables)
 		</div>
 	      </td>
 	      <td>	
@@ -1113,7 +1084,7 @@ let personne2 = personne1
 
 	  <ul>
 	    <li> Etat interne
-	    <li> Base de connaissance	  
+	    <li> Base de connaissances	  
 	    <li> Mise en oeuvre de Protocoles
 	  </ul>
 
@@ -1129,6 +1100,10 @@ public struct Personne {
   var age:Int
 }
 	  </Code></pre>	  	  
+
+	    <div style="font-size:70%">
+	      Méthode <tt>init</tt> implicite. Redéfinition possible.
+	    </div>
 
 	  <pre><code data-trim data-noescape class="swift">
 Personne(nom:"John Doe", age:42)
@@ -1161,7 +1136,7 @@ personne1.age += 1
 	  <ul>
 	    <li> Spécification de formes
 	    <li> Etat interne
-	    <li> Base de connaissance	  
+	    <li> Base de connaissances	  
 	    <li> Mise en oeuvre de Protocoles
 	  </ul>
 
@@ -1176,12 +1151,12 @@ public enum StadePersonne {
 }
 	  </Code></pre>	  	  
 
-	  <pre><code data-trim data-noescape class="swift">
+	  <pre class="fragment"><code data-trim data-noescape class="swift">
 let s : StadePersonne = ...
 switch s {
   case StadePersonne.Enfant: // ...
   case StadePersonne.Adolescent: // ...
-  case StadePersonne..Adulte: // ...
+  case StadePersonne.Adulte: // ...
 }
 	  </Code></pre>	  	  
 
@@ -1193,7 +1168,7 @@ switch s {
 
 
 	<section>
-	  <h4> Enumération :: <tt>Pattern Matching</tt> </h4>
+	  <h4> Enumération :: <tt>switch</tt> avancé </h4>
 
 	  <pre><code data-trim data-noescape class="swift">
 public enum Maybe&lt;T> {
@@ -1207,10 +1182,16 @@ public enum Maybe&lt;T> {
   }</span>
 }</Code></pre>	  	  
 
+	    <div class="fragment remark" style="font-size:70%">
+	      Pattern Matching
+	    </div>
+
 	</section>
 
 	<section> 
-	  <div class="remark"> Cas du <b>self</b> et du <b>Self</b> </div>
+	  <div class="remark">
+	    <b>self</b> ou ... <b>Self</b> 
+	  </div>
 	</section>
 
 	<section> 
@@ -1312,8 +1293,8 @@ class Personne {
 }
 	  </Code></pre>	  
 
-	    <div style="font-size:70%">
-	      Le <tt>new</tt> de Perl !
+	    <div style="font-size:70%" class="fragment">
+	      Cela me rappelle furieusement le <tt>new</tt> de Perl !
 	    </div>		  
 
 	</section>
@@ -1321,39 +1302,40 @@ class Personne {
 	<section> 
 	  <h5> Un tour d'horizon (trop) rapide ! </h5>
 	  <ul>
-	    <li> "Subscripts" </li>
+	    <li> Définition locale </li>
 	    <li> Gestion des erreurs </li>
 	    <li> Structure et mutation </li>
 	    <li> Notion de module </li>
+	    <li> Appeller du C dans Swift </li>
 	    <li> etc ... </li>
 	</section>
 
 	<section> 
-	  <h5> Quelques références </h5>
+	  <h5> Prosélytisme ! </h5>
 	  <ul>
 	    <li> <a href="https://swift.org"> Site officiel </a> </li>
 	    <li> <a href="https://github.com/vsouza/awesome-ios"> A curated list of awesome iOS ecosystem </a> </li>
-	    <li> Votre curiosité ! </li>
+	    <li> <a href="https://github.com/vsouza/awesome-ios"> Swift & Android !? </a> </li>
+	    <li> Meetup ! </li>
 	  </ul>
 	</section>
-
+	
 	<section> 
 	  <h3> Merci </h3>
 	  <h4> Questions ? </h4>
 	</section>
+	
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
 	
-	<script>
-	  
+	<script>	  
 	  // More info https://github.com/hakimel/reveal.js#configuration
 	  Reveal.initialize({
 	  controls: false,
 	  progress: false,
 	  history: true,
 	  center: true,
-	  slideNumber: true,
 
 	  transition: 'none', // none/fade/slide/convex/concave/zoom
 	  
