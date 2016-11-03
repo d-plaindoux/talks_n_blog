@@ -116,7 +116,7 @@
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="fragment"><img width="48%" src="images/hipster.png"></img>
 		<br>
-		(Vi, Emacs)
+		Vi, Emacs
 	      </td>
 	    </tr>
 	  </table>
@@ -599,7 +599,7 @@ multiplier(a:2, b:3)
 	    <br>
 
 	    <div class="b fragment alert">
-	      Nommage obligatoire à l'appel. Permutation des arguments interdite
+	      Permutation des arguments interdite
 	    </div>
 	</section>
 		
@@ -733,8 +733,14 @@ let multiplier : (Int,Int) -> Int = { a,b in a * b }
 func appliquer(_ f:(Int) -> Int, _ a:Int) -> Int {
   return f(a)
 }
+
 // appliquer(f,a) &longrightarrow;* f(a)
 	    </Code></pre>
+
+	    <div class="alert fragment" style="font-size:70%">
+	      Forme  restreinte au type <tt>Int &rightarrow; Int</tt> !
+	    </div>
+
 	</section>
 
 	<section>
@@ -754,7 +760,7 @@ func appliquer&lt;A,B>(_ f:(A) -> B, _ a:A) -> B { return f(a) }
 	      </div>
 
 	    <pre><code data-trim data-noescape class="swift">
-func isEqual&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b } 
+func estEgal&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b } 
 	    </code></pre>
 	    </div>	    
 
@@ -839,7 +845,7 @@ func isEqual&lt;A:Equatable>(_ a:A, _ b:A) -> Bool { return a == b }
 		  Interface
 		</td>
 		<td>
-		  Protocol
+		  Protocole
 		</td>
 	      </tr>
 	      <tr class="fragment">
@@ -1171,13 +1177,13 @@ switch s {
 	  <h4> Enumération :: <tt>switch</tt> avancé </h4>
 
 	  <pre><code data-trim data-noescape class="swift">
-public enum Maybe&lt;T> {
-  case Some(value:T), None
+public enum PeutEtre&lt;T> {
+  case QuelqueChose(value:T), Rien
 
-  <span class="fragment">public func get(_ defaultValue:T) -> T {
+  <span class="fragment">public func get(_ valeurParDefaut:T) -> T {
      switch self {
-       case .Some(let v): return v
-       case _:            return defaultValue
+       case .QuelqueChose(let v): return v
+       case _:                    return valeurParDefaut
      }
   }</span>
 }</Code></pre>	  	  
@@ -1302,11 +1308,10 @@ class Personne {
 	<section> 
 	  <h5> Un tour d'horizon (trop) rapide ! </h5>
 	  <ul>
-	    <li> Définition locale </li>
 	    <li> Gestion des erreurs </li>
-	    <li> Structure et mutation </li>
+	    <li> Structure & Mutation </li>
 	    <li> Notion de module </li>
-	    <li> Appeller du C dans Swift </li>
+	    <li>  Swift & Android via le NDK (Swift &Rightarrow; C) </li>
 	    <li> etc ... </li>
 	</section>
 
@@ -1315,16 +1320,13 @@ class Personne {
 	  <ul>
 	    <li> <a href="https://swift.org"> Site officiel </a> </li>
 	    <li> <a href="https://github.com/vsouza/awesome-ios"> A curated list of awesome iOS ecosystem </a> </li>
-	    <li> <a href="https://github.com/vsouza/awesome-ios"> Swift & Android !? </a> </li>
 	    <li> Meetup ! </li>
 	  </ul>
 	</section>
 	
 	<section> 
 	  <h3> Merci </h3>
-	  <h4> Questions ? </h4>
-	</section>
-	
+	</section>	
 
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
