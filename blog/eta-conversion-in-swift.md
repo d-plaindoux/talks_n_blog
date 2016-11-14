@@ -7,7 +7,7 @@ based on &alpha;-conversion, &beta;-reduction and &eta;-conversion.
 
 The &alpha;-conversion allows bound variable names to be changed, the &beta;-reduction explains
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
-&longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f.
+is equivalent to f whenever x does not appear free in f.
 
 ## Function definition
 
@@ -141,6 +141,8 @@ class MyInt {
 }
 ```
 
+### Applying the &eta;-reduction again!
+
 The previous integers list transformation can be transposed just addinf a class prefix for the function selection.
 
 ```Swift
@@ -172,7 +174,7 @@ can be expressed adding parameter names! The previous expression can be therefor
 precise as shown in the next example.
 
 ```Swift
-let l_eta_reducted = [1,2].map(MyInt.add(a:))
+let l_eta_reduced = [1,2].map(MyInt.add(a:))
 ```
 
 With this last approach we are able to distinguish two methods with same profile
