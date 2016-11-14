@@ -5,8 +5,8 @@ In addition a set of transformation rules define a equational theory dedicated t
 manipulation. This set contains in particular transformation rules dedicated to the reduction process
 based on &alpha;-conversion, &beta;-reduction and &eta;-conversion. 
 
-The &alpha;-conversion allow bound variable names to be changed. The &beta;-reduction explains
-the application in terms of substitution. Finally the &eta;-conversion stated &lambda;x.(f x) &Leftrightarrow; f
+The &alpha;-conversion allows bound variable names to be changed, the &beta;-reduction explains
+the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) &Leftrightarrow; f
 whenever x does not appear free in f.
 
 ## Defining Functions
@@ -20,12 +20,14 @@ func add(a: Int) -> (Int) -> Int {
 }
 ```
 
-Then calling this function in Swift can be easily done but this requires the argument names. Sweet Objective-C
-expressivity legacy!
+Then calling this function in Swift can be easily done but this requires the argument names as shown in the following 
+example.
 
 ```Swift
 add(a:1)(2)
 ```
+
+Sweet Objective-C legacy!
 
 It's important to notice the difference between a function definition from an anonymous function. In the first
 case the argument name is required when such argument name is prohibited when applying a closure. Why this 
@@ -33,12 +35,11 @@ difference? Because of function redefinition principle in Swfit.
 
 ## Function redefinition 
 
-In order to increase expressivity each argument name can be defined or simply ignored. This is done adding a 
-new name before the parameter name if we want to distinguish the argument name from the parameter name. In 
-addition `_` means no specific argument name. 
+Each argument name can be defined or simply ignored. This is done adding a new name before the parameter name 
+if we want to distinguish the argument name from the parameter name or`_` if we want to ignore this naming 
+convention.
 
-Then we can define `add`  with a DSL point of view ignoring the name of the first parameter and naming the second 
-one `to`. 
+Then we can define `add`  without argument name using `_` facility.
 
 ```Swift
 func add(_ a: Int) -> (Int) -> Int {
@@ -46,7 +47,8 @@ func add(_ a: Int) -> (Int) -> Int {
 }
 ```
 
-Then calling this function reflect the argument names convention chosen in the specification.
+Then calling this function reflect the argument names convention chosen in the specification i.e. no specific
+name.
 
 ```Swift
 add(1)(2)
@@ -54,12 +56,12 @@ add(1)(2)
 
 ## Losing a transformation rule!
 
-Back to these definitions each function has:
-- the same name i.e. `add` and 
-- the same signature i.e. `Int -> Int -> Int`
+Each function in the same scope has:
+- the same name i.e. `add`
+- and the same signature i.e. `Int -> Int -> Int`
 
-Only argument names make the difference between these functions. Well based on this 
-what can we learn and what can we do when we want to deal with &eta;-conversion? 
+Only argument names are differents. Based on these definition what can we learn 
+and what can we do when we want to deal with &eta;-conversion? 
 
 As mentioned in the introduction the &eta;-conversion stated &lambda;x.(f x) &longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f. This can be separated in two transformation rules:
 - &eta;-expansion stated f &longrightarrow;<sub>&eta;</sub> &lambda;x.(f x)
@@ -105,7 +107,7 @@ This seems quite natural but here we face a little problem. In fact which `add` 
 So lets try compiling the code and see what's is going one! 
 
 ```Swift
-error: repl.swift:18:19: error: ambiguous use of 'add'
+error: ambiguous use of 'add'
 let l_eta_reduced : [Int -> Int] = [1,2].map(add)
                                          ^
 repl.swift:3:6: note: found this candidate
@@ -152,7 +154,7 @@ let l_eta_reduced : [(Int) -> Int] = [1,2].map(MyInt.add)
  Once again the compiler raises the same kind of error. 
 
 ```Swift
-error: repl.swift:9:46: error: ambiguous use of 'add'
+error: ambiguous use of 'add'
 let l_eta_reduced : [(Int) -> Int] = [1,2].map(MyInt.add)
                                                ^
 repl.swift:2:15: note: found this candidate
@@ -179,7 +181,7 @@ the &eta;-conversion is guarantee when we deal with method in classes only!
 
 The argument naming convention came from Objective-C. This legacy has been applied 
 for expressivness purpose. For instance delegates in iOS use this capability when a 
-method has the same semantic but with different contexts. 
+method has the same semantic but with different contexts.
 
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
 want to use all transformation rules - mainly the &eta;-conversion - when the code is 
