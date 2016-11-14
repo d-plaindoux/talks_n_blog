@@ -177,7 +177,7 @@ precise as shown in the next example.
 let l_eta_reduced = [1,2].map(MyInt.add(a:))
 ```
 
-With this last approach we are able to distinguish two methods with same profile
+With this last approach we are able to distinguish two methods with the same profile
 using parameter names involving the &eta;-reduction transformation rule. Then we can 
 argue the &eta;-conversion is guarantee when we deal with methods in classes only!
 
