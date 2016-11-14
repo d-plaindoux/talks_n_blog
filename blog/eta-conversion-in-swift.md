@@ -5,13 +5,13 @@ In addition a set of transformation rules define a equational theory dedicated t
 manipulation. This set contains in particular transformation rules dedicated to the reduction process
 based on &alpha;-conversion, &beta;-reduction and &eta;-conversion. 
 
-The &alpha;-conversion allow bound any variable name to be changed. The &beta;-reduction explains
+The &alpha;-conversion allow bound variable names to be changed. The &beta;-reduction explains
 the application in terms of substitution. Finally the &eta;-conversion stated &lambda;x.(f x) &Leftrightarrow; f
 whenever x does not appear free in f.
 
 ## Defining Functions
 
-In Swift a function is defined by a name, a set of named arguments and a returned type. For instance we can
+In Swift a function is defined by a name, a set of **named** arguments and a returned type. For instance we can
 simply define the addition with the following function `add`.
 
 ```Swift
