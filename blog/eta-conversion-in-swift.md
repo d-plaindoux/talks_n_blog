@@ -9,9 +9,9 @@ The &alpha;-conversion allows bound variable names to be changed, the &beta;-red
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
 &longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f.
 
-## Defining Functions
+## Function definition
 
-In Swift a function is defined by a name, a set of **named** arguments and a returned type. For instance we can
+In Swift a function is defined by a name, a set of named arguments and a returned type. For instance we can
 simply define the addition with the following function `add`.
 
 ```Swift
@@ -54,20 +54,20 @@ name.
 add(1)(2)
 ```
 
-## Losing a transformation rule!
+## Lost in transformation!
 
-Each function in the same scope has:
+Each function previously defined in the same scope has:
 - the same name i.e. `add`
 - and the same signature i.e. `Int -> Int -> Int`
 
-Only argument names are differents. Based on these definition what can we learn 
-and what can we do when we want to deal with &eta;-conversion? 
+Therefor only argument names are differents. Based on these definition what can we learn and what can we do when
+we want to deal with &eta;-conversion? 
 
 As mentioned in the introduction the &eta;-conversion stated &lambda;x.(f x) &longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f. This can be separated in two transformation rules:
 - &eta;-expansion stated f &longrightarrow;<sub>&eta;</sub> &lambda;x.(f x)
 - &eta;-reduction stated &lambda;x.(f x) &longrightarrow;<sub>&eta;</sub> f 
 
-### The &eta;-expansion
+### Applying the &eta;-expansion
 
 In Swift the &eta;-expansion is verified since functions can be naturally referenced in the langage.
 
@@ -87,7 +87,7 @@ As we can see a function expression can replaced naturally by it's expansion.
 
 So far so good!
 
-### The &eta;-reduction
+### Applying the &eta;-reduction
 
 If we have a list of integers we can for instance apply this `add` on each element. 
 This can be done calling the `map` function as follow:
@@ -102,8 +102,8 @@ The mapped function can be simply reduced applying the &eta;-reduction transform
 let l_eta_reduced : [(Int -> Int] = [1,2].map(add)
 ```
 
-This seems quite natural but here we face a little problem. In fact which `add` is applied since two definitions exist.
-So lets try compiling the code and see what's going on! 
+This seems quite natural but here we face a little problem. In fact which `add` is applied 
+since two definitions exist. So lets try compiling the code and see what's going on! 
 
 ```Swift
 error: ambiguous use of 'add'
@@ -117,15 +117,18 @@ func add(_ a: Int) -> (Int) -> Int {
      ^
 ```
 
-Here the compiler is not able to choose the add function because the signatures are equivalent. Only the parameter name
-differs but it's not - and unfortunately cannot - be used when specifying the mapped function.
+Here the compiler is not able to choose the `add` function because the signatures are equivalent. 
+As mentioned only the parameter name differs but it's not - and unfortunately cannot - be used when 
+specifying the mapped function.
 
-As a consequence the &eta;-reduction cannot be applied which invalidates the &eta;-conversion transformation rule!
+As a consequence the &eta;-reduction cannot be applied which invalidates the &eta;-conversion transformation 
+rule since only &eta;-expansion is a valid rule.
 
 ## Redefinition in classes
 
-In the previous sections we try to apply &eta-conversion in presence of functions. So now lets try with function 
-redefinitions in a class.
+In the previous sections we try to apply &eta;-conversion in presence of functions. So now lets try with function 
+redefinitions in a class. For this purpose we define a basic class `MyInt`with to static `add` methods equivalent
+to the previous ones.
 
 ```Swift
 class MyInt {
@@ -138,19 +141,19 @@ class MyInt {
 }
 ```
 
-The previous integers list transformation can be transposed using a class prefix for the function selection.
+The previous integers list transformation can be transposed just addinf a class prefix for the function selection.
 
 ```Swift
 let l = [1,2].map{ b in MyInt.add(a:b) }
 ```
 
-From this expression we can try to apply the &eta;-reduction
+From this expression we can try to apply the &eta;-reduction once again.
 
 ```Swift
 let l_eta_reduced : [(Int) -> Int] = [1,2].map(MyInt.add) 
 ```
 
- Once again the compiler raises the same kind of error. 
+ Once again the compiler complains raising the same error. 
 
 ```Swift
 error: ambiguous use of 'add'
@@ -164,30 +167,30 @@ repl.swift:5:15: note: found this candidate
               ^
 ```
 
-Fortunately we have the same behavior but unlike functions each class method 
-can be expressed adding parameter names. Then the previous expression can be 
-more precise as shown in the next example.
+Fortunately we have the same result. Nevertheless unlike functions each class method 
+can be expressed adding parameter names! The previous expression can be therefor more 
+precise as shown in the next example.
 
 ```Swift
 let l_eta_reducted = [1,2].map(MyInt.add(a:))
 ```
 
-In this last approach we are able to distinguish two methods with same profile
-using parameter names involving the &eta;-reduction transformation rule. Therefor
-the &eta;-conversion is guarantee when we deal with method in classes only!
+With this last approach we are able to distinguish two methods with same profile
+using parameter names involving the &eta;-reduction transformation rule. Then we can 
+argue the &eta;-conversion is guarantee when we deal with methods in classes only!
 
 ## Expressiveness & Inconsistency
 
 The argument naming convention came from Objective-C. This legacy has been applied 
-for expressivness purpose. For instance delegates in iOS use this capability when a 
+for expressiveness purpose. For instance *delegates* in iOS use this capability when a 
 method has the same semantic but with different contexts.
 
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
 want to use all transformation rules - mainly the &eta;-conversion - when the code is 
-designed using functionnal programming paradigm. Finally the expressivity is not the 
-same when we manipulate functions or static method class implying an inconsistency in 
-the language!
+designed using functionnal programming approach because code simplification can't be
+applied everytime. Finally the expressivity is not the same when we manipulate functions 
+or static method class implying an inconsistency in the language!
 
-Fortunately Swift is a young langage and we can hope this &eta;-conversion will be 
-overcome enabling function qualification with parameter names because such evolution does 
-not imply backward incompatibilities.
+As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
+overcomed enabling function qualification with parameter names and hopefully such evolution 
+does not imply backward incompatibilities.
