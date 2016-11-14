@@ -184,7 +184,7 @@ method has the same semantic but with different contexts.
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
 want to use all transformation rules - mainly the &eta;-conversion - when the code is 
 designed using functionnal programming paradigm. Finally the expressivity is not the 
-same when we manipulate functions or static method class implying a inconsistency in 
+same when we manipulate functions or static method class implying an inconsistency in 
 the language!
 
 Fortunately Swift is a young langage and we can hope this &eta;-conversion will be 
