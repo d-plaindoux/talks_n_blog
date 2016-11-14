@@ -6,8 +6,8 @@ manipulation. This set contains in particular transformation rules dedicated to 
 based on &alpha;-conversion, &beta;-reduction and &eta;-conversion. 
 
 The &alpha;-conversion allows bound variable names to be changed, the &beta;-reduction explains
-the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) &Leftrightarrow; f
-whenever x does not appear free in f.
+the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
+&longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f.
 
 ## Defining Functions
 
@@ -69,8 +69,7 @@ As mentioned in the introduction the &eta;-conversion stated &lambda;x.(f x) &lo
 
 ### The &eta;-expansion
 
-In Swift the &eta;-expansion is verified since function can be naturally referenced in the langage. But this can't 
-always be done because of this function overloading capability.
+In Swift the &eta;-expansion is verified since functions can be naturally referenced in the langage.
 
 ```Swift
 let increment_1 = add(a:1)
@@ -84,9 +83,9 @@ let increment_1_eta_expanded = { b in add(a:1)(b) }
 let increment_2_eta_expanded = { b in add(1)(b)   }
 ```
 
-As we can see since a functional expression can expressed it's expansion can therefor 
-be also expressed. So far so
-good!
+As we can see a function expression can replaced naturally by it's expansion.
+
+So far so good!
 
 ### The &eta;-reduction
 
@@ -104,7 +103,7 @@ let l_eta_reduced : [(Int -> Int] = [1,2].map(add)
 ```
 
 This seems quite natural but here we face a little problem. In fact which `add` is applied since two definitions exist.
-So lets try compiling the code and see what's is going one! 
+So lets try compiling the code and see what's going on! 
 
 ```Swift
 error: ambiguous use of 'add'
@@ -118,7 +117,7 @@ func add(_ a: Int) -> (Int) -> Int {
      ^
 ```
 
-Here the compiler is not able to choose the add function because the signatures are equivalent. Only parameter name
+Here the compiler is not able to choose the add function because the signatures are equivalent. Only the parameter name
 differs but it's not - and unfortunately cannot - be used when specifying the mapped function.
 
 As a consequence the &eta;-reduction cannot be applied which invalidates the &eta;-conversion transformation rule!
