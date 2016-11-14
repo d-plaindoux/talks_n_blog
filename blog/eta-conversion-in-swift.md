@@ -190,9 +190,9 @@ method has the same semantic but with different contexts.
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
 want to use all transformation rules - mainly the &eta;-conversion - when the code is 
 designed using functionnal programming approach because code simplification can't be
-applied everytime. Finally the expressivity is not the same when we manipulate functions 
-or static method class implying an inconsistency in the language!
+applied everytime. Finally the expressiveness is not the same when we manipulate functions 
+or static methods in a class. This implies an inconsistency in the design of this langage!
 
 As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
-overcomed enabling function qualification with parameter names and hopefully such evolution 
+overcome enabling function qualification with parameter names and hopefully such evolution 
 does not imply backward incompatibilities.
