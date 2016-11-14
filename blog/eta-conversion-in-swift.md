@@ -1,6 +1,6 @@
 # &eta;-conversion in Swift 3+
 
-&lambda;-caculus is a formal system expression computation based on application and abstraction. 
+&lambda;-calculus is a formal system expression computation based on application and abstraction. 
 In addition a set of transformation rules define a equational theory dedicated to the expression
 manipulation. This set contains in particular transformation rules dedicated to the reduction process
 based on &alpha;-conversion, &beta;-reduction and &eta;-conversion. 
