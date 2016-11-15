@@ -1,9 +1,6 @@
 # &eta;-conversion in Swift v3+
 
-<button style="font-size:100%;background-color:green;color:white">&lambda;-calculus</button>
-<button style="font-size:100%;background-color:green;color:white">Swift v3+</button>
-<button style="font-size:100%;background-color:green;color:white">Langage design</button>
-<button style="font-size:100%;background-color:green;color:white">Expressiveness</button>
+**Keywords** &lambda;-calculus, Fonctional paradigm, Swift v3+, Langage design, Expressiveness
 
 The &lambda;-calculus is a formal system on application and abstraction expressions. A set of 
 transformation rules define an equational theory dedicated to the expression manipulation. This 
