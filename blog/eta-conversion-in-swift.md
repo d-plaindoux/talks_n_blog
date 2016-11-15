@@ -1,8 +1,8 @@
-# &eta;-conversion in Swift 3+
+# &eta;-conversion in Swift v3+
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
-&lambda;-calculus is a formal system expression computation based on application and abstraction. 
+The &lambda;-calculus is a formal system on application and abstraction expressions. 
 In addition a set of transformation rules define a equational theory dedicated to the expression
 manipulation. This set contains in particular transformation rules dedicated to the reduction process
 based on &alpha;-conversion, &beta;-reduction and &eta;-conversion. 
@@ -10,6 +10,8 @@ based on &alpha;-conversion, &beta;-reduction and &eta;-conversion.
 The &alpha;-conversion allows bound variable names to be changed, the &beta;-reduction explains
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
 is equivalent to f whenever x does not appear free in f.
+
+In this post we show how such transformation rule can or cannot be applied in Swift v3+.
 
 ## Function definition
 
