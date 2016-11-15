@@ -202,7 +202,5 @@ As a conclusion Swift is a young langage and we can hope this &eta;-conversion w
 overcome enabling function qualification with parameter names and hopefully such evolution 
 does not imply backward incompatibilities.
 
-<hr>
-
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
