@@ -1,6 +1,9 @@
 # &eta;-conversion in Swift v3+
 
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
+<button style="font-size:100%;background-color:green;color:white">&lambda;-calculus</button>
+<button style="font-size:100%;background-color:green;color:white">Swift v3+</button>
+<button style="font-size:100%;background-color:green;color:white">Langage design</button>
+<button style="font-size:100%;background-color:green;color:white">Expressiveness</button>
 
 The &lambda;-calculus is a formal system on application and abstraction expressions. A set of 
 transformation rules define an equational theory dedicated to the expression manipulation. This 
@@ -201,3 +204,8 @@ or static methods in a class. This implies an inconsistency in the design of thi
 As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
 overcome enabling function qualification with parameter names and hopefully such evolution 
 does not imply backward incompatibilities.
+
+<hr>
+
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
+
