@@ -12,7 +12,7 @@ the application in terms of substitution and finally the &eta;-conversion stated
 is equivalent to f whenever x does not appear free in f.
 
 In this post we show how such &eta;-conversion transformation rule can or cannot be applied in Swift v3+ and
-the impact on the design and the expressiveness.
+what's the impact on the design and the expressiveness.
 
 ## Function definition
 
