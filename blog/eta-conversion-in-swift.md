@@ -1,5 +1,7 @@
 # &eta;-conversion in Swift 3+
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
+
 &lambda;-calculus is a formal system expression computation based on application and abstraction. 
 In addition a set of transformation rules define a equational theory dedicated to the expression
 manipulation. This set contains in particular transformation rules dedicated to the reduction process
@@ -12,7 +14,7 @@ is equivalent to f whenever x does not appear free in f.
 ## Function definition
 
 In Swift a function is defined by a name, a set of named arguments and a returned type. For instance we can
-simply define the addition with the following function `add`.
+simply define the currified addition with the following function `add`.
 
 ```Swift
 func add(a: Int) -> (Int) -> Int {
@@ -20,8 +22,8 @@ func add(a: Int) -> (Int) -> Int {
 }
 ```
 
-Then calling this function in Swift can be easily done but this requires the argument names as shown in the following 
-example.
+Then calling this function in Swift can be easily done but this requires the argument names as shown in 
+the following example.
 
 ```Swift
 add(a:1)(2)
