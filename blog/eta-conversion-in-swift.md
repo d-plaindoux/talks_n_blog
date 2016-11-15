@@ -11,7 +11,8 @@ The &alpha;-conversion allows bound variable names to be changed, the &beta;-red
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
 is equivalent to f whenever x does not appear free in f.
 
-In this post we show how such &eta;-conversion transformation rule can or cannot be applied in Swift v3+.
+In this post we show how such &eta;-conversion transformation rule can or cannot be applied in Swift v3+ and
+the impact on the design and the expressivness.
 
 ## Function definition
 
