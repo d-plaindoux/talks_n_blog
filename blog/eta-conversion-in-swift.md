@@ -129,7 +129,7 @@ rule since only &eta;-expansion is a valid rule.
 ## Redefinition in classes
 
 In the previous sections we try to apply &eta;-conversion in presence of functions. So now lets try with function 
-redefinitions in a class. For this purpose we define a basic class `MyInt`with to static `add` methods equivalent
+redefinitions in a class. For this purpose we define a basic class `MyInt`with two static `add` methods equivalent
 to the previous ones.
 
 ```Swift
@@ -145,7 +145,7 @@ class MyInt {
 
 ### Applying the &eta;-reduction again!
 
-The previous integers list transformation can be transposed just addinf a class prefix for the function selection.
+The previous integers list transformation can be transposed just adding a class prefix for the function selection.
 
 ```Swift
 let l = [1,2].map{ b in MyInt.add(a:b) }
