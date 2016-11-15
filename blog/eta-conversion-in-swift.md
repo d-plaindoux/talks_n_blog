@@ -2,10 +2,10 @@
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
-The &lambda;-calculus is a formal system on application and abstraction expressions. 
-In addition a set of transformation rules define a equational theory dedicated to the expression
-manipulation. This set contains in particular transformation rules dedicated to the reduction process
-based on &alpha;-conversion, &beta;-reduction and &eta;-conversion. 
+The &lambda;-calculus is a formal system on application and abstraction expressions. A set of 
+transformation rules define an equational theory dedicated to the expression manipulation. This 
+set contains in particular transformation rules dedicated to the reduction process based on
+&alpha;-conversion, &beta;-reduction and &eta;-conversion. 
 
 The &alpha;-conversion allows bound variable names to be changed, the &beta;-reduction explains
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
