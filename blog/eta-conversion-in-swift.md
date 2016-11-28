@@ -194,7 +194,7 @@ argue the &eta;-conversion is guarantee when we deal with methods in classes onl
 
 The argument naming convention came from Objective-C. This legacy has been applied 
 for expressiveness purpose. For instance *delegates* in iOS use this capability when a 
-method has the same semantic but with different contexts.
+method has the same semantic scope but with different contexts.
 
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
 want to use all transformation rules - mainly the &eta;-conversion - when the code is 
