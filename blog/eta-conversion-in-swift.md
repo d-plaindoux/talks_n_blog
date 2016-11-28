@@ -16,7 +16,9 @@ The &alpha;-conversion allows bound variable names to be changed, the &beta;-red
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
 is equivalent to f whenever x does not appear free in f.
 
-## Function definition
+## Functional programming in Swift v3+
+
+### Function definition
 
 In Swift a function is defined by a name, a set of named arguments and a returned type. For instance we can
 simply define the currified addition with the following function `add`.
@@ -40,7 +42,7 @@ It's important to notice the difference between a function definition from an an
 case the argument name is required when such argument name is prohibited when applying a closure. Why this 
 difference? Because of function redefinition principle in Swfit.
 
-## Function redefinition 
+### Function redefinition 
 
 Each argument name can be defined or simply ignored. This is done adding a new name before the parameter name 
 if we want to distinguish the argument name from the parameter name or`_` if we want to ignore this naming 
