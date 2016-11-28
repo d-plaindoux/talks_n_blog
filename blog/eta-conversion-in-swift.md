@@ -4,15 +4,15 @@
 
 The &lambda;-calculus is a formal system on application and abstraction expressions. A set of 
 transformation rules define an equational theory dedicated to the expression manipulation. This 
-set contains in particular transformation rules dedicated to the reduction process based on
-&alpha;-conversion, &beta;-reduction and &eta;-conversion. 
+set contains transformation rules dedicated to the reduction process based on &alpha;-conversion, 
+&beta;-reduction and &eta;-conversion. 
 
 The &alpha;-conversion allows bound variable names to be changed, the &beta;-reduction explains
 the application in terms of substitution and finally the &eta;-conversion stated &lambda;x.(f x) 
 is equivalent to f whenever x does not appear free in f.
 
-In this post we show how such &eta;-conversion transformation rule can or cannot be applied in Swift v3+ and
-what's the impact on the design and the expressiveness.
+In this post we show how such &eta;-conversion transformation rule can or cannot be applied in 
+Swift v3+ and what's the impact on the design and the expressiveness.
 
 ## Function definition
 
