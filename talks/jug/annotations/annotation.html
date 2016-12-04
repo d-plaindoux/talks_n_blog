@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Annotation Java vs. Decorateur Python</title>
+    
+    <meta name="description" content="How can we mimic le Pattern Matching">
+    <meta name="author" content="Didier Plaindoux">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    
+    <style>
+    <style>
+      .close {
+      background-color:#556677;
+      }
+      .alert {
+      font-size:70% !important;
+      color:white;
+      text-align:middle !important;
+      background-color:#AA2211;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+      }
+      .remark {
+      color:white;
+      text-align:middle !important;
+      background-color:#1122AA;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+      }
+      .title {
+      color:black;
+      text-align:middle !important;
+      background-color:white;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  
+  <body>
+    <div class="reveal">
+      <img style="position:fixed;top:15px;left:15px" class="plain" src="images/toulousejug.png" width='15%'>
+
+      <div class="slides">	
+	<section>
+	  <h2>Annotation Java <br> vs. <br> Décorateur Python</h2>
+	  <br/>
+	  <div class="p" style="text-align:middle"><span> 8 Décembre 2016 </span></div>
+	  <div class="p" style="text-align:middle"><span><b> Toulouse JUG </b></span></div>
+	  <div class="p" style="text-align:middle">
+	    <span>
+	      <a href="http://d.plaindoux.free.fr">Didier Plaindoux</a>
+	      (<a href="http://twitter.com/dplaindoux">@dplaindoux</a>)
+	    </span> 
+	  </div>
+	</section>
+	
+	<section>
+	  <table>
+	    <tr>
+	      <td align="center"><b>Computer scientist</b></td>
+	      <td align="center"><b>Freelance</b></td>
+	    </tr>
+	    <tr>
+	      <td width="50%" align="center"><span style="font-size:700%">&lambda;</span></td>
+	      <td width="50%" align="center"><img class="plain" src="images/fungus.png" width='55%'></img></td>
+	    </tr>
+	  </table>
+	</section>
+
+	<section>
+	  <h3>Annotations Java</h3>
+	  <div class="p">
+	    Ajout de méta-données dans le code source Java
+	  </div>	  
+
+	  <div class="p fragment">
+	    Depuis la version 1.5 du langage (JSR-175)
+	  </div>	  
+	</section>
+	
+	<section>
+	  <h3>Annotations Java :: Rétention</h3>
+
+	  <div class="p">
+	    Portée de l'annotation
+	  </div>
+
+	  <br>
+
+	  <table>
+	    <tr class="fragment"><td> SOURCE </td><td> éliminée à la compilation </td></tr>
+	    <tr class="fragment"><td> CLASS </td><td> éliminée à l'exécution </td></tr>
+	    <tr class="fragment"><td> RUNTIME </td><td> préservée à l'exécution </td></tr>	      		
+	  </table>
+
+	</section>
+	
+	<section>
+	  <h3>Annotations Java :: Traitement</h3>
+
+	  <div class="p">
+	    Cycle de vie avec le code
+	  </div>
+
+	  <br>
+
+	  <table>
+	    <tr class="fragment"><td> SOURCE </td><td> Support pour les IDEs </td></tr>
+	    <tr class="fragment"><td> CLASS </td><td> Complément à la compilation </td></tr>
+	    <tr class="fragment"><td> RUNTIME </td><td> Traitement introspectif </td></tr>	      		
+	  </table>
+
+	</section>
+
+	<section>
+	  <h3>Questions ?</h3>
+	</section>
+
+      </div>
+    </div>
+    
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    
+    <script>
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: false,
+      progress: false,
+      history: true,
+      center: true,
+      
+      transition: 'none', // none/fade/slide/convex/concave/zoom
+      
+      // Optional reveal.js plugins
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', 
+      async: true, 
+      condition: function() { return !!document.querySelector( 'pre code' ); }, 
+      callback: function() { hljs.initHighlightingOnLoad(); } 
+      },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+      ]
+      });     
+    </script>    
+  </body>
+</html>

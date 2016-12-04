@@ -1,0 +1,7 @@
+  abstract class JSonVal {
+    def stringify: String
+  } 
+  abstract class JSonExp extends JSonVal {
+    def getSep(r: String, sep: String = ","): String =
+      if (r.length == 0) r else s     
+  }
