@@ -6,7 +6,7 @@
     
     <title>Annotation Java vs. Decorateur Python</title>
     
-    <meta name="description" content="How can we mimic le Pattern Matching">
+    <meta name="description" content="From Java Annotation to Python Decorator">
     <meta name="author" content="Didier Plaindoux">
     
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
     
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -26,7 +26,7 @@
       background-color:#556677;
       }
       .alert {
-      font-size:70% !important;
+      font-size:80% !important;
       color:white;
       text-align:middle !important;
       background-color:#AA2211;
@@ -36,8 +36,17 @@
       .remark {
       color:white;
       text-align:middle !important;
-      background-color:#1122AA;
+      background-color:#234567;
       padding: 1em 0em 1em 0em !important;
+      font-size:90%;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+      }
+      .remark-2 {
+      color:white;
+      text-align:middle !important;
+      background-color:#012345;
+      padding: 1em 0em 1em 0em !important;
+      font-size:90% !important;
       Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
       }
       .title {
@@ -81,7 +90,7 @@
 	  <table>
 	    <tr>
 	      <td align="center"><b>Computer scientist</b></td>
-	      <td align="center"><b>Freelance</b></td>
+      <td align="center"><b>Freelance</b></td>
 	    </tr>
 	    <tr>
 	      <td width="50%" align="center"><span style="font-size:700%">&lambda;</span></td>
@@ -91,52 +100,450 @@
 	</section>
 
 	<section>
-	  <h3>Annotations Java</h3>
-	  <div class="p">
-	    Ajout de méta-données dans le code source Java
-	  </div>	  
 
-	  <div class="p fragment">
-	    Depuis la version 1.5 du langage (JSR-175)
-	  </div>	  
+	  <img src="images/java-logo.jpg" width="60%" class="plain">
+
+	</section>	  
+
+	<section>
+	  <h3>Annotations Java</h3>
+	  <div class="p remark"> Ajout de méta-données dans le code source Java </div>
+
+	  <br>
+
+	  <div class="p fragment"> Intégration dans la version 1.5 (JSR-175) + APT </div>	  
+	  <div class="p fragment"> A la compilation depuis la version 1.6 (JSR-269) </div>	  
+	</section>
+	
+	<section>
+	  <h3>Annotations Java :: Elements cible</h3>
+
+	  <img src="images/element-types.png" width="70%" class="plain">
+
 	</section>
 	
 	<section>
 	  <h3>Annotations Java :: Rétention</h3>
 
-	  <div class="p">
-	    Portée de l'annotation
-	  </div>
-
 	  <br>
 
-	  <table>
-	    <tr class="fragment"><td> SOURCE </td><td> éliminée à la compilation </td></tr>
-	    <tr class="fragment"><td> CLASS </td><td> éliminée à l'exécution </td></tr>
-	    <tr class="fragment"><td> RUNTIME </td><td> préservée à l'exécution </td></tr>	      		
+	  <table border="0" width='100%'>
+	    <tr>
+	      <td width="30%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> SOURCE </div>
+		<div class="remark"> Eliminée à la compilation </div>
+		<div class="remark-2"> Traitement à la compilation (*) </div>
+		<div> <span style="font-size:70%">(*) JSR-269 </span> </div>
+	      </td>
+	      <td width="30%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> CLASS </div>
+		<div class="remark"> Eliminée à l'exécution </div>
+		<div class="remark-2"> Traitement du <br> code objet </div>
+	      </td>
+	      <td width="30%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> RUNTIME </div>
+		<div class="remark"> Préservée à l'exécution </div>
+		<div class="remark-2"> Traitement à l'exécution </div>
+	      </td>
+	    </tr>
 	  </table>
 
 	</section>
+
+	<section>
+	  <h3>Annotations Java :: En résumé</h3>
+
+	  <br>
+
+	  <p> Séparation Spécification & Traitement </p>
+
+	  <p> Traitement à la Compilation & Exécution </p>
+
+	</section>
+
+	<section>
+
+	  <img src="images/python-logo.png" width="60%" class="plain">
+
+	</section>	  
+
+	<section>
+	  <h3> Callable Python :: Définition </h3>
+
+	  <br>
+
+	  <table border="0" width='100%'>
+	    <tr>
+	      <td width="25%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> Fonction </div>
+		<div class="remark" style="font-size:70%"> Application </div>
+	      </td>
+	      <td width="25%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> Classe </div>
+		<div class="remark" style="font-size:70%"> Application </div>
+	      </td>
+	      <td width="25%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> Méthode </div>
+		<div class="remark" style="font-size:70%"> Application </div>
+	      </td>
+	      <td width="25%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> Instance </div>
+		<div class="remark" style="font-size:70%"> Méthode __call__ </div>
+	      </td>
+	    </tr>
+	  </table>
+
+	  <br>
+
+	  <p class="alert fragment"> <tt>__call__</tt> évoque le <tt>apply</tt> de Scala ! </p>
+
+	</section>	  
+
+	<section>
+	  <h3>Décorateurs Python :: Callable</h3>
+
+	  <img src="images/python-elements.png" width="50%" class="plain">
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Définition </h3>
+
+	  <div class="remark"> Callable qui prend pour argument un Callable </div>
+	  <div class="fragment remark-2"> Decorateur :: Callable &longrightarrow; Callable </div>
+
+	  <br>
+	  
+	  <p class="fragment"> Fonction d'ordre supérieur </p>
+	  <p class="fragment"> Composition de Décorateurs <span class="fragment">et Monoïde Commutatif</span></p>
+
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Fonction </h3>
+
+	  <pre><code data-noescape class="Python">
+ def tracer(f):
+     print("Trace active pour " + nom_de(f))         # &langle;1&rangle;
+
+
+
+
+
+     return f
+	  </code></pre>
+
+	  <br>
+
+	  <div class="alert"> &langle;1&rangle; à l'initialisation </div>
+	  
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Fonction </h3>
+
+	  <pre><code data-noescape class="Python">
+ def tracer(f):
+     print("Trace active pour " + nom_de(f))         # &langle;1&rangle;
+
+     def manipule_f(*args, **kwargs):                # Forme generale
+         print("Trace effective pour " + nom_de(f))  # &langle;2&rangle;
+         return f(*args, **kwargs)
+
+     return manipule_f
+	  </code></pre>
+
+	  <br>
+
+	  <div class="alert"> &langle;1&rangle; à l'initialisation et &langle;2&rangle; à chaque exécution </div>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: A l'Action </h3>
+
+	  <pre><code data-noescape class="Python">
+  def ma_fonction():
+      pass
+  
+  ma_fonction = tracer(ma_fonction)
+	  </code></pre>
+
+	  <br>
+
+	  <p class="fragment"> Un peu de sucre ? </p>
+
+	  <pre class="fragment"><code data-noescape class="Python">
+  @tracer
+  def ma_fonction():
+      pass
+	  </code></pre>
+	  
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Classe Callable </h3>
+
+	  <pre><code data-noescape class="Python">
+ class Tracer:
+     def __init__(self, f):
+         self.f = f
+         print("Trace active pour " + nom_de(self.f))     # &langle;1&rangle;
+
+
+
+
+	  </code></pre>
+
+	  <br>
+
+	  <div class="alert"> &langle;1&rangle; à l'initialisation </div>
+	  
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Classe Callable </h3>
+
+	  <pre><code data-noescape class="Python">
+ class Tracer: 
+     def __init__(self, f):
+         self.f = f
+         print("Trace active pour " + nom_de(self.f))     # &langle;1&rangle;
+
+     def __call__(f, *args, **kwargs):
+         print("Trace effective pour " + nom_de(self.f))  # &langle;2&rangle;
+         return self.f(*args, **kwargs)
+	  </code></pre>
+
+	  <br>
+
+	  <div class="alert"> &langle;1&rangle; à l'initialisation et &langle;2&rangle; à chaque exécution </div>
+	  
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: A l'Action </h3>
+
+	  <pre><code data-noescape class="Python">
+  def ma_fonction():
+      pass
+
+  @Tracer
+  def ma_fonction():
+      pass
+	  </code></pre>
+	  
+	  <br>
+	  
+	  <div class="alert fragment"> Décoration sans contexte i.e. paramètres </div>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Avec Paramètres </h3>
+
+	  <pre><code data-noescape class="Python">
+ class Tracer: 
+     def __init__(self, nom): 
+         self.nom = nom
+         print("Trace active pour " + nom) 
+
+
+
+
+
+
+
+
+
+	  </code></pre>
+
+	</section>
+
+
+	<section>
+	  <h3>Decorateurs Python :: Avec Paramètres </h3>
+
+	  <pre><code data-noescape class="Python">
+ class Tracer: 
+     def __init__(self, nom):
+         self.nom = nom
+         print("Trace active pour " + nom)
+
+     def __call__(self, f):
+         print("Trace active pour " + nom + "::" + nom_de(f)) 
+
+
+
+
+
+         return f
+	  </code></pre>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Avec Paramètres </h3>
+
+	  <pre><code data-noescape class="Python">
+ class Tracer: 
+     def __init__(self, nom):
+         self.nom = nom
+         print("Trace active pour " + nom)
+
+     def __call__(self, f):
+         print("Trace active pour " + nom + "::" + nom_de(f))
+
+         def manipule_f(*args, **kwargs):
+             print("Trace effective pour " + nom + "::" + nom_de(f))
+             return self.f(*args, **kwargs)
+
+         return manipule_f
+	  </code></pre>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: A l'Action </h3>
+
+	  <pre><code data-noescape class="Python"> 
+ def ma_fonction():
+      pass
+
+  ma_fonction = Tracer("Ma Fonction")(ma_fonction)
+	  </code></pre>
+	  
+	  <br>
+
+	  <p class="fragment"> Et rebelote avec le sucre ! </p>
+
+	  <pre class="fragment"><code data-noescape class="Python">
+  @Tracer("Ma Fonction")
+  def ma_fonction():
+      pass
+	  </code></pre>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Frameworks </h3>
+
+	  <img src="images/sqlalchemy-logo.jpeg" width="40%">
+
+	  <br>
+
+	  <img src="images/flask-logo.png" width="40%">
+
+	  <br>
+
+	  ...
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Extension du langage </h3>
+
+	  
+	  <pre><code data-noescape class="Python"> 
+ def Maybe:
+     def __init__(self, value=None):
+         self.value = value
+
+     @staticmethod
+     def none(): # pas de self ... car statique
+         return Maybe()
+
+     # ...
+	  </code></pre>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Extension du langage </h3>
+
+
+	  <pre><code data-noescape class="Python"> 
+ def Maybe:
+     def __init__(self, value=None):
+         self.value = value
+
+     @staticmethod
+     def none(): # pas de self ... car statique
+         return Maybe()
+
+     # ...
+	  </code></pre>
+
+	</section>
+
+	<section>
+	  <h3>Decorateurs Python :: Extension du langage </h3>
 	
-	<section>
-	  <h3>Annotations Java :: Traitement</h3>
+	  <pre><code data-noescape class="Python">
+	      o.m &Rightarrow; type(o).__dict__["m"].__get__(o, type(o))
+	  </code></pre>
+	  
+	  <pre class="fragment"><code data-noescape class="Python"> 
+ class StaticMethod(object):
+     def __init__(self, f):
+         self.f = f
 
-	  <div class="p">
-	    Cycle de vie avec le code
-	  </div>
+     def __get__(self, obj, objtype=None):
+         return self.f # Appel glouton: mange l'objet associé à self
+	  </code></pre>
 
-	  <br>
-
-	  <table>
-	    <tr class="fragment"><td> SOURCE </td><td> Support pour les IDEs </td></tr>
-	    <tr class="fragment"><td> CLASS </td><td> Complément à la compilation </td></tr>
-	    <tr class="fragment"><td> RUNTIME </td><td> Traitement introspectif </td></tr>	      		
-	  </table>
+	  <p class="remark fragment"> "Descriptor Protocol" pour aller plus loin ...
 
 	</section>
 
+	<section> 
+
+	  <h3> Décorateurs Ecmascript :: Séquelle </h3>
+	  
+<div  class="fragment">A   <b>Decorator</b>  is  an   expression  that
+evaluates  to  a  <b>function</b>  <span  class="fragment">applied  to
+the         <b>target</b>,          name         and         decorator
+descriptor.  <div  class="fragment"><br> <b>Optionally</b>  it returns
+a   <b>decorator    descriptor</b>   to   install   on    the   target
+object</div></span></div>
+	  
+	</section>
+
 	<section>
-	  <h3>Questions ?</h3>
+
+	  <img src="images/azathoth.jpg">
+
+	</section>
+
+	<section> 
+
+	  <h3> Approches différentes </h3>
+
+	  <table border="0" width='100%'>
+	    <tr>
+	      <td width="10%"/>
+	      <td width="35%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> Java </div>
+		<div class="remark"> Interface <br> Annotation <br> Traitement </div>
+	      </td>	      
+	      <td width="10%"/>
+	      <td width="35%" align="center" valign="middle" class="plain fragment">
+		<div class="title"> Python </div>
+		<div class="remark"> Callable <br> Décoration <br> Exécution </div>
+	      </td>
+	      <td width="10%"/>
+	    </tr>
+	  </table>	  
+	  	 
+	</section>
+
+	<section>
+	  <h3> Merci </h3>
+
+	  <br>
+
+	  <h4>Questions ?</h4>
 	</section>
 
       </div>
@@ -153,6 +560,8 @@
       progress: false,
       history: true,
       center: true,
+
+      slideNumber: true,
       
       transition: 'none', // none/fade/slide/convex/concave/zoom
       
