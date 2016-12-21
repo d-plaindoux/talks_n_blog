@@ -39,7 +39,7 @@ add(a:1)(2)
 Sweet Objective-C legacy!
 
 It's important to notice the difference between a function definition from an anonymous function. In the first
-case the each argument name is required when such argument name is prohibited when applying a closure. Why this 
+case each argument name is required when such argument name is prohibited when applying a closure. Why this 
 difference? Because of function redefinition principle in Swfit.
 
 ### Function redefinition 
