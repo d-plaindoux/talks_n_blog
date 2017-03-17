@@ -1,4 +1,4 @@
-# &eta;-conversion in Swift v3+
+# &eta;-conversion inconsistency in Swift v3+
 
 **Keywords** Fonctional paradigm, Swift v3+, Langage design, Expressiveness, &lambda;-calculus, &eta;-conversion
 
