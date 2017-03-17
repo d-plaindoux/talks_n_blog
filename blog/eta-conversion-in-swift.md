@@ -204,7 +204,7 @@ Finally the expressiveness is not the same when we manipulate functions or stati
 in a class. This implies an inconsistency in the design of this langage!
 
 As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
-overcome enabling function qualification with parameter names and hopefully such evolution 
+overcome enabling function qualification with parameter names. Hopefully such evolution 
 does not imply backward incompatibilities.
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
