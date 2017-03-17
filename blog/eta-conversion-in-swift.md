@@ -48,7 +48,7 @@ Each argument name can be defined or simply ignored. This is done adding a new n
 if we want to distinguish the argument name from the parameter name or`_` if we want to ignore this naming 
 convention.
 
-Then we can define `add`  without argument name using `_` facility.
+Then we can define `add`  without argument name using `_` convention.
 
 ```Swift
 func add(_ a: Int) -> (Int) -> Int {
@@ -69,8 +69,7 @@ Each function previously defined in the same scope has:
 - the same name i.e. `add`
 - and the same signature i.e. `Int -> Int -> Int`
 
-Therefor only argument names are differents. Based on these definition what can we learn and what can we do when
-we want to deal with &eta;-conversion? 
+Therefor only argument names are differents. Based on these definitions what can we do when we want to *deal* with the &eta;-conversion? 
 
 As mentioned in the introduction the &eta;-conversion stated &lambda;x.(f x) &longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f. This can be separated in two transformation rules:
 - &eta;-expansion stated f &longrightarrow;<sub>&eta;</sub> &lambda;x.(f x)
@@ -197,10 +196,12 @@ for expressiveness purpose. For instance *delegates* in iOS use this capability 
 method has the same semantic scope but with different contexts.
 
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
-want to use all transformation rules - mainly the &eta;-conversion - when the code is 
+want to apply all transformation rules - mainly the &eta;-conversion - when the code is 
 designed using functionnal programming approach because code simplification can't be
-applied everytime. Finally the expressiveness is not the same when we manipulate functions 
-or static methods in a class. This implies an inconsistency in the design of this langage!
+applied everytime. 
+
+Finally the expressiveness is not the same when we manipulate functions or static methods 
+in a class. This implies an inconsistency in the design of this langage!
 
 As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
 overcome enabling function qualification with parameter names and hopefully such evolution 
