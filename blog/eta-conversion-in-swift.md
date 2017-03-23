@@ -65,7 +65,7 @@ name.
 add(1)(2)
 ```
 
-## Lost in transformation!
+## Lost in reduction!
 
 Each function previously defined in the same scope has:
 - the same name i.e. `add`
