@@ -31,7 +31,7 @@ func add(a: Int) -> (Int) -> Int {
 }
 ```
 
-Then calling this function in Swift can be easily done but this requires the argument names as shown in 
+Then calling this function in Swift can be easily done but this requires the argument name as shown in 
 the following example.
 
 ```Swift
