@@ -5,6 +5,8 @@
 In this post we show how &eta;-conversion transformation rule can or cannot be applied in 
 Swift v3+ and what's the impact on the design and the expressiveness.
 
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
+
 ## Foundation
 
 The &lambda;-calculus is a formal system on application and abstraction expressions. A set of 
@@ -206,6 +208,3 @@ in a class. This implies an inconsistency in the design of this langage!
 As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
 overcome enabling function qualification with parameter names. Hopefully such evolution 
 does not imply backward incompatibilities.
-
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
-
