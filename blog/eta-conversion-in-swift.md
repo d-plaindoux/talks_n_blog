@@ -1,9 +1,11 @@
-# &eta;-conversion in Swift v3+
+# &eta;-conversion inconsistency in Swift v3+
 
-**Keywords** Fonctional paradigm, Swift v3+, Langage design, Expressiveness, &lambda;-calculus, &eta;-conversion
+**Keywords** Functional paradigm, Swift v3+, Langage design, Expressiveness, &lambda;-calculus, &eta;-conversion
 
 In this post we show how &eta;-conversion transformation rule can or cannot be applied in 
 Swift v3+ and what's the impact on the design and the expressiveness.
+
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
 ## Foundation
 
@@ -29,7 +31,7 @@ func add(a: Int) -> (Int) -> Int {
 }
 ```
 
-Then calling this function in Swift can be easily done but this requires the argument names as shown in 
+Then calling this function in Swift can be easily done but this requires the argument name as shown in 
 the following example.
 
 ```Swift
@@ -39,7 +41,7 @@ add(a:1)(2)
 Sweet Objective-C legacy!
 
 It's important to notice the difference between a function definition from an anonymous function. In the first
-case the each argument name is required when such argument name is prohibited when applying a closure. Why this 
+case each argument name is required when such argument name is prohibited when applying a closure. Why this 
 difference? Because of function redefinition principle in Swfit.
 
 ### Function redefinition 
@@ -48,7 +50,7 @@ Each argument name can be defined or simply ignored. This is done adding a new n
 if we want to distinguish the argument name from the parameter name or`_` if we want to ignore this naming 
 convention.
 
-Then we can define `add`  without argument name using `_` facility.
+Then we can define `add`  without argument name using `_` convention.
 
 ```Swift
 func add(_ a: Int) -> (Int) -> Int {
@@ -63,14 +65,13 @@ name.
 add(1)(2)
 ```
 
-## Lost in transformation!
+## Lost in reduction!
 
 Each function previously defined in the same scope has:
 - the same name i.e. `add`
 - and the same signature i.e. `Int -> Int -> Int`
 
-Therefor only argument names are differents. Based on these definition what can we learn and what can we do when
-we want to deal with &eta;-conversion? 
+Therefor only argument names are differents. Based on these definitions what can we do when we want to *deal* with the &eta;-conversion? 
 
 As mentioned in the introduction the &eta;-conversion stated &lambda;x.(f x) &longleftrightarrow;<sub>&eta;</sub> f whenever x does not appear free in f. This can be separated in two transformation rules:
 - &eta;-expansion stated f &longrightarrow;<sub>&eta;</sub> &lambda;x.(f x)
@@ -197,14 +198,13 @@ for expressiveness purpose. For instance *delegates* in iOS use this capability 
 method has the same semantic scope but with different contexts.
 
 Unfortunately the reverse of the medal is the difficulty of the expressiveness when we 
-want to use all transformation rules - mainly the &eta;-conversion - when the code is 
+want to apply all transformation rules - mainly the &eta;-conversion - when the code is 
 designed using functionnal programming approach because code simplification can't be
-applied everytime. Finally the expressiveness is not the same when we manipulate functions 
-or static methods in a class. This implies an inconsistency in the design of this langage!
+applied everytime. 
+
+Finally the expressiveness is not the same when we manipulate functions or static methods 
+in a class. This implies an inconsistency in the design of this langage!
 
 As a conclusion Swift is a young langage and we can hope this &eta;-conversion will be 
-overcome enabling function qualification with parameter names and hopefully such evolution 
+overcome enabling function qualification with parameter names. Hopefully such evolution 
 does not imply backward incompatibilities.
-
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
-
