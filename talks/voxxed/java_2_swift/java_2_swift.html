@@ -36,7 +36,7 @@
       font-size:70% !important;
       color:white;
       text-align:middle !important;
-      background-color:#446688;
+      background-color:#445566;
       padding: 1em 0em 1em 0em !important;
       Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
       }
@@ -101,23 +101,31 @@
 	  </div>
 	</section>
 
-	<section style="background:#2255AA">
+	<!-- section style="background:#2255AA">
 	  <div class="ribbon"><span>Avertissement</span></div>
 
 	  <h2 style="color:#FFFFFF">Attention <br> ce Tlak n'est pas <br> un Tlak sur <br> le devleoppement iOS</h2>
 
 	  <p style="color:#FFFFFF">Merci de votre compréhension</p>
-	</section>
+	</section -->
 
 	<section>
 	  <table>
 	    <tr>
-	      <td align="center"><b>Computer scientist</b></td>
 	      <td align="center"><b>Freelance</b></td>
+	      <td align="center"><b>Computer scientist</b></td>
 	    </tr>
 	    <tr>
-	      <td width="50%" align="center"><span style="font-size:700%">&lambda;</span></td>
-	      <td width="50%" align="center"><img class="plain" src="images/fungus.png" width='55%'></img></td>
+	      <td width="50%" align="center"><img class="plain" src="images/fungus.png" width='45%'></img></td>
+	      <td width="50%" align="center"><span style="font-size:500%">&lambda;</span></td>
+	    </tr>
+	  </table>
+	  <br>
+	  <table width="35%">
+	    <tr>
+	      <td align="center" style="background:white">
+		<img class="plain" style="background:white" src="images/devfest.png" width='80%'></img>
+	      </td>
 	    </tr>
 	  </table>
 	</section>
@@ -144,7 +152,6 @@
 	    <li><div class="fragment"> <b>v1.0</b>: Dévoilé durant la WWDC en 2014 </div> </li>
 	    <li><div class="fragment"> <b>v2.0</b>: Ouverture du compilateur en 2015</div> </li>
 	    <li><div class="fragment"> <b>v3.0</b>: Publication en septembre 2016</div> </li>
-	    <Li><div class="fragment"> <b>v3.1</b>: Publication fin mars 2017</div> </li>
 	    <li><div class="fragment"> <b>v4.0</b>: Publication prévue pour fin 2017</div> </li>
 	  </ul>
 	</section>
@@ -175,7 +182,7 @@
 	</section>
 	
 	<section>
-	  <h3> Exécuter Swift </h3>
+	  <h3> Exécuter avec Swift </h3>
 
 	  <table width='100%'>
 	    <tr>
@@ -204,7 +211,7 @@
 	</section>
 	
 	<section>
-	  <h3> Partager Swift </h3>
+	  <h3> Partager avec Swift </h3>
 
 	  <table width='100%'>
 	    <tr>
@@ -219,7 +226,7 @@
 		Carthage
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="fragment">
-		<img width="72%" class="plain" src="images/swift.png"></img>
+		<img width="73%" class="plain" src="images/swift.png"></img>
 		<br>
 		Swift Package
 	      </td>
@@ -234,17 +241,26 @@
 	  <table width='100%'>
 	    <tr>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
-		<div class="remark"> Orienté Objet </div>
 		<div class="title"> Objective-C<br>C# </div>
+		<div class="remark"> Orienté Objet </div>
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
-		<div class="remark"> Fonctionnel </div>
 		<div class="title"> Haskell<br>OCaml </div>
+		<div class="remark"> Fonctionnel </div>
 	      </td>
 	      <td width="33%" align="center" valign="middle" class="plain fragment">
-		<div class="remark"> Expressivité </div>
 		<div class="title"> Ruby<br>Python </div>
+		<div class="remark"> Expressivité </div>
 	      </td>
+	    </tr>
+	  </table>
+
+	  <table width='100%'>
+	    <tr>
+	      <td width="66%" align="center" valign="middle" class="plain fragment">
+		<div class="remark"> Système de typage </div>
+	      </td>
+	      <td width="33%" align="center" valign="middle" class="plain"></td>
 	    </tr>
 	  </table>
 	</section>
@@ -401,30 +417,14 @@ public class Personne {
 	  </code></pre>
 	</section>
 
-	<section>
-	  <h3> Une structure Swift </h3>
-	  <pre><code style="font-size:80%"  data-trim data-noescape class="Swift">
-public struct Personne {
-  let nom:String
-  var age:Int
-
-  public mutating func anniversaire() {
-    self.age += 1
-  }
-}
-	  </code></pre>
-	</section>
-
 	<!-- Données et Types initiaux -->
 
-	<section data-transition="zoom">
+	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
-	  <p style="opacity:0.15"> Données, Types initiaux, Contrôle </p>
-	  <p style="opacity:0.15"> Le Fonctionnel </p>
-	  <p style="opacity:0.10"> Les Objets </p>
+	  <h3> Survol du langage </h3>
 	</section>
 
-	<section data-transition="none">
+	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
 	  <h3> Données, Types initiaux, Contrôle </h3>
 	  <p style="opacity:0.10"> Le Fonctionnel </p>
@@ -513,7 +513,7 @@ let t:Int? =
     n?.characters.count 
 
 if let taille = t { 
-   // cas taille &ne; nil &#x1F60F; 
+   // cas taille &ne; nil &#x1F60F;  
 }
 		  </code></pre>
 		</td>
@@ -603,14 +603,14 @@ guard let valeur = expression else {
 
 	<!-- Les Fonctions -->
 
-	<section data-transition="zoom">
+	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
 	  <p style="opacity:0.15"> Données, Types initiaux etc.</p>
 	  <h3> Le Fonctionnel </h3>
 	  <p style="opacity:0.15"> Les Objets </p>
 	</section>
 	
-	<section data-transition="none">
+	<section>
 	    <h3> Type Fonctionnel </h3>
 
 	    <table width="100%">
@@ -624,11 +624,11 @@ Consumer&lt;A>
 Predicate&lt;A>
 ...
 		  </code></pre>
-<center style="font-size:40%">"Execution in the Kingdom of Nouns" - S. Yegge</center>
+<center style="font-size:60%">"Execution in the Kingdom of Nouns" <br> S. Yegge</center>
 		</td>
 		<td class="fragment">
 		  <h5>Swift</h5>
-		  <pre><code style="font-size:80%"  data-trim data-noescape class="swift"> 
+		  <pre><code style="font-size:80%" data-trim data-noescape class="swift"> 
 (A) -> B 
 ()  -> B
 (A) -> ()
@@ -736,7 +736,7 @@ multiplier(2, par:3)
 	</section>
 			
 	<section>
-	    <h3> Fonction anonyme :: Closure </h3>
+	    <h3> Fonction :: Closure </h3>
 
 	    <table width="100%">
 	      <tr>
@@ -765,7 +765,7 @@ multiplier(2, par:3)
 	</section>
 
 	<section>
-	    <h3> Closure :: Exemples </h3>
+	    <h3> Closure :: Exemple </h3>
 
 	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
 let multiplier = { (a:Int, b:Int) -> Int in a * b }
@@ -805,23 +805,19 @@ let multiplier = { a,b in a * b }
 	</section>
 
 	<section>
-	    <h3> Closure :: Synthèse de Type ! </h3>
+	    <h3> Closure :: Vérification de Type </h3>
 
 	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
 let multiplier : (Int,Int) -> Int = { a,b in a * b }
 	    </code></pre>
 
 	    <div style="font-size:70%">
-	      Spécification vs. Mise en oeuvre
+	      Spécification et Mise en oeuvre séparées
 	    </div>	    
 	</section>
 
 	<section>
 	    <h3> Fonction :: Ordre Supérieur </h3>
-
-	    <div style="font-size:70%">
-	      Fonction qui manipule une fonction
-	    </div>
 
 	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
 func appliquer(_ f:(Int) -> Int, _ a:Int) -> Int {
@@ -831,10 +827,18 @@ func appliquer(_ f:(Int) -> Int, _ a:Int) -> Int {
 // appliquer(f,a) &longrightarrow;* f(a)
 	    </Code></pre>
 
+	    <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+func curry(_ f:@escaping (Int,Int) -> Int) -> (Int) -> (Int) -> Int {
+  return { a in { b in f(a,b) } }
+}
+
+// f(1,2) &equiv; curry(f)(1)(2)
+	    </Code></pre>
+
 	    <br>
 
 	    <div class="alert fragment" style="font-size:70%">
-	      Forme  restreinte au type <tt>Int &rightarrow; Int</tt> !
+	      Forme  restreinte au type <tt>Int</tt> !
 	    </div>
 
 	</section>
@@ -901,7 +905,7 @@ f &rArr; { x in f(x) }
 	      </td>
 	      <td>
 		<div style="font-size:70%" class="alert">
-		  &nbsp;  &eta;-expansion mais pas &eta;-reduction
+		  &nbsp;  &eta;-expansion mais pas de &eta;-reduction
 		</div>	    
 	      </td>
 	    </tr>
@@ -911,18 +915,17 @@ f &rArr; { x in f(x) }
 
 	<!-- LES OBJETS -->
 
-	<section data-transition="zoom">
+	<section>
 	  <img class="plain" width="15%" src="images/swift.png">	  
 	  <p style="opacity:0.10"> Données, Types initiaux etcs. </p>
 	  <p style="opacity:0.15"> Le Fonctionnel </p>
 	  <h3> Les Objets </h3>
 	</section>
 
-	<section data-transition="none">
-	  <div class="remark">
-	    <h2>Ecole Scandinave</h2>
-	    <p> Simula, C++, Objective-C, Eiffel, Java, C# ... <b> Swift </b> </p>
-	  </div>
+	<section>
+	  <h2>école Scandinave</h2>
+	  <p> Simula, C++, Objective-C, Eiffel, Java, C# ... <b> Swift </b> </p>
+
 	  <p style="font-size:70%">Abstraction de donnée &leftrightarrow; Classe &leftrightarrow; Type</p>
 	  <p style="font-size:70%">Repose sur un Typage Statique</p>
 	</section>
@@ -980,7 +983,7 @@ f &rArr; { x in f(x) }
 	  
 	  <ul>
 	    <li> Base de connaissances	</li>
-	    <li> Extension de Protocoles </li>
+	    <li> Extension<sup>2</sup> de Protocoles </li>
 	  </ul>
 
 	</section>
@@ -989,8 +992,8 @@ f &rArr; { x in f(x) }
 	  <h3> Protocole :: Base de connaissances </h3>
 	  
 	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-public protocol Monde {
-  func vivants() -> [Personne]
+protocol Population {
+  func elements() -> [Personne]
   func recherche(nom:String) -> Personne?
 }
 	    </code></pre>	  
@@ -1001,9 +1004,9 @@ public protocol Monde {
 	  <h3> Protocole :: Mise en oeuvre </h3>	 
 	  
 	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-extension Monde {
+extension Population {
   func recherche(nom:String) -> Personne? {
-     return vivants().filter{ p in p.nom == nom }.first
+     return elements().filter{ p in p.nom == nom }.first
   }
 }
 	  </code></pre>	  
@@ -1024,10 +1027,10 @@ extension Monde {
 	  <h3> Protocole :: Généricité </h3>	 
 
 	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-protocol Copiable {
+protocol Ensemble {
   associatedtype E
   
-  <span class="fragment">func copier&lt;C:Copiable where C.E == E>() -> C // 0_o </span>
+  <span class="fragment">func elements() -> [E] </span>
 }
 	  </Code></pre>	  
 
@@ -1040,22 +1043,20 @@ protocol Copiable {
 	</section>
 
 	<section>
-	  <h3> Protocole :: Spécialisation </h3>	 
+	  <h3> Protocole :: Extension & Spécialisation </h3>	 
 
 	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-public class Personne: Copiable {
+protocol Population: Ensemble {
   typealias E = Personne
   
-  func copier() -> Personne {
-     // ...
-  }
+  func recherche(nom:String) -> Personne?
 }
 	  </Code></pre>	  
 
 	  <br>
 
 	  <div class="alert fragment">
-	    Spécialisation par le <tt>typealias</tt> 
+	    Spécification de la spécialisation par le <tt>typealias</tt> 
 	  </div>	
 
 	</section>
@@ -1075,7 +1076,7 @@ public class Personne: Copiable {
 	<section>
 	  <h3> Classe :: Etat interne & Initialisation </h3>
 	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-public class Personne {
+publi class Personne {
   private let nom:String
   private var age:Int
 
@@ -1115,7 +1116,7 @@ public class Personne {
 	    </code></pre>
 
 	    <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
-let personne:Personne? = Personne(nom:"John Doe", age:-1)
+let personne:Personne? = Personne(nom:"John Doe", age:-1) // i.e. nil
 	    </code></pre>
 
 	</section>
@@ -1201,6 +1202,7 @@ let personne2 = personne1
 	  <ul>
 	    <li> Etat interne
 	    <li> Base de connaissances	  
+	    <li> Pas d'héritage 
 	    <li> Mise en oeuvre de Protocoles
 	  </ul>
 
@@ -1270,11 +1272,12 @@ public enum StadePersonne {
 	  </Code></pre>	  	  
 
 	  <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
-let s : StadePersonne = ...
+let s : StadePersonne = .Adolescent
+
 switch s {
-  case StadePersonne.Enfant: // ...
-  case StadePersonne.Adolescent: // ...
-  case StadePersonne.Adulte: // ...
+  case .Enfant: // ...
+  case .Adolescent: // ...
+  case .Adulte: // ...
 }
 	  </Code></pre>	  	  
 
@@ -1361,7 +1364,7 @@ protocol Copiable {
 	    </table>	    
 	    
 	    <div class="fragment" style="font-size:70%">
-	      Self type vs. F-Bounded quantification polymorphism
+	      F-Bounded quantification polymorphism vs. Self type
 	    </div>
 
 	</section>
@@ -1386,7 +1389,7 @@ class Personne : Copiable {
 	  </Code></pre>	  
 
 	    <div style="font-size:70%" class="fragment">
-	      <tt>required</tt> force la définition dans les sous-classes
+	      <u>required</u> force l'existence dans les sous-classes
 	    </div>	
 
 	</section>
@@ -1413,52 +1416,33 @@ class Personne {
 	  </Code></pre>	  
 
 	    <div style="font-size:70%" class="fragment">
-	      Cela me rappelle furieusement le <tt>new</tt> de Perl !
+	      Le <tt>new</tt> de Perl ? Presque !
 	    </div>		  
 
 	</section>
 
 	<section> 
 	  <img class="plain" width="15%" src="images/swift.png">	  
-
 	  <h3>Pour aller un peu plus loin !</h3> 
 	</section>
 
 	<section> 
 	  <h3>Programmation orientée Protocol</h3> 
 	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-&plusb; protocol Personne { ... }
-&plusb; extension Personne { ... }
-<span class="fragment">&plusb; extension Personne : Equatable { ... }</span>
-<span class="fragment">&plusb; extension Personne where Self : Equatable { ... }</span>
+&plusb; protocol Individu { ... }
+&plusb; extension Individu { ... }
+<span class="fragment">&plusb; extension Individu : Externalisable { ... }</span>
+<span class="fragment">&plusb; extension Individu where Self : Externalisable { ... }</span>
 	  </code></pre>	  	  
 
-	    <div style="font-size:70%" class="fragment remark">
-	      "Cake Pattern" de Scala ...
-	    </div>		  
-	</section>
+	  <br>
 
-	<section> 
-	  <h3>Associated type</h3> 
-	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-protocol Factory { 
-  associatedtype E     
-  func new() -> E 
-} 
-
-protocol C { 
-  init() 
-} 
-
-class B&lt;R:C> : Factory {  
-  typealias E = R 
-  <span class="fragment">func new() -> E { return E() }</span>
-} 
-	  </code></pre>	  	  
-
-	    <div style="font-size:70%" class="fragment remark">
-	      Comparaison avec la réification de type ?
-	    </div>		  
+	  <div style="font-size:70%" class="fragment remark">
+	    "Cake Pattern" de Scala
+	  </div>
+	  <div style="font-size:70%" class="fragment remark">
+	    Composition de protocol en Swift 4.0 i.e. <tt> Type & Type </tt>
+	  </div>		  
 	</section>
 
 	<section> 
@@ -1467,6 +1451,7 @@ class B&lt;R:C> : Factory {
 	    <li> Gestion des erreurs </li>
 	    <li> Structure & Mutation </li>
 	    <li> Notion de module </li>
+	    <li> Protocole et "Associated Type"</li>
 	    <li> etc ... </li>
 	</section>
 
@@ -1481,7 +1466,7 @@ class B&lt;R:C> : Factory {
 	</section>
 	
 	<section> 
-	  <h3> Merci </h3>
+	  <h2> Questions ? </h2>
 	</section>	
 
 	<script src="lib/js/head.min.js"></script>
@@ -1491,7 +1476,7 @@ class B&lt;R:C> : Factory {
 	  // More info https://github.com/hakimel/reveal.js#configuration
 	  Reveal.initialize({
           controls: false,
-          progress: true,
+          progress: false,
           history: true,
           center: true,
 	  slideNumber: true,
