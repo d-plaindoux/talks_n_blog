@@ -15,7 +15,7 @@ $ source $HOME/.cargo/env
 $ rustup update
 ```
 
-This command is helpful if you want to keep in touch with the latest release done every one or two monthes.
+This command is helpful if you want to keep in touch with the latest release done every one or two months.
 
 ## IDE
 
@@ -39,7 +39,7 @@ $ cargo new <name> [--bin]
 
 This command creates a new project named with the given name. Like `swift` package manager you can ask for binary or a library with the `--bin` switch.
 
-This command creates a directory with the given **name**. If you want to to create it in the existing directory you should use **init** instead. Of course the name is not required otherwise the result is the same `new`.
+This command creates a directory with the given **name**. If you want to to create it in the existing directory you should use **init** instead. Of course the name is not required otherwise the result is the same as the `new` command.
 
 ```sh
 $ cargo init [--bin]
