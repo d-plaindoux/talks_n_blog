@@ -1,8 +1,0 @@
-s0 ::=
-   "let" IDENT "=" Exp
-
-Exp ::= 
-   IDENT* "->" Exp
-   Exp Exp
-   "(" Exp ")"
-      
