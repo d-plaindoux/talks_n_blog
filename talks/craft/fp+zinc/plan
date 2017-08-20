@@ -1,0 +1,29 @@
+---
+
+s0 ::=
+   "let" IDENT "=" Exp
+   "native" IDENT = TDB
+
+Exp ::= 
+   "{" IDENT* "in" Exp "}"	// { Exp } == { () -> Exp }
+   Exp Exp    	       	     	// Application
+   "(" Exp ")"
+   NUMBER 
+   STRING
+   [ (IDENT : Exp)* ]		// Record
+ 
+---
+
+Parser -> AST
+AST -> AST De Bruinj 
+AST De Bruinj -> Javascript => Perf + Tail recursion
+AST De Bruinj -> ZINC => Perf + Tail recursion + GC Perspective
+
+--- 
+
+Implementation en Javascript / Compilation à la volée
+Utilisation dans le cadre d'une application réelle ?
+
+---
+
+
