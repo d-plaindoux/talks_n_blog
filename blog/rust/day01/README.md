@@ -51,7 +51,7 @@ $ cargo init [--bin]
 ```
 
 For instance `cargo new hello` creates a project named **hello** containing
-- a **Cargo.tmml** file
+- a **Cargo.toml** file
 - a **src** directory and
 - a **src/lib.rs** test file.
 
