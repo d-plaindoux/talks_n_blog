@@ -19,17 +19,22 @@ This command is helpful if you want to keep in touch with the latest release don
 
 ## IDE
 
-Since I'm already using JetBrain IDEs for Java, Scala, Python, Javascript and Swift the conclusion is trivial: lets use it for rust! Of course if
-your are reluctant to use such IDE feel free to use [Vim](https://github.com/rust-lang/rust.vim), [Emacs](https://github.com/rust-lang/rust-mode), [Atom](https://atom.io/packages/language-rust) or
-finally any editor supporting the [Rust Language Server](https://github.com/rust-lang-nursery/rls).
+Since I'm already using JetBrain IDEs for Java, Scala, Python, Javascript and Swift the conclusion is trivial: lets use it for rust! Of course if your are reluctant to use such IDE feel free to use **Vim**, **Emacs**, **Atom** or finally any editor supporting the **Language Protocol Server** like **Rust Language Server**.
 
-Links: [JetBrains Rust plugin](https://intellij-rust.github.io)
+Links:
+- [JetBrains Rust plugin](https://intellij-rust.github.io)
+- [Vim Rust plugin](https://github.com/rust-lang/rust.vim)
+- [Emacs Rust plugin](https://github.com/rust-lang/rust-mode)
+- [Atom Rust plugin](https://atom.io/packages/language-rust)
+- [Language Protocol Server](https://github.com/Microsoft/language-server-protocol)
+- [Rust Language Server](https://github.com/rust-lang-nursery/rls)
 
 ## Rust project management with Cargo
 
 First a Rust project can be created and managed using `cargo`. Like `sbt`, `maven`, `gradle`, `yarn` or `swift` it's a project and a package manager.
 
-Links: [Cargo Guide](http://doc.crates.io/guide.html)
+Links:
+- [Cargo Guide](http://doc.crates.io/guide.html)
 
 ### Creating a new project
 
