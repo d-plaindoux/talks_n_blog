@@ -5,13 +5,14 @@ s0 ::=
    "native" IDENT = TDB
 
 Exp ::= 
-   "{" IDENT* "in" Exp "}"	// { Exp } == { () -> Exp }
-   Exp Exp    	       	     	// Application
+   Exp Exp*    	       	   
+
+SExp ::= 
+   IDENT+ "=>" SExp 	         
    "(" Exp ")"
    NUMBER 
    STRING
-   [ (IDENT : Exp)* ]		// Record
- 
+
 ---
 
 Parser -> AST
