@@ -1,5 +1,4 @@
----
-
+```
 s0 ::=
    "let" IDENT "=" Exp
    "native" IDENT = TDB
@@ -12,8 +11,7 @@ SExp ::=
    "(" Exp ")"
    NUMBER 
    STRING
-
----
+```
 
 Parser -> AST
 AST -> AST De Bruinj 
