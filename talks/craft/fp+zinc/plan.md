@@ -1,22 +1,23 @@
+Grammar definition of **fun.js** langage:
 ```
 s0 ::=
-   "let" IDENT "=" Exp
-   "native" IDENT = TDB
+   "def" IDENT SExp
+   Exp
 
 Exp ::= 
-   Exp Exp*    	       	   
+   SExp+    	       	   
 
 SExp ::= 
-   IDENT+ "=>" SExp 	         
+   IDENT+ "->" SExp 	         
    "(" Exp ")"
    NUMBER 
    STRING
+   "native" STRING
 ```
-
-Parser -> AST
-AST -> AST De Bruinj 
-AST De Bruinj -> Javascript => Perf + Tail recursion
-AST De Bruinj -> ZINC => Perf + Tail recursion + GC Perspective
+Step 1 Parser -> AST
+Step 2 AST -> AST De Bruinj 
+Step 3 AST De Bruinj -> Javascript => Perf + Tail recursion
+Step 4 AST De Bruinj -> ZINC => Perf + Tail recursion + GC Perspective
 
 --- 
 
