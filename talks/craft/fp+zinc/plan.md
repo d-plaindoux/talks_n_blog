@@ -15,7 +15,7 @@ SExp ::=
    "(" Exp ")"
    NUMBER 
    STRING
-   "native" STRING
+   "native" STRING NUMBER
 ```
 
 Example:
