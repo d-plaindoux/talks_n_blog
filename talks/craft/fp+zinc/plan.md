@@ -18,6 +18,15 @@ SExp ::=
    "native" STRING
 ```
 
+Example:
+```
+def add native "add"
+def ONE 1 
+def increment (add ONE)
+
+increment 41
+```
+
 Steps:
 * Parser -> AST
 * AST -> AST De Bruinj 
