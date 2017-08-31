@@ -14,10 +14,12 @@ SExp ::=
    STRING
    "native" STRING
 ```
-Step 1 Parser -> AST
-Step 2 AST -> AST De Bruinj 
-Step 3 AST De Bruinj -> Javascript => Perf + Tail recursion
-Step 4 AST De Bruinj -> ZINC => Perf + Tail recursion + GC Perspective
+
+Steps:
+* Parser -> AST
+* AST -> AST De Bruinj 
+* AST De Bruinj -> Javascript => Perf + Tail recursion
+* AST De Bruinj -> ZINC => Perf + Tail recursion + GC Perspective
 
 --- 
 
