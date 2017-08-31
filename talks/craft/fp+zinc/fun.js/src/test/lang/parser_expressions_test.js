@@ -52,8 +52,8 @@ export default {
 
     'parse native': function(test) {
         test.expect(1);
-        test.deepEqual(parser.expression(stream.ofString('native "+"')).value,
-                       terms.native('+'),
+        test.deepEqual(parser.expression(stream.ofString('native "+" 2')).value,
+                       terms.native('+', 2),
                        'should accept native.');
         test.done();
     },
@@ -132,8 +132,8 @@ export default {
 
     'parse native in a block': function(test) {
         test.expect(1);
-        test.deepEqual(parser.expression(stream.ofString('(native "+")')).value,
-                       terms.native('+'),
+        test.deepEqual(parser.expression(stream.ofString('(native "+" 2)')).value,
+                       terms.native('+', 2),
                        'should accept native in a block.');
         test.done();
     },

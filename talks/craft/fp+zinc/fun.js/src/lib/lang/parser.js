@@ -44,7 +44,9 @@ function abstraction() {
 // unit -> Parser Expression Token
 function native() {
     return tkKeyword('native').drop()
-        .then(tkString.map(terms.native));
+        .then(tkString)
+        .then(tkNumber)
+        .map(t => terms.native(t[0], t[1]));
 }
 
 // unit -> Parser Expression Token

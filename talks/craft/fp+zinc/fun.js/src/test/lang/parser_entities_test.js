@@ -56,7 +56,7 @@ export default {
         test.deepEqual(parser.entities(stream.ofString('Identity 42 def Identity x -> x')).value.array(),
                        [ entities.main(terms.application(terms.ident('Identity'),terms.constant(42))),
                          entities.definition('Identity',terms.abstraction('x', terms.ident('x'))) ],
-                       'should accept identity definition.');
+                       'should accept identity and an application defintions.');
         test.done();
     },
 }

@@ -28,10 +28,11 @@ class Ident extends Expression {
 }
 
 class Native extends Expression {
-    // String -> Expression
-    constructor(name) {
+    // String, Number -> Expression
+    constructor(name, arity) {
         super();
         this.name = name;
+        this.arity = arity
     }
 
     // Visitor 'a -> 'a
