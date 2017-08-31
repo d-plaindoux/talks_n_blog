@@ -1,6 +1,9 @@
 Grammar definition of **fun.js** langage:
 ```
 s0 ::=
+   definition*
+
+definition ::=
    "def" IDENT SExp
    Exp
 
