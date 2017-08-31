@@ -1,18 +1,17 @@
----
-
+```
 s0 ::=
    "let" IDENT "=" Exp
    "native" IDENT = TDB
 
 Exp ::= 
-   "{" IDENT* "in" Exp "}"	// { Exp } == { () -> Exp }
-   Exp Exp    	       	     	// Application
+   Exp Exp*    	       	   
+
+SExp ::= 
+   IDENT+ "=>" SExp 	         
    "(" Exp ")"
    NUMBER 
    STRING
-   [ (IDENT : Exp)* ]		// Record
- 
----
+```
 
 Parser -> AST
 AST -> AST De Bruinj 
