@@ -5,8 +5,10 @@
  * Licensed under the LGPL2 license.
  */
 
-import parserTest from './lang/parser_test'
+import parserExpressionsTest from './lang/parser_expressions_test'
+import parserEntitiesTest from './lang/parser_entities_test'
 
 export {
-    parserTest
+    parserExpressionsTest,
+    parserEntitiesTest
 }

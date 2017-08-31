@@ -1,5 +1,5 @@
 /*
- * .js
+ * fun.js
  * https://github.com/d-plaindoux/talks_n_blog/blob/master/talks/craft/fp%2Bzinc/.js
  *
  * Copyright (c) 2017 Didier Plaindoux
@@ -21,6 +21,20 @@ class Ident extends Expression {
         this.name = name;
     }
 
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.ident(this);
+    }
+}
+
+class Native extends Expression {
+    // String -> Expression
+    constructor(name) {
+        super();
+        this.name = name;
+    }
+
+    // Visitor 'a -> 'a
     visit(visitor) {
         return visitor.ident(this);
     }
@@ -33,6 +47,7 @@ class Constant extends Expression {
         this.value = value;
     }
 
+    // Visitor 'a -> 'a
     visit(visitor) {
         return visitor.constant(this);
     }
@@ -46,6 +61,7 @@ class Application extends Expression {
         this.argument = argument;
     }
 
+    // Visitor 'a -> 'a
     visit(visitor) {
         return visitor.application(this);
     }
@@ -59,6 +75,7 @@ class Abstraction extends Expression {
         this.body = body;
     }
 
+    // Visitor 'a -> 'a
     visit(visitor) {
         return visitor.abstraction(this);
     }
@@ -67,6 +84,7 @@ class Abstraction extends Expression {
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
+    native: c => new Native(c),
     application: (f,a) => new Application(f,a),
     abstraction: (v,b) => new Abstraction(v,b)
 }
