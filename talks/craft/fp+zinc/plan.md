@@ -20,7 +20,7 @@ SExp ::=
 
 Example:
 ```
-def add native "add"
+def add native "add" 2
 def ONE 1 
 def increment (add ONE)
 
