@@ -1,6 +1,6 @@
 import { stream } from 'parser-combinator';
 import parser from '../../lib/lang/parser';
-import terms from '../../lib/lang/terms';
+import ast from '../../lib/lang/ast';
 
 /*
  ======== A Handy Little Nodeunit Reference ========
@@ -29,7 +29,7 @@ export default {
     'parse number': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('42')).value,
-                       terms.constant(42),
+                       ast.constant(42),
                        'should accept number.');
         test.done();
     },
@@ -37,7 +37,7 @@ export default {
     'parse string': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('"42"')).value,
-                       terms.constant('42'),
+                       ast.constant('42'),
                        'should accept string.');
         test.done();
     },
@@ -45,7 +45,7 @@ export default {
     'parse character': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("'4'")).value,
-                       terms.constant('4'),
+                       ast.constant('4'),
                        'should accept character.');
         test.done();
     },
@@ -53,7 +53,7 @@ export default {
     'parse native': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('native "+" 2')).value,
-                       terms.native('+', 2),
+                       ast.native('+', 2),
                        'should accept native.');
         test.done();
     },
@@ -61,7 +61,7 @@ export default {
     'parse ident': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("anIdent")).value,
-                       terms.ident('anIdent'),
+                       ast.ident('anIdent'),
                        'should accept ident.');
         test.done();
     },
@@ -69,7 +69,7 @@ export default {
     'parse identity abstraction': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("a -> a")).value,
-                       terms.abstraction('a',terms.ident('a')),
+                       ast.abstraction('a',ast.ident('a')),
                        'should accept abstraction.');
         test.done();
     },
@@ -77,7 +77,7 @@ export default {
     'parse true abstraction': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("a b -> a ")).value,
-                       terms.abstraction('a',terms.abstraction('b',terms.ident('a'))),
+                       ast.abstraction('a',ast.abstraction('b',ast.ident('a'))),
                        'should accept abstraction.');
         test.done();
     },
@@ -85,7 +85,7 @@ export default {
     'parse simple application': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("a b")).value,
-                       terms.application(terms.ident('a'), terms.ident('b')),
+                       ast.application(ast.ident('a'), ast.ident('b')),
                        'should accept application.');
         test.done();
     },
@@ -93,7 +93,7 @@ export default {
     'parse simple left associativity': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("a b c")).value,
-                       terms.application(terms.application(terms.ident('a'), terms.ident('b')), terms.ident('c')),
+                       ast.application(ast.application(ast.ident('a'), ast.ident('b')), ast.ident('c')),
                        'should accept application.');
         test.done();
     },
@@ -101,7 +101,7 @@ export default {
     'parse simple right associativity': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("a (b c)")).value,
-                       terms.application(terms.ident('a'), terms.application(terms.ident('b'), terms.ident('c'))),
+                       ast.application(ast.ident('a'), ast.application(ast.ident('b'), ast.ident('c'))),
                        'should accept application.');
         test.done();
     },
@@ -109,7 +109,7 @@ export default {
     'parse number in block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('(42)')).value,
-                       terms.constant(42),
+                       ast.constant(42),
                        'should accept number.');
         test.done();
     },
@@ -117,7 +117,7 @@ export default {
     'parse string in block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('("42")')).value,
-                       terms.constant('42'),
+                       ast.constant('42'),
                        'should accept string.');
         test.done();
     },
@@ -125,7 +125,7 @@ export default {
     'parse character in block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("('4')")).value,
-                       terms.constant('4'),
+                       ast.constant('4'),
                        'should accept character.');
         test.done();
     },
@@ -133,7 +133,7 @@ export default {
     'parse native in a block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('(native "+" 2)')).value,
-                       terms.native('+', 2),
+                       ast.native('+', 2),
                        'should accept native in a block.');
         test.done();
     },
@@ -141,7 +141,7 @@ export default {
     'parse ident in a block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("(anIdent)")).value,
-                       terms.ident('anIdent'),
+                       ast.ident('anIdent'),
                        'should accept ident in a block.');
         test.done();
     },
@@ -149,7 +149,7 @@ export default {
     'parse identity abstraction in a block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("(a -> a)")).value,
-                       terms.abstraction('a',terms.ident('a')),
+                       ast.abstraction('a',ast.ident('a')),
                        'should accept abstraction in a block.');
         test.done();
     },
@@ -157,7 +157,7 @@ export default {
     'parse true abstraction in a block': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("(a b -> a)")).value,
-                       terms.abstraction('a',terms.abstraction('b',terms.ident('a'))),
+                       ast.abstraction('a',ast.abstraction('b',ast.ident('a'))),
                        'should accept abstraction in a block.');
         test.done();
     },

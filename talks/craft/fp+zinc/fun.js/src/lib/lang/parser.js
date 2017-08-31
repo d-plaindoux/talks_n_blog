@@ -7,8 +7,7 @@
  */
 
 import { genlex as GLex, F as Flow } from 'parser-combinator';
-import entities from './entities';
-import terms from './terms';
+import ast from './ast';
 
 //
 // Facilities
@@ -22,10 +21,10 @@ const tkNumber = GLex.token.parser.number,
 
 // unit -> Parser Expression Token
 function atom() {
-    return (tkNumber.map(terms.constant))
-        .or(tkString.map(terms.constant))
-        .or(tkChar.map(terms.constant))
-        .or(tkIdent.map(terms.ident));
+    return (tkNumber.map(ast.constant))
+        .or(tkString.map(ast.constant))
+        .or(tkChar.map(ast.constant))
+        .or(tkIdent.map(ast.ident));
 }
 
 // unit -> Parser Expression Token
@@ -36,7 +35,7 @@ function abstraction() {
             var term = t[1];
             t[0].array()
                 .reverse()
-                .forEach(a => term = terms.abstraction(a, term));
+                .forEach(a => term = ast.abstraction(a, term));
             return term;
         });
 }
@@ -46,7 +45,7 @@ function native() {
     return tkKeyword('native').drop()
         .then(tkString)
         .then(tkNumber)
-        .map(t => terms.native(t[0], t[1]));
+        .map(t => ast.native(t[0], t[1]));
 }
 
 // unit -> Parser Expression Token
@@ -69,7 +68,7 @@ function expression() {
     return simpleExpression().then(simpleExpression().optrep())
         .map(t => {
             var term = t[0];
-            t[1].array().forEach(a => term = terms.application(term, a));
+            t[1].array().forEach(a => term = ast.application(term, a));
             return term;
         });
 }
@@ -79,13 +78,13 @@ function definition() {
     return tkKeyword('def').drop()
         .then(tkIdent)
         .then(simpleExpression())
-        .map(t => entities.definition(t[0], t[1]));
+        .map(t => ast.definition(t[0], t[1]));
 }
 
 // unit -> Parser [Entity] Token
 function definitions() {
     return definition()
-        .or(expression().map(entities.main))
+        .or(expression().map(ast.main))
         .optrep();
 }
 

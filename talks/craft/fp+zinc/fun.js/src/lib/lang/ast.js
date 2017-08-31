@@ -82,10 +82,49 @@ class Abstraction extends Expression {
     }
 }
 
+// -----------------------------------------------------------------------------
+
+class /*abstract*/ Entity {
+    constructor() {
+        if (this.constructor.name === Entity.name) {
+            throw new TypeError("Abstract class");
+        }
+    }
+}
+
+class Definition extends Entity {
+    // String -> Expression
+    constructor(name, expression) {
+        super();
+        this.name = name;
+        this.expression = expression;
+    }
+
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.definition(this);
+    }
+}
+
+class Main extends Entity {
+    // String -> Expression
+    constructor(expression) {
+        super();
+        this.expression = expression;
+    }
+
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.main(this);
+    }
+}
+
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
     native: c => new Native(c),
     application: (f,a) => new Application(f,a),
-    abstraction: (v,b) => new Abstraction(v,b)
+    abstraction: (v,b) => new Abstraction(v,b),
+    definition: (n,e) => new Definition(n,e),
+    main: e => new Main(e)
 }
