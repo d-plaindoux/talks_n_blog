@@ -10,8 +10,8 @@ import astDB from './ast-debruijn';
 
 class Transformer {
 
-    constructor() {
-        this.variables = [];
+    constructor(variables) {
+        this.variables = variables;
     }
 
     definition(d) {
@@ -29,7 +29,7 @@ class Transformer {
             return astDB.ident(i.name);
         }
 
-        return astDB.variable(index);
+        return astDB.variable(index + 1);
     }
 
     constant(c) {
@@ -45,13 +45,13 @@ class Transformer {
     }
 
     abstraction(a) {
-        const newVariables = [a.name].concat(this.variables),
+        const newVariables = [a.variable].concat(this.variables),
               newTransformer = new Transformer(newVariables);
 
-        return astDB.abstraction(a.abstraction.visit(this), a.argument.visit(newTransformer));
+        return astDB.abstraction(a.body.visit(newTransformer));
     }
 }
 
-export default {
-    toDeBruijn: e => e.visit(new Transformer())
+export default function(e) {
+    return e.visit(new Transformer([]));
 }

@@ -8,7 +8,7 @@
 
 class /*abstract*/ DBExpression {
     constructor() {
-        if (this.constructor.name === DBDBExpression.name) {
+        if (this.constructor.name === DBExpression.name) {
             throw new TypeError("Abstract class");
         }
     }
@@ -96,15 +96,15 @@ class Variable extends DBExpression {
 
 // -----------------------------------------------------------------------------
 
-class /*abstract*/ Entity {
+class /*abstract*/ DBEntity {
     constructor() {
-        if (this.constructor.name === Entity.name) {
+        if (this.constructor.name === DBEntity.name) {
             throw new TypeError("Abstract class");
         }
     }
 }
 
-class Definition extends Entity {
+class Definition extends DBEntity {
     // String -> Expression
     constructor(name, expression) {
         super();
@@ -118,7 +118,7 @@ class Definition extends Entity {
     }
 }
 
-class Main extends Entity {
+class Main extends DBEntity {
     // String -> Expression
     constructor(expression) {
         super();
@@ -136,7 +136,7 @@ export default {
     constant: c => new Constant(c),
     native: c => new Native(c),
     application: (f,a) => new Application(f,a),
-    abstraction: (v,b) => new Abstraction(b),
+    abstraction: (b) => new Abstraction(b),
     variable: n => new Variable(n),
     definition: (n,e) => new Definition(n,e),
     main: e => new Main(e)
