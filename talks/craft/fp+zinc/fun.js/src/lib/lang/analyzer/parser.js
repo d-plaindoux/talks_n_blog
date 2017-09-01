@@ -8,6 +8,7 @@
 
 import { genlex as GLex, F as Flow } from 'parser-combinator';
 import ast from './ast';
+import '../../extensions/array'
 
 //
 // Facilities
@@ -31,13 +32,7 @@ function atom() {
 function abstraction() {
     return Flow.try(tkIdent.rep().then(tkKeyword('->').drop()))
         .then(Flow.lazy(expression))
-        .map(t => {
-            var term = t[1];
-            t[0].array()
-                .reverse()
-                .forEach(a => term = ast.abstraction(a, term));
-            return term;
-        });
+        .map(t => t[0].array().foldRight(ast.abstraction, t[1]));
 }
 
 // unit -> Parser Expression Token
@@ -66,11 +61,7 @@ function simpleExpression() {
 // unit -> Parser Expression Token
 function expression() {
     return simpleExpression().then(simpleExpression().optrep())
-        .map(t => {
-            var term = t[0];
-            t[1].array().forEach(a => term = ast.application(term, a));
-            return term;
-        });
+        .map(t => t[1].array().foldLeft(t[0], ast.application));
 }
 
 // unit -> Parser Entity Token

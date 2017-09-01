@@ -6,10 +6,6 @@
  * Licensed under the LGPL2 license.
  */
 
-import parser from "./lang/parser";
-import terms from "./lang/terms";
-
 export default {
-    parser,
-    terms
+    // TODO
 }

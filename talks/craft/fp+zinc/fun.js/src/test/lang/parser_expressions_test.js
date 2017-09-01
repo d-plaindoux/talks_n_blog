@@ -1,6 +1,6 @@
 import { stream } from 'parser-combinator';
-import parser from '../../lib/lang/parser';
-import ast from '../../lib/lang/ast';
+import parser from '../../lib/lang/analyzer/parser';
+import ast from '../../lib/lang/analyzer/ast';
 
 /*
  ======== A Handy Little Nodeunit Reference ========

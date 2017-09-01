@@ -1,6 +1,6 @@
-import ast from '../../lib/lang/ast';
-import astDB from '../../lib/lang/ast-debruijn';
-import toDeBruijn from '../../lib/lang/debruijn.js'
+import ast from '../../lib/lang/analyzer/ast';
+import astDB from '../../lib/lang/compiler/ast-debruijn';
+import toDeBruijn from '../../lib/lang/compiler/debruijn.js'
 
 /*
  ======== A Handy Little Nodeunit Reference ========
