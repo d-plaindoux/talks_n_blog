@@ -73,10 +73,72 @@ class Constant extends Objcode {
 
 }
 
+class Ident extends Objcode {
+
+    // Number -> Objcode
+    constructor(name) {
+        super();
+        this.name = name;
+    }
+
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.ident(this);
+    }
+
+}
+
+class Native extends Objcode {
+    // String, Number -> Objcode
+    constructor(name) {
+        super();
+        this.name = name;
+    }
+
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.native(this);
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+
+class Definition extends Objcode {
+    // String, Objcode -> Objcode
+    constructor(name, code) {
+        super();
+        this.name = name;
+        this.code = code;
+    }
+
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.definition(this);
+    }
+}
+
+class Main extends Objcode {
+    // Objcode -> Objcode
+    constructor(code) {
+        super();
+        this.code = code;
+    }
+
+    // Visitor 'a -> 'a
+    visit(visitor) {
+        return visitor.main(this);
+    }
+}
+
 export default {
     access: (i) => new Access(i),
     closure: (i) => new Closure(i),
     returns: new Returns(),
     apply: new Apply(),
-    constant: (c) => new Constant(c)
+    ident: (c) => new Ident(c),
+    constant: (c) => new Constant(c),
+    native: (n) => new Native(n),
+    definition: (n,e) => new Definition(n,e),
+    main: (e) => new Main(e)
 }

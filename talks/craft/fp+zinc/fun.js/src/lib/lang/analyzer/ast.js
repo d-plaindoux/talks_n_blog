@@ -32,12 +32,12 @@ class Native extends Expression {
     constructor(name, arity) {
         super();
         this.name = name;
-        this.arity = arity
+        this.arity = arity;
     }
 
     // Visitor 'a -> 'a
     visit(visitor) {
-        return visitor.ident(this);
+        return visitor.native(this);
     }
 }
 
@@ -122,7 +122,7 @@ class Main extends Entity {
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
-    native: c => new Native(c),
+    native: (n,a) => new Native(n,a),
     application: (f,a) => new Application(f,a),
     abstraction: (v,b) => new Abstraction(v,b),
     definition: (n,e) => new Definition(n,e),

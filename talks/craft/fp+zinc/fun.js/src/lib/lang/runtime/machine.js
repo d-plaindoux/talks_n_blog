@@ -6,15 +6,13 @@
  * Licensed under the LGPL2 license.
  */
 
+ import native from "./native"
+
 class Machine {
 
     constructor() {
         this.heap = {};
         this.init([]);
-    }
-
-    define(name, code) {
-        this.heap[name] = code;
     }
 
     init(code) {
@@ -67,6 +65,36 @@ class Machine {
 
     constant(m) {
         this.stack.unshift(m);
+    }
+
+    ident(i) {
+        this.stack.unshift(this.heap[i.name]);
+    }
+
+    native(n) {
+        this.stack.unshift(native[n.name](this.env.slice()));
+    }
+
+    //
+    // Entities
+    //
+
+    definition(d) {
+        const result = this.execute(d.code);
+        this.heap[d.name] = result;
+        return result;
+    }
+
+    main(m) {
+        return this.execute(m.code);
+    }
+
+    //
+    // Main entry for entities management
+    //
+
+    manage(e) {
+        return e.visit(this);
     }
 }
 

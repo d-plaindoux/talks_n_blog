@@ -7,6 +7,7 @@
  */
 
 import astObjcode from './ast-objcode';
+import '../../extensions/array'
 
 class Generator {
 
@@ -15,11 +16,15 @@ class Generator {
     }
 
     definition(d) {
-        return []; // astDB.definition(d.name, d.expression.visitor(this));
+        return astObjcode.definition(d.name, d.expression.visit(this));
     }
 
     main(m) {
-        return []; // astDB.main(d.expression.visitor(this));
+        return astObjcode.main(m.expression.visit(this));
+    }
+
+    ident(i) {
+        return [ astObjcode.ident(i.name) ];
     }
 
     variable(i) {
@@ -31,7 +36,10 @@ class Generator {
     }
 
     native(n) {
-        return []; // astObjcode.native(n.name, n.arity);
+        return [...Array(n.arity)].foldLeft(
+            [ astObjcode.native(n.name) ],
+            (code) => [ astObjcode.closure(code.concat(astObjcode.returns)) ]
+        );
     }
 
     application(a) {

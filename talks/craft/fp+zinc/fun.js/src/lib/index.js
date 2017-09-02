@@ -6,8 +6,8 @@
  * Licensed under the LGPL2 license.
  */
 
-
+import fun from './toplevel/fun'
 
 export default {
-    // TODO
+    fun
 }

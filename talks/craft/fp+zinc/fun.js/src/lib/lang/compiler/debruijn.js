@@ -15,11 +15,11 @@ class Transformer {
     }
 
     definition(d) {
-        return astDB.definition(d.name, d.expression.visitor(this));
+        return astDB.definition(d.name, d.expression.visit(this));
     }
 
     main(m) {
-        return astDB.main(d.expression.visitor(this));
+        return astDB.main(m.expression.visit(this));
     }
 
     ident(i) {
@@ -37,7 +37,7 @@ class Transformer {
     }
 
     native(n) {
-        return astDB.native(n.name, n.arity);
+        return astDB.native(n.name,n.arity);
     }
 
     application(a) {

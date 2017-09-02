@@ -32,12 +32,12 @@ class Native extends DBExpression {
     constructor(name, arity) {
         super();
         this.name = name;
-        this.arity = arity
+        this.arity = arity;
     }
 
     // Visitor 'a -> 'a
     visit(visitor) {
-        return visitor.ident(this);
+        return visitor.native(this);
     }
 }
 
@@ -105,7 +105,7 @@ class /*abstract*/ DBEntity {
 }
 
 class Definition extends DBEntity {
-    // String -> Expression
+    // String, DBEntity -> DBEntity
     constructor(name, expression) {
         super();
         this.name = name;
@@ -119,7 +119,7 @@ class Definition extends DBEntity {
 }
 
 class Main extends DBEntity {
-    // String -> Expression
+    // DBEntity -> DBEntity
     constructor(expression) {
         super();
         this.expression = expression;
@@ -134,7 +134,7 @@ class Main extends DBEntity {
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
-    native: c => new Native(c),
+    native: (n,a) => new Native(n,a),
     application: (f,a) => new Application(f,a),
     abstraction: (b) => new Abstraction(b),
     variable: n => new Variable(n),

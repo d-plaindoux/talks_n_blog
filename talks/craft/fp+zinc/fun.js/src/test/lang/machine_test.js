@@ -1,36 +1,20 @@
 import { stream, data } from 'parser-combinator';
-import parser from "../../lib/lang/analyzer/parser";
-import toDeBruijn from "../../lib/lang/compiler/debruijn";
-import toObjcode from "../../lib/lang/compiler/objcode";
-import runtime from "../../lib/lang/runtime/machine";
+import parser from '../../lib/lang/analyzer/parser';
+import toDeBruijn from '../../lib/lang/compiler/debruijn';
+import toObjcode from '../../lib/lang/compiler/objcode';
+import machine from '../../lib/lang/runtime/machine';
 
-import astObjcode from "../../lib/lang/compiler/ast-objcode";
-
-/*
- ======== A Handy Little Nodeunit Reference ========
- https://github.com/caolan/nodeunit
- Test methods:
- test.expect(numAssertions)
- test.done()
- Test assertions:
- test.ok(value, [message])
- test.equal(actual, expected, [message])
- test.notEqual(actual, expected, [message])
- test.deepEqual(actual, expected, [message])
- test.notDeepEqual(actual, expected, [message])
- test.strictEqual(actual, expected, [message])
- test.notStrictEqual(actual, expected, [message])
- test.throws(block, [error], [message])
- test.doesNotThrow(block, [error], [message])
- test.ifError(value)
- */
+import astObjcode from '../../lib/lang/compiler/ast-objcode';
 
 function repl(source) {
-    return parser.expression(stream.ofString(source))
+    return parser.entities(stream.ofString(source))
         .toTry()
-        .map(toDeBruijn)
-        .map(toObjcode)
-        .map(runtime.execute.bind(runtime)); // o_O
+        .map(l =>
+            l.array()
+             .map(toDeBruijn)
+             .map(toObjcode)
+             .map(machine.manage.bind(machine))  // o_O
+        );
 }
 
 export default {
@@ -40,25 +24,43 @@ export default {
 
     'execute a constant': function(test) {
         test.expect(1);
-        test.deepEqual(repl("42"),
-                       data.atry.success(astObjcode.constant(42)),
+        test.deepEqual(repl('42'),
+                       data.atry.success([ astObjcode.constant(42) ]),
                        'execute a constant.');
         test.done();
     },
 
     'execute an abstraction': function(test) {
         test.expect(1);
-        test.deepEqual(repl("a -> a"),
-                       data.atry.success([ [ astObjcode.access(1), astObjcode.returns ], [] ]),
+        test.deepEqual(repl('a -> a'),
+                       data.atry.success([ [[ astObjcode.access(1), astObjcode.returns ], []] ]),
                        'execute a constant.');
         test.done();
     },
 
-    'execute an application': function(test) {
+    'execute a definition': function(test) {
         test.expect(1);
-        test.deepEqual(repl("(a -> a) 42"),
-                       data.atry.success(astObjcode.constant(42)),
-                       'execute a constant.');
+        test.deepEqual(repl('def ID a -> a'),
+                       data.atry.success([ [[ astObjcode.access(1), astObjcode.returns ], []] ]),
+                       'execute a definition.');
+        test.done();
+    },
+
+    'execute an applied definition': function(test) {
+        test.expect(1);
+        repl('def ID (a -> a)');
+        test.deepEqual(repl('ID 42'),
+                       data.atry.success([ astObjcode.constant(42) ]),
+                       'execute an applied definition.');
+        test.done();
+    },
+
+    'execute an applied native definition': function(test) {
+        test.expect(1);
+        repl('def add native "add" 2');
+        test.deepEqual(repl('add 41 1'),
+                       data.atry.success([ astObjcode.constant(42) ]),
+                       'execute an applied definition.');
         test.done();
     },
 
