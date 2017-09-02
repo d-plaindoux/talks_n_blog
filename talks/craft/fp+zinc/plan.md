@@ -15,12 +15,12 @@ SExp ::=
    "(" Exp ")"
    NUMBER 
    STRING
-   "native" STRING
+   "native" STRING NUMBER
 ```
 
 Example:
 ```
-def add a b -> native "add"
+def add native "add" 2
 def ONE 1 
 def increment (add ONE)
 
