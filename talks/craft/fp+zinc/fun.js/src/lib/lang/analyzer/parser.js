@@ -8,17 +8,18 @@
 
 import { genlex as GLex, F as Flow } from 'parser-combinator';
 import ast from './ast';
+
 import '../../extensions/array'
 
 //
-// Facilities
+// Facilities provided by the generic lexer library
 //
 
 const tkNumber = GLex.token.parser.number,
       tkString = GLex.token.parser.string,
       tkChar = GLex.token.parser.char,
       tkIdent = GLex.token.parser.ident,
-      tkKeyword = s => GLex.token.parser.keyword.match(s);
+      tkKeyword = s => GLex.token.parser.keyword.match(s).drop();
 
 // unit -> Parser Expression Token
 function atom() {
@@ -30,14 +31,15 @@ function atom() {
 
 // unit -> Parser Expression Token
 function abstraction() {
-    return Flow.try(tkIdent.rep().then(tkKeyword('->').drop()))
+    // A B -> ... == A -> (B -> ...)
+    return Flow.try(tkIdent.rep().then(tkKeyword('->')))
         .then(Flow.lazy(expression))
         .map(t => t[0].array().foldRight(ast.abstraction, t[1]));
 }
 
 // unit -> Parser Expression Token
 function native() {
-    return tkKeyword('native').drop()
+    return tkKeyword('native')
         .then(tkString)
         .then(tkNumber)
         .map(t => ast.native(t[0], t[1]));
@@ -45,9 +47,9 @@ function native() {
 
 // unit -> Parser Expression Token
 function block() {
-    return tkKeyword('(').drop()
+    return tkKeyword('(')
         .then(Flow.lazy(expression))
-        .then(tkKeyword(')').drop());
+        .then(tkKeyword(')'));
 }
 
 // unit -> Parser Expression Token
@@ -60,13 +62,14 @@ function simpleExpression() {
 
 // unit -> Parser Expression Token
 function expression() {
+    // A B ... == (A B) ...
     return simpleExpression().then(simpleExpression().optrep())
         .map(t => t[1].array().foldLeft(t[0], ast.application));
 }
 
 // unit -> Parser Entity Token
 function definition() {
-    return tkKeyword('def').drop()
+    return tkKeyword('def')
         .then(tkIdent)
         .then(simpleExpression())
         .map(t => ast.definition(t[0], t[1]));
@@ -89,9 +92,9 @@ function lexer(parser) {
 
 export default {
     expression: (source) => {
-        return lexer(expression()).parse(source);
+        return lexer(expression()).then(Flow.eos.drop()).parse(source);
     },
     entities: (source) => {
-        return lexer(definitions()).thenLeft(Flow.eos).parse(source);
+        return lexer(definitions()).then(Flow.eos.drop()).parse(source);
     }
 };

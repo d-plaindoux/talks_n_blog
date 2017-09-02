@@ -8,9 +8,13 @@
 import parserExpressionsTest from './lang/parser_expressions_test'
 import parserEntitiesTest from './lang/parser_entities_test'
 import deBruijnTest from './lang/debruijn_test'
+import objcodeTest from './lang/objcode_test'
+import machineTest from './lang/machine_test'
 
 export {
     parserExpressionsTest,
     parserEntitiesTest,
-    deBruijnTest
+    deBruijnTest,
+    objcodeTest,
+    machineTest
 }

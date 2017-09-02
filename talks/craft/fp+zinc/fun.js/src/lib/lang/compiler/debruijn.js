@@ -41,7 +41,7 @@ class Transformer {
     }
 
     application(a) {
-        return astDB.abstraction(a.abstraction.visit(this), a.argument.visit(this));
+        return astDB.application(a.abstraction.visit(this), a.argument.visit(this));
     }
 
     abstraction(a) {
