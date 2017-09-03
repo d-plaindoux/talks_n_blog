@@ -1,10 +1,18 @@
-import { stream } from 'parser-combinator';
+import { stream, data } from 'parser-combinator';
 import parser from '../../lib/lang/analyzer/parser';
 import ast from '../../lib/lang/analyzer/ast';
 
 export default {
     setUp: function(done) {
         done();
+    },
+
+    'parse unit': function(test) {
+        test.expect(1);
+        test.deepEqual(parser.expression(stream.ofString('()')).value,
+                       ast.constant(data.unit),
+                       'should accept unit.');
+        test.done();
     },
 
     'parse number': function(test) {
@@ -82,6 +90,14 @@ export default {
     'parse simple right associativity': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString("a (b c)")).value,
+                       ast.application(ast.ident('a'), ast.application(ast.ident('b'), ast.ident('c'))),
+                       'should accept application.');
+        test.done();
+    },
+
+    'parse simple right associativity using $': function(test) {
+        test.expect(1);
+        test.deepEqual(parser.expression(stream.ofString("a $ b c")).value,
                        ast.application(ast.ident('a'), ast.application(ast.ident('b'), ast.ident('c'))),
                        'should accept application.');
         test.done();

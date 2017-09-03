@@ -6,7 +6,8 @@
  * Licensed under the LGPL2 license.
  */
 
- import native from "./native"
+import { data } from 'parser-combinator';
+import native from "./native";
 
 class Machine {
 
@@ -25,10 +26,14 @@ class Machine {
         this.init(code)
 
         while (this.code.length > 0) {
-            this.code.shift().visit(this);
+            try {
+                this.code.shift().visit(this);
+            } catch (e) {
+                return data.atry.failure(e);
+            }
         }
 
-        return this.stack.shift();
+        return data.atry.success(this.stack.shift());
     }
 
     access(i) {
@@ -80,9 +85,8 @@ class Machine {
     //
 
     definition(d) {
-        const result = this.execute(d.code);
-        this.heap[d.name] = result;
-        return result;
+        return this.execute(d.code)
+            .onSuccess(result => this.heap[d.name] = result);
     }
 
     main(m) {
@@ -93,9 +97,11 @@ class Machine {
     // Main entry for entities management
     //
 
-    manage(e) {
+    eval(e) {
         return e.visit(this);
     }
 }
 
-export default new Machine();
+
+// Factory :: unit -> Machine
+export default () => new Machine();

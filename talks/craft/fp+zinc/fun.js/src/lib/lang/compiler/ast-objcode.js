@@ -104,7 +104,15 @@ class Native extends Objcode {
 
 // -----------------------------------------------------------------------------
 
-class Definition extends Objcode {
+class /*abstract*/ EntityObjcode {
+    constructor() {
+        if (this.constructor.name === EntityObjcode.name) {
+            throw new TypeError("Abstract class");
+        }
+    }
+}
+
+class Definition extends EntityObjcode {
     // String, Objcode -> Objcode
     constructor(name, code) {
         super();
@@ -118,7 +126,7 @@ class Definition extends Objcode {
     }
 }
 
-class Main extends Objcode {
+class Main extends EntityObjcode {
     // Objcode -> Objcode
     constructor(code) {
         super();

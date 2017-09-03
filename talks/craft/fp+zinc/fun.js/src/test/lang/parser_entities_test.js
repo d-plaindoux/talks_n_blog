@@ -25,7 +25,7 @@ export default {
 
     'parse main definition': function(test) {
         test.expect(1);
-        test.deepEqual(parser.entities(stream.ofString('(x -> x) 42')).value.array(),
+        test.deepEqual(parser.entities(stream.ofString('do (x -> x) 42')).value.array(),
                        [ ast.main(ast.application(ast.abstraction('x',ast.ident('x')),ast.constant(42))) ],
                        'should accept identity definition.');
         test.done();
@@ -33,9 +33,9 @@ export default {
 
     'parse multiple definitions': function(test) {
         test.expect(1);
-        test.deepEqual(parser.entities(stream.ofString('Identity 42 def Identity x -> x')).value.array(),
-                       [ ast.main(ast.application(ast.ident('Identity'),ast.constant(42))),
-                         ast.definition('Identity',ast.abstraction('x', ast.ident('x'))) ],
+        test.deepEqual(parser.entities(stream.ofString('def Identity x -> x do Identity 42')).value.array(),
+                       [ ast.definition('Identity',ast.abstraction('x', ast.ident('x'))),
+                         ast.main(ast.application(ast.ident('Identity'),ast.constant(42))) ],
                        'should accept identity and an application defintions.');
         test.done();
     },

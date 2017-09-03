@@ -6,7 +6,7 @@
  * Licensed under the LGPL2 license.
  */
 
-import { genlex as GLex, F as Flow } from 'parser-combinator';
+import { genlex as GLex, F as Flow, data } from 'parser-combinator';
 import ast from './ast';
 
 import '../../extensions/array'
@@ -26,7 +26,8 @@ function atom() {
     return (tkNumber.map(ast.constant))
         .or(tkString.map(ast.constant))
         .or(tkChar.map(ast.constant))
-        .or(tkIdent.map(ast.ident));
+        .or(tkIdent.map(ast.ident))
+        .or(Flow.try(tkKeyword('(').then(tkKeyword(')')).map(_ => ast.constant(data.unit))));
 }
 
 // unit -> Parser Expression Token
@@ -52,12 +53,18 @@ function block() {
         .then(tkKeyword(')'));
 }
 
+function endblock() {
+    return tkKeyword('$')
+        .then(Flow.lazy(expression));
+}
+
 // unit -> Parser Expression Token
 function simpleExpression() {
     return abstraction()
         .or(native())
         .or(atom())
-        .or(block());
+        .or(block())
+        .or(endblock());
 }
 
 // unit -> Parser Expression Token
@@ -71,21 +78,26 @@ function expression() {
 function definition() {
     return tkKeyword('def')
         .then(tkIdent)
-        .then(simpleExpression())
+        .then(expression())
         .map(t => ast.definition(t[0], t[1]));
+}
+
+function main() {
+    return tkKeyword('do')
+        .then(expression().map(ast.main));
 }
 
 // unit -> Parser [Entity] Token
 function definitions() {
     return definition()
-        .or(expression().map(ast.main))
+        .or(main())
         .optrep();
 }
 
 // Parser a' Token -> Parser a' char
 function lexer(parser) {
     return GLex.genlex
-            .generator(['def', 'native', '->', '(', ')'])
+            .generator(['def', 'do', 'native', '->', '(', ')', '$'])
             .tokenBetweenSpaces(GLex.token.builder)
             .chain(parser);
 }
