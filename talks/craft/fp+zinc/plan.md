@@ -1,7 +1,7 @@
 Steps:
 * Grammar presentation
 * Parser -> AST
-* AST -> AST De Bruijn
+* AST -> AST avec les indexes de De Bruijn
 * AST De Bruinj -> ZINC
 
 --- 
