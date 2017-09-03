@@ -9,8 +9,8 @@ s0 ::=
    definition*
 
 definition ::=
-   "def" IDENT SExp
-   Exp
+   "def" IDENT Exp
+   "do" Exp
 
 Exp ::= 
    SExp+    	       	   
@@ -37,7 +37,7 @@ def fact a -> (cond (equal a 0)
                     (_ -> 1)
                     (_ -> mult a $ fact $ minus a 1) ())
 
-fact 6
+do fact 6
 ```
 
 ## License
