@@ -99,11 +99,11 @@ class Machine {
     //
 
     definition(d) {
-        return this.execute(d.code).onSuccess(r => this.definitions[d.name] = r);
+        return this.execute(d.expression).onSuccess(r => this.definitions[d.name] = r);
     }
 
     main(m) {
-        return this.execute(m.code);
+        return this.execute(m.expression);
     }
 
     //

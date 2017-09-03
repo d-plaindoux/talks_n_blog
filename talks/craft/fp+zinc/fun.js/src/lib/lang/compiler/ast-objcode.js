@@ -6,6 +6,8 @@
  * Licensed under the LGPL2 license.
  */
 
+import astDB from "./ast-debruijn"
+
 class /*abstract*/ Objcode {
     constructor() {
         if (this.constructor.name === Objcode.name) {
@@ -102,43 +104,6 @@ class Native extends Objcode {
 
 }
 
-// -----------------------------------------------------------------------------
-
-class /*abstract*/ EntityObjcode {
-    constructor() {
-        if (this.constructor.name === EntityObjcode.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
-
-class Definition extends EntityObjcode {
-    // String, Objcode -> Objcode
-    constructor(name, code) {
-        super();
-        this.name = name;
-        this.code = code;
-    }
-
-    // Visitor 'a -> 'a
-    visit(visitor) {
-        return visitor.definition(this);
-    }
-}
-
-class Main extends EntityObjcode {
-    // Objcode -> Objcode
-    constructor(code) {
-        super();
-        this.code = code;
-    }
-
-    // Visitor 'a -> 'a
-    visit(visitor) {
-        return visitor.main(this);
-    }
-}
-
 export default {
     access: (i) => new Access(i),
     closure: (i) => new Closure(i),
@@ -147,6 +112,6 @@ export default {
     ident: (c) => new Ident(c),
     constant: (c) => new Constant(c),
     native: (n) => new Native(n),
-    definition: (n,e) => new Definition(n,e),
-    main: (e) => new Main(e)
+    definition: astDB.definition,
+    main: astDB.main
 }

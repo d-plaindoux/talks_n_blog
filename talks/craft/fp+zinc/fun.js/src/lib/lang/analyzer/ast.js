@@ -83,8 +83,10 @@ class Abstraction extends Expression {
 }
 
 // -----------------------------------------------------------------------------
+// Generic entity definition
+// -----------------------------------------------------------------------------
 
-class /*abstract*/ Entity {
+class /*abstract*/ Entity /* 'a */ {
     constructor() {
         if (this.constructor.name === Entity.name) {
             throw new TypeError("Abstract class");
@@ -92,7 +94,7 @@ class /*abstract*/ Entity {
     }
 }
 
-class Definition extends Entity {
+class Definition extends Entity /* 'a */ {
     // String -> Expression
     constructor(name, expression) {
         super();
@@ -100,20 +102,20 @@ class Definition extends Entity {
         this.expression = expression;
     }
 
-    // Visitor 'a -> 'a
+    // Visitor 'b -> 'b
     visit(visitor) {
         return visitor.definition(this);
     }
 }
 
-class Main extends Entity {
+class Main extends Entity /* 'a */ {
     // String -> Expression
     constructor(expression) {
         super();
         this.expression = expression;
     }
 
-    // Visitor 'a -> 'a
+    // Visitor 'b -> 'b
     visit(visitor) {
         return visitor.main(this);
     }

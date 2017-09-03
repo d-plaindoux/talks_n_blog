@@ -6,16 +6,18 @@
  * Licensed under the LGPL2 license.
  */
 
-class /*abstract*/ DBExpression {
+import ast from "../analyzer/ast"
+
+class /*abstract*/ DeBruijnExpression {
     constructor() {
-        if (this.constructor.name === DBExpression.name) {
+        if (this.constructor.name === DeBruijnExpression.name) {
             throw new TypeError("Abstract class");
         }
     }
 }
 
-class Ident extends DBExpression {
-    // String -> DBExpression
+class Ident extends DeBruijnExpression {
+    // String -> DeBruijnExpression
     constructor(name) {
         super();
         this.name = name;
@@ -27,8 +29,8 @@ class Ident extends DBExpression {
     }
 }
 
-class Native extends DBExpression {
-    // String, Number -> DBExpression
+class Native extends DeBruijnExpression {
+    // String, Number -> DeBruijnExpression
     constructor(name, arity) {
         super();
         this.name = name;
@@ -41,8 +43,8 @@ class Native extends DBExpression {
     }
 }
 
-class Constant extends DBExpression {
-    // Number|String|Char -> DBExpression
+class Constant extends DeBruijnExpression {
+    // Number|String|Char -> DeBruijnExpression
     constructor(value) {
         super();
         this.value = value;
@@ -54,8 +56,8 @@ class Constant extends DBExpression {
     }
 }
 
-class Application extends DBExpression {
-    // Abstraction, DBExpression -> DBExpression
+class Application extends DeBruijnExpression {
+    // Abstraction, DeBruijnExpression -> DeBruijnExpression
     constructor(abstraction, argument) {
         super();
         this.abstraction = abstraction;
@@ -68,8 +70,8 @@ class Application extends DBExpression {
     }
 }
 
-class Abstraction extends DBExpression {
-    // String, DBExpression -> DBExpression
+class Abstraction extends DeBruijnExpression {
+    // String, DeBruijnExpression -> DeBruijnExpression
     constructor(body) {
         super();
         this.body = body;
@@ -81,8 +83,8 @@ class Abstraction extends DBExpression {
     }
 }
 
-class Variable extends DBExpression {
-    // String -> DBExpression
+class Variable extends DeBruijnExpression {
+    // String -> DeBruijnExpression
     constructor(index) {
         super();
         this.index = index;
@@ -94,43 +96,6 @@ class Variable extends DBExpression {
     }
 }
 
-// -----------------------------------------------------------------------------
-
-class /*abstract*/ DBEntity {
-    constructor() {
-        if (this.constructor.name === DBEntity.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
-
-class Definition extends DBEntity {
-    // String, DBEntity -> DBEntity
-    constructor(name, expression) {
-        super();
-        this.name = name;
-        this.expression = expression;
-    }
-
-    // Visitor 'a -> 'a
-    visit(visitor) {
-        return visitor.definition(this);
-    }
-}
-
-class Main extends DBEntity {
-    // DBEntity -> DBEntity
-    constructor(expression) {
-        super();
-        this.expression = expression;
-    }
-
-    // Visitor 'a -> 'a
-    visit(visitor) {
-        return visitor.main(this);
-    }
-}
-
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
@@ -138,6 +103,6 @@ export default {
     application: (f,a) => new Application(f,a),
     abstraction: (b) => new Abstraction(b),
     variable: n => new Variable(n),
-    definition: (n,e) => new Definition(n,e),
-    main: e => new Main(e)
+    definition: ast.definition,
+    main: ast.main
 }

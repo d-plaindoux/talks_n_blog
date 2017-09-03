@@ -3,9 +3,7 @@ import astEval from '../../lib/lang/runtime/ast-eval';
 import engineFactory from '../../lib/lang/toplevel/evaluator'
 
 function destruct(r) {
-    return r.onFailure(e => { throw e; })
-            .success().map(a => a.onFailure(e => { throw e; })
-                                 .success());
+    return r.onFailure(e => { throw e; }).success();
 }
 
 export default {
