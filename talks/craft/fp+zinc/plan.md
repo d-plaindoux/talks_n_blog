@@ -2,8 +2,7 @@ Steps:
 * Grammar presentation
 * Parser -> AST
 * AST -> AST De Bruinj 
-* AST De Bruinj -> Javascript => Perf + Tail recursion
-* AST De Bruinj -> ZINC => Perf + Tail recursion + GC Perspective
+* AST De Bruinj -> ZINC
 
 --- 
 
