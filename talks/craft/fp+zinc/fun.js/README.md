@@ -28,9 +28,9 @@ SExp ::=
 ## Example
 
 ```
-def cond native "equal" 3
+def cond  native "cond" 3
 def equal native "equal" 2
-def mult native "mult" 2
+def mult  native "mult" 2
 def minus native "minus" 2
 
 def fact a -> 
