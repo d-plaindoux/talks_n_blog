@@ -19,13 +19,13 @@ class Eval {
     }
 
     // :: String -> Try [Objcode]
-    eval(source) {
+    apply(source) {
         return parser.entities(stream.ofString(source))                         // Response (List Entity)
             .toTry()                                                            // Try (List Entity)
             .map(l => l.array())                                                // Try [Entity]
             .map(a => a.map(toDeBruijn))                                        // Try [DBEntity]
             .map(a => a.map(toObjcode))                                         // Try [EntityObjcode]
-            .map(a => a.map(this.machine.eval.bind(this.machine)));             // Try [Try Objcode]
+            .map(a => a.map(this.machine.eval.bind(this.machine)));             // Try [Try EvaluatedCode]
     }
 
 }

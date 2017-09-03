@@ -8,10 +8,24 @@
 
 import { data } from 'parser-combinator';
 import native from "./native";
+import astEval from "./ast-eval";
+
+class EnsureClosure {
+
+    constant(c) {
+        throw new EvalError("Waiting for a closure")
+    }
+
+    closure(c) {
+        return c;
+    }
+
+}
 
 class Machine {
 
     constructor() {
+        this.ensureClosure = new EnsureClosure();
         this.definitions = {};
         this.init([]);
     }
@@ -41,18 +55,18 @@ class Machine {
     }
 
     closure(i) {
-        this.stack.unshift([i.instructions, this.env.slice()]);
+        this.stack.unshift(astEval.closure(i.instructions, this.env.slice()));
     }
 
     apply() {
         const v = this.stack.shift(),
-              c = this.stack.shift();
+              c = this.stack.shift().visit(this.ensureClosure);
 
         this.stack.unshift(this.env);
         this.stack.unshift(this.code);
 
-        this.code = c[0].slice();
-        this.env = c[1].slice();
+        this.code = c.code.slice();
+        this.env = c.env.slice();
 
         this.env.unshift(v);
     }
@@ -69,7 +83,7 @@ class Machine {
     }
 
     constant(m) {
-        this.stack.unshift(m);
+        this.stack.unshift(astEval.constant(m.value));
     }
 
     ident(i) {
