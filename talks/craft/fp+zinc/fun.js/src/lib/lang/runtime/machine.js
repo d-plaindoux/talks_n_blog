@@ -12,7 +12,7 @@ import native from "./native";
 class Machine {
 
     constructor() {
-        this.heap = {};
+        this.definitions = {};
         this.init([]);
     }
 
@@ -73,7 +73,7 @@ class Machine {
     }
 
     ident(i) {
-        this.stack.unshift(this.heap[i.name]);
+        this.stack.unshift(this.definitions[i.name]);
     }
 
     native(n) {
@@ -85,8 +85,7 @@ class Machine {
     //
 
     definition(d) {
-        return this.execute(d.code)
-            .onSuccess(result => this.heap[d.name] = result);
+        return this.execute(d.code).onSuccess(r => this.definitions[d.name] = r);
     }
 
     main(m) {

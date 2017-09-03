@@ -8,23 +8,22 @@
 
 import astObjcode from '../compiler/ast-objcode';
 
+// Remember De Bruijn indexes
+
 export default {
     'add': env => {
-        // Remember De Bruijn indexes
         const a = env[1].value,
               b = env[0].value;
 
         return astObjcode.constant(a + b);
     },
     'minus': env => {
-        // Remember De Bruijn indexes
         const a = env[1].value,
               b = env[0].value;
 
         return astObjcode.constant(a - b);
     },
     'mult': env => {
-        // Remember De Bruijn indexes
         const a = env[1].value,
               b = env[0].value;
 
@@ -37,7 +36,6 @@ export default {
         return astObjcode.constant(a === b);
     },
     'cond': env => {
-        // Remember De Bruijn indexes
         const c = env[2].value,
               t = env[1].value,
               f = env[0].value
