@@ -22,11 +22,15 @@ SExp ::=
 
 Example:
 ```
-def add native "add" 2
-def ONE 1 
-def increment (add ONE)
+def equal native "equal" 2
+def mult native "mult" 2
+def minus native "minus" 2
 
-increment 41
+def fact a -> (cond (equal a 0)
+                    (_ -> 1)
+                    (_ -> mult a $ fact $ minus a 1) ())
+
+fact 6
 ```
 
 Steps:
