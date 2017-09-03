@@ -2,9 +2,42 @@
 
 [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
-## Introduction
+## Grammar
 
-TODO
+```
+s0 ::=
+   definition*
+
+definition ::=
+   "def" IDENT SExp
+   Exp
+
+Exp ::= 
+   SExp+    	       	   
+
+SExp ::= 
+   IDENT+ "->" SExp 	         
+   "(" Exp ")"
+   "(" ")"
+   "$ Exp
+   NUMBER 
+   STRING
+   "native" STRING NUMBER
+```
+
+## Example
+
+```
+def equal native "equal" 2
+def mult native "mult" 2
+def minus native "minus" 2
+
+def fact a -> (cond (equal a 0)
+                    (_ -> 1)
+                    (_ -> mult a $ fact $ minus a 1) ())
+
+fact 6
+```
 
 ## License
 
