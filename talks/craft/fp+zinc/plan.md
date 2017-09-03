@@ -13,6 +13,8 @@ Exp ::=
 SExp ::= 
    IDENT+ "->" SExp 	         
    "(" Exp ")"
+   "(" ")"
+   "$ Exp
    NUMBER 
    STRING
    "native" STRING NUMBER
