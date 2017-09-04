@@ -95,7 +95,7 @@ function definitions() {
 // Parser a' Token -> Parser a' char
 function lexer(parser) {
     return GLex.genlex
-            .generator(['def', 'do', 'native', '->', '(', ')', '$', '{', '}'])
+            .generator(['def', 'native', '->', '(', ')', '$', '{', '}'])
             .tokenBetweenSpaces(GLex.token.builder)
             .chain(parser);
 }
