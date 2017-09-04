@@ -36,6 +36,7 @@ class Machine {
         this.stack = [];
     }
 
+    // :: [Objcode] -> Try EvaluatedCode
     execute(code) {
         this.init(code)
 
@@ -110,6 +111,7 @@ class Machine {
     // Main entry for entities management
     //
 
+    // :: Entity Objcode -> Try EvaluatedCode
     eval(e) {
         return e.visit(this);
     }

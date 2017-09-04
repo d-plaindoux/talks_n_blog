@@ -1,9 +1,13 @@
-def cond c t f -> native "cond" 3 c t f ()
-def equal native "equal" 2
-def mult native "mult" 2
-def minus native "minus" 2
+def leq   { l r t f -> native "equal" }
+def mult  { l r     -> native "mult"  }
+def minus { l r     -> native "minus" }
 
-def fact a ->
-    cond (equal a 0)
-         (_ -> 1)
-         (_ -> mult a $ fact $ minus a 1)
+def cond { c t f -> c t f () }
+
+def fact { a ->
+    cond (leq a 1)
+         { 1 }
+         { mult a $ fact $ minus a 1 }
+}         
+
+do fact 12

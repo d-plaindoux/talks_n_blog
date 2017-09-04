@@ -6,7 +6,7 @@
  * Licensed under the LGPL2 license.
  */
 
-import astObjcode from '../compiler/ast-objcode';
+import astEval from './ast-eval';
 
 // Remember De Bruijn indexes
 
@@ -15,35 +15,26 @@ export default {
         const a = env[1].value,
               b = env[0].value;
 
-        return astObjcode.constant(a + b);
+        return astEval.constant(a + b);
     },
     'minus': env => {
         const a = env[1].value,
               b = env[0].value;
 
-        return astObjcode.constant(a - b);
+        return astEval.constant(a - b);
     },
     'mult': env => {
         const a = env[1].value,
               b = env[0].value;
 
-        return astObjcode.constant(a * b);
+        return astEval.constant(a * b);
     },
     'equal': env => {
-        const a = env[1].value,
-              b = env[0].value;
-
-        return astObjcode.constant(a === b);
-    },
-    'cond': env => {
-        const c = env[2].value,
+        const a = env[3].value,
+              b = env[2].value,
               t = env[1].value,
-              f = env[0].value
+              f = env[0].value;
 
-        if (c.value == true) {
-            return t;
-        } else {
-            return f;
-        }
+        return a === b ? t : f;
     }
 }

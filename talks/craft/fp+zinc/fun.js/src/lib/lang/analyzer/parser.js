@@ -26,30 +26,29 @@ function atom() {
     return (tkNumber.map(ast.constant))
         .or(tkString.map(ast.constant))
         .or(tkChar.map(ast.constant))
-        .or(tkIdent.map(ast.ident))
-        .or(Flow.try(tkKeyword('(').then(tkKeyword(')')).map(_ => ast.constant(data.unit))));
+        .or(tkIdent.map(ast.ident));
 }
 
 // unit -> Parser Expression Token
 function abstraction() {
-    // A B -> ... == A -> (B -> ...)
-    return Flow.try(tkIdent.rep().then(tkKeyword('->')))
+    // { A B -> ... } == { A -> { B -> ... } }
+    return tkKeyword('{')
+        .then(tkIdent.rep().then(tkKeyword('->')).opt().map(t => t.orElse(['_'])))
         .then(Flow.lazy(expression))
+        .then(tkKeyword('}'))
         .map(t => t[0].array().foldRight(ast.abstraction, t[1]));
 }
 
 // unit -> Parser Expression Token
 function native() {
     return tkKeyword('native')
-        .then(tkString)
-        .then(tkNumber)
-        .map(t => ast.native(t[0], t[1]));
+        .then(tkString.map(ast.native));
 }
 
 // unit -> Parser Expression Token
-function block() {
+function blockOrUnit() {
     return tkKeyword('(')
-        .then(Flow.lazy(expression))
+        .then(Flow.lazy(expression).opt().map(t => t.orElse(ast.constant(data.unit))))
         .then(tkKeyword(')'));
 }
 
@@ -63,7 +62,7 @@ function simpleExpression() {
     return abstraction()
         .or(native())
         .or(atom())
-        .or(block())
+        .or(blockOrUnit())
         .or(endblock());
 }
 
@@ -78,13 +77,12 @@ function expression() {
 function definition() {
     return tkKeyword('def')
         .then(tkIdent)
-        .then(expression())
+        .then(simpleExpression())
         .map(t => ast.definition(t[0], t[1]));
 }
 
 function main() {
-    return tkKeyword('do')
-        .then(expression().map(ast.main));
+    return expression().map(ast.main);
 }
 
 // unit -> Parser [Entity] Token
@@ -97,7 +95,7 @@ function definitions() {
 // Parser a' Token -> Parser a' char
 function lexer(parser) {
     return GLex.genlex
-            .generator(['def', 'do', 'native', '->', '(', ')', '$'])
+            .generator(['def', 'do', 'native', '->', '(', ')', '$', '{', '}'])
             .tokenBetweenSpaces(GLex.token.builder)
             .chain(parser);
 }

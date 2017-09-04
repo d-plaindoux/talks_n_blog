@@ -36,10 +36,7 @@ class Generator {
     }
 
     native(n) {
-        return [...Array(n.arity)].foldLeft(
-            [ astObjcode.native(n.name) ],
-            (code) => [ astObjcode.closure(code.concat(astObjcode.returns)) ]
-        );
+        return [ astObjcode.native(n.name) ];
     }
 
     application(a) {

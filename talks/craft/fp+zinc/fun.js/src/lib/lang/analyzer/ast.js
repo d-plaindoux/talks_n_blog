@@ -29,10 +29,9 @@ class Ident extends Expression {
 
 class Native extends Expression {
     // String, Number -> Expression
-    constructor(name, arity) {
+    constructor(name) {
         super();
         this.name = name;
-        this.arity = arity;
     }
 
     // Visitor 'a -> 'a
@@ -124,7 +123,7 @@ class Main extends Entity /* 'a */ {
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
-    native: (n,a) => new Native(n,a),
+    native: (n) => new Native(n),
     application: (f,a) => new Application(f,a),
     abstraction: (v,b) => new Abstraction(v,b),
     definition: (n,e) => new Definition(n,e),

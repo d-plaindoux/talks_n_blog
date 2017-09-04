@@ -1,6 +1,6 @@
-import astObjcode from '../../lib/lang/compiler/ast-objcode';
-import astEval from '../../lib/lang/runtime/ast-eval';
-import engineFactory from '../../lib/lang/toplevel/evaluator'
+import astObjcode from '../../../lib/lang/compiler/ast-objcode';
+import astEval from '../../../lib/lang/runtime/ast-eval';
+import engineFactory from '../../../lib/lang/toplevel/evaluator'
 
 function destruct(r) {
     return r.onFailure(e => { throw e; }).success();
@@ -14,7 +14,7 @@ export default {
     'execute a constant': function(test) {
         test.expect(1);
         const engine = engineFactory();
-        test.deepEqual(destruct(engine.apply('do 42')),
+        test.deepEqual(destruct(engine.apply('42')),
                        [ astEval.constant(42) ],
                        'execute a constant.');
         test.done();
@@ -23,7 +23,7 @@ export default {
     'execute an abstraction': function(test) {
         test.expect(1);
         const engine = engineFactory();
-        test.deepEqual(destruct(engine.apply('do a -> a')),
+        test.deepEqual(destruct(engine.apply('{ a -> a }')),
                        [ astEval.closure([astObjcode.access(1), astObjcode.returns ], []) ],
                        'execute a constant.');
         test.done();
@@ -32,7 +32,7 @@ export default {
     'execute a definition': function(test) {
         test.expect(1);
         const engine = engineFactory();
-        test.deepEqual(destruct(engine.apply('def ID a -> a')),
+        test.deepEqual(destruct(engine.apply('def ID { a -> a }')),
                        [ astEval.closure([ astObjcode.access(1), astObjcode.returns ], []) ],
                        'execute a definition.');
         test.done();
@@ -53,8 +53,8 @@ export default {
     'execute an applied definition': function(test) {
         test.expect(1);
         const engine = engineFactory();
-        engine.apply('def ID a -> a');
-        test.deepEqual(destruct(engine.apply('do ID 42')),
+        engine.apply('def ID { a -> a }');
+        test.deepEqual(destruct(engine.apply('ID 42')),
                        [ astEval.constant(42) ],
                        'execute an applied definition.');
         test.done();
@@ -63,8 +63,8 @@ export default {
     'execute an applied native definition': function(test) {
         test.expect(1);
         const engine = engineFactory();
-        engine.apply('def add native "add" 2');
-        test.deepEqual(destruct(engine.apply('do add 41 1')),
+        engine.apply('def add { a b -> native "add" }');
+        test.deepEqual(destruct(engine.apply('add 41 1')),
                        [ astEval.constant(42) ],
                        'execute an applied definition.');
         test.done();

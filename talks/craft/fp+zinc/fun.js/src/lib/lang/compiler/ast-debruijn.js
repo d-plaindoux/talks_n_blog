@@ -31,10 +31,9 @@ class Ident extends DeBruijnExpression {
 
 class Native extends DeBruijnExpression {
     // String, Number -> DeBruijnExpression
-    constructor(name, arity) {
+    constructor(name) {
         super();
         this.name = name;
-        this.arity = arity;
     }
 
     // Visitor 'a -> 'a
@@ -99,7 +98,7 @@ class Variable extends DeBruijnExpression {
 export default {
     ident: n => new Ident(n),
     constant: c => new Constant(c),
-    native: (n,a) => new Native(n,a),
+    native: (n) => new Native(n),
     application: (f,a) => new Application(f,a),
     abstraction: (b) => new Abstraction(b),
     variable: n => new Variable(n),

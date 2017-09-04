@@ -6,17 +6,17 @@
  * Licensed under the LGPL2 license.
  */
 
-class /*abstract*/ EvalResult {
+class /*abstract*/ EvaluatedCode {
     constructor() {
-        if (this.constructor.name === EvalResult.name) {
+        if (this.constructor.name === EvaluatedCode.name) {
             throw new TypeError("Abstract class");
         }
     }
 }
 
-class Constant extends EvalResult {
+class Constant extends EvaluatedCode {
 
-    // Number|String|Char|unit -> EvalResult
+    // Number|String|Char|unit -> EvaluatedCode
     constructor(value) {
         super();
         this.value = value;
@@ -29,7 +29,7 @@ class Constant extends EvalResult {
 
 }
 
-class Closure extends EvalResult {
+class Closure extends EvaluatedCode {
 
     constructor(code, env) {
         super();

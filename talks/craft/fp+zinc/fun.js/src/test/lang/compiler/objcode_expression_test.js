@@ -1,6 +1,6 @@
-import astDB from '../../lib/lang/compiler/ast-debruijn';
-import astObjcode from '../../lib/lang/compiler/ast-objcode';
-import toObjcode from '../../lib/lang/compiler/objcode.js'
+import astDB from '../../../lib/lang/compiler/ast-debruijn';
+import astObjcode from '../../../lib/lang/compiler/ast-objcode';
+import toObjcode from '../../../lib/lang/compiler/objcode.js'
 
 export default {
     setUp: function(done) {
@@ -17,8 +17,8 @@ export default {
 
     'compile a native': function(test) {
         test.expect(1);
-        test.deepEqual(toObjcode(astDB.native("add", 1)),
-                       [ astObjcode.closure([ astObjcode.native("add"), astObjcode.returns ]) ],
+        test.deepEqual(toObjcode(astDB.native("add")),
+                       [ astObjcode.native("add") ],
                        'Compile a native.');
         test.done();
     },

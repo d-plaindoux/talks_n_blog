@@ -1,6 +1,6 @@
-import ast from '../../lib/lang/analyzer/ast';
-import astDB from '../../lib/lang/compiler/ast-debruijn';
-import toDeBruijn from '../../lib/lang/compiler/debruijn.js'
+import ast from '../../../lib/lang/analyzer/ast';
+import astDB from '../../../lib/lang/compiler/ast-debruijn';
+import toDeBruijn from '../../../lib/lang/compiler/debruijn.js'
 
 export default {
     setUp: function(done) {

@@ -37,7 +37,7 @@ class Transformer {
     }
 
     native(n) {
-        return astDB.native(n.name,n.arity);
+        return astDB.native(n.name);
     }
 
     application(a) {

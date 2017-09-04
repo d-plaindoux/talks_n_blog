@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Compilation d'un langage fonctionnel</title>
+
+    <meta name="description" content="Compilation d'un langage fonctionnel">
+    <meta name="author" content="Didier Plaindoux">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+      .close {
+      background-color:#556677;
+      }
+      .alert {
+      font-size:70% !important;
+      color:white;
+      text-align:middle !important;
+      background-color:#994422;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+      }
+      .remark {
+      font-size:70% !important;
+      color:white;
+      text-align:middle !important;
+      background-color:#445566;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+      }
+      .title {
+      color:black;
+      text-align:middle !important;
+      background-color:white;
+      padding: 1em 0em 1em 0em !important;
+      Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+      }
+
+        .ribbon {
+          position:fixed;
+          right: 0px; top:0px;
+          z-index: 1;
+          overflow: hidden;
+          width: 120px; height: 120px;
+          text-align: right;
+        }
+        .ribbon span {
+          font-size: 10px;
+          font-weight: bold;
+          color: #FFF;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 20px;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          width: 120px;
+          display: block;
+          background: #79A70A;
+          background: linear-gradient(#F70505 0%, #8F0808 100%);
+          box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+          position: absolute;
+          top: 24px; right: -26px;
+        }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+	<section>
+	  <h2>Compilation d'un langage fonctionnel</h2>
+	  <br/>
+	  <div class="p" style="text-align:middle">20 septembre 2017</div>
+	  <div class="p" style="text-align:middle">Software Craftsmanship Toulouse</div>
+	  <div class="p" style="text-align:middle">
+	    <span>
+	      <a href="http://twitter.com/dplaindoux">@dplaindoux</a>
+          &amp;
+          <a href="http://twitter.com/fcabestre">@fcabestre</a>
+	    </span>
+	  </div>
+	</section>
+
+	<section>
+	  <h3> Définition du langage Fun.js </h3>
+      <pre>
+
+          s0   ::= ent*
+          ent  ::= "def" IDENT sexp
+                 | exp
+          exp  ::= sexp+
+          sexp ::= "{" (IDENT+ "->")? exp "}"
+                 | "(" exp? ")"
+                 | "$" exp
+                 | IDENT
+                 | NUMBER
+                 | STRING
+                 | "native" STRING
+      </pre>
+	</section>
+
+    <section>
+	  <h3> Exemple :: Factoriel </h3>
+      <pre>
+
+          def leq   { l r t f -> native "equal" }
+          def mult  { l r     -> native "mult"  }
+          def minus { l r     -> native "minus" }
+
+          def cond { c t f -> c t f () }
+
+          def fact { a ->
+              cond (leq a 1)
+                   { 1 }
+                   { mult a $ fact $ minus a 1 }
+          }
+
+          fact 12
+      </pre>
+	</section>
+
+    <section>
+	  <h3> Analyse lexical </h3>
+
+      Sequence char &rightarrow; Ast
+	</section>
+
+    <section>
+	  <h3> Transformation </h3>
+      Ast &rightarrow; AstDeBruijn
+	</section>
+
+    <section>
+	  <h3> Compilation </h3>
+      AstDeBruijn &rightarrow; Objcode
+	</section>
+
+    <section>
+	  <h3> Execution </h3>
+      Objcode &rightarrow; EvaluatedCode
+	</section>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+	  // More info https://github.com/hakimel/reveal.js#configuration
+	  Reveal.initialize({
+          controls: false,
+          progress: false,
+          history: true,
+          center: true,
+	  slideNumber: true,
+          transition: 'none', // none/fade/slide/convex/concave/zoom
+
+          // More info https://github.com/hakimel/reveal.js#dependencies
+          dependencies: [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/zoom-js/zoom.js', async: true },
+              { src: 'plugin/notes/notes.js', async: true }
+          ]
+	  });
+	</script>
+</body>
+</html>

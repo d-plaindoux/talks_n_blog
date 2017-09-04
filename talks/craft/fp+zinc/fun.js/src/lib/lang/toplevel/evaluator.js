@@ -24,18 +24,18 @@ class Eval {
     evalAtMost(a) {
         return a.foldLeft(
             data.atry.success([]),
-            (l,c) => l.flatmap(l => this.machine.eval(c).map(c => l.concat([c]))) // Encoded for comprehension
+            (l,c) => l.flatmap(l => this.machine.eval(c).map(c => l.concat([c])))   // Encoded for comprehension
         );
     }
 
     // :: String -> Try [Objcode]
     apply(source) {
-        return parser.entities(stream.ofString(source))                         // Response (List Entity)
-            .toTry()                                                            // Try (List (Entity Expression))
-            .map(l => l.array())                                                // Try [Entity Expression]
-            .map(a => a.map(toDeBruijn))                                        // Try [Entity DeBruijnExpression]
-            .map(a => a.map(toObjcode))                                         // Try [Entity Objcode]
-            .flatmap(this.evalAtMost.bind(this));                               // Try [EvaluatedCode]
+        return parser.entities(stream.ofString(source))                             // Response (List Entity)
+            .toTry()                                                                // Try (List (Entity Expression))
+            .map(l => l.array())                                                    // Try [Entity Expression]
+            .map(a => a.map(toDeBruijn))                                            // Try [Entity DeBruijnExpression]
+            .map(a => a.map(toObjcode))                                             // Try [Entity Objcode]
+            .flatmap(this.evalAtMost.bind(this));                                   // Try [EvaluatedCode]
     }
 
 }
