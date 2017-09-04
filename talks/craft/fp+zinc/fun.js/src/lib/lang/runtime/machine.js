@@ -95,9 +95,7 @@ class Machine {
         this.stack.unshift(native[n.name](this.env.slice()));
     }
 
-    //
-    // Entities
-    //
+    // -------------------------------------------------------------------------
 
     definition(d) {
         return this.execute(d.expression).onSuccess(r => this.definitions[d.name] = r);
@@ -106,10 +104,6 @@ class Machine {
     main(m) {
         return this.execute(m.expression);
     }
-
-    //
-    // Main entry for entities management
-    //
 
     // :: Entity Objcode -> Try EvaluatedCode
     eval(e) {

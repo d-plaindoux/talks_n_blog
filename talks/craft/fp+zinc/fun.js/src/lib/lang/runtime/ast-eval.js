@@ -6,11 +6,11 @@
  * Licensed under the LGPL2 license.
  */
 
-class /*abstract*/ EvaluatedCode {}
+class /*abstract*/ ResultCode {}
 
-class Constant extends EvaluatedCode {
+class Constant extends ResultCode {
 
-    // Number|String|Char|unit -> EvaluatedCode
+    // Number|String|Char|unit -> ResultCode
     constructor(value) {
         super();
         this.value = value;
@@ -23,7 +23,7 @@ class Constant extends EvaluatedCode {
 
 }
 
-class Closure extends EvaluatedCode {
+class Closure extends ResultCode {
 
     constructor(code, env) {
         super();
