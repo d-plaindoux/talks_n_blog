@@ -8,13 +8,7 @@
 
 import ast from "../analyzer/ast"
 
-class /*abstract*/ DeBruijnExpression {
-    constructor() {
-        if (this.constructor.name === DeBruijnExpression.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
+class /*abstract*/ DeBruijnExpression {}
 
 class Ident extends DeBruijnExpression {
     // String -> DeBruijnExpression

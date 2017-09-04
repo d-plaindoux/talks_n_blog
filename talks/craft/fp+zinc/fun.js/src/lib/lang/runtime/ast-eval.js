@@ -6,13 +6,7 @@
  * Licensed under the LGPL2 license.
  */
 
-class /*abstract*/ EvaluatedCode {
-    constructor() {
-        if (this.constructor.name === EvaluatedCode.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
+class /*abstract*/ EvaluatedCode {}
 
 class Constant extends EvaluatedCode {
 

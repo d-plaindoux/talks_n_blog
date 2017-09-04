@@ -6,13 +6,42 @@
  * Licensed under the LGPL2 license.
  */
 
-class /*abstract*/ Expression {
-    constructor() {
-        if (this.constructor.name === Expression.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
+ // -----------------------------------------------------------------------------
+ // Generic entity definition
+ // -----------------------------------------------------------------------------
+
+ class /*abstract*/ Entity /* 'a */ {}
+
+ class Definition extends Entity /* 'a */ {
+     // String -> Expression
+     constructor(name, expression) {
+         super();
+         this.name = name;
+         this.expression = expression;
+     }
+
+     // Visitor 'b -> 'b
+     visit(visitor) {
+         return visitor.definition(this);
+     }
+ }
+
+ class Main extends Entity /* 'a */ {
+     // String -> Expression
+     constructor(expression) {
+         super();
+         this.expression = expression;
+     }
+
+     // Visitor 'b -> 'b
+     visit(visitor) {
+         return visitor.main(this);
+     }
+ }
+
+ // -----------------------------------------------------------------------------
+
+class /*abstract*/ Expression {}
 
 class Ident extends Expression {
     // String -> Expression
@@ -78,45 +107,6 @@ class Abstraction extends Expression {
     // Visitor 'a -> 'a
     visit(visitor) {
         return visitor.abstraction(this);
-    }
-}
-
-// -----------------------------------------------------------------------------
-// Generic entity definition
-// -----------------------------------------------------------------------------
-
-class /*abstract*/ Entity /* 'a */ {
-    constructor() {
-        if (this.constructor.name === Entity.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
-
-class Definition extends Entity /* 'a */ {
-    // String -> Expression
-    constructor(name, expression) {
-        super();
-        this.name = name;
-        this.expression = expression;
-    }
-
-    // Visitor 'b -> 'b
-    visit(visitor) {
-        return visitor.definition(this);
-    }
-}
-
-class Main extends Entity /* 'a */ {
-    // String -> Expression
-    constructor(expression) {
-        super();
-        this.expression = expression;
-    }
-
-    // Visitor 'b -> 'b
-    visit(visitor) {
-        return visitor.main(this);
     }
 }
 

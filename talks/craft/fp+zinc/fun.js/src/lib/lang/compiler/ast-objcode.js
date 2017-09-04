@@ -8,13 +8,7 @@
 
 import astDB from "./ast-debruijn"
 
-class /*abstract*/ Objcode {
-    constructor() {
-        if (this.constructor.name === Objcode.name) {
-            throw new TypeError("Abstract class");
-        }
-    }
-}
+class /*abstract*/ Objcode {}
 
 class Access extends Objcode {
 
