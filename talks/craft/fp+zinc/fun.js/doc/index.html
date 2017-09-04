@@ -110,7 +110,7 @@
           s0   ::= ent*
           ent  ::= "def" IDENT sexp
                  | exp
-          exp  ::= sexp+
+          exp  ::= sexp sexp*
           sexp ::= "{" (IDENT+ "->")? exp "}"
                  | "(" exp? ")"
                  | "$" exp

@@ -31,14 +31,6 @@ export default {
         test.done();
     },
 
-    'parse character': function(test) {
-        test.expect(1);
-        test.deepEqual(parser.expression(stream.ofString("'4'")).value,
-                       ast.constant('4'),
-                       'should accept character.');
-        test.done();
-    },
-
     'parse native': function(test) {
         test.expect(1);
         test.deepEqual(parser.expression(stream.ofString('native "+"')).value,
@@ -116,14 +108,6 @@ export default {
         test.deepEqual(parser.expression(stream.ofString('("42")')).value,
                        ast.constant('42'),
                        'should accept string.');
-        test.done();
-    },
-
-    'parse character in block': function(test) {
-        test.expect(1);
-        test.deepEqual(parser.expression(stream.ofString("('4')")).value,
-                       ast.constant('4'),
-                       'should accept character.');
         test.done();
     },
 

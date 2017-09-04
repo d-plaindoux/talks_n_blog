@@ -8,30 +8,23 @@
 
 import { genlex as GLex, F as Flow, data } from 'parser-combinator';
 import ast from './ast';
-
 import '../../extensions/array'
 
-//
 // Facilities provided by the generic lexer library
-//
-
-const tkNumber = GLex.token.parser.number,
-      tkString = GLex.token.parser.string,
-      tkChar = GLex.token.parser.char,
-      tkIdent = GLex.token.parser.ident,
+const tkNumber  = GLex.token.parser.number,
+      tkString  = GLex.token.parser.string,
+      tkIdent   = GLex.token.parser.ident,
       tkKeyword = s => GLex.token.parser.keyword.match(s).drop();
 
 // unit -> Parser Expression Token
 function atom() {
-    return (tkNumber.map(ast.constant))
-        .or(tkString.map(ast.constant))
-        .or(tkChar.map(ast.constant))
-        .or(tkIdent.map(ast.ident));
+    return (tkIdent.map(ast.ident))
+        .or(tkNumber.map(ast.constant))
+        .or(tkString.map(ast.constant));
 }
 
 // unit -> Parser Expression Token
 function abstraction() {
-    // { A B -> ... } == { A -> { B -> ... } }
     return tkKeyword('{')
         .then(tkIdent.rep().then(tkKeyword('->')).opt().map(t => t.orElse(['_'])))
         .then(Flow.lazy(expression))
@@ -41,70 +34,58 @@ function abstraction() {
 
 // unit -> Parser Expression Token
 function native() {
-    return tkKeyword('native')
-        .then(tkString.map(ast.native));
+    return tkKeyword('native').then(tkString.map(ast.native));
 }
 
 // unit -> Parser Expression Token
-function blockOrUnit() {
+function block() {
     return tkKeyword('(')
         .then(Flow.lazy(expression).opt().map(t => t.orElse(ast.constant(data.unit))))
         .then(tkKeyword(')'));
 }
 
-function endblock() {
-    return tkKeyword('$')
-        .then(Flow.lazy(expression));
+// unit -> Parser Expression Token
+function endBlock() {
+    return tkKeyword('$').then(Flow.lazy(expression));
 }
 
 // unit -> Parser Expression Token
 function simpleExpression() {
-    return abstraction()
-        .or(native())
-        .or(atom())
-        .or(blockOrUnit())
-        .or(endblock());
+    return abstraction().or(block()).or(endBlock()).or(atom()).or(native());
 }
 
 // unit -> Parser Expression Token
 function expression() {
-    // A B ... == (A B) ...
     return simpleExpression().then(simpleExpression().optrep())
         .map(t => t[1].array().foldLeft(t[0], ast.application));
 }
 
 // unit -> Parser Entity Token
 function definition() {
-    return tkKeyword('def')
-        .then(tkIdent)
-        .then(simpleExpression())
+    return tkKeyword('def').then(tkIdent).then(simpleExpression())
         .map(t => ast.definition(t[0], t[1]));
 }
 
+// unit -> Parser Entity Token
 function main() {
     return expression().map(ast.main);
 }
 
 // unit -> Parser [Entity] Token
-function definitions() {
-    return definition()
-        .or(main())
-        .optrep();
+function entities() {
+    return definition().or(main()).optrep();
 }
 
 // Parser a' Token -> Parser a' char
-function lexer(parser) {
+function analyzer(parser) {
     return GLex.genlex
-            .generator(['def', 'native', '->', '(', ')', '$', '{', '}'])
+            .generator(['def', 'native', '{', '}' , '->', '(', ')', '$' ])
             .tokenBetweenSpaces(GLex.token.builder)
-            .chain(parser);
+            .chain(parser.then(Flow.eos.drop()))
+            .parse;
 }
 
 export default {
-    expression: (source) => {
-        return lexer(expression()).then(Flow.eos.drop()).parse(source);
-    },
-    entities: (source) => {
-        return lexer(definitions()).then(Flow.eos.drop()).parse(source);
-    }
+    expression: analyzer(expression()),
+    entities: analyzer(entities())
 };
