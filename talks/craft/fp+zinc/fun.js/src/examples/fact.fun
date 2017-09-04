@@ -10,4 +10,4 @@ def fact { a ->
          { mult a $ fact $ minus a 1 }
 }         
 
-do fact 12
+fact 12
