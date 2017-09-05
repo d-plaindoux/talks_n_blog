@@ -25,7 +25,7 @@
       background-color:#556677;
       }
       .alert {
-      font-size:70% !important;
+      font-size:55% !important;
       color:white;
       text-align:middle !important;
       background-color:#994422;
@@ -126,14 +126,19 @@
     </section>
 
     <section>
-      <h3> <div class="name">&micro;Fun</name> syntax conventions </h3>
+      <h3> <div class="name">&micro;Fun</name> syntax equivalences </h3>
 
       <div class="remark">
-          <table>
-              <tr> <td align="right"> <tt> a (b c) (c d)</tt> </td><td>&equiv;</td><td> <tt> a (b c) $ c d  </tt> </td><td> Trailing block </td></tr>
-              <tr> <td align="right"> <tt> { a -> { b -> ... } } </tt> </td><td>&equiv;</td><td> <tt> { a b -> ... } </tt> </td><td> Currified form </td></tr>
-              <tr> <td align="right"> <tt> { a -> f a } </tt> </td><td>&equiv;</td><td> <tt> { f _ } </tt> </td><td> Implicit argument </td></tr>
-              <tr> <td align="right"> <tt> { f a } </tt> </td><td>&nequiv;</td><td> <tt> ( f a ) </tt> </td><td> Abstraction vs. Application </td></tr>
+          <table width="100%">
+              <tr> <td width="33%" align="right"> <tt> a (b c) (c d)</tt> </td><td width="2%">&equiv;</td><td width="33%" > <tt> a (b c) $ c d  </tt> </td><td> Trailing block </td></tr>
+              <tr> <td width="33%" align="right"> <tt> { a -> { b -> ... } } </tt> </td><td width="2%">&equiv;</td><td width="33%"> <tt> { a b -> ... } </tt> </td><td> Currified form </td></tr>
+              <tr> <td width="33%" align="right"> <tt> { a -> f a } </tt> </td><td width="2%">&equiv;</td><td width="33%"> <tt> { f _ } </tt> </td><td> Implicit argument </td></tr>
+          </table>
+      </div>
+
+      <div class="alert">
+          <table width="100%">
+              <tr> <td width="33%" align="right"> <tt> { f a } </tt> </td><td width="2%">&nequiv;</td><td width="33%"> <tt> ( f a ) </tt> </td><td> Abstraction vs. Application </td></tr>
           </table>
       </div>
 	</section>
@@ -217,10 +222,11 @@
 
  [_] :: Sequence Token &rightarrow; Ast
 
- [<span class="tk">{</span> a <span class="tk">-></span> b <span class="tk">}</span>] = Ast.abstraction(a, [b]))    -- currified
+ [<span class="tk">{</span> a <span class="tk">-></span> b <span class="tk">}</span>] = Ast.abstraction(a, [b]))
  [a b]        = Ast.application([a],[b])
  [i]          = Ast.ident(i)                if i &in; IDENT
  [n]          = Ast.constant(n)             if n &in; NUMBER &cup; STRING
+
  [<span class="tk">native</span> s]   = Ast.native(n)
  [<span class="tk">(</span> a <span class="tk">)</span>]      = [a]
  [<span class="tk">$</span> a]        = [a]
@@ -251,11 +257,12 @@
 
       <pre>
 
- [_] :: Ast &rightarrow; [String] &rightarrow; AstDB
+ [_] :: Ast &rightarrow; Array String &rightarrow; AstDB
 
  [Ast.abstraction(a,b)]<sub>e</sub>  = AstDB.abstraction([b]<sub>(a::e)</sub>)
  [Ast.application(a,b)]<sub>e</sub>  = AstDB.application([a]<sub>e</sub>, [b]<sub>e</sub>)
  [Ast.ident(n)]<sub>e</sub>          = AstDB.variable(i)     if &exist; i / e[i]=n
+
  [Ast.ident(n)]<sub>e</sub>          = AstDB.ident(n)        if &forall; i / e[i]&ne;n
  [Ast.constant(c)]<sub>e</sub>       = AstDB.constant(c)
  [Ast.native(c)]<sub>e</sub>         = AstDB.native(c)
@@ -277,6 +284,7 @@
  [AstDB.abstraction(b)]   = Objcode.closure(b ; Objcode.returns())
  [AstDB.application(a,b)] = [a]; [b]; Objcode.apply()
  [AstDB.variable(i)]      = Objcode.access(i)
+
  [AstDB.ident(n)]         = Objcode.ident(n)
  [AstDB.constant(c)]      = Objcode.constant(c)
  [AstDB.native(c)]        = Objcode.native(c)
@@ -289,22 +297,31 @@
 	</section>
 
     <section>
-      <h3> Execution process </h3>
+      <h3> Execution process :: Core </h3>
 
       <pre>
  type Result = NUMBER | STRING | (Objcode,Env)
- type Env    = [Result]
- type Stack  = [Result]
+  and Env    = List Result
+  and Stack  = List Result
+
  [_] :: Objcode &rightarrow; Env &rightarrow; Stack &rightarrow; Result
 
+ [Objcode.access(i);c]<sub>e s</sub>             = [c]<sub>e e[i]::s</sub>
  [Objcode.closure(c');c]<sub>e s</sub>           = [c]<sub>e (c',e)::s</sub>
  [Objcode.apply();c]<sub>e v::(c',e')::s</sub>   = [c']<sub>v::e' (c,e)::s</sub>
  [Objcode.returns();c]<sub>e v::(c',e')::s</sub> = [c']<sub>e' v::s d</sub>
- [Objcode.access(i);c]<sub>e s</sub>             = [c]<sub>e e[i]::s</sub>
+ ...
+    </section>
+
+    <section>
+      <h3> Execution process :: Extension </h3>
+
+      <pre>
+ ...
  [Objcode.constant(n);c]<sub>e s</sub>           = [c]<sub>e n::s</sub>
 
  definition :: String -> Result
- native     :: String -> [Result] -> Result
+ native     :: String -> List Result -> Result
 
  [Objcode.ident(n);c]<sub>e s</sub>              = [c]<sub>e (definition n)::s</sub>
  [Objcode.native(n);c]<sub>e s</sub>             = [c]<sub>e (native n e)::s</sub></pre>

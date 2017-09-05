@@ -6,9 +6,9 @@
  * Licensed under the LGPL2 license.
  */
 
-class /*abstract*/ ResultCode {}
+class /*abstract*/ Result {}
 
-class Constant extends ResultCode {
+class Constant extends Result {
 
     // Number|String|Char|unit -> ResultCode
     constructor(value) {
@@ -23,7 +23,7 @@ class Constant extends ResultCode {
 
 }
 
-class Closure extends ResultCode {
+class Closure extends Result {
 
     constructor(code, env) {
         super();

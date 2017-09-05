@@ -8,7 +8,7 @@
 
 import { data } from 'parser-combinator';
 import native from "./native";
-import astEval from "./ast-eval";
+import astResult from "./ast-result";
 
 class EnsureClosure {
 
@@ -56,7 +56,7 @@ class Machine {
     }
 
     closure(i) {
-        this.stack.unshift(astEval.closure(i.instructions, this.env.slice()));
+        this.stack.unshift(astResult.closure(i.instructions, this.env.slice()));
     }
 
     apply() {
@@ -84,7 +84,7 @@ class Machine {
     }
 
     constant(m) {
-        this.stack.unshift(astEval.constant(m.value));
+        this.stack.unshift(astResult.constant(m.value));
     }
 
     ident(i) {

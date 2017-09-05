@@ -1,5 +1,6 @@
+
 import astObjcode from '../../../lib/lang/compiler/ast-objcode';
-import astEval from '../../../lib/lang/runtime/ast-eval';
+import astResult from '../../../lib/lang/runtime/ast-result';
 import engineFactory from '../../../lib/lang/toplevel/evaluator'
 
 function destruct(r) {
@@ -15,7 +16,7 @@ export default {
         test.expect(1);
         const engine = engineFactory();
         test.deepEqual(destruct(engine.apply('42')),
-                       [ astEval.constant(42) ],
+                       [ astResult.constant(42) ],
                        'execute a constant.');
         test.done();
     },
@@ -24,7 +25,7 @@ export default {
         test.expect(1);
         const engine = engineFactory();
         test.deepEqual(destruct(engine.apply('{ a -> a }')),
-                       [ astEval.closure([astObjcode.access(1), astObjcode.returns ], []) ],
+                       [ astResult.closure([astObjcode.access(1), astObjcode.returns ], []) ],
                        'execute a constant.');
         test.done();
     },
@@ -33,7 +34,7 @@ export default {
         test.expect(1);
         const engine = engineFactory();
         test.deepEqual(destruct(engine.apply('def ID { a -> a }')),
-                       [ astEval.closure([ astObjcode.access(1), astObjcode.returns ], []) ],
+                       [ astResult.closure([ astObjcode.access(1), astObjcode.returns ], []) ],
                        'execute a definition.');
         test.done();
     },
@@ -55,7 +56,7 @@ export default {
         const engine = engineFactory();
         engine.apply('def ID { a -> a }');
         test.deepEqual(destruct(engine.apply('ID 42')),
-                       [ astEval.constant(42) ],
+                       [ astResult.constant(42) ],
                        'execute an applied definition.');
         test.done();
     },
@@ -65,7 +66,7 @@ export default {
         const engine = engineFactory();
         engine.apply('def add { a b -> native "add" }');
         test.deepEqual(destruct(engine.apply('add 41 1')),
-                       [ astEval.constant(42) ],
+                       [ astResult.constant(42) ],
                        'execute an applied definition.');
         test.done();
     },

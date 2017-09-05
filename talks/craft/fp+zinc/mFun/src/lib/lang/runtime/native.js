@@ -6,7 +6,7 @@
  * Licensed under the LGPL2 license.
  */
 
-import astEval from './ast-eval';
+import astResult from './ast-result';
 
 // Remember De Bruijn indexes
 
@@ -15,19 +15,19 @@ export default {
         const a = env[1].value,
               b = env[0].value;
 
-        return astEval.constant(a + b);
+        return astResult.constant(a + b);
     },
     'minus': env => {
         const a = env[1].value,
               b = env[0].value;
 
-        return astEval.constant(a - b);
+        return astResult.constant(a - b);
     },
     'mult': env => {
         const a = env[1].value,
               b = env[0].value;
 
-        return astEval.constant(a * b);
+        return astResult.constant(a * b);
     },
     'equal': env => {
         const a = env[3].value,
