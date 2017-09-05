@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Compilation d'un langage fonctionnel</title>
+    <title>Compiling &micro;Fun langage</title>
 
-    <meta name="description" content="Compilation d'un langage fonctionnel">
+    <meta name="description" content="Functional langage compilation">
     <meta name="author" content="Didier Plaindoux">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,12 +37,15 @@
       color:#AABBFF;
       }
       .remark {
-      font-size:70% !important;
+      font-size:55% !important;
       color:white;
       text-align:middle !important;
       background-color:#445566;
       padding: 1em 0em 1em 0em !important;
       Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4);
+      }
+      .name {
+          text-transform: none !important;
       }
       .title {
       color:black;
@@ -93,7 +96,7 @@
       <div class="slides">
 
 	<section>
-	  <h2>Compiling the Fun.js langage</h2>
+	  <h2>Compiling <span class="name">&micro;Fun</span> langage</h2>
 	  <br/>
 	  <div class="p" style="text-align:middle">20 septembre 2017</div>
 	  <div class="p" style="text-align:middle">Software Craftsmanship Toulouse</div>
@@ -107,21 +110,32 @@
 	</section>
 
 	<section>
-	  <h3> Fun.js langage definition </h3>
-      <pre>
-
+	  <h3> <div class="name">&micro;Fun</name> langage definition </h3>
+      <pre class="remark">
           s0   ::= ent*
           ent  ::= "def" IDENT sexp
                  | exp
           exp  ::= sexp sexp*
-          sexp ::= "{" (IDENT+ "->")? exp "}"  -- à la Kotlin
+          sexp ::= "{" (IDENT+ "->")? exp "}"
                  | "(" exp? ")"
                  | "$" exp
                  | IDENT
                  | NUMBER
                  | STRING
-                 | "native" STRING
-      </pre>
+                 | "native" STRING      </pre>
+    </section>
+
+    <section>
+      <h3> <div class="name">&micro;Fun</name> syntax conventions </h3>
+
+      <div class="remark">
+          <table>
+              <tr> <td align="right"> <tt> a (b c) (c d)</tt> </td><td>&equiv;</td><td> <tt> a (b c) $ c d  </tt> </td><td> Trailing block </td></tr>
+              <tr> <td align="right"> <tt> { a -> { b -> ... } } </tt> </td><td>&equiv;</td><td> <tt> { a b -> ... } </tt> </td><td> Currified form </td></tr>
+              <tr> <td align="right"> <tt> { a -> f a } </tt> </td><td>&equiv;</td><td> <tt> { f _ } </tt> </td><td> Implicit argument </td></tr>
+              <tr> <td align="right"> <tt> { f a } </tt> </td><td>&nequiv;</td><td> <tt> ( f a ) </tt> </td><td> Abstraction vs. Application </td></tr>
+          </table>
+      </div>
 	</section>
 
     <section>
@@ -163,6 +177,25 @@
 	</section>
 
     <section>
+	  <h3> Example :: Factorial </h3>
+      <pre><code>
+          def leq   { l r t f -> native "leq"   } // l=&lt;r?t:f
+          def mult  { l r     -> native "mult"  }
+          def minus { l r     -> native "minus" }
+
+          def cond { c t f -> c t f () }
+
+          def fact {
+              cond (leq _ 1)
+                   { 1 }
+                   { mult _ $ fact $ minus _ 1 }
+          }
+
+          fact 12
+      </code></pre>
+	</section>
+
+    <section>
 	  <h3> Analyze </h3>
 
       Sequence char &rightarrow; Try Ast
@@ -184,12 +217,11 @@
 
  [_] :: Sequence Token &rightarrow; Ast
 
- [i]          = ident(i)                    if i &in; IDENT
- [n]          = constant(n)                 if n &in; NUMBER
- [s]          = constant(n)                 if s &in; STRING
- [<span class="tk">{</span> a <span class="tk">-></span> b <span class="tk">}</span>] = abstraction(a, [b]))        -- currified
- [a b]        = application([a],[b])
- [<span class="tk">native</span> s]   = native(n)
+ [<span class="tk">{</span> a <span class="tk">-></span> b <span class="tk">}</span>] = Ast.abstraction(a, [b]))    -- currified
+ [a b]        = Ast.application([a],[b])
+ [i]          = Ast.ident(i)                if i &in; IDENT
+ [n]          = Ast.constant(n)             if n &in; NUMBER &cup; STRING
+ [<span class="tk">native</span> s]   = Ast.native(n)
  [<span class="tk">(</span> a <span class="tk">)</span>]      = [a]
  [<span class="tk">$</span> a]        = [a]
       </pre>
@@ -197,7 +229,7 @@
 
     <section>
 	  <h3> Transform </h3>
-      Ast &rightarrow; AstDeBruijn
+      Ast &rightarrow; AstDB
 	</section>
 
     <section>
@@ -209,7 +241,7 @@
 
        <ul>
            <li type="none"> Invariant with respect to &alpha;-conversion </li>
-           <li type="none"> Direct access in an environment e.g. registers </li>
+           <li type="none"> Direct access in an environment </li>
        </ul>
 
     </section>
@@ -219,30 +251,68 @@
 
       <pre>
 
- [_] :: Ast &rightarrow; [String] &rightarrow; AstDeBruijn
+ [_] :: Ast &rightarrow; [String] &rightarrow; AstDB
 
- [ident(n)]<sub>e</sub>          = variable(i)     if &exist; i / e[i]=n
- [ident(n)]<sub>e</sub>          = ident(n)        if &forall; i / e[i]&ne;n
- [abstraction(a,b)]<sub>e</sub>  = abstraction([b]<sub>(a::e)</sub>)
- [application(a,b)]<sub>e</sub>  = application([a]<sub>e</sub>, [b]<sub>e</sub>)
- [constant(c)]<sub>e</sub>       = constant(c)
- [native(c)]<sub>e</sub>         = native(c)
+ [Ast.abstraction(a,b)]<sub>e</sub>  = AstDB.abstraction([b]<sub>(a::e)</sub>)
+ [Ast.application(a,b)]<sub>e</sub>  = AstDB.application([a]<sub>e</sub>, [b]<sub>e</sub>)
+ [Ast.ident(n)]<sub>e</sub>          = AstDB.variable(i)     if &exist; i / e[i]=n
+ [Ast.ident(n)]<sub>e</sub>          = AstDB.ident(n)        if &forall; i / e[i]&ne;n
+ [Ast.constant(c)]<sub>e</sub>       = AstDB.constant(c)
+ [Ast.native(c)]<sub>e</sub>         = AstDB.native(c)
       </pre>
 	</section>
 
     <section>
 	  <h3> Compile </h3>
-      AstDeBruijn &rightarrow; Objcode
+      AstDB &rightarrow; Objcode
+	</section>
+
+    <section>
+	  <h3> Compilation process </h3>
+
+      <pre>
+
+ [_] :: AstDB &rightarrow; Objcode
+
+ [AstDB.abstraction(b)]   = Objcode.closure(b ; Objcode.returns())
+ [AstDB.application(a,b)] = [a]; [b]; Objcode.apply()
+ [AstDB.variable(i)]      = Objcode.access(i)
+ [AstDB.ident(n)]         = Objcode.ident(n)
+ [AstDB.constant(c)]      = Objcode.constant(c)
+ [AstDB.native(c)]        = Objcode.native(c)
+      </pre>
 	</section>
 
     <section>
 	  <h3> Execute </h3>
-      Objcode &rightarrow; Try ResultCode
+      Objcode &rightarrow; Try Result
 	</section>
 
     <section>
+      <h3> Execution process </h3>
+
+      <pre>
+ type Result = NUMBER | STRING | (Objcode,Env)
+ type Env    = [Result]
+ type Stack  = [Result]
+ [_] :: Objcode &rightarrow; Env &rightarrow; Stack &rightarrow; Result
+
+ [Objcode.closure(c');c]<sub>e s</sub>           = [c]<sub>e (c',e)::s</sub>
+ [Objcode.apply();c]<sub>e v::(c',e')::s</sub>   = [c']<sub>v::e' (c,e)::s</sub>
+ [Objcode.returns();c]<sub>e v::(c',e')::s</sub> = [c']<sub>e' v::s d</sub>
+ [Objcode.access(i);c]<sub>e s</sub>             = [c]<sub>e e[i]::s</sub>
+ [Objcode.constant(n);c]<sub>e s</sub>           = [c]<sub>e n::s</sub>
+
+ definition :: String -> Result
+ native     :: String -> [Result] -> Result
+
+ [Objcode.ident(n);c]<sub>e s</sub>              = [c]<sub>e (definition n)::s</sub>
+ [Objcode.native(n);c]<sub>e s</sub>             = [c]<sub>e (native n e)::s</sub></pre>
+    </section>
+
+    <section>
 	  <h4> Analyze(S).map(Transform).map.(Compile).flatmap(Execute) </h4>
-      Sequence char &rightarrow; Try ResultCode
+      Sequence char &rightarrow; Try Result
 	</section>
 
 	<script src="lib/js/head.min.js"></script>
