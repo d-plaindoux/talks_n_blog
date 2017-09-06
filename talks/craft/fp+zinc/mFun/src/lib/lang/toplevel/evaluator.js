@@ -24,7 +24,7 @@ class Eval {
     evalAtMost(a) {
         return a.foldLeft(
             data.atry.success([]),
-            (l,c) => l.flatmap(l => this.machine.eval(c).map(c => l.concat([c])))   // Encoded for comprehension
+            (l,c) => l.flatmap(l => this.machine.eval(c).map(c => l.concat([c])))   // List comprehension like
         );
     }
 

@@ -224,13 +224,15 @@
 
  [<span class="tk">{</span> a <span class="tk">-></span> b <span class="tk">}</span>] = Ast.abstraction(a, [b]))
  [a b]        = Ast.application([a],[b])
- [i]          = Ast.ident(i)                if i &in; IDENT
- [n]          = Ast.constant(n)             if n &in; NUMBER &cup; STRING
+ [i]          = Ast.ident(i)             if i &in; IDENT
+ [n]          = Ast.constant(n)          if n &in; NUMBER &cup; STRING
 
  [<span class="tk">native</span> s]   = Ast.native(n)
  [<span class="tk">(</span> a <span class="tk">)</span>]      = [a]
  [<span class="tk">$</span> a]        = [a]
       </pre>
+
+      <div class="fragment ribbon"><span>Live Code</span></div>
 	</section>
 
     <section>
@@ -267,6 +269,8 @@
  [Ast.constant(c)]<sub>e</sub>       = AstDB.constant(c)
  [Ast.native(c)]<sub>e</sub>         = AstDB.native(c)
       </pre>
+
+      <div class="fragment ribbon"><span>Live Code</span></div>
 	</section>
 
     <section>
@@ -281,14 +285,17 @@
 
  [_] :: AstDB &rightarrow; Objcode
 
- [AstDB.abstraction(b)]   = Objcode.closure(b ; Objcode.returns())
- [AstDB.application(a,b)] = [a]; [b]; Objcode.apply()
+ [AstDB.abstraction(b)]   = Objcode.closure(b;Objcode.returns)
+ [AstDB.application(a,b)] = [a];[b];Objcode.apply
  [AstDB.variable(i)]      = Objcode.access(i)
 
  [AstDB.ident(n)]         = Objcode.ident(n)
  [AstDB.constant(c)]      = Objcode.constant(c)
  [AstDB.native(c)]        = Objcode.native(c)
       </pre>
+
+      <div class="remark"> Standard call-by-value </div>
+      <div class="fragment ribbon"><span>Live Code</span></div>
 	</section>
 
     <section>
@@ -300,6 +307,7 @@
       <h3> Execution process :: Core </h3>
 
       <pre>
+
  type Result = NUMBER | STRING | (Objcode,Env)
   and Env    = List Result
   and Stack  = List Result
@@ -310,25 +318,34 @@
  [Objcode.closure(c');c]<sub>e s</sub>           = [c]<sub>e (c',e)::s</sub>
  [Objcode.apply();c]<sub>e v::(c',e')::s</sub>   = [c']<sub>v::e' (c,e)::s</sub>
  [Objcode.returns();c]<sub>e v::(c',e')::s</sub> = [c']<sub>e' v::s d</sub>
+ [Objcode.constant(n);c]<sub>e s</sub>           = [c]<sub>e n::s</sub>
  ...
+    </pre>
+
+    <div class="fragment ribbon"><span>Live Code</span></div>
+
     </section>
 
     <section>
       <h3> Execution process :: Extension </h3>
 
       <pre>
- ...
- [Objcode.constant(n);c]<sub>e s</sub>           = [c]<sub>e n::s</sub>
 
+ ...
  definition :: String -> Result
  native     :: String -> List Result -> Result
 
  [Objcode.ident(n);c]<sub>e s</sub>              = [c]<sub>e (definition n)::s</sub>
- [Objcode.native(n);c]<sub>e s</sub>             = [c]<sub>e (native n e)::s</sub></pre>
+ [Objcode.native(n);c]<sub>e s</sub>             = [c]<sub>e (native n e)::s</sub>
+  </pre>
+
+    <div class="fragment ribbon"><span>Live Code</span></div>
+
     </section>
 
     <section>
 	  <h4> Analyze(S).map(Transform).map.(Compile).flatmap(Execute) </h4>
+
       Sequence char &rightarrow; Try Result
 	</section>
 
