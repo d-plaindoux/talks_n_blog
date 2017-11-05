@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">    
+  
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Swift cooking course: Making a Cake ... Pattern</title>
+      
+    <meta name="description" content="Cake pattern in Swift 4">
+    <meta name="author" content="Didier Plaindoux">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+    
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+    .close {
+        background-color:#556677;
+    }
+    .img-circle {
+    border-radius: 50%;
+    }    
+    .alert {
+        font-size:70% !important;
+        color:white;
+        text-align:middle !important;
+        background-color:#994422;
+        padding: 1em 0em 1em 0em !important;
+        Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+    }
+    .remark {
+        font-size:70% !important;
+        color:white;
+        text-align:middle !important;
+        background-color:#445566;
+        padding: 1em 0em 1em 0em !important;
+        Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+    }
+    .paradgim-title {
+        font-size:70% !important;
+        color:white;
+        text-align:middle !important;
+        background-color:#994422;
+        padding: 5px 0em 5px 0em !important;
+    }
+    .paradigm-what {
+        font-size:70% !important;
+        color:white;
+        text-align:middle !important;
+        background-color:#445566;
+        padding: 5px 0em 5px 0em !important;
+    }
+    .title {
+        color:black;
+        text-align:middle !important;
+        background-color:white;
+        padding: 1em 0em 1em 0em !important;
+        Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+    }
+        
+    .ribbon {
+        position:fixed;
+        right: 0px; top:0px;
+        z-index: 1;
+        overflow: hidden;
+        width: 120px; height: 120px;
+        text-align: right;
+    }
+    .ribbon span {
+        font-size: 10px;
+        font-weight: bold;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 20px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        width: 120px;
+        display: block;
+        background: #79A70A;
+        background: linear-gradient(#F70505 0%, #8F0808 100%);
+        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 24px; right: -26px;
+    }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+    <!-- ####################### -->
+          
+    <section>
+	  <h2>Swift cooking course <br> Making a Cake ... Pattern</h2>
+	  <br/>
+	  <div class="p" style="text-align:middle">16 Novembre 2017</div>
+	  <div class="p" style="text-align:middle">Devoxx Maroc</div>
+	  <div class="p" style="text-align:middle">
+	    <span>
+	      <a href="http://d.plaindoux.free.fr">Didier Plaindoux</a>
+	      (<a href="http://twitter.com/dplaindoux">@dplaindoux</a>)
+	    </span> 
+	  </div>
+	</section>
+
+    <!-- ####################### -->
+          
+    <section>
+        <img class="plain img-circle" width="15%" src="images/photo.jpg">	  
+        <p class="remark">typealias MySelf = <b>Freelance</b> & <b>ComputerScientist</b></p>
+	</section>
+          
+    <!-- ####################### -->
+          
+	<section> 
+	  <img class="plain" width="15%" src="images/swift.png">	  
+	  <h3> Quick langage overview </h3>    
+	</section>	
+	
+    <!-- ####################### -->
+          
+	<section>
+	  <h3> Objet-Oriented Paradigm </h3>
+        
+        <center>
+            <table width="80%">
+            <tr>
+            <td width="25%"></td>
+            <td align="center" class="fragment" >
+                <div class="paradigm-title"> Class </div>
+                <div class="paradigm-what"> OO programming </div>
+            </td>
+            <td width="25%"></td>
+            </tr>
+            </table>
+            <table width="80%">
+            <tr>
+            <td width="50%" align="center" class="fragment" >
+                <div class="paradigm-title"> Structure </div>
+                <div class="paradigm-what"> OO &amp; Immutability </div>
+            </td>
+            <td></td>
+            <td width="50%" align="center" class="fragment" >
+                <div class="paradigm-title"> Enumeration </div>
+                <div class="paradigm-what"> OO &amp; Patterns </div>
+            </td>
+            </tr>
+            </table>
+            <table width="80%">
+            <tr>
+            <td width="25%"></td>
+            <td align="center" class="fragment" >
+                <div class="paradigm-title"> Protocol </div>
+                <div class="paradigm-what"> Specification &amp; Abstraction </div>
+            </td>
+            <td width="25%"></td>
+            </tr>
+            </table>
+        </center>
+
+	</section>
+	
+    <!-- ####################### -->
+          
+    <section>
+	  <h3> Protocol </h3>
+	  
+	  <ul>
+	    <li type="square"> Behaviors e.g. methods and values </li>
+	    <li type="square" class="fragment"> Protocol extensions </li>
+	  </ul>
+
+	</section>
+
+    <!-- ####################### -->
+          
+	<section>
+	  <h3> Protocol specification </h3>
+	  
+	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol User {
+  var name : String { get }
+}        
+
+protocol UserRepository {
+  func users() -> [Users]
+  func seach(byName name:String) -> User?
+}
+	    </code></pre>	  
+
+	</section>
+
+    <!-- ####################### -->
+          
+	<section>
+	  <h3> Protocol extension </h3>	 
+	  
+	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+extension UserRepository {
+  func search(byName name:String) -> User? {
+     return self.users().filter{ $0.name == name }.first // self &equiv; Java this 
+  }
+}
+	  </code></pre>	  
+
+	  <div class="fragment" style="font-size:70%">
+	    Looks like "<tt>default</tt>" methods in Java 8+ interfaces
+	  </div>
+      
+    </section>
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Protocol and inheritance </h3>
+        
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol Contact {
+  func send(message: String);
+}        
+        
+protocol User : Contact {
+  var name: String { get }
+}
+
+extension User {
+  func send(message: String) { ... }
+}
+    </code></pre>	  
+  
+        <p class="fragment">
+        A priori ...
+        </p>    
+      
+	</section>		
+          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Protocol extension and ... inheritance ? </h3>
+        
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol Contact {
+  func send(message: String);
+}        
+        
+extension User : Contact {
+  func send(message: String) { ... }
+}
+	  </code></pre>	  
+  
+        <p class="alert fragment">
+            Extension of protocol User cannot have an inheritance clause
+        </p>    
+      
+	</section>		
+
+          <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> extension and inheritance </h3>
+                
+      <p> Only available for Class, Struct and Enum </p>          
+
+        <h3> &#x1F633; </h3>
+
+    </section>		
+          
+    <!-- ####################### -->
+          
+	<section> 
+	   <h3> The <b>Self</b> type </h3>
+        
+       <p> "Bounded Polymorphism for Extensible Objects" </p>
+	</section>
+
+    <!-- ####################### -->
+          
+	<section> 
+	  <h3> <span style="text-transform: lowercase;">self</span> : <span style="text-transform: capitalize;">Self</span> </h3>
+
+	  <pre><code style="font-size:80%" data-trim data-noescape class="swift">
+class Counter {
+  var value:Int
+
+  init(value:Int = 0) {
+    self.value = value
+  }
+
+  <span class="fragment">func increment() -> Self {
+    self.value += 1
+    return self // Mutable &#x1F631;
+  }</span>
+}
+	  </code></pre>	  
+
+    <div class="fragment" style="font-size:70%">
+        Self is the type of current instance i.e. self ...
+    </div>
+
+	</section>
+
+    <!-- ####################### -->
+          
+	<section> 
+	  <h3> a new ... <span style="text-transform: capitalize;">Self</span> </h3>
+
+	  <pre><code style="font-size:80%" data-trim data-noescape class="swift">
+class Counter {
+  let value:Int
+
+  <span class="fragment">func increment() -> Self {
+    return type(of:self).init(self.value + 1) // Immutable &#x1F60E;
+  }</span>
+
+  <span class="fragment">required init(value:Int = 0) {
+    self.value = value
+  }</span>
+}
+	  </code></pre>	  
+
+    <div class="fragment" style="font-size:70%">
+        &#x1F60F; &nbsp; Looks like Perl 5+ object creation
+    </div>
+
+	</section>
+	
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Protocol strikes back </h3>
+        
+        <p> Capability to constraint <tt>Self</tt> type </p>
+        <p class="fragment"> Inheritance vs. Composition </p> 
+	</section>		
+          
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Protocol implementation and Self constraints </h3>
+        
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol Contact {
+  func send(message: String);
+}        
+        
+<span class="fragment">extension User where Self:Contact {
+  func send(message: String) { 
+    print("Say \(message) to \(name)") 
+  }
+}</span>
+	  </code></pre>	  
+        
+      <p class="remark fragment"> send defined for a User when composed with a Contact </p>
+  
+	</section>		
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Protocol usage and Self constraints </h3>
+        
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol Contact {
+  func send(message: String);
+}        
+        
+<span class="fragment">extension Contact where Self:User {
+  func send(message: String) { 
+    print("Say \(message) to \(name)") 
+  }
+}</span>
+	  </code></pre>	  
+        
+      <p class="remark fragment"> send defined for a Contact when composed with a User </p>
+  
+	</section>	
+          
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Protocol and mutual composition </h3>
+        
+      <p> Mutual Self constraints is allowed <br> when mutual inheritance is not possible! </p>
+  
+	</section>		
+
+    <!-- ####################### -->
+          
+ 	<section> 
+      <img class="plain" width="30%" src="images/Scala.png">	  
+	  <h3> "Scalable Component Abstractions" </h3>       
+    
+       <p> Martin Odersky &amp; Matthias Zenger </p>
+	</section>		         
+
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Principle #1: Abstract type member </h3>  
+        <p> "Abstract type members provide a flexible way to abstract over concrete types of components." </p>
+    </section>
+          
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Notions of Abstraction </h3>  
+        
+        <table width="100%">
+        <tr>
+            <td width="50%" align="center"> <h4>Parameterization</h4> </td>
+            <td width="50%" align="center"> <h4>Abstract Members</h4>
+                <ul>
+                    <li type="none" class="fragment"> Method </li>
+                    <li type="none" class="fragment"> Variable</li>
+                    <li type="none" class="fragment"> Type </li>
+                    <li type="none" class="fragment"> Constructor </li>
+                </ul>
+            </td>
+        </tr>
+        </table>
+        
+    </section>
+
+    <!-- ####################### -->
+
+    <section>
+       <h3> Principle #2: Explicit self type </h3>        
+    
+        <p> "Self type annotations allow one to attach a programmer-defined type to self" </p>
+    </section>
+
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Principle #3: Modular mixin composition </h3>
+        
+        <p> "Modular mixin composition provides a flexible way to compose components and component types" </p>
+    </section>
+
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Scalable Component Abstractions &amp; Swift </h3>
+       <h4> User Repository design illustrated </h4>    
+    </section>    
+
+    <!-- ####################### -->
+                    
+    <section>
+       <h3> Specific Protocol </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct User : Equatable {
+    let name: String
+
+    static func == (lhs:User, rhs:User) -> Bool { return lhs.name == rhs.name }
+}
+
+<span class="fragment">protocol UserRepository {
+    func create(_ user: User) -> Self
+    func delete(_ user: User) -> Self
+}</span>
+        </code></pre>	         
+    </section>
+                              
+
+    <!-- ####################### -->
+    <section>
+       <h3> Abstrat Type Member &amp; Self type </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol InMemoryRepository {
+    associatedtype Element : Equatable
+
+    <span class="fragment">var elements : [Element] { get }</span>
+
+    <span class="fragment">func create(_ e: Element) -> Self
+    func delete(_ e: Element) -> Self</span>
+
+    <span class="fragment">init(_ elements:[Element]) // Constructor specification in Protocols &#x1F60F; </span>
+}
+	  </code></pre>	         
+
+    </section>
+
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Abstract type member &amp; upper bound </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+ extension InMemoryRepository {
+    <span class="fragment">func create(_ e: Element) -> Self {
+        return type(of:self).init(self.elements + [e]) // Use constructor &#x1F60F;
+    }</span>
+
+    <span class="fragment">func delete(_ e: Element) -> Self {
+    	return type(of:self).init(self.elements.filter{ $0 != e })
+    }</span>
+}
+        </code></pre>	         
+    </section>
+
+
+    <!-- ####################### -->
+                    
+    <section>
+       <h3> Specific Protocol &amp; Self Type constraint </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+extension UserRepository where Self:InMemoryRepository {
+    typealias Element = User
+}
+        </code></pre>
+    </section>
+                       
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Structure &amp; Modular mixin composition </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct ConcreteUserRepository : UserRepository, InMemoryRepository {
+    <span class="fragment">typealias Element = User</span>
+
+    <span class="fragment">let elements : [User]</span>
+
+    <span class="fragment">init(_ elements:[User]) { self.elements = elements }</span>
+}
+
+<span class="fragment">let r = ConcreteUserRepository([]).create(User(name:"Alice"))</span>
+    </code></pre>	         
+    </section>
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h1> &#x1F382; </h1>
+	  <h3> The Cake pattern </h3>       
+    
+       <p> Aternative to Dependency Injection? </p>
+       <p class="fragment"> Not only! </p>
+	</section>		
+          
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> The Cake pattern </h3>       
+    
+       <p> Design Pattern based on</p>
+       <ul>
+           <li> Modular Mixin Composition </li>
+           <li> Explicit Self Type </li>
+           <li> Abstrat Type Member </li>
+        </ul>
+        
+	</section>		
+                  
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> The Cake pattern anatomy </h3>       
+        
+      <table width="80%">
+      <tr class="fragment">
+          <td class="paradigm-title" align="center" width="40%"> Service </td> 
+          <td width="50%" align="center" class="remark"> Features and Interactions </td>
+          </tr>  
+      <tr><td></td><td></td></tr>
+      <tr class="fragment">
+          <td class="paradigm-title" align="center" width="40%"> Component </td> 
+          <td align="center" class="remark"> Services wrapper </td>
+          </tr>  
+      <tr><td></td><td></td></tr>
+      <tr class="fragment">
+          <td class="paradigm-title" align="center" width="40%"> Registry </td> 
+          <td align="center" class="remark"> Components Assembly </td>
+          </tr>  
+      </table>
+        
+      <p class="fragment"> "Standardized" boiler plate for application design </p>
+    
+	</section>		          
+                  
+    <!-- ####################### -->
+          
+ 	<section> 
+      <h3> The Cake pattern physiology </h3>
+	  <h4> Services definition and implementation </h4>
+    </section>
+    
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Services definition  </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol UserRepository {
+    func find(name: String) -> User?
+}
+
+protocol UserService {
+    func authenticate(name: String, password: String) -> Bool
+}
+        </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> A Static Repository Service implementation </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct StaticUserRepository : UserRepository {
+    private let users = [ User(name:"Alice", password:"Wonderland") ]
+    func find(name: String ) -> User? {
+        return self.users.filter{ $0.name == name }.first
+    }
+}
+        </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> A Default user Service implementation </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct DefaultUserService : UserService {
+    let userRepository : UserRepository
+
+    func authenticate(name: String, password: String) -> Bool {
+        return self.userRepository.find(name: name)
+                                  .map{ $0.password == password } ?? false
+    }
+}
+        </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+      <h3> The Cake pattern physiology </h3>
+	  <h4> Components definition </h4>
+    </section>
+    
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> User Repository component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol UserRepositoryComponent {
+    static var userRepository : UserRepository { get }
+    static func create() -> UserRepository
+}
+
+extension UserRepositoryComponent {
+    static var userRepository : UserRepository {
+        return self.create()
+    }
+}
+        </code></pre>	
+        
+    </section>		        
+
+    <!-- ####################### -->
+
+ 	<section> 
+	  <h3> User Service component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol UserServiceComponent {
+    static var userService : UserService { get }
+    static func create() -> UserService
+}
+
+extension UserServiceComponent {
+    static var userService : UserService {
+        return self.create()
+    }
+}
+    </code></pre>	
+        
+    </section>		        
+
+    <!-- ####################### -->
+
+ 	<section> 
+	  <h3> Static Repository Component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol StaticUserRepositoryComponent : UserRepositoryComponent {}
+
+extension StaticUserRepositoryComponent {
+    static func create() -> UserRepository {
+        return StaticUserRepository()
+    }
+}
+    </code></pre>	
+        
+    </section>		        
+
+    <!-- ####################### -->
+
+ 	<section> 
+	  <h3> Default User Service Component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol DefaultUserServiceComponent : UserServiceComponent {}
+
+extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
+    static func create() -> UserService {
+        return DefaultUserService(userRepository: self.userRepository)
+    }
+}
+    </code></pre>	
+        
+    <p class="remark"> Self constraint used to retrieve the user repository </p>    
+        
+    </section>		        
+
+    <!-- ####################### -->
+          
+ 	<section> 
+      <h3> The Cake pattern physiology </h3>
+	  <h4> Registry definition </h4>
+    </section>
+    
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Mixing components </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct Application: StaticUserRepositoryComponent,DefaultUserServiceComponent {
+    // Static variables implicitely linked via variables initialization
+}
+        </code></pre>	         
+
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+print(Application.userService.authenticate(name:"Alice", password:"Wonderland"))
+        </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+
+    <section>
+        <h3> Revisiting Protocol Self constraint </h3>
+          
+        <p> The Twilight Zone </p>
+    </section>
+          
+    <!-- ####################### -->
+
+    <section>
+       <h3> Act 1 - Basic Protocol Definition </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">          
+protocol  A { func a() -> String }
+extension A { func a() -> String { return "a" } }
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol  B { func b() -> String }
+extension B { func b() -> String { return "b" } }
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol  C { func c() -> String }
+extension C { func c() -> String { return "c" } }
+        </code></pre>	
+    </section>
+          
+    <!-- ####################### -->
+
+    <section>
+       <h3> Act 2 - Self constrained extensions </h3>
+       
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+extension C where Self:A { 
+    func c() -> String { return "c with \(a())" }
+}
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+extension C where Self:B { 
+    func c() -> String { return "c with \(b())" }
+}
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+extension C where Self:A&amp;B { 
+    func c() -> String { return "c with \(a()) and \(b())" }
+}
+        </code></pre>	
+    </section>
+          
+    <!-- ####################### -->
+
+    <section>
+       <h3> Act 3 - Constraint based compositions </h3>
+       
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+class DefaultC : C { func display() { print(c()) } }
+DefaultC().display() // prints "c"
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+class DefaultAC : A, C { func display() { print(c()) } }
+DefaultAC().display() // prints "c with a"
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+class DefaultBC : B, C { func display() { print(c()) } }
+DefaultBC().display() // prints "c with b"
+        </code></pre>	
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+class DefaultABC : A, B, C { func display() { print(c()) } }
+DefaultABC().display() // prints "c with a and b"
+        </code></pre>
+    </section>
+                    
+    <!-- ####################### -->
+
+    <section>
+       <h3> Self Constraint and Protocol </h3>
+        
+        <p> Constraint based programming style i.e.<br>
+        behaviors aggregation driven by composed types </p>
+
+    </section>    
+          
+    <!-- ####################### -->
+                    
+    <section>
+        <h3> Revisiting the Cake Pattern </h3>
+        <h4> Mimic Spring "<b>Autowired</b>" Annotation </h4>
+    </section>
+          
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> User Repository component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol Autowired {}
+
+extension UserRepositoryComponent where Self:Autowired {
+    static var userRepository : UserRepository {
+        return self.create()
+    }
+}
+
+extension UserServiceComponent where Self:Autowired {
+    static var userService : UserService {
+        return self.create()
+    }
+}
+    </code></pre>	
+        
+    </section>		
+             
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Mixing components </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct Application: StaticUserRepositoryComponent, DefaultUserServiceComponent {
+    static let userRepository = Application.createUserRepository()
+    static let userService    = Application.createUserService()
+}
+        </code></pre>	         
+
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct Application: StaticUserRepositoryComponent, DefaultUserServiceComponent,
+                    Autowired {
+    // Static variables implicitly linked
+}
+        </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+                    
+    <section>
+	  <h3> Protocol Oriented programming </h3>	 
+        
+        <p> Programming style </p>
+    
+        <ul class="fragment">
+            <li> Protocol Based Design </li>
+            <li> Modular Mixin Composition </li>
+            <li> Abstract Type Member </li>
+        </ul>
+
+    </section>
+          
+    <!-- ####################### -->
+                    
+    <section>
+        <h3> Protocol Oriented programming philosophy </h4>	 
+        
+      <p> "Replace a class hierarchy with <br> a protocol-oriented solution" </p>
+    </section>
+
+    <!-- ####################### -->
+                    
+    <section>
+        <h3> Revisiting the Cake Pattern </h3>
+        <h4> Protocol Oriented Programming applied </h4>
+    </section>
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> A Static Repository Service prototype </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol StaticUserRepository : UserRepository {}
+
+extension StaticUserRepository {
+    var users : [User] {
+        return [ User(name: "Alice", password: "Wonderland") ]
+    }
+    
+    func find(name: String ) -> User? {
+        return self.users.filter{ $0.name == name }.first
+    }
+}        
+    </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> A Default user Service protocol </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+protocol DefaultUserService : UserService {
+    var userRepository : UserRepository { get }
+}
+
+extension DefaultUserService {
+    func authenticate(name: String, password: String) -> Bool {
+        return userRepository.find(name:name)
+                             .map{ $0.password == password }
+                             ?? false
+    }
+}
+        </code></pre>	         
+          
+    </section>	
+          
+    <!-- ####################### -->
+
+ 	<section> 
+	  <h3> Static Repository Component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct StaticUserRepositoryStruct : StaticUserRepository {}
+
+protocol StaticUserRepositoryComponent : UserRepositoryComponent {}
+
+extension StaticUserRepositoryComponent {
+    static func createUserRepository() -> UserRepository {
+        return StaticUserRepositoryStruct()
+    }
+}
+    </code></pre>	
+        
+    </section>		        
+
+    <!-- ####################### -->
+
+ 	<section> 
+	  <h3> Default User Service Component </h3>
+	
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+struct DefaultUserServiceStruct : DefaultUserService {
+    let userRepository : UserRepository
+}
+
+protocol DefaultUserServiceComponent : UserServiceComponent {}
+
+extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
+    static func createUserService() -> UserService {
+        return DefaultUserServiceStruct(userRepository: self.userRepository)
+    }
+}
+    </code></pre>	
+        
+    </section>		        
+          
+    <!-- ####################### -->
+                    
+    <section>
+        <h3> Abstraction first programming style </h3>	 
+        
+      <p> "Cake Pattern: The Bakery from the Black Lagoon" <br> Daniel Spiewack </p>
+    </section>
+
+    <!-- ####################### -->
+          
+	<section> 
+	  <h3> Questions ? </h3>
+	</section>	
+
+    <!-- ####################### -->
+          
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	
+	<script>	  
+	  // More info https://github.com/hakimel/reveal.js#configuration
+	  Reveal.initialize({
+          controls: false,
+          progress: false,
+          history: true,
+          center: true,
+	      slideNumber: true,
+          transition: 'none', // none/fade/slide/convex/concave/zoom
+
+          // More info https://github.com/hakimel/reveal.js#dependencies
+          dependencies: [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/zoom-js/zoom.js', async: true },
+              { src: 'plugin/notes/notes.js', async: true }
+          ]
+	  });	  
+	</script>
+</body>
+</html>
+
+

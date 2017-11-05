@@ -96,7 +96,7 @@
       <div class="slides">
 
 	<section>
-	  <h2>Compiling <span class="name">&micro;Fun</span> langage</h2>
+	  <h2><span class="name">&micro;Fun</span> Definition &amp; compilation</h2>
 	  <br/>
 	  <div class="p" style="text-align:middle">20 septembre 2017</div>
 	  <div class="p" style="text-align:middle">Software Craftsmanship Toulouse</div>
@@ -110,7 +110,7 @@
 	</section>
 
 	<section>
-	  <h3> <div class="name">&micro;Fun</name> langage definition </h3>
+	  <h3> Langage Definition </h3>
       <pre class="remark">
           s0   ::= ent*
           ent  ::= "def" IDENT sexp
@@ -126,7 +126,7 @@
     </section>
 
     <section>
-      <h3> <div class="name">&micro;Fun</name> syntax equivalences </h3>
+      <h3> syntax highlights </h3>
 
       <div class="remark">
           <table width="100%">
@@ -182,25 +182,6 @@
 	</section>
 
     <section>
-	  <h3> Example :: Factorial </h3>
-      <pre><code>
-          def leq   { l r t f -> native "leq"   } // l=&lt;r?t:f
-          def mult  { l r     -> native "mult"  }
-          def minus { l r     -> native "minus" }
-
-          def cond { c t f -> c t f () }
-
-          def fact {
-              cond (leq _ 1)
-                   { 1 }
-                   { mult _ $ fact $ minus _ 1 }
-          }
-
-          fact 12
-      </code></pre>
-	</section>
-
-    <section>
 	  <h3> Analyze </h3>
 
       Sequence char &rightarrow; Try Ast
@@ -226,7 +207,6 @@
  [a b]        = Ast.application([a],[b])
  [i]          = Ast.ident(i)             if i &in; IDENT
  [n]          = Ast.constant(n)          if n &in; NUMBER &cup; STRING
-
  [<span class="tk">native</span> s]   = Ast.native(n)
  [<span class="tk">(</span> a <span class="tk">)</span>]      = [a]
  [<span class="tk">$</span> a]        = [a]
@@ -259,7 +239,7 @@
 
       <pre>
 
- [_] :: Ast &rightarrow; Array String &rightarrow; AstDB
+ [_] :: Ast &rightarrow; List String &rightarrow; AstDB
 
  [Ast.abstraction(a,b)]<sub>e</sub>  = AstDB.abstraction([b]<sub>(a::e)</sub>)
  [Ast.application(a,b)]<sub>e</sub>  = AstDB.application([a]<sub>e</sub>, [b]<sub>e</sub>)
@@ -347,6 +327,16 @@
 	  <h4> Analyze(S).map(Transform).map.(Compile).flatmap(Execute) </h4>
 
       Sequence char &rightarrow; Try Result
+	</section>
+
+    <section>
+	  <h3> What's Next? </h3>
+
+      <ul>
+          <li> Call-by-Name   </li>
+          <li> Tail recursive </li>
+          <li> Type systems   </li>
+      </ul>
 	</section>
 
 	<script src="lib/js/head.min.js"></script>
