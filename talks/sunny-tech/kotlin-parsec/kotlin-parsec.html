@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Kotlin Parsec</title>
+
+        <meta name="description" content="Parser combinators in Kotlin">
+        <meta name="author" content="Didier Plaindoux">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/devoxx.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+         .transitions {
+             position:relative;
+         }
+         .transition {
+             position:absolute;
+             margin-left: auto;
+             margin-right: auto;
+             left: 0;
+             right: 0;
+         }
+         .lower {
+             text-transform: lowercase !important;
+         }
+         .img-circle {
+             border-radius: 50%;
+         }
+         .highlight {
+             color:white;
+             left: 10%;
+             width: 100%;
+             text-align:middle !important;
+             background-color:#223344;
+             padding: 10px 0em 10px 0em !important;
+         }
+         .keyword {
+             color:#FFAA00;
+         }
+         .type-hole {
+             right:10px;
+             color:#FF4444;
+             padding: 0px 10px 0px 10px !important;
+         }
+         .type-parameters {
+             color:#44FF44;
+         }
+         .type-ok {
+             right:10px;
+             color:#44FF44;
+             padding: 0px 5px 2px 5px !important;
+         }
+         .type-rule {
+             position:absolute;
+             right:10px; color:white;
+             background-color:#442266;
+             padding: 0px 5px 2px 5px !important;
+         }
+         .ribbon {
+             position:fixed;
+             right: 0px;
+             top:0px;
+             z-index: 1;
+             overflow: hidden;
+             width: 150px;
+             height: 150px;
+             text-align: right;
+         }
+         .ribbon span {
+             font-size: 12px;
+             font-weight: bold; color: #FFF;
+             text-transform: uppercase;
+             text-align: center;
+             line-height: 20px;
+             transform: rotate(45deg);
+             -webkit-transform: rotate(45deg);
+             width: 150px;
+             display: block;
+             background: #79A70A;
+             background:linear-gradient(#F70505 0%, #8F0808 100%);
+             box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+             position: absolute;
+             top: 34px; right: -32px;
+         }
+         .map {
+             z-index: 1;
+             position:absolute;
+             right: -2em;
+             top: -0em;
+         }
+        </style>
+
+        <!-- Printing and PDF exports -->
+        <script>
+         var link = document.createElement( 'link' );
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <!-- ####################### -->
+
+                <section>
+                    <h2>Kotlin Parsec</h2>
+                    <h4> SunnyTech 2018 </h4>
+                    <p><img style="vertical-align: middle;" class="plain img-circle" width="6%" src="images/photo.jpg">
+                        &nbsp; <a style="font-size:30px" href="http://twitter.com/dplaindoux">@dplaindoux</a></p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                	  <table>
+                	    <tr>
+                	      <td align="center"><b>Computer scientist</b></td>
+                	      <td align="center"><b>Freelance</b></td>
+                	    </tr>
+                	    <tr>
+                	      <td width="50%" align="center"><span style="font-size:500%">&lambda;</span></td>
+                	      <td width="50%" align="center"><img class="plain" src="images/fungus.png" width='45%'></img></td>
+                	    </tr>
+                	  </table>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> <img class="plain" src="images/devfest.png" width='120%'></img> </h3>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> <img class="plain" src="images/lambdada.png" width='15%'></img> </h3>
+                    <p> Lambdada is a french community <br> of software developers <br> <span class="fragment">#FP</span> <span class="fragment">#Haskell</span> <span class="fragment">#Idris and more</span> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h2> Kotlin <span class="fragment fade-out"> Parsec </span> </h2>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Kotlin </h3>
+                    <p> Strong Typed Object-Oriented and <br> Functional programming language </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Multiplatform Kotlin </h3>
+                    <ul>
+                        <li> Kotlin/JVM for Desktop, Server and Android</li>
+                        <li class="fragment"> Kotlin/JS for WebSites</li>
+                        <li class="fragment"> Kotlin/Native for iOS, Linux, WebAssembly ...</li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Kotlin Features </h3>
+                    <ul>
+                        <li> Concise e.g. constructors, methods etc.</li>
+                        <li class="fragment"> Safer when dealing with <span class="keyword" >null</span> </li>
+                        <li class="fragment"> Strong type checker </li>
+                        <li class="fragment"> Closure support </li>
+                        <li class="fragment"> Class extension </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h2> <span class="fragment fade-out"> Kotlin </span> Parsec </h2>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> <img class="plain" src="images/paper.png" width='120%'></img> </h3>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Expressions EBNF </h3>
+                    <pre>
+
+                 Expr  ::= SExp [('+' | '*') Expr]
+                 SExpr ::= NUMBER | ('(' Expr ')')
+                    </pre>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Expressions &amp; Parser Combinators</h3>
+
+                    <pre>
+
+    fun Expr()  = SExp() <span class="keyword">then</span> <span class="keyword">opt</span>(<span class="keyword">charIn</span>('+','*') <span class="keyword">then</span> Expr())
+    fun SExpr() = <span class="keyword">NUMBER</span> <span class="keyword">or</span> (<span class="keyword">char</span>('(') <span class="keyword">then</span> Expr() <span class="keyword">char</span>(')')
+                    </pre>
+
+
+                    <div class="highlight fragment"> TDD and TDD compliant </div>
+                </section>
+
+                 <!-- ####################### -->
+
+                <section>
+                    <h3> Parser </h3>
+                    <p>  Function accepting characters as input <br>
+                        and returning a structure as output </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> Parser </h3>
+                    <p> CharReader &rarr; Response&lt;A> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> Core Parsers </h3>
+                    <ul>
+                        <li> <span class="keyword"> returns </span> succeeds without consuming any input </li>
+                        <li> <span class="keyword"> fails </span> fails without consuming any input </li>
+                        <li> <span class="keyword"> any </span> succeeds consuming one Character </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Parser Combinator </h3>
+                    <p> Accept parsers as input and <br> returning a new parser as output </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> Core Parser Combinators </h3>
+                    <ul>
+                        <li> <span class="keyword"> lazy </span> for (mutual) recursive parsers </li>
+                        <li> <span class="keyword"> doTry </span> try a parse or consume nothing </li>
+                        <li> <span class="keyword"> lookahead </span> try a parser and consume nothing </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Monadic Parser Combinators </h3>
+                    <pre class="fragment">          map     : Parser&lt;A> &rarr; (A &rarr; B) &rarr; Parser&lt;B> </pre>
+                    <pre class="fragment">          join    : Parser&lt;Parser&lt;A>> &rarr; Parser&lt;A> </pre>
+                    <pre class="fragment">          flatMap : Parser&lt;A> &rarr; (A &rarr; Parser&lt;B>) &rarr; Parser&lt;B> </pre>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Episode I </h3>
+                    <p> The Object-Oriented Menace </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> Episode II </h3>
+                    <p> Attack of the Closure </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Episode III </h3>
+                    <p> Revenge of the Type </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> Flow Parser Combinators </h3>
+                    <p> <span class="keyword"> then </span>,
+                         <span class="keyword"> or </span>,
+                         <span class="keyword"> opt </span>,
+                         <span class="keyword"> optrep </span>,
+                         <span class="keyword"> rep </span>
+                     </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> tail recursion in Kotlin </h3>
+
+                    <p> Allows some algorithms using recursive function <br>
+                         <span class="type-hole">without the risk of stack overflow.</span> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <div class="fragment ribbon"><span>Live Code</span></div>
+                    <h3> Character Parser Combinators </h3>
+                    <p> <span class="keyword"> char </span>,
+                        <span class="keyword"> charIn </span>,
+                        <span class="keyword"> not </span>
+                     </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Some Examples </h3>
+                    <ul>
+                        <li> Expressions aka "Hello world" for parsers :) </li>
+                        <li> JSON parser </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Conclusion about Parser Combinators </h3>
+
+                    <ul>
+                        <li> Expressive Parser DSL </li>
+                        <li class="fragment"> Intensive Functional Composition </li>
+                        <li class="fragment"> Efficiency? <span class="fragment">Not really e.g. JSON &approx; 500k/s<span> </li>
+                        <li class="fragment">Free-Monads?</li>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Conclusion about Kotlin </h3>
+
+                    <ul>
+                        <li> Object-Oriented with(out) Functional paradigm </li>
+                        <li class="fragment"> Function type as Class </li>
+                        <li class="fragment"> Class Extension </li>
+                        <li class="fragment"> Tail recursion support </li>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h3> Thank you! </h3>
+                </section>
+
+                <!-- ####################### -->
+
+                <script src="lib/js/head.min.js"></script>
+                <script src="plugin/mermaid/mermaid.full.js"></script>
+                <script src="js/reveal.js"></script>
+
+                <link rel="stylesheet" href="plugin/css/mermaid.css">
+
+                <script>
+                 // More info https://github.com/hakimel/reveal.js#configuration
+                 Reveal.initialize({
+                     controls: false,
+                     progress: false,
+                     history: true,
+                     center: true,
+                     slideNumber: true,
+                     transition: 'none', // none/fade/slide/convex/concave/zoom
+
+                     // More info https://github.com/hakimel/reveal.js#dependencies
+                     dependencies: [
+                         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                         { src: 'plugin/zoom-js/zoom.js', async: true },
+                         { src: 'plugin/notes/notes.js', async: true }
+                     ]
+                 });
+                </script>
+    </body>
+</html>
