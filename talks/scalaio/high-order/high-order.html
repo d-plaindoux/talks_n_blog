@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>High Order Transformation Function</title>
+
+        <meta name="description" content="Designing code with High Order Transformation Function">
+        <meta name="author" content="Didier Plaindoux">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+         body {
+            # background: #000000 !important
+         }
+         .transitions {
+             position:relative;
+         }
+         .transition {
+             position:absolute;
+             margin-left: auto;
+             margin-right: auto;
+             left: 0;
+             right: 0;
+         }
+         .lower {
+             text-transform: lowercase !important;
+         }
+         .img-circle {
+             border-radius: 50%;
+         }
+         .given {
+             left: 5%;
+             width: 90%;
+             text-align:left !important;
+         }
+         .highlight {
+             color:white;
+             left: 5%;
+             width: 90%;
+             text-align:middle !important;
+             background-color:#333333;
+             padding: 10px 0em 10px 0em !important;
+         }
+         .keyword {
+             color:#FFAA00;
+         }
+         .type-hole {
+             right:10px;
+             color:#FF4444;
+             padding: 0px 10px 0px 10px !important;
+         }
+         .type-parameters {
+             color:#44FF44;
+         }
+         .type-ok {
+             right:10px;
+             color:#44FF44;
+             padding: 0px 5px 2px 5px !important;
+         }
+         .type-rule {
+             position:absolute;
+             right:10px; color:white;
+             background-color:#664422;
+             padding: 0px 5px 2px 5px !important;
+         }
+         .map {
+             z-index: 1;
+             position:absolute;
+             right: -2em;
+             top: -0em;
+         }
+        </style>
+
+        <!-- Printing and PDF exports -->
+        <script>
+         var link = document.createElement( 'link' );
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+
+    <body>
+        <div style="width:100%; height: 50px; position:absolute; top: 0px; background:#000000;">
+        </div>
+
+        <div style="width:100%; height: 50px; position:absolute; bottom: 0px; background:#000000;">
+            <img src="./images/scalaio_black.svg" width="130px" alt="Scala.IO logo" />
+        </div>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4>High Order "Transformation" Function</h4>
+                    <h5> Scala<span style="color:#FF3322">IO</span> 2018 </h5>
+                    <p><img style="vertical-align: middle;" class="plain img-circle" width="6%" src="images/photo.jpg">
+                        &nbsp; <a style="font-size:30px" href="http://twitter.com/dplaindoux">@dplaindoux</a></p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> function type constructor </h4>
+                    <h4> (&rarr;) : &lowast; &rarr; <span class="fragment" data-fragment-index="1">(</span>&lowast; &rarr; &lowast;<span class="fragment" data-fragment-index="1">)</span> </h4>
+                    <p class="fragment" data-fragment-index="1">
+                        Right Associativity
+                    </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast; </h4>
+                    <h4 class="lower"> a &rarr; a </h4>
+                    <p class="fragment" data-fragment-index="0"> Identity Function aka <span class="keyword"> id </span> </p>
+                    <div class="transitions" >
+                        <p class="highlight fragment current-visible transition" data-fragment-index="1">
+                            <span class="keyword"> id </span> a &#x225D; a
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="2">
+                            <span class="keyword"> id </span> &#x225D; &lambda; a . a <span class="type-rule">abstraction</span>
+                        </p>
+                    </div>
+
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast; b:&lowast; </h4>
+                    <h4 class="lower"> (a &rarr; b) &rarr; <span class="fragment" data-fragment-index="6">(</span>a &rarr; b<span class="fragment" data-fragment-index="6">)</span></span> </h4>
+                    <p class="fragment" data-fragment-index="0"> Application Function aka <span class="keyword"> apply </span> or <span class="keyword">$</span> </p>
+                    <div class="transitions" >
+                        <p class="highlight fragment current-visible transition" data-fragment-index="1">
+                            <span class="keyword"> apply </span> f a &#x225D; f a
+                            <span class="type-rule">reification</span>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="2">
+                            <span class="keyword"> apply </span> f &#x225D; &lambda; a . f a
+                            <span class="type-rule">abstraction</span>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="3">
+                            <span class="keyword"> apply </span> f &#x225D; f <span class="type-rule">&eta;-reduction</span>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="4">
+                            <span class="keyword"> apply </span> &#x225D; &lambda; f . f <span class="type-rule">abstraction</span>
+                        </p>
+                        <p class="highlight fragment transition" data-fragment-index="5">
+                            <span class="keyword"> apply </span> &#x225D; <span class="keyword"> id </span> <span class="type-rule"> rewrite </span>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast; b:&lowast; </h4>
+                    <h4 class="lower"> (a &rarr; b) &rarr; (a &rarr; b) </h4>
+                    <p> High Order Function <br> <span class="fragment"> "Transformation" Function </span>
+                    </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, b:&lowast;, c:&lowast; </h4>
+                    <h4 class="lower"> (b &rarr; c) &rarr; (a &rarr; b) &rarr; (a &rarr; c) <br>  </h4>
+                    <p class="fragment"> Composition Function aka <span class="keyword">&#x2218;</span> </p>
+                    <div class="transitions">
+                        <div class="highlight fragment transition">
+                            g <span class="keyword"> &#x2218; </span> f  &#x225D; &lambda; a . g (f a)
+                        </div>
+                        <div class="highlight fragment transition">
+                            (f <span class="keyword">&#x2218;</span> g) <span class="keyword">&#x2218;</span> h &#x225D; <span class="fragment">&lambda; a. f (g (h a))</span>
+                        </div>
+                        <div class="highlight fragment transition">
+                            f <span class="keyword">&#x2218;</span> (g <span class="keyword">&#x2218;</span> h) &#x225D; <span class="fragment">&lambda; a. f (g (h x))</span>
+                        </div>
+                        <div class="highlight fragment transition">
+                            (f <span class="keyword">&#x2218;</span> g) <span class="keyword">&#x2218;</span> h &equiv; f <span class="keyword">&#x2218;</span> (g <span class="keyword">&#x2218;</span> h)
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, b:&lowast;, c:&lowast; </h4>
+                    <h4 class="lower"> (a &rarr; b) &rarr; (b &rarr; c) &rarr; (a &rarr; c) <br>  </h4>
+                    <p class="fragment"> Pipelining Function aka <span class="keyword">|></span> </p>
+                    <div class="transitions">
+                        <div class="highlight fragment transition">
+                            f <span class="keyword"> |> </span> g &#x225D; g <span class="keyword"> &#x2218; </span> f
+                        </div>
+                        <div class="highlight fragment transition">
+                            (f <span class="keyword">&#x2218;</span> g) <span class="keyword">&#x2218;</span> h &equiv; f <span class="keyword">&#x2218;</span> (g <span class="keyword">&#x2218;</span> h)
+                        </div>
+                        <div class="highlight fragment transition">
+                            (g <span class="keyword">|></span> f) <span class="keyword">&#x2218;</span> h &equiv; f <span class="keyword">&#x2218;</span> (g <span class="keyword">&#x2218;</span> h)
+                        </div>
+                        <div class="highlight fragment transition">
+                            h <span class="keyword">|></span> (g <span class="keyword">|></span> f) &equiv; f <span class="keyword">&#x2218;</span> (g <span class="keyword">&#x2218;</span> h)
+                        </div>
+                        <div class="highlight fragment transition">
+                            h <span class="keyword">|></span> (g <span class="keyword">|></span> f) &equiv; (g <span class="keyword">&#x2218;</span> h) <span class="keyword">|></span> f
+                        </div>
+                        <div class="highlight fragment transition">
+                            h <span class="keyword">|></span> (g <span class="keyword">|></span> f) &equiv; (h <span class="keyword">|></span> g) <span class="keyword">|></span> f
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Higher Kinded Type </h4>
+                    <h4 class="lower"> &forall; m : &lowast; &rarr; &lowast; </h4>
+                    <p class="fragment"> Abstraction over Type Constructors </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, b:&lowast;, m:&lowast; &rarr; &lowast; </h4>
+                    <h4 class="lower"> (a &rarr; b) &rarr; (<span class="fragment" data-fragment-index="2">m</span> a &rarr; <span class="fragment" data-fragment-index="2">m</span> b) </h4>
+                    <p class="fragment"> Function Mapping aka <span class="keyword">fmap</span> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <ul>
+                        <h4 class="lower"> <span class="fragment"><span class="keyword">functor</span></span> &forall; m:&lowast; &rarr; &lowast; </h4>
+                        <li type="none"> <span class="keyword"> fmap </span> :: (a &rarr; b) &rarr; (m a &rarr; m b) </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, m:&lowast; &rarr; &lowast; </h4>
+                    <h4 class="lower"> a &rarr; <span class="fragment" data-fragment-index="1">m</span> a </h4>
+                    <p class="fragment" data-fragment-index="1"> Lifting Function aka <span class="keyword">pure</span> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, b:&lowast;, m:&lowast; &rarr; &lowast; </h4>
+                    <h4 class="lower"> <span class="fragment">m</span> (a &rarr; b) &rarr; (m a &rarr; m b) </h4>
+                    <p class="fragment"> Applicative Functor aka <span class="keyword"><&lowast;></Span>  </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <ul class="given">
+                        <p> Given </p>
+                        <li type="none"> <span class="keyword">pure</span> :: a &rarr; m a </li>
+                        <li type="none"> <span class="keyword"><&lowast;></span> :: m (a &rarr; b) &rarr; (m a &rarr; m b) </li>
+                    </ul>
+                    <div class="transitions">
+                        <p class="highlight fragment current-visible transition" data-fragment-index="1">
+                            <span class="keyword"> fmap </span> f &#x225D; ?
+                            <br><br><span class="type-hole"><span class="type-parameters">(a &rarr; b) &rarr; </span> ?</span><br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="2">
+                            <span class="keyword"> fmap </span> f &#x225D; f
+                            <br><br><span class="type-hole"><span class="type-parameters">(a &rarr; b) &rarr; </span>(a &rarr; b)</span><br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="3">
+                            <span class="keyword"> fmap </span> f &#x225D; <span class="keyword"> pure </span> f
+                            <br><br><span class="type-hole"><span class="type-parameters">(a &rarr; b) &rarr; </span>m (a &rarr; b)</span><br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="4">
+                            <span class="keyword"> fmap </span> f &#x225D; <span class="keyword"> pure </span> f <span class="keyword"> <&lowast;> </span>
+                            <br><br><span class="type-ok">(a &rarr; b) &rarr; (m a &rarr; m b)</span><br>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <ul>
+                        <h4 class="lower"> <span class="fragment"><span class="keyword">applicative</span></span> &forall; m:&lowast; &rarr; &lowast; </h4>
+                        <li type="none"> when <b><span class="keyword">functor</span></b> m </li>
+                        <li type="none"> <span class="keyword"> pure </span> :: a &rarr; m a </li>
+                        <li type="none"> <span class="keyword"> <&lowast;> </span> :: m (a &rarr; b) &rarr; (m a &rarr; m b) </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, m:&lowast; &rarr; &lowast; </h4>
+                    <h4 class="lower"> <span class="fragment" data-fragment-index="1">m (m</span> a<span class="fragment" data-fragment-index="1">)</span> &rarr; m a <br>  </h4>
+                    <p class="fragment"> Flattening Function aka <span class="keyword">join</span> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, b:&lowast;, m:&lowast; &rarr; &lowast; </h4>
+                    <h4 class="lower"> (a &rarr; <span class="fragment" data-fragment-index="0">m</span> b) &rarr; (m a &rarr; m b) <br>  </h4>
+                    <p class="fragment" data-fragment-index="1"> Combining Computation Function aka <span class="keyword">bind</span> </p>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <ul class="given">
+                        <p> Given </p>
+                        <li type="none"> <b><span class="keyword">applicative</span></b> m</li>
+                        <li type="none"> <span class="keyword"> join </span> :: m (m a) &rarr; m a </li>
+                    </ul>
+                    <div class="transitions">
+                        <p class="highlight fragment current-visible transition" data-fragment-index="2">
+                            <span class="keyword"> bind </span> f &#x225D; ?
+                            <br><br><span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; </span>?</span><br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="3">
+                            <span class="keyword"> bind </span> f &#x225D; f
+                            <br><br><span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; </span>(a &rarr; m b)</span><br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="4">
+                            <span class="keyword"> bind </span> f &#x225D; <span class="keyword"> fmap </span> f
+                            <br><br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; </span>(m a &rarr; m (m b))</span> <br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="6">
+                            <span class="keyword"> bind </span> f &#x225D; <span class="keyword"> fmap </span> f <span class="keyword"> |> </span>
+                            <br><br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; </span>(m (m b) &rarr; ?) &rarr; (m a &rarr; ?) </span> <br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="7">
+                            <span class="keyword"> bind </span> f &#x225D; <span class="keyword"> fmap </span> f <span class="keyword"> <span class="keyword"> |> join </span>
+                            <br><br> <span class="type-ok">(a &rarr; m b) &rarr; (m a &rarr; m b) </span> <br>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <ul>
+                        <h4 class="lower"> <span class="fragment"><span class="keyword">monad</span></span> &forall; m:&lowast; &rarr; &lowast; </h4>
+                        <li type="none"> when <b><span class="keyword">applicative</span></b> m </li>
+                        <li type="none"> <span class="keyword"> join </span> :: m (m a) &rarr; m a </li>
+                        <li type="none"> <span class="keyword"> bind </span> :: (a &rarr; m b) &rarr; (m a &rarr; m b) </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4 class="lower"> &forall; a:&lowast;, b:&lowast;, c:&lowast;, m:&lowast; &rarr; &lowast; </h4>
+                    <h4 class="lower"> (a &rarr; <span class="fragment" data-fragment-index="2">m</span> b) &rarr; (b &rarr; <span class="fragment" data-fragment-index="2">m</span> c) &rarr; (a &rarr; <span class="fragment" data-fragment-index="2">m</span> c) <br>  </h4>
+                    <p class="fragment" data-fragment-index="3"> Kleisli Monad Pipelining aka <span class="keyword">>=></span> </p>
+                    <div class="highlight fragment transition">
+                        (f <span class="keyword">>=></span> g) <span class="keyword">>=></span> h &equiv; f <span class="keyword">>=></span> (g <span class="keyword">>=></span> h)
+                    </div>
+                </section>
+                <!-- ####################### -->
+
+                <section>
+                    <ul class="given">
+                        <p> Given </p>
+                        <li type="none"> <b><span class="keyword">monad</span></b> m</li>
+                    </ul>
+                    <div class="transitions" >
+                        <p class="highlight fragment current-visible transition" data-fragment-index="4">
+                            f <span class="keyword"> >=> </span> g &#x225D; ?
+                            <br><br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; (b&rarr; m c) &rarr; </span>?</span>
+                            <br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="5">
+                            f <span class="keyword"> >=> </span> g &#x225D; f
+                            <br><br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; (b&rarr; m c) &rarr; </span>(a &rarr; m b)</span>
+                            <br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="6">
+                            f <span class="keyword"> >=> </span> g &#x225D; f <span class="keyword"> |> </span>
+                            <br><br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; (b&rarr; m c) &rarr; </span>(m b &rarr; ?) &rarr; (a &rarr; ?)</span>
+                            <br>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="7">
+                            f <span class="keyword"> >=> </span> g &#x225D; f <span class="keyword"> |> </span>  <br>
+                            g :: <span class="type-ok">b &rarr; m c</span>
+                            <br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; (b&rarr; m c) &rarr; </span>(m b &rarr; ?) &rarr; (a &rarr; ?)</span>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="8">
+                            f <span class="keyword"> >=> </span> g &#x225D; f <span class="keyword"> |> </span> <br>
+                            <span class="keyword"> bind </span> g :: <span class="type-ok">m b &rarr; m c</span>
+                            <br> <span class="type-hole"><span class="type-parameters">(a &rarr; m b) &rarr; (b&rarr; m c) &rarr; </span>(m b &rarr; ?) &rarr; (a &rarr; ?)</span>
+                        </p>
+                        <p class="highlight fragment current-visible transition" data-fragment-index="9">
+                            f <span class="keyword"> >=> </span> g &#x225D; f <span class="keyword"> |> </span> (<span class="keyword">bind</span> g)
+                            <br><br> <span class="type-ok">(a &rarr; m b) &rarr; (b&rarr; m c) &rarr; (a &rarr; m c)</span>
+                            <br>
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Master your types </h4>
+
+                    <table>
+                        <tr>
+                            <td align="right">(a &rarr; m b) &rarr; (m a &rarr; m b)</td><td>Function centric</td>
+                        </tr>
+                        <tr>
+                            <td align="right"> m a &rarr; (a &rarr; m b) &rarr; m b</td><td>Data centric</td>
+                        </tr>
+                    </table>
+
+                    <p class="fragment type-ok"> Function centric approach promotes the composition </p>
+
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Draw your types </h4>
+
+                    <img style="vertical-align: middle;" class="plain" width="50%" src="images/pipelining.jpg">
+
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Understand your types </h4>
+
+                    <img style="vertical-align: middle;" class="plain" width="40%" src="images/functor.jpg">
+
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Going Further </h4>
+                    <ul style="font-size:70%">
+                        <li type="none"> Pointfree i.e. Function as a Composition of Other Functions </li>
+                        <li type="none"> Category Theory and Declarative Programming by Bartosz Milewski </li>
+                        <li type="none"> Category: The Essence of Composition by Bartosz Milewski </li>
+                    </ul>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Thank You </h4>
+                </section>
+
+                <!-- ####################### -->
+
+                <section>
+                    <h4> Bind-Kleisli rewrite </h4>
+                    <pre>
+
+ (bind f) >=> g
+ &equiv; (bind f) |> (bind g)              -- rewrite
+ &equiv; (bind g) . (bind f)               -- rewrite
+ &equiv; a &rarr; (bind g) . (bind f) a         -- &eta;-expansion
+ &equiv; a &rarr; bind g (bind f a)             -- rewrite
+ &equiv; a &rarr; bind (x &rarr; (bind g) (f x)) a   -- bind associativity
+ &equiv; a &rarr; bind (x &rarr; (bind g) . f x) a   -- rewrite
+ &equiv; a &rarr; bind ((bind g) . f) a         -- &eta;-reduction
+ &equiv; a &rarr; bind (f |> (bind g)) a        -- rewrite
+ &equiv; bind (f |> (bind g))              -- &eta;-reduction
+ &equiv; bind (f >=> g)                    -- rewrite
+                    </pre>
+                </section>
+
+                <section>
+                    <h4> Kleisli associativity </h4>
+                    <pre>
+
+ (f >=> g) >=> r
+ &equiv; (f |> (bind g)) |> (bind r)       -- rewrite
+ &equiv; f |> ((bind g) |> (bind r))       -- Pipelining associativity
+ &equiv; f |> ((bind g) >=> r)             -- rewrite
+ &equiv; f |> (bind (g >=> r))             -- Bind-Kleisli rewrite
+ &equiv; f >=> (g >=> r)                   -- rewrite
+                    </pre>
+                </section>
+
+                <!-- ####################### -->
+
+                <script src="lib/js/head.min.js"></script>
+                <script src="plugin/mermaid/mermaid.full.js"></script>
+                <script src="js/reveal.js"></script>
+
+                <link rel="stylesheet" href="plugin/css/mermaid.css">
+
+                <script>
+                 // More info https://github.com/hakimel/reveal.js#configuration
+                 Reveal.initialize({
+                     controls: false,
+                     progress: true,
+                     history: false,
+                     center: true,
+                     slideNumber: false,
+                     transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+                     // More info https://github.com/hakimel/reveal.js#dependencies
+                     dependencies: [
+                         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                         { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                         { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                         { src: 'plugin/zoom-js/zoom.js', async: true },
+                         { src: 'plugin/notes/notes.js', async: true }
+                     ]
+                 });
+                </script>
+    </body>
+</html>

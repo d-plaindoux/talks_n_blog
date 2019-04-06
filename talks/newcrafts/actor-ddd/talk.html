@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title> Modélisation de Domaine et le modèle Acteur </title>
+
+    <meta name="description" content="Actor and DDD">
+    <meta name="author" content="Didier Plaindoux">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+
+        .img-circle {
+            border-radius: 50%;
+        }
+
+        .keyword {
+            color: #FFAAAA;
+        }
+
+        .dark-text {
+            color: #222222;
+        }
+
+        .theorical-model {
+            color: #AAAAFF;
+        }
+
+        .ribbon span {
+            font-size: 12px;
+            font-weight: bold;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 20px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            width: 150px;
+            display: block;
+            background: #79A70A;
+            background: linear-gradient(#F70505 0%, #8F0808 100%);
+            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+            position: absolute;
+            top: 34px;
+            right: -32px;
+        }
+
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Modélisation de Domaine et <br> le modèle Acteur </h2>
+            <h3s> Newcrafts Toulouse 2019</h3s>
+            <p><img style="vertical-align: middle;" class="plain img-circle" width="10%" src="images/photo.jpg">
+                &nbsp; Didier Plaindoux (<a style="font-size:40px" href="http://twitter.com/dplaindoux">@dplaindoux</a>)
+            </p>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h3> Crédits </h3>
+
+            <p><img style="vertical-align: middle;" class="plain img-circle" width="10%" src="images/alessio.jpg">
+                &nbsp; Alessio Coltellacci (<a style="font-size:40px"
+                                               href="http://twitter.com/lightplay8">@lightplay8</a>)</p>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Mise au point </h2>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Domain Driven Development </h2>
+            <p> Approche pour le développement <br> d'applications complexes </p>
+        </section>
+
+        <section>
+            <h2> Domain Driven Development </h2>
+
+            <ul>
+                <li class="fragment"> Focus sur le domaine principal</li>
+                <li class="fragment"> Collaboration entre experts (domaine et logiciel)</li>
+                <li class="fragment"> Determination d'un lexique par context</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Ubiquitous Language </span></h3>
+
+            <p> Champ lexical partagé </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Bounded Context </span></h3>
+
+            <p> Périmètre induit par un champ lexical </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Value Object </span></h3>
+
+            <p class="fragment"> Objet (immutable) défini par ses données </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Value Object </span> :: Illustration </h3>
+            <pre><code style="font-size:80%" data-trim data-noescape class="Scala">
+<span class="fragment">case class Money(amount:Int)  {
+  def plus(money: Money): Money = Money(amount + money.amount)
+}
+
+<span class="fragment">case class OrderLine(orderCost: Money) {
+  def cost(): Money = orderCost
+}</span></span>
+            </code></pre>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Entity </span></h3>
+
+            <p class="fragment"> Objet défini par son identité, <br> ayant un cycle de vie et un état associé. </p>
+            <p class="fragment"> Identité &rarr; Etat + Comportement </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Entity </span> :: Illustration </h3>
+            <pre><code style="font-size:80%" data-trim data-noescape class="Scala">
+class Order(val id: OrderId, var orderLines: List[OrderLine], var cost: Money) {
+<span class="fragment">
+  def totalCost(): Money = cost
+<span class="fragment">
+  def addOrderLine(orderLine: OrderLine): Unit = {
+    orderLines = orderLines :+ orderLine
+    cost = cost.plus(orderLine.cost())
+  }</span></span>
+
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Aggregate </span></h3>
+
+            <p class="fragment"> Ensemble d'entités en cohésion </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Aggregate Root </span></h3>
+
+            <p class="fragment"> Portée de la cohérence et de la persistance </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Repository </span></h3>
+
+            <p class="fragment"> Asbtraire le stockage et la récupération des Aggregate Root </p>
+        </section>
+
+        <section>
+            <h3><span class="keyword"> Domain Event </span></h3>
+
+            <p class="fragment">
+                Quelque chose qui s'est passé dans le domaine.
+            </p>
+        </section>
+
+        <section>
+            <h2> Event Storming </h2>
+            <p> Atelier pour une exploration rapide <br> d'un domaine métier </p>
+        </section>
+
+        <section>
+            <img height="400" src="images/Event_Storming_domain_event.jpg">
+
+            <p><a style="font-size: x-large" href="https://en.wikipedia.org/wiki/Event_storming">
+                https://en.wikipedia.org/wiki/Event_storming
+            </a></p>
+        </section>
+
+        <section>
+            <img height="400" src="images/Event_Storming_command.jpg">
+
+            <p><a style="font-size: x-large" href="https://en.wikipedia.org/wiki/Event_storming">
+                https://en.wikipedia.org/wiki/Event_storming
+            </a></p>
+        </section>
+
+        <section>
+            <img height="400" src="images/Event_Storming_actor.jpg">
+
+            <p><a style="font-size: x-large" href="https://en.wikipedia.org/wiki/Event_storming">
+                https://en.wikipedia.org/wiki/Event_storming
+            </a></p>
+        </section>
+
+        <section>
+            <img height="400" src="images/Event_Storming_aggregate.jpg">
+
+            <p><a style="font-size: x-large" href="https://en.wikipedia.org/wiki/Event_storming">
+                https://en.wikipedia.org/wiki/Event_storming
+            </a></p>
+        </section>
+
+        <section>
+            <img height="400" src="images/reactive.png">
+        </section>
+
+        <section>
+            <h3> Evénement &rarrw; Commande(s) </h3>
+
+            <img height="400" src="images/event-command.png">
+            <p class="fragment"> Couplage faible </p>
+        </section>
+
+        <section>
+            <h3> Event-Driven Architecture </h3>
+            <p>
+            <ul>
+                <li class="fragment"> Event notification</li>
+                <li class="fragment"> Event-Carried State Transfer</li>
+                <li class="fragment"> Event Sourcing</li>
+                <li class="fragment"> CQRS</li>
+            </ul>
+            </p>
+            <a class="fragment" style="font-size: x-large"
+               href="https://martinfowler.com/articles/201701-event-driven.html">
+                What do you mean by “Event-Driven"? - Martin Fowler
+            </a>
+        </section>
+
+        <section>
+            <h3> Système Réactif </h3>
+
+            <img class="fragment" src="images/Reactive-manifesto.png">
+        </section>
+
+        <section>
+
+            <h3> Orientés messages </h3>
+            <p> Utilisation des messages asynchrones </p>
+
+        </section>
+
+        <section>
+            <h3> Message <span class="fragment">&nequiv;</span> Evénement </h3>
+        </section>
+
+        <section>
+            <h2> Questions ? </h2>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Le modèle Acteur </h2>
+            <p class="fragment theorical-model"> "A Universal Modular ACTOR Formalism for Artificial Intelligence"
+                - Carl Hewitt, Peter Bishop et Richard Steiger</p>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h3>Modèle pour le calcul concurrent et distribué</h3>
+            <p>&nbsp;<br>&nbsp;</p>
+        </section>
+
+        <section>
+            <h3><span class="dark-text">Modèle pour le</span>
+                calcul concurrent
+                <span class="dark-text">et distribué</span></h3>
+            <p class="fragment"> Executions "simultanées" dans un même programme </p>
+        </section>
+
+        <section>
+            <h3> Calcul concurrent disjoint </h3>
+            <p class="fragment"> Aucune interaction </p>
+        </section>
+
+        <section>
+            <h3> Calcul concurrent compétitif </h3>
+            <p class="fragment"> Accès à des ressources partagées </p>
+            <p class="fragment"> Mutex, Sémaphore, Spinlock, ... </p>
+        </section>
+
+        <section>
+            <h3> Calcul concurrent coopératif </h3>
+            <p> Echange d'information </p>
+            <p class="fragment"> IPC, Channel </p>
+            <p class="fragment theorical-model"> Communicating sequential processes (CSP) - Hoare </p>
+        </section>
+
+        <section>
+            <h3>Modèle pour le calcul concurrent et distribué</h3>
+            <p>&nbsp; <br> &nbsp; </p>
+            <p>&nbsp;</p>
+        </section>
+
+        <section>
+            <h3><span class="dark-text">Modèle pour le</span>
+                calcul
+                <span class="dark-text">concurrent et</span>
+                distribué </h3>
+            <p class="fragment"> Executions sur plusieurs unités de calcul <br>
+                <span class="fragment">coordonnées par envoie de messages </span>
+            </p>
+            <p class="fragment theorical-model"> &Pi;-Calculus - Milner </p>
+        </section>
+
+        <section>
+            <img src="images/actor-channel.png">
+        </section>
+
+        <section>
+            <img src="images/actor-channel-comparison.png">
+        </section>
+
+        <section>
+            <h3> Anatomie d'un Acteur </h3>
+        </section>
+
+        <section>
+            <img src="images/anatomy-1.png">
+        </section>
+
+        <section>
+            <img src="images/anatomy-2.png">
+        </section>
+
+        <section>
+            <img src="images/anatomy-3.png">
+        </section>
+
+        <section>
+            <img src="images/anatomy-4.png">
+        </section>
+
+        <section>
+            <img src="images/anatomy-5.png">
+        </section>
+
+        <section>
+            <h3> Physiologie d'un Acteur </h3>
+        </section>
+
+        <section>
+            <img src="images/physiology-1.png">
+        </section>
+
+        <section>
+            <img src="images/physiology-2.png">
+        </section>
+
+        <section>
+            <img src="images/physiology-3.png">
+        </section>
+
+        <section>
+            <img src="images/physiology-4.png">
+        </section>
+
+        <section>
+            <h3> The isolated Turn principle </h3>
+            <ul>
+                <li class="fragment"> Un acteur traite les messages de sa B.A.L.</li>
+                <li class="fragment"> Traitement unique et isolé à un instant t</li>
+                <li class="fragment"> Thread Safe et sans dead-lock bas niveau</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Axiomes </h3>
+
+            <ul>
+                <li class="fragment"> Créer un nouvel acteur</li>
+                <li class="fragment"> Changer de comportement</li>
+                <li class="fragment"> Communiquer avec un acteur</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3> Communication </h3>
+
+            <p class="fragment"> Interaction avec un acteur par <br> envoie de <b>message</b> via une <b>référence</b>
+            </p>
+            <p class="fragment"> Concurrence coopérative </p>
+        </section>
+
+        <section>
+            <h3> Message </h3>
+
+            <p class="fragment"> Immutable </p>
+            <p class="fragment"> Délivré au plus une fois </p>
+        </section>
+
+        <section>
+            <h3> Référence d'acteur </h3>
+
+            <p class="fragment"> Existence globale </p>
+            <p class="fragment"> Transparence de l'emplacement </p>
+            <p class="fragment"> Partageable / Communicable </p>
+        </section>
+
+        <section>
+            <h3> Système Acteur </h3>
+
+            <p class="fragment"> Grappes interconnectées </p>
+            <p class="fragment"> Distribution et Référence d'acteur </p>
+        </section>
+
+        <section>
+            <h3> Acteur :: Exemple </h3>
+
+            <pre><code style="font-size:80%" data-trim data-noescape class="Scala">
+<span class="fragment">case object TryConsume // i.e. Interface
+
+<span class="fragment">class Energy(value: Int)(region: ActorRef) extends Actor {
+  <span class="fragment">def receive: Receive = {
+    <span class="fragment">case TryConsume =>
+        <span class="fragment">sender ! Consumed(value)</span>
+        <span class="fragment">region ! Destroy(self)</span>
+        <span class="fragment">context become consumed</span></span>
+  }
+  <span class="fragment">def consumed: Receive = {
+    case _ => ()
+  }</span></span>
+}</span></span>
+            </code></pre>
+
+            <p><a style="font-size: x-large"
+                  href="https://docs.google.com/presentation/d/19b189WgmyCOPwmBDy4h-GFUBqYK95bJ5E_tMW--ymT8/edit#slide=id.g45f7e548ef_0_9">
+                "Actor, an elegant model for concurrent and distributed computation"
+            </a></p>
+        </section>
+
+        <section>
+            <h3> Questions ? </h3>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Domaine et Acteur </h2>
+        </section>
+
+        <section>
+            <h3> Soupe acteur </h3>
+
+            <p class="fragment"><img height="340" src="images/soupe-1.png"></p>
+            <p> &nbsp; </p>
+        </section>
+
+        <section>
+            <h3> Soupe acteur </h3>
+
+            <p><img height="340" src="images/soupe-2.png"></p>
+            <p class="fragment"> Emergence de l'asynchrone ! </p>
+        </section>
+
+        <section>
+            <h3> Soupe acteur </h3>
+
+            <p><img height="340" src="images/soupe-3.png"></p>
+            <p> Emergence de l'asynchrone ! </p>
+        </section>
+
+        <section>
+            <h3> Soupe acteur </h3>
+
+            <p><img height="340" src="images/soupe-4.png"></p>
+            <p> Emergence de l'asynchrone ! </p>
+        </section>
+
+        <section>
+            <h3> Aggregate Root &rarr; Acteur </h3>
+            <pre><code style="font-size:80%" data-trim data-noescape class="Scala">
+
+<span class="fragment">case class AddOrderLine(orderLine: OrderLine)
+case object GetTotalCost
+
+<span class="fragment">case object AddedOrderLine
+case class TotalCost(money: Money)
+case class OrderLineModified(who: ActorRef)
+<span class="fragment">
+class OrderActor(broker: ActorRef, order: Order) extends Actor {
+  override def receive: Receive = {
+    case GetTotalCost       => sender ! OrderCost(order.cost())
+    case AddOrderLine(line) => order.addOrderLine(line)
+                               broker ! OrderLineModified(self)
+                               sender ! AddedOrderLine
+  }
+}</span></span></span>
+            </code></pre>
+            <p class="fragment"> L'agrégat est protégé i.e Thread Safe </p>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h3> "Event-Driven" </h3>
+
+            <p class="fragment"> Publication / Souscription (PubSub) </p>
+            <p class="fragment"> Utilisation naturelle des Acteurs </p>
+            <p class="fragment"> Domain Event &rarrw; Message</p>
+        </section>
+
+        <section>
+            <h3> PubSub </h3>
+
+            <img height="240" src="images/pubsub.png">
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h3> Passage à l'echelle </h3>
+
+            <p class="fragment"> Cluster & Distribution des Acteurs </p>
+        </section>
+
+        <section>
+            <h3> PubSub généralisé </h3>
+
+            <img height="240" src="images/generalized-pubsub.png">
+        </section>
+
+        <section>
+            <h3> Bus d'événements </h3>
+            <p class="fragment"> Haute performance (Kafka, RabbitMQ etc.) </p>
+        </section>
+
+        <section>
+            <h3> Microservices </h3>
+
+            <p class="fragment"> "Loosely coupled service oriented architecture with bounded contexts" - Adrian
+                Cockcroft</p>
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Quelques Références </h2>
+
+            <p>
+                <a style="font-size: xx-large" href="https://www.youtube.com/watch?v=sFCgXH7DwxM">
+                    "DDD and Microservices: At Last, Some Boundaries!" - E. Evans
+                </a>
+                <br>
+                <a style="font-size: xx-large" href="https://www.youtube.com/watch?v=Xh6Ts19M6rg">
+                    "Designing Reactive Systems with Event Storming" - L. Huehnken
+                </a>
+                <br>
+                <a style="font-size: xx-large" href="https://www.youtube.com/watch?v=NVsSHY3vrFI">
+                    "Reactive Microservices with DDD and Actors" - V. Vernon
+                </a>
+            </p>
+
+        </section>
+
+        <!-- ####################### -->
+
+        <section>
+            <h2> Merci </h2>
+        </section>
+
+        <!-- ####################### -->
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="plugin/mermaid/mermaid.full.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <link rel="stylesheet" href="plugin/css/mermaid.css">
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
+                slideNumber: true,
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    {
+                        src: 'lib/js/classList.js', condition: function () {
+                            return !document.body.classList;
+                        }
+                    },
+                    {
+                        src: 'plugin/markdown/marked.js', condition: function () {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    },
+                    {
+                        src: 'plugin/markdown/markdown.js', condition: function () {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    },
+                    {
+                        src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    },
+                    {src: 'plugin/zoom-js/zoom.js', async: true},
+                    {src: 'plugin/notes/notes.js', async: true}
+                ]
+            });
+        </script>
+</body>
+</html>

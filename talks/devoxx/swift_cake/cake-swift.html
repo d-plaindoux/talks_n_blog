@@ -15,81 +15,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
      
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+    <link rel="stylesheet" href="css/mermaid-svg.css">
+    <link rel="stylesheet" href="css/theme/devoxx.css" id="theme">
     
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
-
+      
     <style>
-    .close {
-        background-color:#556677;
-    }
-    .img-circle {
-    border-radius: 50%;
-    }    
-    .alert {
-        font-size:70% !important;
-        color:white;
-        text-align:middle !important;
-        background-color:#994422;
-        padding: 1em 0em 1em 0em !important;
-        Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
-    }
-    .remark {
-        font-size:70% !important;
-        color:white;
-        text-align:middle !important;
-        background-color:#445566;
-        padding: 1em 0em 1em 0em !important;
-        Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
-    }
-    .paradgim-title {
-        font-size:70% !important;
-        color:white;
-        text-align:middle !important;
-        background-color:#994422;
-        padding: 5px 0em 5px 0em !important;
-    }
-    .paradigm-what {
-        font-size:70% !important;
-        color:white;
-        text-align:middle !important;
-        background-color:#445566;
-        padding: 5px 0em 5px 0em !important;
-    }
-    .title {
-        color:black;
-        text-align:middle !important;
-        background-color:white;
-        padding: 1em 0em 1em 0em !important;
-        Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
-    }
-        
-    .ribbon {
-        position:fixed;
-        right: 0px; top:0px;
-        z-index: 1;
-        overflow: hidden;
-        width: 120px; height: 120px;
-        text-align: right;
-    }
-    .ribbon span {
-        font-size: 10px;
-        font-weight: bold;
-        color: #FFF;
-        text-transform: uppercase;
-        text-align: center;
-        line-height: 20px;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        width: 120px;
-        display: block;
-        background: #79A70A;
-        background: linear-gradient(#F70505 0%, #8F0808 100%);
-        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-        position: absolute;
-        top: 24px; right: -26px;
-    }
+        .close {
+            background-color:#556677;
+        }
+        .img-circle {
+            border-radius: 50%;
+        }    
+        .alert {
+            font-size:70% !important;
+            position: relative;
+            color:white;
+            left: 5%;
+            width: 90%;
+            text-align:middle !important;
+            background-color:#994422;
+            padding: 10px 0em 10px 0em !important;
+            Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+        }
+        .remark {
+            font-size:80% !important;
+            position: relative;
+            color:white;
+            width: 100%;
+            text-align:middle !important;
+            background-color:#445566;
+            padding: 10px 0em 10px 0em !important;
+            Box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+        }
+        .remark-service {
+            display: block;
+            position: relative;
+            width: 99%;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 0.55em;
+            font-family: monospace;
+            line-height: 1.2em;
+            word-wrap: break-word;
+            background-color:#445533;
+            background: linear-gradient(to right, #445533 0%, #55555555 100%);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); 
+        }
+        .remark-component {
+            display: block;
+            position: relative;
+            width: 99%;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 0.55em;
+            font-family: monospace;
+            line-height: 1.2em;
+            word-wrap: break-word;
+            background-color:#554433;
+            background: linear-gradient(to right, #554433 0%, #55555555 100%);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+        }
+        .remark-application {
+            display: block;
+            position: relative;
+            width: 99%;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 0.55em;
+            font-family: monospace;
+            line-height: 1.2em;
+            word-wrap: break-word;
+            background-color:#553344;
+            background: linear-gradient(to right, #553344 0%, #55555555 100%);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+        }
+        .paradgim-title {
+            font-size:70% !important;
+            color:white;
+            text-align:middle !important;
+            background-color:#994422;
+            padding: 5px 0em 5px 0em !important;
+        }
+        .paradigm-what {
+            font-size:70% !important;
+            color:white;
+            text-align:middle !important;
+            background-color:#445566;
+            padding: 5px 0em 5px 0em !important;
+        }
+        .title {
+            color:black;
+            text-align:middle !important;
+            background-color:white;
+            padding: 1em 0em 1em 0em !important;
+            box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.4); 
+        }
+        .ribbon {
+            position:fixed;
+            right: 0px; top:0px;
+            z-index: 1;
+            overflow: hidden;
+            width: 150px; height: 150px;
+            text-align: right;
+        }
+        .ribbon span {
+            font-size: 12px;
+            font-weight: bold;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 20px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            width: 150px;
+            display: block;
+            background: #79A70A;
+            background: linear-gradient(#F70505 0%, #8F0808 100%);
+            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+            position: absolute;
+            top: 34px; right: -32px;
+        }
+        .map {
+            z-index: 1;
+            position:absolute;
+            right: -2em; top: -0em;
+        }
     </style>
 
     <!-- Printing and PDF exports -->
@@ -103,42 +155,68 @@
   </head>
   
   <body>
+      
     <div class="reveal">
-      <div class="slides">
-
+        <!-- div class="footer"> <span style="right:1em;">TODO</span> </div -->
+      
+        <div class="slides">
+          
     <!-- ####################### -->
           
     <section>
+      <h4 style="background-color:white; color:black; width:100%"> Under the great patronage of his majesty the king Mohammed VI </h4>
+	  <br/>
 	  <h2>Swift cooking course <br> Making a Cake ... Pattern</h2>
 	  <br/>
-	  <div class="p" style="text-align:middle">16 Novembre 2017</div>
-	  <div class="p" style="text-align:middle">Devoxx Maroc</div>
-	  <div class="p" style="text-align:middle">
-	    <span>
-	      <a href="http://d.plaindoux.free.fr">Didier Plaindoux</a>
-	      (<a href="http://twitter.com/dplaindoux">@dplaindoux</a>)
-	    </span> 
-	  </div>
+	  <h4>D. Plaindoux | Devoxx Morocco</h4>
 	</section>
 
     <!-- ####################### -->
           
     <section>
-        <img class="plain img-circle" width="15%" src="images/photo.jpg">	  
-        <p class="remark">typealias MySelf = <b>Freelance</b> & <b>ComputerScientist</b></p>
+	  <h3> Dependency injection with Swift </h3>
+      <ul>
+        <li> Calling a constructor and/or a setter </li>  
+        <li> Container with registration capabilities </li>
+      </ul>
+      <br>
+      <p class="alert fragment"> Classical and "agnostic" approach ... </p>
 	</section>
+
+    <!-- ####################### -->
+          
+    <section>
+	  <h3> Dependency injection alternative? </h3>
+      <p class="fragment"> Specific design pattern applied <br> using the Swift language expressivness </p>
+	</section>
+
+    <!-- ####################### -->
+          
+    <section>
+        <p><img style="vertical-align: middle;" class="plain img-circle" width="12%" src="images/photo.jpg">	  
+        &nbsp; <a style="font-size:45px" href="http://twitter.com/dplaindoux">@dplaindoux</a></p>
+        <br>
+        <p>type MySelf = <b>Freelance</b> &amp; <b>ComputerScientist</b></p>
+    </section>
           
     <!-- ####################### -->
           
 	<section> 
+      <h1> &#x1F36F; </h1>
+      <h3> The ingredients </h3>
+	</section>	
+	
+    <!-- ####################### -->
+          
+	<section> 
 	  <img class="plain" width="15%" src="images/swift.png">	  
-	  <h3> Quick langage overview </h3>    
+	  <h3> Quick language overview </h3>    
 	</section>	
 	
     <!-- ####################### -->
           
 	<section>
-	  <h3> Objet-Oriented Paradigm </h3>
+	  <h3> Objet-Oriented Programming Language </h3>
         
         <center>
             <table width="80%">
@@ -169,7 +247,7 @@
             <td width="25%"></td>
             <td align="center" class="fragment" >
                 <div class="paradigm-title"> Protocol </div>
-                <div class="paradigm-what"> Specification &amp; Abstraction </div>
+                <div class="paradigm-what"> Specification </div>
             </td>
             <td width="25%"></td>
             </tr>
@@ -184,8 +262,8 @@
 	  <h3> Protocol </h3>
 	  
 	  <ul>
-	    <li type="square"> Behaviors e.g. methods and values </li>
-	    <li type="square" class="fragment"> Protocol extensions </li>
+	    <li type="square"> Specification: methods, values ... </li>
+	    <li type="square" class="fragment"> Extensions </li>
 	  </ul>
 
 	</section>
@@ -197,14 +275,14 @@
 	  
 	    <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
 protocol User {
-  var name : String { get }
+  var name : String { get }                     // Variable Specification
 }        
 
-protocol UserRepository {
-  func users() -> [Users]
-  func seach(byName name:String) -> User?
-}
-	    </code></pre>	  
+<span class="fragment">protocol UserRepository {
+  func users() -> [User]                        // Methods specification
+  func search(byName name:String) -> User?      // Returns an optional !
+}</span>
+        </code></pre>	  
 
 	</section>
 
@@ -216,7 +294,7 @@ protocol UserRepository {
 	  <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
 extension UserRepository {
   func search(byName name:String) -> User? {
-     return self.users().filter{ $0.name == name }.first // self &equiv; Java this 
+     return self.users()<span class="fragment">.filter{ $0.name == name }</span><span class="fragment">.first</span> // self &equiv; Java this 
   }
 }
 	  </code></pre>	  
@@ -232,40 +310,38 @@ extension UserRepository {
  	<section> 
 	  <h3> Protocol and inheritance </h3>
         
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-protocol Contact {
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift"><img style="vertical-align: middle;" class="map plain" width="20%"  src="images/contact.png">protocol Contact {
   func send(message: String);
-}        
-        
-protocol User : Contact {
-  var name: String { get }
 }
 
-extension User {
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="20%"  src="images/contact-user.png">protocol User : Contact {
+  var name: String { get }
+}</span>
+
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="20%"  src="images/contact-user-extension.png">extension User {
   func send(message: String) { ... }
-}
+}</span>
     </code></pre>	  
-  
+        
         <p class="fragment">
         A priori ...
         </p>    
-      
+
 	</section>		
-          
 
     <!-- ####################### -->
           
  	<section> 
 	  <h3> Protocol extension and ... inheritance ? </h3>
         
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-protocol Contact {
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">protocol Contact {
   func send(message: String);
 }        
         
-extension User : Contact {
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="20%"  src="images/contact-extension.png">extension User : Contact {
   func send(message: String) { ... }
-}
+}</span><span class="fragment"><img style="vertical-align: middle;" class="map plain" width="20%"  src="images/contact-extension-rejected.png"></span>
+
 	  </code></pre>	  
   
         <p class="alert fragment">
@@ -302,19 +378,19 @@ extension User : Contact {
 class Counter {
   var value:Int
 
-  init(value:Int = 0) {
+  init(_ value:Int = 0) {
     self.value = value
   }
 
   <span class="fragment">func increment() -> Self {
     self.value += 1
-    return self // Mutable &#x1F631;
+    <span class="fragment">return self // Mutable &#x1F631;</span>
   }</span>
 }
 	  </code></pre>	  
 
-    <div class="fragment" style="font-size:70%">
-        Self is the type of current instance i.e. self ...
+    <div class="remark fragment" style="font-size:70%">
+        Self is the type of the current instance i.e. self ...
     </div>
 
 	</section>
@@ -329,16 +405,16 @@ class Counter {
   let value:Int
 
   <span class="fragment">func increment() -> Self {
-    return type(of:self).init(self.value + 1) // Immutable &#x1F60E;
+    return <span class="fragment"><span class="fragment">type(of:self).</span>init</span>(self.value + 1) <span class="fragment">// Immutable &#x1F60E;</span>
   }</span>
 
-  <span class="fragment">required init(value:Int = 0) {
+  <span class="fragment"><span class="fragment">required</span> init(_ value:Int = 0) {
     self.value = value
   }</span>
 }
 	  </code></pre>	  
 
-    <div class="fragment" style="font-size:70%">
+    <div class="remark fragment" style="font-size:70%">
         &#x1F60F; &nbsp; Looks like Perl 5+ object creation
     </div>
 
@@ -363,7 +439,7 @@ protocol Contact {
   func send(message: String);
 }        
         
-<span class="fragment">extension User where Self:Contact {
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="40%"  src="images/user-extension.png">extension User where Self:Contact {
   func send(message: String) { 
     print("Say \(message) to \(name)") 
   }
@@ -384,7 +460,7 @@ protocol Contact {
   func send(message: String);
 }        
         
-<span class="fragment">extension Contact where Self:User {
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="40%"  src="images/contact-extension-accepted.png">extension Contact where Self:User {
   func send(message: String) { 
     print("Say \(message) to \(name)") 
   }
@@ -404,6 +480,13 @@ protocol Contact {
   
 	</section>		
 
+    <!-- ####################### -->
+          
+	<section> 
+	  <h1> &#x2697; </h1>    
+      <h3> The Chemistry </h3>
+	</section>	
+          
     <!-- ####################### -->
           
  	<section> 
@@ -483,14 +566,14 @@ struct User : Equatable {
         </code></pre>	         
     </section>
                               
-
     <!-- ####################### -->
+          
     <section>
-       <h3> Abstrat Type Member &amp; Self type </h3>
+       <h3> Abstract Type Member &amp; Self type </h3>
        
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift w">
 protocol InMemoryRepository {
-    associatedtype Element : Equatable
+    associatedtype Element
 
     <span class="fragment">var elements : [Element] { get }</span>
 
@@ -509,29 +592,55 @@ protocol InMemoryRepository {
        <h3> Abstract type member &amp; upper bound </h3>
        
         <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
- extension InMemoryRepository {
-    <span class="fragment">func create(_ e: Element) -> Self {
-        return type(of:self).init(self.elements + [e]) // Use constructor &#x1F60F;
-    }</span>
-
-    <span class="fragment">func delete(_ e: Element) -> Self {
-    	return type(of:self).init(self.elements.filter{ $0 != e })
-    }</span>
+extension InMemoryRepository {
+    func create(_ e: Element) -> Self {
+        return <span class="fragment">type(of:self).init</span>(self.elements + [e])
+    }
 }
-        </code></pre>	         
+
+<span class="fragment">extension InMemoryRepository where Element:Equatable {
+    func delete(_ e: Element) -> Self {
+    	return <span class="fragment">type(of:self).init</span>(self.elements.filter{ $0 != e })
+    }
+}</span>
+</code></pre>	         
     </section>
 
+    <!-- ####################### -->
+          
+    <section>
+       <h3> Abstract type member &amp; upper bound </h3>
+       
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+extension InMemoryRepository {
+    func create(_ e: Element) -> Self {
+        return ...
+    }
+}
+
+extension InMemoryRepository when Element:Equatable {
+    func delete(_ e: Element) -> Self {
+    	return ...
+    }
+}<img style="vertical-align: middle;" class="map plain" width="40%"  src="images/InMemory.png">
+        </code></pre>	         
+    </section>
 
     <!-- ####################### -->
                     
     <section>
        <h3> Specific Protocol &amp; Self Type constraint </h3>
        
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-extension UserRepository where Self:InMemoryRepository {
-    typealias Element = User
+        <pre><code style="font-size:80%"  data-noescape class="swift">
+extension UserRepository 
+    where Self:InMemoryRepository 
+{
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="60%"  src="images/user-repository.png"></span>
+    <span class="fragment">typealias Element = User<img style="vertical-align: middle;" class="map plain" width="60%"  src="images/user-repository-element.png"></span>
+    
 }
-        </code></pre>
+
+<span class="fragment"><img style="vertical-align: middle;" class="map plain" width="60%"  src="images/user-repository-extension.png"></span><span class="fragment"><img style="vertical-align: middle;" class="map plain" width="60%"  src="images/user-repository-extension-full.png"></span></code></pre>
     </section>
                        
     <!-- ####################### -->
@@ -540,15 +649,14 @@ extension UserRepository where Self:InMemoryRepository {
        <h3> Structure &amp; Modular mixin composition </h3>
        
         <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-struct ConcreteUserRepository : UserRepository, InMemoryRepository {
-    <span class="fragment">typealias Element = User</span>
-
+struct ConcreteUserRepository : <span class="fragment">UserRepository</span><span class="fragment">, InMemoryRepository</span> {
     <span class="fragment">let elements : [User]</span>
 
     <span class="fragment">init(_ elements:[User]) { self.elements = elements }</span>
 }
-
-<span class="fragment">let r = ConcreteUserRepository([]).create(User(name:"Alice"))</span>
+<span class="fragment">
+let r = ConcreteUserRepository([])<span class="fragment">.create(User(name:"Alice"))</span>
+                                  <span class="fragment">.delete(User(name:"Alice"))</span></span>
     </code></pre>	         
     </section>
 
@@ -558,7 +666,7 @@ struct ConcreteUserRepository : UserRepository, InMemoryRepository {
 	  <h1> &#x1F382; </h1>
 	  <h3> The Cake pattern </h3>       
     
-       <p> Aternative to Dependency Injection? </p>
+       <p> Alternative to Dependency Injection? </p>
        <p class="fragment"> Not only! </p>
 	</section>		
           
@@ -569,9 +677,9 @@ struct ConcreteUserRepository : UserRepository, InMemoryRepository {
     
        <p> Design Pattern based on</p>
        <ul>
+           <li> Abstrat Type Member </li>
            <li> Modular Mixin Composition </li>
            <li> Explicit Self Type </li>
-           <li> Abstrat Type Member </li>
         </ul>
         
 	</section>		
@@ -584,21 +692,21 @@ struct ConcreteUserRepository : UserRepository, InMemoryRepository {
       <table width="80%">
       <tr class="fragment">
           <td class="paradigm-title" align="center" width="40%"> Service </td> 
-          <td width="50%" align="center" class="remark"> Features and Interactions </td>
+          <td width="50%" align="center" class="remark-service"> Domains, API and SPI </td>
           </tr>  
       <tr><td></td><td></td></tr>
       <tr class="fragment">
           <td class="paradigm-title" align="center" width="40%"> Component </td> 
-          <td align="center" class="remark"> Services wrapper </td>
+          <td align="center" class="remark-component"> Services wrapper </td>
           </tr>  
       <tr><td></td><td></td></tr>
       <tr class="fragment">
-          <td class="paradigm-title" align="center" width="40%"> Registry </td> 
-          <td align="center" class="remark"> Components Assembly </td>
+          <td class="paradigm-title" align="center" width="40%"> Application </td> 
+          <td align="center" class="remark-application"> Components Assembly </td>
           </tr>  
       </table>
         
-      <p class="fragment"> "Standardized" boiler plate for application design </p>
+      <p class="fragment remark"> "Standardized" boilerplate for application design </p>
     
 	</section>		          
                   
@@ -614,14 +722,19 @@ struct ConcreteUserRepository : UserRepository, InMemoryRepository {
  	<section> 
 	  <h3> Services definition  </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-protocol UserRepository {
-    func find(name: String) -> User?
-}
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
+struct User {
+    let name: String
+    let password: String
+}        
 
-protocol UserService {
+<span class="fragment">protocol UserRepository {
+    func find(name: String) -> User?
+}</span>
+
+<span class="fragment">protocol UserService {
     func authenticate(name: String, password: String) -> Bool
-}
+}</span>
         </code></pre>	         
           
     </section>		          
@@ -631,12 +744,13 @@ protocol UserService {
  	<section> 
 	  <h3> A Static Repository Service implementation </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
 struct StaticUserRepository : UserRepository {
-    private let users = [ User(name:"Alice", password:"Wonderland") ]
-    func find(name: String ) -> User? {
+    <span class="fragment">let users = [ User(name:"Alice", password:"Wonderland") ]</span>
+    
+    <span class="fragment">func find(name: String) -> User? {
         return self.users.filter{ $0.name == name }.first
-    }
+    }</span>
 }
         </code></pre>	         
           
@@ -647,16 +761,25 @@ struct StaticUserRepository : UserRepository {
  	<section> 
 	  <h3> A Default user Service implementation </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
 struct DefaultUserService : UserService {
-    let userRepository : UserRepository
+    <span class="fragment">let userRepository : UserRepository</span>
 
-    func authenticate(name: String, password: String) -> Bool {
-        return self.userRepository.find(name: name)
-                                  .map{ $0.password == password } ?? false
-    }
+    <span class="fragment">func authenticate(name: String, password: String) -> Bool {
+        return self.userRepository<span class="fragment">.find(name: name)</span>
+                                  <span class="fragment">.map{ $0.password == password }</span><span class="fragment"> ?? false</span>
+    }</span>
 }
         </code></pre>	         
+          
+    </section>		          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Quick Service overview </h3>
+	        
+        <img style="vertical-align: middle;" class="plain" width="60%"  src="images/user-repository-services.png">
           
     </section>		          
 
@@ -672,18 +795,20 @@ struct DefaultUserService : UserService {
  	<section> 
 	  <h3> User Repository component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-component">
 protocol UserRepositoryComponent {
-    static var userRepository : UserRepository { get }
-    static func create() -> UserRepository
+    <span class="fragment">static var userRepository : UserRepository { get }</span>
+    <span class="fragment">static func createUserRepository() -> UserRepository</span>
 }
 
-extension UserRepositoryComponent {
-    static var userRepository : UserRepository {
-        return self.create()
-    }
-}
+<span class="fragment">extension UserRepositoryComponent {
+    <span class="fragment">static var userRepository : UserRepository {
+        return self.createUserRepository()
+    }</span>
+}</span>
         </code></pre>	
+        
+        <p class="remark fragment"> Simple service wrapper with abstract creator </p>
         
     </section>		        
 
@@ -692,34 +817,45 @@ extension UserRepositoryComponent {
  	<section> 
 	  <h3> User Service component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-component">
 protocol UserServiceComponent {
-    static var userService : UserService { get }
-    static func create() -> UserService
+    <span class="fragment">static var userService : UserService { get }</span>
+    <span class="fragment">static func createUserService() -> UserService</span>
 }
 
-extension UserServiceComponent {
-    static var userService : UserService {
-        return self.create()
-    }
-}
+<span class="fragment">extension UserServiceComponent {
+    <span class="fragment">static var userService : UserService {
+        return self.createUserService()
+    }</span>
+}</span>
     </code></pre>	
         
+    <p class="remark fragment"> Same wrapper ! Not real DRY </p>
+ 
     </section>		        
+            
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Quick Basic Components overview </h3>
+	        
+        <img style="vertical-align: middle;" class="plain" width="70%"  src="images/components.png">
+          
+    </section>		          
 
     <!-- ####################### -->
 
  	<section> 
 	  <h3> Static Repository Component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-component">
 protocol StaticUserRepositoryComponent : UserRepositoryComponent {}
 
-extension StaticUserRepositoryComponent {
-    static func create() -> UserRepository {
+<span class="fragment">extension StaticUserRepositoryComponent {
+    <span class="fragment">static func createUserRepository() -> UserRepository {
         return StaticUserRepository()
-    }
-}
+    }</span>
+}</span>
     </code></pre>	
         
     </section>		        
@@ -729,25 +865,42 @@ extension StaticUserRepositoryComponent {
  	<section> 
 	  <h3> Default User Service Component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-component">
 protocol DefaultUserServiceComponent : UserServiceComponent {}
 
-extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
-    static func create() -> UserService {
-        return DefaultUserService(userRepository: self.userRepository)
-    }
-}
+<span class="fragment">extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
+    <span class="fragment">static func createUserService() -> UserService {
+        return DefaultUserService(<span class="fragment">userRepository: self.userRepository</span>)
+    }</span>
+}</span>
     </code></pre>	
         
-    <p class="remark"> Self constraint used to retrieve the user repository </p>    
+    <p class="fragment remark"> Self constraint used to retrieve the user repository </p>    
         
-    </section>		        
+    </section>
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Quick Components overview </h3>
+	        
+        <img style="vertical-align: middle;" class="plain" width="70%"  src="images/components.png">
+          
+    </section>		          
+
+    <!-- ####################### -->
+          
+ 	<section> 
+	  <h3> Quick Components overview </h3>
+	        
+        <img style="vertical-align: middle;" class="plain" width="70%"  src="images/components-all.png">
+          
+    </section>		          
 
     <!-- ####################### -->
           
  	<section> 
       <h3> The Cake pattern physiology </h3>
-	  <h4> Registry definition </h4>
+	  <h4> Application definition </h4>
     </section>
     
     <!-- ####################### -->
@@ -755,22 +908,28 @@ extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
  	<section> 
 	  <h3> Mixing components </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-struct Application: StaticUserRepositoryComponent,DefaultUserServiceComponent {
-    // Static variables implicitely linked via variables initialization
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-application">
+struct Application: <span class="fragment">StaticUserRepositoryComponent</span>,<span class="fragment">DefaultUserServiceComponent</span> {
+    <span class="fragment">// Static variables userRepository and userService
+    // implicitely setup via variables initialization</span>
 }
-        </code></pre>	         
 
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-print(Application.userService.authenticate(name:"Alice", password:"Wonderland"))
+<span class="fragment">Application.userService</span><span class="fragment">.authenticate(name:"Alice", password:"Wonderland")</span>
         </code></pre>	         
           
     </section>		          
 
     <!-- ####################### -->
+          
+	<section> 
+	  <h1> &#x1F4D4; </h1>    
+      <h3> Revisiting the Recipe </h3>
+	</section>	
+          
+    <!-- ####################### -->
 
     <section>
-        <h3> Revisiting Protocol Self constraint </h3>
+        <h3> Protocol Self constraint </h3>
           
         <p> The Twilight Zone </p>
     </section>
@@ -778,7 +937,7 @@ print(Application.userService.authenticate(name:"Alice", password:"Wonderland"))
     <!-- ####################### -->
 
     <section>
-       <h3> Act 1 - Basic Protocol Definition </h3>
+       <h3> Basic Protocol Definition </h3>
        
         <pre><code style="font-size:80%"  data-trim data-noescape class="swift">          
 protocol  A { func a() -> String }
@@ -799,7 +958,7 @@ extension C { func c() -> String { return "c" } }
     <!-- ####################### -->
 
     <section>
-       <h3> Act 2 - Self constrained extensions </h3>
+       <h3> Self constrained extensions </h3>
        
         <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
 extension C where Self:A { 
@@ -823,7 +982,7 @@ extension C where Self:A&amp;B {
     <!-- ####################### -->
 
     <section>
-       <h3> Act 3 - Constraint based compositions </h3>
+       <h3> Constraint based compositions </h3>
        
         <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
 class DefaultC : C { func display() { print(c()) } }
@@ -852,7 +1011,7 @@ DefaultABC().display() // prints "c with a and b"
        <h3> Self Constraint and Protocol </h3>
         
         <p> Constraint based programming style i.e.<br>
-        behaviors aggregation driven by composed types </p>
+        behaviors aggregation driven by types composition </p>
 
     </section>    
           
@@ -868,20 +1027,20 @@ DefaultABC().display() // prints "c with a and b"
  	<section> 
 	  <h3> User Repository component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-component">
 protocol Autowired {}
 
-extension UserRepositoryComponent where Self:Autowired {
+<span class="fragment">extension UserRepositoryComponent where Self:Autowired {
     static var userRepository : UserRepository {
-        return self.create()
+        return self.createUserRepository()
     }
-}
+}</span>
 
-extension UserServiceComponent where Self:Autowired {
+<span class="fragment">extension UserServiceComponent where Self:Autowired {
     static var userService : UserService {
-        return self.create()
+        return self.createUserService()
     }
-}
+}</span>
     </code></pre>	
         
     </section>		
@@ -891,15 +1050,15 @@ extension UserServiceComponent where Self:Autowired {
  	<section> 
 	  <h3> Mixing components </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
-struct Application: StaticUserRepositoryComponent, DefaultUserServiceComponent {
-    static let userRepository = Application.createUserRepository()
-    static let userService    = Application.createUserService()
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-application">
+struct Application: StaticUserRepositoryComponent,DefaultUserServiceComponent {
+    <span class="fragment">static let userRepository = Application.createUserRepository()
+    static let userService    = Application.createUserService()</span>
 }
         </code></pre>	         
 
-        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift">
-struct Application: StaticUserRepositoryComponent, DefaultUserServiceComponent,
+        <pre class="fragment"><code style="font-size:80%"  data-trim data-noescape class="swift remark-application">
+struct Application: StaticUserRepositoryComponent,DefaultUserServiceComponent,
                     Autowired {
     // Static variables implicitly linked
 }
@@ -917,7 +1076,6 @@ struct Application: StaticUserRepositoryComponent, DefaultUserServiceComponent,
         <ul class="fragment">
             <li> Protocol Based Design </li>
             <li> Modular Mixin Composition </li>
-            <li> Abstract Type Member </li>
         </ul>
 
     </section>
@@ -942,10 +1100,10 @@ struct Application: StaticUserRepositoryComponent, DefaultUserServiceComponent,
  	<section> 
 	  <h3> A Static Repository Service prototype </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
 protocol StaticUserRepository : UserRepository {}
 
-extension StaticUserRepository {
+<span class="fragment">extension StaticUserRepository {
     var users : [User] {
         return [ User(name: "Alice", password: "Wonderland") ]
     }
@@ -953,7 +1111,7 @@ extension StaticUserRepository {
     func find(name: String ) -> User? {
         return self.users.filter{ $0.name == name }.first
     }
-}        
+}</span>
     </code></pre>	         
           
     </section>		          
@@ -963,18 +1121,18 @@ extension StaticUserRepository {
  	<section> 
 	  <h3> A Default user Service protocol </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
 protocol DefaultUserService : UserService {
     var userRepository : UserRepository { get }
 }
 
-extension DefaultUserService {
+<span class="fragment">extension DefaultUserService {
     func authenticate(name: String, password: String) -> Bool {
         return userRepository.find(name:name)
                              .map{ $0.password == password }
                              ?? false
     }
-}
+}</span>
         </code></pre>	         
           
     </section>	
@@ -984,16 +1142,16 @@ extension DefaultUserService {
  	<section> 
 	  <h3> Static Repository Component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
 struct StaticUserRepositoryStruct : StaticUserRepository {}
 
-protocol StaticUserRepositoryComponent : UserRepositoryComponent {}
+<span class="fragment">protocol StaticUserRepositoryComponent : UserRepositoryComponent {}
 
 extension StaticUserRepositoryComponent {
     static func createUserRepository() -> UserRepository {
-        return StaticUserRepositoryStruct()
+        return <span class="fragment">StaticUserRepositoryStruct()</span>
     }
-}
+}</span>
     </code></pre>	
         
     </section>		        
@@ -1003,18 +1161,18 @@ extension StaticUserRepositoryComponent {
  	<section> 
 	  <h3> Default User Service Component </h3>
 	
-        <pre><code style="font-size:80%"  data-trim data-noescape class="swift">
+        <pre><code style="font-size:80%"  data-trim data-noescape class="swift remark-service">
 struct DefaultUserServiceStruct : DefaultUserService {
     let userRepository : UserRepository
 }
 
-protocol DefaultUserServiceComponent : UserServiceComponent {}
+<span class="fragment">protocol DefaultUserServiceComponent : UserServiceComponent {}
 
 extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
     static func createUserService() -> UserService {
-        return DefaultUserServiceStruct(userRepository: self.userRepository)
+        return <span class="fragment">DefaultUserServiceStruct(userRepository: self.userRepository)</span>
     }
-}
+}</span>
     </code></pre>	
         
     </section>		        
@@ -1024,8 +1182,22 @@ extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
     <section>
         <h3> Abstraction first programming style </h3>	 
         
-      <p> "Cake Pattern: The Bakery from the Black Lagoon" <br> Daniel Spiewack </p>
+         <p> "Cake Pattern: The Bakery from the Black Lagoon" <br> Daniel Spiewak </p>
     </section>
+
+    <!-- ####################### -->
+          
+	<section> 
+	  <h3> Some References </h3>
+      <ul style="font-size:90% !important;">
+          <li> <a> Odersky &amp; Zenger - Scalable component abstractions </a> </li>
+          <li> <a> Jonas Boner - Cake Pattern blog post </a> </li>
+          <li> <a> D. Spiewak - Cake Pattern conference talk </a> </li>
+          <li> <a href="https://www.raywenderlich.com/category/swift"> Protocol Oriented Programming and </a> </li>
+          <li type="none"> <a href="https://www.raywenderlich.com/category/swift"> Cake pattern by raywenderlich.com </a> </li>
+	  </ul>
+
+	</section>	
 
     <!-- ####################### -->
           
@@ -1036,7 +1208,10 @@ extension DefaultUserServiceComponent where Self:UserRepositoryComponent {
     <!-- ####################### -->
           
 	<script src="lib/js/head.min.js"></script>
+    <script src="plugin/mermaid/mermaid.full.js"></script>  
 	<script src="js/reveal.js"></script>
+          
+    <link rel="stylesheet" href="plugin/css/mermaid.css">
 	
 	<script>	  
 	  // More info https://github.com/hakimel/reveal.js#configuration

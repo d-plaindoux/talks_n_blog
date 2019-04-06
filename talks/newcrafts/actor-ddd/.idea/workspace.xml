@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb774773-e214-4423-ad57-a5e51eb25d77" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/Event_Storming_actor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Event_Storming_aggregate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Event_Storming_command.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Event_Storming_domain_event.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Reactive-manifesto.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/actor-channel-comparison.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/actor-channel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/alessio.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/anatomy-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/anatomy-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/anatomy-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/anatomy-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/anatomy-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/bounded-context.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/event-command.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/generalized-pubsub.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/physiology-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/physiology-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/physiology-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/physiology-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/pubsub.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/reactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/soupe-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/soupe-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/soupe-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/soupe-4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blog/rust/day01/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blog/rust/day01/hello/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blog/rust/day01/hello/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blog/rust/day01/hello/src/lib.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blog/rust/s1e1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blog/rust/s1e1/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../blog/rust/s1e1/hello/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../blog/rust/s1e1/hello/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../devfest/java_2_swift/images/fungus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../devoxx/swift_cake/cake-swift.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../devoxx/swift_cake/cake-swift.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../functional-metamorphosis/metamorphosis.html" beforeDir="false" afterPath="$PROJECT_DIR$/../functional-metamorphosis/metamorphosis.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/talk.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="174" selection-start-line="174" selection-end-line="174" />
+              <folding>
+                <element signature="e#15232#15238#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dark-text</find>
+      <find>large</find>
+      <find>code</find>
+      <find>&quot;440&quot;</find>
+      <find>évenement</find>
+      <find>bound</find>
+      <find>Bound</find>
+      <find>Aggregat</find>
+      <find>disjoin</find>
+      <find>Syst</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;400&quot;</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/actor-ddd.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1474" />
+    <option name="height" value="1027" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="actor-ddd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="actor-ddd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="actor-ddd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="actor-ddd" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="actor-ddd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="actor-ddd" type="462c0819:PsiDirectoryNode" />
+              <item name="plugin" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554535990644" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../../../../courses/akka-quickstart-scala" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../../../agtors/agar.core" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb774773-e214-4423-ad57-a5e51eb25d77" name="Default Changelist" comment="" />
+      <created>1553618459684</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553618459684</updated>
+      <workItem from="1553618461406" duration="16073000" />
+      <workItem from="1553746320216" duration="14151000" />
+      <workItem from="1553874412327" duration="9889000" />
+      <workItem from="1554108379119" duration="58651000" />
+      <workItem from="1554407839750" duration="8320000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="107084000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1636" height="1027" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3092848" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="UI Designer" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="SBT Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Cargo" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="BPMNPalette" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/images/pipelining.jpg" />
+    <entry file="file://$PROJECT_DIR$/images/DidierPlaindouxNB.jpeg" />
+    <entry file="file://$PROJECT_DIR$/images/photo.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5chars.ent">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="96" column="10" selection-start-line="96" selection-start-column="10" selection-end-line="96" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/debug.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/talk.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="174" selection-start-line="174" selection-end-line="174" />
+          <folding>
+            <element signature="e#15232#15238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

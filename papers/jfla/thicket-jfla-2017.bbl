@@ -1,0 +1,104 @@
+\begin{thebibliography}{10}
+
+\bibitem{bower}
+Bower: A package manager for the web.
+\newblock \url{https://bower.io}.
+
+\bibitem{scalajs}
+Scala.js.
+\newblock \url{http://www.scala-js.org/}, 2015.
+
+\bibitem{ocaml}
+E.~Chailloux, P.~Manoury, and B.~Pagano.
+\newblock {\em Développement d’applications avec Objective Caml}.
+\newblock O’Reilly \& Associates, 2000.
+
+\bibitem{elm}
+E.~Czaplicki.
+\newblock Elm: A delightful language for reliable webapps.
+\newblock \url{http://elm-lang.org}.
+
+\bibitem{react}
+A.~Fedosejev.
+\newblock {\em React.js Essentials A fast-paced guide to designing and building
+  scalable and maintainable web apps with React.js}.
+\newblock Packt Publishing Ltd., Birmingham, UK, first edition edition, Aug.
+  2015.
+
+\bibitem{java}
+D.~Flanagan.
+\newblock {\em Java In A Nutshell, 5th Edition}.
+\newblock O'Reilly Media, Inc., 2005.
+
+\bibitem{angularjs}
+B.~Green and S.~Seshadri.
+\newblock {\em AngularJS}.
+\newblock O'Reilly Media, Inc., 1st edition, 2013.
+
+\bibitem{haskell}
+G.~Hutton.
+\newblock {\em Programming in Haskell}.
+\newblock Cambridge University Press, 2007.
+
+\bibitem{krivine:2007}
+J.-L. Krivine.
+\newblock A call-by-name lambda-calculus machine.
+\newblock {\em Higher Order Symbol. Comput.}, 20(3):199--207, Sept. 2007.
+
+\bibitem{zinc}
+X.~Leroy.
+\newblock The zinc experiment, an economical implementation of the ml language.
+\newblock Technical report, 1990.
+
+\bibitem{meijer1991functional}
+E.~Meijer, M.~Fokkinga, and R.~Paterson.
+\newblock Functional programming with bananas, lenses, envelopes and barbed
+  wire.
+\newblock In {\em Conference on Functional Programming Languages and Computer
+  Architecture}, pages 124--144. Springer, 1991.
+
+\bibitem{scala}
+M.~Odersky, L.~Spoon, and B.~Venners.
+\newblock {\em Programming in Scala: A Comprehensive Step-by-step Guide}.
+\newblock Artima Incorporation, USA, 1st edition, 2008.
+
+\bibitem{thicket}
+D.~Plaindoux.
+\newblock Thicket: Strong typed functional programming language dedicated to
+  backend and web applications.
+\newblock \url{https://github.com/d-plaindoux/thicket}.
+
+\bibitem{purescript}
+{PureScript}.
+\newblock Purescript documentation, 2014.
+
+\bibitem{rossberg2016webassembly}
+A.~Rossberg.
+\newblock Webassembly: high speed at low cost for everyone.
+\newblock In {\em Proceedings of the 2016 Workshop on ML}, ML 2016, New York,
+  NY, USA, 2016. ACM.
+
+\bibitem{trait}
+N.~Sh\"{a}rli, S.~Ducasse, O.~Nierstrasz, and A.~Black.
+\newblock Traits: Composable units of behavior.
+\newblock Technical report, 2002.
+
+\bibitem{unidirectionnal}
+A.~Staltz.
+\newblock Unidirectional user interface architectures.
+\newblock
+  \url{http://staltz.com/unidirectional-user-interface-architectures.html},
+  2015.
+
+\bibitem{swift}
+{Swift}.
+\newblock {\em The Swift Programming Language}.
+\newblock 2016.
+
+\bibitem{dom}
+L.~Wood, A.~{Le Hors}, V.~Apparao, S.~Byrne, M.~Champion, S.~Isaacs, I.~Jacobs,
+  G.~T. Nicol, J.~Robie, R.~Sutor, and C.~Wilson.
+\newblock Document object model ({DOM}) level 1 specification (second edition).
+\newblock World Wide Web Consortium, Working Draft, September 2000.
+
+\end{thebibliography}

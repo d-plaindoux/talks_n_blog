@@ -1,0 +1,27 @@
+Avec l'avénement des architectures multi-cœurs nous avons besoin de moyens pour les exploiter. Généralement, cela se fait à l'aide des threads natifs et de primitive de synchronisation qui conduit à des généralement à des problèmes difficiles à appréhender.
+
+Explorons une approche différente: le modèle de l'acteur, un modèle conceptuel pour traiter le calcul concurrent.
+
+Pour cela par le biais de la conception d'un jeu nous illustrerons:
+
+- ce qu'est un acteur,
+
+- comment ils< interagissent entre eux sans partager la mémoire,
+
+- comment ils communiquent dans un système distribué et 
+
+- comment avoir un système distribué tolérant aux pannes.
+
+------
+
+Nous avons besoin d'un moyen pour exploiter l'hardware moderne (processeurs multicœurs, ..). Généralement, cela se fait à l'aide des threads natifs et de primitive de synchronisation, ce qui conduit à des problèmes difficile à debugger.
+
+Explorons une approche différente à travers le modèle de l'acteur, un modèle conceptuel pour traiter le calcul concurrent.
+
+Nous essaierons de comprendre: 
+
+- Comment les acteurs interagissent entre eux sans partager la mémoire ?
+
+- Comment les acteurs communiquent dans un système distribué ?
+
+- Comment avoir un système distribué tolérant aux pannes en utilisant le modèle acteur ?

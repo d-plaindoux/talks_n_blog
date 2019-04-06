@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thicket-jfla-2017.aux
+The style file: abbrv.bst
+Database file #1: mesreferences.bib
+Warning--entry type for "elm" isn't style-file defined
+--line 40 of file mesreferences.bib
+Warning--entry type for "purescript" isn't style-file defined
+--line 97 of file mesreferences.bib
+Warning--entry type for "scalajs" isn't style-file defined
+--line 137 of file mesreferences.bib
+Warning--to sort, need author or key in scalajs
+Warning--to sort, need author or key in bower
+Warning--empty institution in zinc
+Warning--empty institution in trait
+Warning--empty publisher in swift
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            594 strings with 6175 characters,
+and the built_in function-call counts, 4938 in all, are:
+= -- 460
+> -- 227
+< -- 1
++ -- 96
+- -- 74
+* -- 271
+:= -- 835
+add.period$ -- 56
+call.type$ -- 19
+change.case$ -- 92
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 197
+empty$ -- 435
+format.name$ -- 74
+if$ -- 1046
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 17
+newline$ -- 95
+num.names$ -- 34
+pop$ -- 151
+preamble$ -- 1
+purify$ -- 75
+quote$ -- 0
+skip$ -- 136
+stack$ -- 0
+substring$ -- 155
+swap$ -- 27
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 62
+warning$ -- 5
+while$ -- 39
+width$ -- 21
+write$ -- 193
+(There were 8 warnings)

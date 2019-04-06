@@ -50,7 +50,7 @@ This command creates a directory with the given **name**. If you want to to crea
 $ cargo init [--bin]
 ```
 
-For instance `cargo new hello` creates a project named **hello** containing
+For instance `cargo new hello` creates a project named **hello** containing:
 - a **Cargo.tmml** file
 - a **src** directory and
 - a **src/lib.rs** test file.
@@ -58,13 +58,13 @@ For instance `cargo new hello` creates a project named **hello** containing
 
 ### Building a project or not
 
-```rust
+```sh
 $ cargo build
 ```
 
 Once this command is executed a **target** directory containing compiled material is created. If you only want a dry like compilation for code analysis without effective compilation use the `check` command.
 
-```rust
+```sh
 $ cargo check
 ```
 

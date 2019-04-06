@@ -1,0 +1,3833 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker22092"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path22094"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker21848"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#e90000;stroke-width:1pt;stroke-opacity:1;fill:#e90000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path21850" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker21610"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path21612" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker21378"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path21380"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker21158"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path21160"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect21156"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect21152"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect21148"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect21124"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect21120"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect21068"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect21064"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect21032"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker20278"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path20280" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect20276"
+       effect="spiro" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker20060"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path20062"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect20058"
+       is_visible="true" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker19338"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path19340" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect19336"
+       effect="spiro" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker17971"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path17973"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect17969"
+       is_visible="true" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker16817"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path16819" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect16815"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect14813"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker14627"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path14629" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker14083"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path14085" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect14081"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker12893"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path12895" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect12891"
+       effect="spiro" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker12711"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path12713"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect12709"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker12481"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path12483"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker12278"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path12280"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker12108"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path12110" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect12106"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect12094"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect12090"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker10053"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path10055" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect10051"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker9721"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path9723" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect9719"
+       effect="spiro" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker9383"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path9385"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect9381"
+       is_visible="true" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker9255"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path9257" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker9123"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path9125"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8999"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker8855"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path8857"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8853"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8849"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8845"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8829"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8817"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8767"
+       effect="spiro" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker8647"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path8649"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8645"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8641"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8637"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8621"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8609"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8559"
+       is_visible="true" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker8337"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path8339" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker8249"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path8251"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker8161"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path8163" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8159"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8155"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8151"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8135"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8123"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect8073"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect8051"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker7595"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path7597"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect7593"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker7149"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path7151" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7147"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker6303"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path6305"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect6301"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker6235"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path6237" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6207"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect6165"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect6141"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6087"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect6002"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5849"
+       is_visible="true" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker5586"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5588"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5584"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect5580"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect5572"
+       effect="spiro" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect5550"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5546"
+       is_visible="true" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5492"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5494" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5486"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect5476"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5386"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5388" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect5380"
+       effect="spiro" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5370"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5338"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect5328"
+       effect="spiro" />
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker4744"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path4746" />
+    </marker>
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect4742"
+       effect="spiro" />
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path4192"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker4477"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4479"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path4189"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4183"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.46465873"
+     inkscape:cx="-2149.4587"
+     inkscape:cy="-1191.8703"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1874"
+     inkscape:window-height="1155"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       position="-2988.7198,-1488.0539"
+       orientation="63.375893,0"
+       id="guide18689" />
+    <sodipodi:guide
+       position="-2543.9453,-1633.4569"
+       orientation="0,444.77448"
+       id="guide18691" />
+    <sodipodi:guide
+       position="-2543.9453,-1551.4298"
+       orientation="-63.375893,0"
+       id="guide18693" />
+    <sodipodi:guide
+       position="-2543.9453,-1488.0539"
+       orientation="0,-444.77448"
+       id="guide18695" />
+    <sodipodi:guide
+       position="-2988.7198,-1488.0539"
+       orientation="63.375893,0"
+       id="guide18697" />
+    <sodipodi:guide
+       position="-2543.9453,-1551.4298"
+       orientation="-63.375893,0"
+       id="guide18701" />
+    <sodipodi:guide
+       position="-2543.9453,-1488.0539"
+       orientation="0,-444.77448"
+       id="guide18703" />
+    <sodipodi:guide
+       position="-2952.9068,-1537.1618"
+       orientation="-34.839844,0"
+       id="guide18705" />
+    <sodipodi:guide
+       position="-2952.9068,-1502.322"
+       orientation="0,373.14844"
+       id="guide18707" />
+    <sodipodi:guide
+       position="-2579.7584,-1502.322"
+       orientation="34.839844,0"
+       id="guide18709" />
+    <sodipodi:guide
+       position="-3094.7444,-1502.322"
+       orientation="0,-373.14844"
+       id="guide18711" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect12050"
+       width="1748.7471"
+       height="1104.6826"
+       x="-3321.4023"
+       y="1588.0248"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png" />
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="1577.2643"
+       x="-1282.4387"
+       height="637.49713"
+       width="1573.7242"
+       id="rect11972"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6105"
+       width="1129.866"
+       height="482.97726"
+       x="-632.42322"
+       y="460.46494"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png" />
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5931"
+       width="481.1041"
+       height="811.38605"
+       x="-1616.77"
+       y="-1010.8896"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="-1010.8896"
+       x="-1118.77"
+       height="811.38605"
+       width="481.1041"
+       id="rect5881"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3350"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion3352"><rect
+           id="rect3354"
+           width="235.28998"
+           height="347.29703"
+           x="34.579357"
+           y="75.119507" /></flowRegion><flowPara
+         id="flowPara3356"></flowPara></flowRoot>    <g
+       id="g4162"
+       transform="translate(-1537.801,-1009.4022)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3336"
+         y="114.53438"
+         x="78.920456"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="114.53438"
+           x="78.920456"
+           id="tspan3338"
+           sodipodi:role="line">Contact</tspan><tspan
+           id="tspan3340"
+           y="159.53438"
+           x="78.920456"
+           sodipodi:role="line" /></text>
+      <rect
+         y="69.105705"
+         x="31.572456"
+         height="64.648361"
+         width="236.0417"
+         id="rect3358"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5292"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion5294"><rect
+           id="rect5296"
+           width="533.72485"
+           height="1062.9393"
+           x="-84.193214"
+           y="-28.618561" /></flowRegion><flowPara
+         id="flowPara5298"></flowPara></flowRoot>    <text
+       sodipodi:linespacing="125%"
+       id="text5304"
+       y="-755.6546"
+       x="-875.6098"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-755.6546"
+         x="-875.6098"
+         id="tspan5306"
+         sodipodi:role="line">inherits</tspan></text>
+    <g
+       transform="translate(-1040.0899,-1009.8711)"
+       id="g5308"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="78.920456"
+         y="114.53438"
+         id="text5310"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan5312"
+           x="78.920456"
+           y="114.53438">Contact</tspan><tspan
+           sodipodi:role="line"
+           x="78.920456"
+           y="159.53438"
+           id="tspan5314" /></text>
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5316"
+         width="236.0417"
+         height="64.648361"
+         x="31.572456"
+         y="69.105705" />
+    </g>
+    <g
+       transform="translate(-1046.1037,-913.5123)"
+       id="g5318"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="113.03289"
+         y="279.67661"
+         id="text5320"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan5322"
+           x="113.03289"
+           y="279.67661">User</tspan></text>
+      <rect
+         y="234.48524"
+         x="37.586258"
+         height="64.648361"
+         width="236.0417"
+         id="rect5324"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -892.20215,-679.84422 1.94959,-190.70875"
+       inkscape:path-effect="#path-effect5328"
+       id="path5326"
+       d="m -892.20215,-679.84422 1.94959,-190.70875"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.80128217;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5386)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5344"
+       width="481.1041"
+       height="811.38605"
+       x="-624.77002"
+       y="-1010.8896"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-381.85733"
+       y="-755.11664"
+       id="text5346"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5348"
+         x="-381.85733"
+         y="-755.11664">inherits</tspan></text>
+    <g
+       id="g5350"
+       transform="translate(-546.33746,-1009.3332)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         sodipodi:linespacing="125%"
+         id="text5352"
+         y="114.53438"
+         x="78.920456"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="114.53438"
+           x="78.920456"
+           id="tspan5354"
+           sodipodi:role="line">Contact</tspan><tspan
+           id="tspan5356"
+           y="159.53438"
+           x="78.920456"
+           sodipodi:role="line" /></text>
+      <rect
+         y="69.105705"
+         x="31.572456"
+         height="64.648361"
+         width="236.0417"
+         id="rect5358"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       id="g5360"
+       transform="translate(-552.35126,-912.97435)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         sodipodi:linespacing="125%"
+         id="text5362"
+         y="279.67661"
+         x="113.03289"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="279.67661"
+           x="113.03289"
+           id="tspan5364"
+           sodipodi:role="line">User</tspan></text>
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5366"
+         width="236.0417"
+         height="64.648361"
+         x="37.586258"
+         y="234.48524" />
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.80128217;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m -398.4497,-679.30627 1.94959,-190.70874"
+       id="path5368"
+       inkscape:path-effect="#path-effect5370"
+       inkscape:original-d="m -398.4497,-679.30627 1.94959,-190.70874"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:5.55113125;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5376"
+       width="234.03387"
+       height="160.03424"
+       x="-513.76111"
+       y="-422.06421"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5372"
+       y="-377.87677"
+       x="-439.31842"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-377.87677"
+         x="-439.31842"
+         id="tspan5374"
+         sodipodi:role="line">User</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -398.45274,-425.09831 1.95307,-189.20082"
+       inkscape:path-effect="#path-effect5380"
+       id="path5378"
+       d="m -398.45274,-425.09831 1.95307,-189.20082"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.79574108;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:7.18296432, 7.18296432;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4744)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5382"
+       y="-495.11658"
+       x="-381.85733"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-495.11658"
+         x="-381.85733"
+         id="tspan5384"
+         sodipodi:role="line">extension</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="-426.52744"
+       x="15.419765"
+       height="525.29199"
+       width="481.1041"
+       id="rect5450"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       transform="translate(99.852277,-424.97097)"
+       id="g5456">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="78.920456"
+         y="114.53438"
+         id="text5458"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan5460"
+           x="78.920456"
+           y="114.53438">Contact</tspan><tspan
+           sodipodi:role="line"
+           x="78.920456"
+           y="159.53438"
+           id="tspan5462" /></text>
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5464"
+         width="236.0417"
+         height="64.648361"
+         x="31.572456"
+         y="69.105705" />
+    </g>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.79574108;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:7.18296432, 7.18296432;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4744)"
+       d="m 247.73698,-100.7361 1.9531,-189.20082"
+       id="path5484"
+       inkscape:path-effect="#path-effect5486"
+       inkscape:original-d="m 247.73698,-100.7361 1.9531,-189.20082"
+       inkscape:connector-curvature="0" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="264.33237"
+       y="-170.75436"
+       id="text5488"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5490"
+         x="264.33237"
+         y="-170.75436">inherits</tspan></text>
+    <g
+       id="g5807"
+       transform="translate(-2145.705,-268.00689)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 2170.5949,-131.72449 c 447.2448,438.29143 447.2448,438.29143 447.2448,438.29143"
+         inkscape:path-effect="#path-effect5546"
+         id="path5544"
+         d="m 2170.5949,-131.72449 447.2448,438.29143"
+         style="fill:none;fill-rule:evenodd;stroke:#f34600;stroke-width:15.77889347;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.54314719" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:none;fill-rule:evenodd;stroke:#f34600;stroke-width:15.72105217;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.54314719"
+         d="m 2167.5556,302.04611 453.3235,-429.24977"
+         id="path5548"
+         inkscape:path-effect="#path-effect5550"
+         inkscape:original-d="m 2167.5556,302.04611 c 453.3235,-429.24977 453.3235,-429.24977 453.3235,-429.24977"
+         inkscape:connector-curvature="0" />
+    </g>
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5552"
+       width="849.85907"
+       height="294.27698"
+       x="-1572.8811"
+       y="3.5050383"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png" />
+    <g
+       id="g5828"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(-2675.2832,-590.44934)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect5562"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5564"
+       y="125.72946"
+       x="-973.43268"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png"><tspan
+         y="125.72946"
+         x="-973.43268"
+         id="tspan5566"
+         sodipodi:role="line">User</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -1245.5031,111.20052 189.2009,1.9531"
+       inkscape:path-effect="#path-effect5572"
+       id="path5570"
+       d="m -1245.5031,111.20052 189.2009,1.9531"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5586)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1219.5503"
+       y="149.01999"
+       id="text5780"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png"><tspan
+         sodipodi:role="line"
+         x="-1219.5503"
+         y="149.01999"
+         id="tspan5784">Self is a</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5788"
+       y="103.01999"
+       x="-1200.0034"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png"><tspan
+         id="tspan5790"
+         y="103.01999"
+         x="-1200.0034"
+         sodipodi:role="line">When</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="-1067.4963"
+       x="779.78546"
+       height="637.49713"
+       width="1573.7242"
+       id="rect5835"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g5837"
+       transform="matrix(2.0397256,0,0,0.97756645,-1940.0306,-1673.6504)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png">
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5839"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="-1018.0828"
+       x="833.34467"
+       height="63.932362"
+       width="344.89362"
+       id="rect5841"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:4.25930357;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1431.297"
+       y="-973.24933"
+       id="text5843"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png"><tspan
+         sodipodi:role="line"
+         id="tspan5845"
+         x="1431.297"
+         y="-973.24933">InMemoryRepository</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001000000002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6235)"
+       d="m 1180.2088,-987.77837 189.2009,1.9531"
+       id="path5847"
+       inkscape:path-effect="#path-effect5849"
+       inkscape:original-d="m 1180.2088,-987.77837 189.2009,1.9531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text5851"
+       y="-949.9588"
+       x="1206.1616"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png"><tspan
+         id="tspan5853"
+         y="-949.9588"
+         x="1206.1616"
+         sodipodi:role="line">Self is a</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1225.7085"
+       y="-995.9588"
+       id="text5855"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png"><tspan
+         sodipodi:role="line"
+         x="1225.7085"
+         y="-995.9588"
+         id="tspan5857">When</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text5859"
+       y="-973.01215"
+       x="868.00531"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository.png"><tspan
+         y="-973.01215"
+         x="868.00531"
+         id="tspan5861"
+         sodipodi:role="line">UserRepository</tspan><tspan
+         id="tspan5863"
+         y="-928.01215"
+         x="868.00531"
+         sodipodi:role="line" /></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5865"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion5867"><rect
+           id="rect5869"
+           width="773.0625"
+           height="334.79086"
+           x="-307.39886"
+           y="1238.0189" /></flowRegion><flowPara
+         id="flowPara5871"></flowPara></flowRoot>    <rect
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.99600005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect5879"
+       width="203.91806"
+       height="70.001724"
+       x="-498.70322"
+       y="-347.67227"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-439.36237"
+       y="-304.01895"
+       id="text5873"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5875"
+         x="-439.36237"
+         y="-304.01895">send</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="-98.310028"
+       x="132.40976"
+       height="160.03424"
+       width="234.03387"
+       id="rect5957"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:5.55113125;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="206.85239"
+       y="-54.122589"
+       id="text5959"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5961"
+         x="206.85239"
+         y="-54.122589">User</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="-23.918093"
+       x="147.46762"
+       height="70.001724"
+       width="203.91806"
+       id="rect5963"
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.99600005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text5965"
+       y="19.735228"
+       x="206.80844"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="19.735228"
+         x="206.80844"
+         id="tspan5967"
+         sodipodi:role="line">send</tspan></text>
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5988"
+       width="481.1041"
+       height="525.29199"
+       x="15.419765"
+       y="-992.62836"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png" />
+    <g
+       id="g5990"
+       transform="translate(99.852277,-991.07186)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png">
+      <text
+         sodipodi:linespacing="125%"
+         id="text5992"
+         y="114.53438"
+         x="78.920456"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="114.53438"
+           x="78.920456"
+           id="tspan5994"
+           sodipodi:role="line">Contact</tspan><tspan
+           id="tspan5996"
+           y="159.53438"
+           x="78.920456"
+           sodipodi:role="line" /></text>
+      <rect
+         y="69.105705"
+         x="31.572456"
+         height="64.648361"
+         width="236.0417"
+         id="rect5998"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 247.73698,-666.83699 1.9531,-189.20082"
+       inkscape:path-effect="#path-effect6002"
+       id="path6000"
+       d="m 247.73698,-666.83699 1.9531,-189.20082"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.79574108;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:7.18296432, 7.18296432;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4744)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text6004"
+       y="-736.85529"
+       x="264.33237"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png"><tspan
+         y="-736.85529"
+         x="264.33237"
+         id="tspan6006"
+         sodipodi:role="line">inherits</tspan></text>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:5.55113125;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6014"
+       width="234.03387"
+       height="160.03424"
+       x="132.40976"
+       y="-664.41095"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text6016"
+       y="-620.22351"
+       x="206.85239"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png"><tspan
+         y="-620.22351"
+         x="206.85239"
+         id="tspan6018"
+         sodipodi:role="line">User</tspan></text>
+    <rect
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.99600005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect6020"
+       width="203.91806"
+       height="70.001724"
+       x="147.46762"
+       y="-590.01898"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="206.80844"
+       y="-546.36566"
+       id="text6022"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension.png"><tspan
+         sodipodi:role="line"
+         id="tspan6024"
+         x="206.80844"
+         y="-546.36566">send</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6045"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion6047"><rect
+           id="rect6049"
+           width="952.63214"
+           height="663.49457"
+           x="879.58685"
+           y="-883.33765" /></flowRegion><flowPara
+         id="flowPara6051"></flowPara></flowRoot>    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.06900501;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6053"
+       width="502.39224"
+       height="157.51637"
+       x="-543.75262"
+       y="532.53406"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text6055"
+       y="575.46259"
+       x="-479.37683"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         y="575.46259"
+         x="-479.37683"
+         id="tspan6057"
+         sodipodi:role="line">InMemoryRepository</tspan></text>
+    <rect
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:3.01058698;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect6059"
+       width="470.73615"
+       height="68.987137"
+       x="-527.92456"
+       y="606.17432"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-349.79089"
+       y="649.32037"
+       id="text6061"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         sodipodi:role="line"
+         id="tspan6063"
+         x="-349.79089"
+         y="649.32037">create</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="712.53406"
+       x="-543.75262"
+       height="157.51637"
+       width="502.39224"
+       id="rect6065"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.06900501;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-479.37683"
+       y="755.46259"
+       id="text6067"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         sodipodi:role="line"
+         id="tspan6069"
+         x="-479.37683"
+         y="755.46259">InMemoryRepository</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="786.17432"
+       x="-527.92456"
+       height="68.987137"
+       width="470.73615"
+       id="rect6071"
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:3.01058698;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text6073"
+       y="829.32037"
+       x="-349.22839"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         y="829.32037"
+         x="-349.22839"
+         id="tspan6075"
+         sodipodi:role="line">delete</tspan></text>
+    <g
+       transform="translate(-1466.9926,89.127189)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g6077"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png">
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect6079"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="196.85791"
+       y="805.30597"
+       id="text6081"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         sodipodi:role="line"
+         id="tspan6083"
+         x="196.85791"
+         y="805.30597">Equatable</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5586)"
+       d="m -37.212453,790.77705 189.200903,1.9531"
+       id="path6085"
+       inkscape:path-effect="#path-effect6087"
+       inkscape:original-d="m -37.212453,790.77705 189.200903,1.9531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text6089"
+       y="828.5965"
+       x="-11.259641"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         id="tspan6091"
+         y="828.5965"
+         x="-11.259641"
+         sodipodi:role="line">Element</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="8.2872343"
+       y="782.5965"
+       id="text6093"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/InMemory.png"><tspan
+         sodipodi:role="line"
+         x="8.2872343"
+         y="782.5965"
+         id="tspan6095">When</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6097"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion6099"><rect
+           id="rect6101"
+           width="2179.1841"
+           height="541.75244"
+           x="-1317.8585"
+           y="559.30658" /></flowRegion><flowPara
+         id="flowPara6103"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot7065"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion7067"><rect
+           id="rect7069"
+           width="542.3335"
+           height="105.45374"
+           x="656.39569"
+           y="-809.21912" /></flowRegion><flowPara
+         id="flowPara7071"></flowPara></flowRoot>    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8059"
+       width="1573.7242"
+       height="637.49713"
+       x="779.78546"
+       y="-407.04529"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png" />
+    <g
+       transform="matrix(2.0397256,0,0,0.97756645,-1940.0306,-1013.1994)"
+       id="g8061"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect8063"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:4.25930357;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8065"
+       width="344.89362"
+       height="63.932362"
+       x="833.34467"
+       y="-357.63177"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text8067"
+       y="-312.79828"
+       x="1431.297"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"><tspan
+         y="-312.79828"
+         x="1431.297"
+         id="tspan8069"
+         sodipodi:role="line">InMemoryRepository</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 1180.2088,-327.32733 189.2009,1.9531"
+       inkscape:path-effect="#path-effect8073"
+       id="path8071"
+       d="m 1180.2088,-327.32733 189.2009,1.9531"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6235)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1206.1616"
+       y="-289.50775"
+       id="text8075"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"><tspan
+         sodipodi:role="line"
+         x="1206.1616"
+         y="-289.50775"
+         id="tspan8077">Self is a</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text8079"
+       y="-335.50775"
+       x="1225.7085"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"><tspan
+         id="tspan8081"
+         y="-335.50775"
+         x="1225.7085"
+         sodipodi:role="line">When</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="868.00531"
+       y="-312.5611"
+       id="text8083"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"><tspan
+         sodipodi:role="line"
+         id="tspan8085"
+         x="868.00531"
+         y="-312.5611">UserRepository</tspan><tspan
+         sodipodi:role="line"
+         x="868.00531"
+         y="-267.5611"
+         id="tspan8087" /></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.83426952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6303)"
+       d="M 1008.5036,-294.3542 1006.82,-65.484318"
+       id="path8133"
+       inkscape:path-effect="#path-effect8135"
+       inkscape:original-d="M 1008.5036,-294.3542 1006.82,-65.484318"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1030.5493"
+       y="-176.83093"
+       id="text8137"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         x="1030.5493"
+         y="-176.83093"
+         id="tspan8139">Element</tspan></text>
+    <g
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"
+       id="g8141"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(-737.39271,-729.95626)"
+       style="fill:#5ea2c6;fill-opacity:1">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect8143"
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-element.png"
+       sodipodi:linespacing="125%"
+       id="text8145"
+       y="-13.777473"
+       x="964.45782"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="-13.777473"
+         x="964.45782"
+         id="tspan8147"
+         sodipodi:role="line">User</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="262.53641"
+       x="767.61127"
+       height="637.49713"
+       width="1573.7242"
+       id="rect8545"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png" />
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g8547"
+       transform="matrix(2.0397256,0,0,0.97756645,-1952.2048,-343.6177)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png">
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect8549"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="311.94992"
+       x="821.17047"
+       height="63.932362"
+       width="344.89362"
+       id="rect8551"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:4.25930357;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1419.1228"
+       y="356.78342"
+       id="text8553"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         sodipodi:role="line"
+         id="tspan8555"
+         x="1419.1228"
+         y="356.78342">InMemoryRepository</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001000000002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9123)"
+       d="m 1168.0346,342.25437 189.2009,1.9531"
+       id="path8557"
+       inkscape:path-effect="#path-effect8559"
+       inkscape:original-d="m 1168.0346,342.25437 189.2009,1.9531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8561"
+       y="380.07394"
+       x="1193.9874"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         id="tspan8563"
+         y="380.07394"
+         x="1193.9874"
+         sodipodi:role="line">Self is a</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1213.5343"
+       y="334.07394"
+       id="text8565"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         sodipodi:role="line"
+         x="1213.5343"
+         y="334.07394"
+         id="tspan8567">When</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8569"
+       y="357.0206"
+       x="855.83112"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         y="357.0206"
+         x="855.83112"
+         id="tspan8571"
+         sodipodi:role="line">UserRepository</tspan><tspan
+         id="tspan8573"
+         y="402.0206"
+         x="855.83112"
+         sodipodi:role="line" /></text>
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="386.44351"
+       x="1354.3811"
+       height="157.51637"
+       width="502.39224"
+       id="rect8575"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.06900501;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1418.7568"
+       y="429.37204"
+       id="text8577"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan8579"
+         x="1418.7568"
+         y="429.37204">InMemoryRepository</tspan></text>
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="460.08377"
+       x="1370.2091"
+       height="68.987137"
+       width="470.73615"
+       id="rect8581"
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:3.01058698;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8583"
+       y="503.22983"
+       x="1548.3428"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="503.22983"
+         x="1548.3428"
+         id="tspan8585"
+         sodipodi:role="line">create</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 996.32939,375.2275 -1.6836,228.86988"
+       inkscape:path-effect="#path-effect8621"
+       id="path8619"
+       d="m 996.32939,375.2275 -1.6836,228.86988"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.83426952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9255)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8623"
+       y="492.75076"
+       x="1018.3751"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         id="tspan8625"
+         y="492.75076"
+         x="1018.3751"
+         sodipodi:role="line">Element</tspan></text>
+    <g
+       transform="translate(-749.56692,-60.374558)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g8627"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+       style="fill:#5ea2c6;fill-opacity:1">
+      <rect
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect8629"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect9029"
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="952.28363"
+       y="655.8042"
+       id="text8631"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         sodipodi:role="line"
+         id="tspan8633"
+         x="952.28363"
+         y="655.8042">User</tspan></text>
+    <rect
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8753"
+       width="1573.7242"
+       height="637.49713"
+       x="770.65485"
+       y="923.94391"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <g
+       transform="matrix(2.0397256,0,0,0.97756645,-1949.1612,317.78979)"
+       id="g8755"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect8757"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:4.25930357;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8759"
+       width="344.89362"
+       height="63.932362"
+       x="824.21405"
+       y="973.35742"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text8761"
+       y="1018.1909"
+       x="1422.1664"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         y="1018.1909"
+         x="1422.1664"
+         id="tspan8763"
+         sodipodi:role="line">InMemoryRepository</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 1171.0782,1003.6619 189.2009,1.9531"
+       inkscape:path-effect="#path-effect8767"
+       id="path8765"
+       d="m 1171.0782,1003.6619 189.2009,1.9531"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6235)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1197.031"
+       y="1041.4814"
+       id="text8769"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         sodipodi:role="line"
+         x="1197.031"
+         y="1041.4814"
+         id="tspan8771">Self is a</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text8773"
+       y="995.48145"
+       x="1216.5779"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         id="tspan8775"
+         y="995.48145"
+         x="1216.5779"
+         sodipodi:role="line">When</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="858.87469"
+       y="1018.4281"
+       id="text8777"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         sodipodi:role="line"
+         id="tspan8779"
+         x="858.87469"
+         y="1018.4281">UserRepository</tspan><tspan
+         sodipodi:role="line"
+         x="858.87469"
+         y="1063.4281"
+         id="tspan8781" /></text>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.06900501;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8783"
+       width="502.39224"
+       height="157.51637"
+       x="1357.4247"
+       y="1047.851"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text8785"
+       y="1090.7795"
+       x="1421.8004"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         y="1090.7795"
+         x="1421.8004"
+         id="tspan8787"
+         sodipodi:role="line">InMemoryRepository</tspan></text>
+    <rect
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:3.01058698;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect8789"
+       width="470.73615"
+       height="68.987137"
+       x="1373.2527"
+       y="1121.4912"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1551.3864"
+       y="1164.6373"
+       id="text8791"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         sodipodi:role="line"
+         id="tspan8793"
+         x="1551.3864"
+         y="1164.6373">create</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="1219.7639"
+       x="1358.3811"
+       height="157.51637"
+       width="502.39224"
+       id="rect8795"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.06900501;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1422.7568"
+       y="1262.6924"
+       id="text8797"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         sodipodi:role="line"
+         id="tspan8799"
+         x="1422.7568"
+         y="1262.6924">InMemoryRepository</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="1293.4042"
+       x="1374.2091"
+       height="68.987137"
+       width="470.73615"
+       id="rect8801"
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:3.01058698;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8803"
+       y="1336.5502"
+       x="1552.9053"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         y="1336.5502"
+         x="1552.9053"
+         id="tspan8805"
+         sodipodi:role="line">delete</tspan></text>
+    <g
+       transform="translate(435.14104,596.35703)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g8807"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png">
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect8809"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="2098.9915"
+       y="1312.5358"
+       id="text8811"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         sodipodi:role="line"
+         id="tspan8813"
+         x="2098.9915"
+         y="1312.5358">Equatable</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5586)"
+       d="m 1864.9212,1298.0069 189.2009,1.9531"
+       id="path8815"
+       inkscape:path-effect="#path-effect8817"
+       inkscape:original-d="m 1864.9212,1298.0069 189.2009,1.9531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8819"
+       y="1335.8263"
+       x="1890.874"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         id="tspan8821"
+         y="1335.8263"
+         x="1890.874"
+         sodipodi:role="line">Element</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1910.4209"
+       y="1289.8263"
+       id="text8823"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"><tspan
+         sodipodi:role="line"
+         x="1910.4209"
+         y="1289.8263"
+         id="tspan8825">When</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.83426952;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6303)"
+       d="m 999.37294,1036.635 -1.6836,228.8699"
+       id="path8827"
+       inkscape:path-effect="#path-effect8829"
+       inkscape:original-d="m 999.37294,1036.635 -1.6836,228.8699"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1021.4187"
+       y="1154.1582"
+       id="text8831"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         x="1021.4187"
+         y="1154.1582"
+         id="tspan8833">Element</tspan></text>
+    <g
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"
+       id="g8835"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(-746.52337,601.03293)"
+       style="fill:#5ea2c6;fill-opacity:1">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect8837"
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png"
+       sodipodi:linespacing="125%"
+       id="text8839"
+       y="1317.2117"
+       x="955.32721"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="1317.2117"
+         x="955.32721"
+         id="tspan8841"
+         sodipodi:role="line">User</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 2180.2531,1475.5804 1.894,-136.0166"
+       inkscape:path-effect="#path-effect8845"
+       id="path8843"
+       d="m 2180.2531,1475.5804 1.894,-136.0166"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.49978626;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:1.49978626, 1.49978626;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7149)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.49978626;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:1.49978626, 1.49978626;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 996.33564,1475.5804 1.894,-136.0166"
+       id="path8847"
+       inkscape:path-effect="#path-effect8849"
+       inkscape:original-d="m 996.33564,1475.5804 1.894,-136.0166"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m 998.83604,1474.7185 1180.67016,1.7072"
+       inkscape:path-effect="#path-effect8853"
+       id="path8851"
+       d="m 998.83604,1474.7185 1180.67016,1.7072"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.50271702;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:1.50271706, 1.50271706;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension-full.png" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="84.733543"
+       x="-1484.6545"
+       height="160.03424"
+       width="234.03387"
+       id="rect8967"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:5.55113125;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1438.3105"
+       y="128.92097"
+       id="text8969"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png"><tspan
+         sodipodi:role="line"
+         id="tspan8971"
+         x="-1438.3105"
+         y="128.92097">Contact</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="159.12546"
+       x="-1469.5967"
+       height="70.001724"
+       width="203.91806"
+       id="rect8973"
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.99600005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text8975"
+       y="202.77878"
+       x="-1410.2559"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/contact-extension-accepted.png"><tspan
+         y="202.77878"
+         x="-1410.2559"
+         id="tspan8977"
+         sodipodi:role="line">send</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot8979"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion8981"><rect
+           id="rect8983"
+           width="308.92065"
+           height="400.22723"
+           x="-1544.6033"
+           y="-72.230698" /></flowRegion><flowPara
+         id="flowPara8985"></flowPara></flowRoot>    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="316.99103"
+       x="-1578.9683"
+       height="294.27698"
+       width="849.85907"
+       id="rect8987"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png" />
+    <g
+       transform="translate(-2681.3703,-276.96336)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g8989"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png">
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect8991"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1007.6183"
+       y="439.21545"
+       id="text8993"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png"><tspan
+         sodipodi:role="line"
+         id="tspan8995"
+         x="-1007.6183"
+         y="439.21545">Contact</tspan></text>
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:10.77600002, 3.59200001000000002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker14627)"
+       d="m -1251.5902,424.6865 189.2009,1.9531"
+       id="path8997"
+       inkscape:path-effect="#path-effect8999"
+       inkscape:original-d="m -1251.5902,424.6865 189.2009,1.9531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       sodipodi:linespacing="125%"
+       id="text9001"
+       y="462.50598"
+       x="-1225.6375"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png"><tspan
+         id="tspan9003"
+         y="462.50598"
+         x="-1225.6375"
+         sodipodi:role="line">Self is a</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1206.0906"
+       y="416.50598"
+       id="text9005"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png"><tspan
+         sodipodi:role="line"
+         x="-1206.0906"
+         y="416.50598"
+         id="tspan9007">When</tspan></text>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:5.55113125;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9009"
+       width="234.03387"
+       height="160.03424"
+       x="-1490.7417"
+       y="398.21951"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text9011"
+       y="442.40695"
+       x="-1416.2991"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png"><tspan
+         y="442.40695"
+         x="-1416.2991"
+         id="tspan9013"
+         sodipodi:role="line">User</tspan></text>
+    <rect
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.99600005;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect9015"
+       width="203.91806"
+       height="70.001724"
+       x="-1475.6838"
+       y="472.61145"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-1416.343"
+       y="516.26477"
+       id="text9017"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-extension.png"><tspan
+         sodipodi:role="line"
+         id="tspan9019"
+         x="-1416.343"
+         y="516.26477">send</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot9021"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:gre;font-style:normal;font-weight:normal;font-size:36px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:gre"><flowRegion
+         id="flowRegion9023"><rect
+           id="rect9025"
+           width="155.22121"
+           height="202.39629"
+           x="-958.71924"
+           y="474.0871" /></flowRegion><flowPara
+         id="flowPara9027"></flowPara></flowRoot>    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+       sodipodi:linespacing="125%"
+       id="text9037"
+       y="655.8042"
+       x="952.28363"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="655.8042"
+         x="952.28363"
+         id="tspan9039"
+         sodipodi:role="line">User</tspan></text>
+    <g
+       id="g9116"
+       transform="translate(188.7003,15.18249)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         style="fill:#5ea2c6;fill-opacity:1"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+         id="g9055"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         transform="matrix(1.8843043,0,0,0.98031686,-4335.9152,1240.5563)">
+        <rect
+           y="670.98743"
+           x="1626.4039"
+           height="64.648361"
+           width="236.0417"
+           id="rect9057"
+           style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <rect
+           style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect9059"
+           width="236.0417"
+           height="64.648361"
+           x="1626.4039"
+           y="670.98743" />
+      </g>
+      <text
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"
+         sodipodi:linespacing="125%"
+         id="text9061"
+         y="1939.9562"
+         x="-1237.8353"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           y="1939.9562"
+           x="-1237.8353"
+           id="tspan9063"
+           sodipodi:role="line">StaticUserRepository</tspan></text>
+    </g>
+    <g
+       style="fill:#5ea2c6;fill-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       id="g9069"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(1.8076282,0,0,2.4748995,-3336.4428,253.2783)">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect9071"
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9073"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       sodipodi:linespacing="125%"
+       id="text9075"
+       y="1958.6279"
+       x="-357.33542"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="1958.6279"
+         x="-357.33542"
+         id="tspan9077"
+         sodipodi:role="line">DefaultUserService</tspan></text>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-532.97034"
+       y="1937.1401"
+       id="text9079"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-extension.png"><tspan
+         sodipodi:role="line"
+         id="tspan9081"
+         x="-532.97034"
+         y="1937.1401" /></text>
+    <g
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       transform="matrix(2.0397256,0,0,0.97756645,-4408.3522,1077.7216)"
+       id="g9241"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="650.91003"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect9243"
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:25.49432373px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="2422.2168"
+         y="480.02872"
+         id="text9245"
+         sodipodi:linespacing="125%"
+         transform="scale(0.69228873,1.444484)"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan9247"
+           x="2422.2168"
+           y="480.02872">UserRepository</tspan></text>
+      <rect
+         style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:3.33387518;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9249"
+         width="207.96574"
+         height="64.958435"
+         x="1967.7471"
+         y="650.755"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <text
+         transform="scale(0.69228873,1.444484)"
+         sodipodi:linespacing="125%"
+         id="text9251"
+         y="482.49973"
+         x="2915.9919"
+         style="font-style:normal;font-weight:normal;font-size:25.49432373px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           y="482.49973"
+           x="2915.9919"
+           id="tspan9253"
+           sodipodi:role="line">UserService</tspan></text>
+    </g>
+    <path
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.51846433;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9383)"
+       d="m -181.60936,1918.4002 -1.8822,-140.2957"
+       id="path9379"
+       inkscape:path-effect="#path-effect9381"
+       inkscape:original-d="m -181.60936,1918.4002 -1.8822,-140.2957"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -858.62575,1918.4002 -1.8822,-140.2957"
+       inkscape:path-effect="#path-effect9719"
+       id="path9717"
+       d="m -858.62575,1918.4002 -1.8822,-140.2957"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.51846433;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9721)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png" />
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.70984602;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect10290"
+       width="379.73029"
+       height="69.28788"
+       x="-375.89728"
+       y="1987.8721"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-288.35532"
+       y="2033.3428"
+       id="text10292"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan10294"
+         x="-288.35532"
+         y="2033.3428">userRepository</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="1987.0961"
+       x="-376.67331"
+       height="70.839958"
+       width="67.796387"
+       id="rect10296"
+       style="opacity:1;fill:#bfcbc6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.15776598;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -338.22176,2022.8382 -160.19216,2.0322 0.32402,-283.9562 -112.77798,1.3012"
+       inkscape:path-effect="#path-effect10051"
+       id="path10049"
+       d="m -338.22176,2022.8382 -160.19216,2.0322 0.32402,-283.9562 -112.77798,1.3012"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.65456378;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker10053)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2739.198"
+       y="1411.5015"
+       id="text12469"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan12471"
+         x="-2739.198"
+         y="1411.5015" /></text>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.43767643;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect12473"
+       width="502.02359"
+       height="172.36545"
+       x="-2257.4614"
+       y="1829.7314"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2219.5667"
+       y="1873.8678"
+       id="text12070"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"><tspan
+         sodipodi:role="line"
+         id="tspan12072"
+         x="-2219.5667"
+         y="1873.8678">UserServiceComponent</tspan></text>
+    <g
+       id="g20796"
+       transform="translate(3.9008331,0)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         id="rect12665"
+         width="419.16202"
+         height="69.153419"
+         x="-2219.9314"
+         y="1905.5652"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-2148.4565"
+         y="1950.9688"
+         id="text12667"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan12669"
+           x="-2148.4565"
+           y="1950.9688">userService</tspan></text>
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         y="1904.7219"
+         x="-1868.7747"
+         height="70.839958"
+         width="67.796387"
+         id="rect12671"
+         style="opacity:1;fill:#bfcbc6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.15776598;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png" />
+    </g>
+    <rect
+       style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:7.41660404;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect12082"
+       width="457.89337"
+       height="146.00731"
+       x="-2235.3962"
+       y="1665.2549"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text12084"
+       y="1714.2418"
+       x="-2218.5518"
+       style="font-style:normal;font-weight:normal;font-size:35.82856369px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="1714.2418"
+         x="-2218.5518"
+         id="tspan12086"
+         sodipodi:role="line">UserServiceComponent</tspan></text>
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       style="opacity:1;fill:#bfa291;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect12673"
+       width="419.16202"
+       height="69.153419"
+       x="-2216.0305"
+       y="1731.5651"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2171.1917"
+       y="1778.9686"
+       id="text12675"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         x="-2171.1917"
+         y="1778.9686"
+         id="tspan12677">createUserService</tspan></text>
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26512623;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12711)"
+       d="m -1839.7149,1936.1545 140.504,1.1826 -1.2865,-173.2065 -117.5627,-0.1283"
+       id="path12707"
+       inkscape:path-effect="#path-effect12709"
+       inkscape:original-d="m -1839.7149,1936.1545 140.504,1.1826 -1.2865,-173.2065 -117.5627,-0.1283"
+       inkscape:connector-curvature="0" />
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="1833.0059"
+       x="-3126.4121"
+       height="167.72789"
+       width="524.77795"
+       id="rect12456"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.50993156;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:linespacing="125%"
+       id="text12060"
+       y="1875.1385"
+       x="-3106.3901"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="1875.1385"
+         x="-3106.3901"
+         id="tspan12062"
+         sodipodi:role="line">UserRepositoryComponent</tspan></text>
+    <rect
+       y="1666.8328"
+       x="-3123.2026"
+       height="147.02422"
+       width="518.35938"
+       id="rect12076"
+       style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:7.91854906;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-3106.3901"
+       y="1713.6471"
+       id="text12078"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan12080"
+         x="-3106.3901"
+         y="1713.6471">UserRepositoryComponent</tspan></text>
+    <g
+       id="g14411"
+       transform="translate(-29.455856,-81.912908)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         y="1987.9393"
+         x="-3044.1482"
+         height="69.153419"
+         width="419.16202"
+         id="rect12643"
+         style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         sodipodi:linespacing="125%"
+         id="text12645"
+         y="2033.3428"
+         x="-2956.6733"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="2033.3428"
+           x="-2956.6733"
+           id="tspan12647"
+           sodipodi:role="line">userRepository</tspan></text>
+      <rect
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         style="opacity:1;fill:#bfcbc6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.15776598;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         id="rect12649"
+         width="67.796387"
+         height="70.839958"
+         x="-3044.9915"
+         y="1987.0961"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+    </g>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="1734.4122"
+       x="-3073.604"
+       height="69.153419"
+       width="419.16202"
+       id="rect12692"
+       style="opacity:1;fill:#bfa291;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:linespacing="125%"
+       id="text12655"
+       y="1779.4298"
+       x="-3058.4019"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan12659"
+         y="1779.4298"
+         x="-3058.4019"
+         sodipodi:role="line">createUserRepository</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -3054.4063,1945.0414 -140.4679,1.223 1.2862,-179.1279 117.5325,-0.1328"
+       inkscape:path-effect="#path-effect14081"
+       id="path14079"
+       d="m -3054.4063,1945.0414 -140.4679,1.223 1.2862,-179.1279 117.5325,-0.1328"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.28640509;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker14083)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:nodetypes="cccc" />
+    <path
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -2307.0097,2328.6005 -175.4275,1.6686 2.4853,-582.6485 -119.6032,-0.947"
+       inkscape:path-effect="#path-effect14813"
+       id="path14811"
+       d="m -2307.0097,2328.6005 -175.4275,1.6686 2.4853,-582.6485 -119.6032,-0.947"
+       style="fill:none;fill-rule:evenodd;stroke:#e90000;stroke-width:3.142;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:18.852, 6.28399999999999981;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker21848);fill-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       sodipodi:nodetypes="cccc" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#d30000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-2483.4949"
+       y="2371.2959"
+       id="text16284"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         x="-2483.4949"
+         y="2371.2959"
+         id="tspan16286">Self is a</tspan></text>
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:linespacing="125%"
+       id="text16288"
+       y="2313.9258"
+       x="-2464.9045"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#dd0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan16290"
+         y="2313.9258"
+         x="-2464.9045"
+         sodipodi:role="line">When</tspan></text>
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:9.64505291;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16443"
+       width="660.60284"
+       height="171.15807"
+       x="-3194.3245"
+       y="2258.3352"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-3157.5513"
+       y="2310.9219"
+       id="text16404"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"><tspan
+         sodipodi:role="line"
+         id="tspan16406"
+         x="-3157.5513"
+         y="2310.9219">StaticUserRepositoryComponent</tspan></text>
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="2256.0869"
+       x="-2302.7593"
+       height="171.65459"
+       width="592.61938"
+       id="rect16423"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:9.14853001;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:linespacing="125%"
+       id="text16419"
+       y="2312.2588"
+       x="-2285.5813"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="2312.2588"
+         x="-2285.5813"
+         id="tspan16421"
+         sodipodi:role="line">DefaultUserServiceComponent</tspan></text>
+    <g
+       id="g20791"
+       transform="translate(1.9836426e-4,0)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         y="2331.5652"
+         x="-2216.0308"
+         height="69.153419"
+         width="419.16202"
+         id="rect16425"
+         style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-2171.1919"
+         y="2378.9688"
+         id="text16433"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           x="-2171.1919"
+           y="2378.9688"
+           id="tspan16435">createUserService</tspan></text>
+    </g>
+    <g
+       id="g20786"
+       transform="translate(-4.5776367e-5,0)"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         id="rect16447"
+         width="419.16202"
+         height="69.153419"
+         x="-3073.604"
+         y="2332.0264"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-3058.4019"
+         y="2377.4299"
+         id="text16449"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan16451"
+           x="-3058.4019"
+           y="2377.4299">createUserRepository</tspan></text>
+    </g>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:6.98412418;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16459"
+       width="657.77545"
+       height="90.131134"
+       x="-3192.9109"
+       y="2146.3657" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:linespacing="125%"
+       id="text16455"
+       y="2204.9219"
+       x="-3157.5513"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="2204.9219"
+         x="-3157.5513"
+         id="tspan16457"
+         sodipodi:role="line">StaticUserRepositoryComponent</tspan></text>
+    <rect
+       y="2146.2026"
+       x="-2304.3037"
+       height="90.45681"
+       width="595.70831"
+       id="rect16471"
+       style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:6.6584506;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2285.5813"
+       y="2204.9219"
+       id="text16473"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"><tspan
+         sodipodi:role="line"
+         id="tspan16475"
+         x="-2285.5813"
+         y="2204.9219">DefaultUserServiceComponent</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -1710.13,2197.0586 61.2837,-0.7169 -0.7102,-479.8985 -128.2558,-0.3561"
+       inkscape:path-effect="#path-effect16815"
+       id="path16813"
+       d="m -1710.13,2197.0586 61.2837,-0.7169 -0.7102,-479.8985 -128.2558,-0.3561"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.20172191;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16817)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.20172191;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17971)"
+       d="m -3197.4333,2197.0586 -67.2837,-0.7169 0.7102,-479.8985 128.2558,-0.3561"
+       id="path17967"
+       inkscape:path-effect="#path-effect17969"
+       inkscape:original-d="m -3197.4333,2197.0586 -67.2837,-0.7169 0.7102,-479.8985 128.2558,-0.3561"
+       inkscape:connector-curvature="0" />
+    <g
+       style="fill:#5ea2c6;fill-opacity:1"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       id="g18649"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(1.8843043,0,0,0.98031686,-6151.0502,1880.4837)">
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect18651"
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect18653"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+    </g>
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:linespacing="125%"
+       id="text18655"
+       y="2579.8835"
+       x="-3052.9702"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="2579.8835"
+         x="-3052.9702"
+         id="tspan18657"
+         sodipodi:role="line">StaticUserRepository</tspan></text>
+    <g
+       transform="matrix(1.8843043,0,0,0.98031686,-5293.4767,1880.4837)"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       id="g18742"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       style="fill:#5ea2c6;fill-opacity:1">
+      <rect
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect18744"
+         width="236.0417"
+         height="64.648361"
+         x="1626.4039"
+         y="670.98743" />
+      <rect
+         y="670.98743"
+         x="1626.4039"
+         height="64.648361"
+         width="236.0417"
+         id="rect18746"
+         style="opacity:1;fill:#5ea2c6;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.54330707;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2180.6135"
+       y="2583.3728"
+       id="text18748"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"><tspan
+         sodipodi:role="line"
+         id="tspan18750"
+         x="-2180.6135"
+         y="2583.3728">DefaultUserService</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -2005.252,2399.6573 c 222.0308,-25.2946 99.6857,131.145 -1.41,132.0001"
+       inkscape:path-effect="#path-effect19336"
+       id="path19334"
+       d="m -2005.252,2399.6573 -1.41,132.0001"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26512623;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker19338)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26512623;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20060)"
+       d="m -2005.252,2399.6573 -1.41,132.0001"
+       id="path20056"
+       inkscape:path-effect="#path-effect20058"
+       inkscape:original-d="m -2005.252,2399.6573 c 222.0308,-25.2946 99.6857,131.145 -1.41,132.0001"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -2862.8254,2399.6573 c 222.0308,-25.2946 99.6857,131.145 -1.41,132.0001"
+       inkscape:path-effect="#path-effect20276"
+       id="path20274"
+       d="m -2862.8254,2399.6573 -1.41,132.0001"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26512623;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20278)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components-all.png"
+       sodipodi:nodetypes="cc" />
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="430.18579"
+       x="-3648.5242"
+       height="1104.6826"
+       width="1748.7471"
+       id="rect21000"
+       style="opacity:1;fill:#bfbcc6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.796;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:7.184, 7.184;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="671.89246"
+       x="-2584.5833"
+       height="172.36545"
+       width="502.02359"
+       id="rect21002"
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.43767643;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       sodipodi:linespacing="125%"
+       id="text21004"
+       y="716.02881"
+       x="-2546.6885"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="716.02881"
+         x="-2546.6885"
+         id="tspan21006"
+         sodipodi:role="line">UserServiceComponent</tspan></text>
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       transform="translate(-323.22097,-1157.839)"
+       id="g21008">
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         y="1905.5652"
+         x="-2219.9314"
+         height="69.153419"
+         width="419.16202"
+         id="rect21010"
+         style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         sodipodi:linespacing="125%"
+         id="text21012"
+         y="1950.9688"
+         x="-2148.4565"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="1950.9688"
+           x="-2148.4565"
+           id="tspan21014"
+           sodipodi:role="line">userService</tspan></text>
+      <rect
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+         style="opacity:1;fill:#bfcbc6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.15776598;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         id="rect21016"
+         width="67.796387"
+         height="70.839958"
+         x="-1868.7747"
+         y="1904.7219"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+    </g>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       y="507.41589"
+       x="-2562.5181"
+       height="146.00731"
+       width="457.89337"
+       id="rect21018"
+       style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:7.41660404;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:35.82856369px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-2545.6736"
+       y="556.40283"
+       id="text21020"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan21022"
+         x="-2545.6736"
+         y="556.40283">UserServiceComponent</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       y="573.72607"
+       x="-2543.1523"
+       height="69.153419"
+       width="419.16202"
+       id="rect21024"
+       style="opacity:1;fill:#bfa291;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       sodipodi:linespacing="125%"
+       id="text21026"
+       y="621.12964"
+       x="-2498.3135"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan21028"
+         y="621.12964"
+         x="-2498.3135"
+         sodipodi:role="line">createUserService</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:original-d="m -2166.8367,778.3155 140.504,1.1826 -1.2865,-173.2065 -117.5627,-0.1283"
+       inkscape:path-effect="#path-effect21032"
+       id="path21030"
+       d="m -2166.8367,778.3155 140.504,1.1826 -1.2865,-173.2065 -117.5627,-0.1283"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26512623;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12711)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       sodipodi:nodetypes="cccc" />
+    <rect
+       style="opacity:1;fill:#539793;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:8.50993156;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect21034"
+       width="524.77795"
+       height="167.72789"
+       x="-3453.5339"
+       y="675.16687"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-3433.512"
+       y="717.29956"
+       id="text21036"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"><tspan
+         sodipodi:role="line"
+         id="tspan21038"
+         x="-3433.512"
+         y="717.29956">UserRepositoryComponent</tspan></text>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       style="opacity:1;fill:#7b7b77;fill-opacity:0.46153846;fill-rule:nonzero;stroke:#000000;stroke-width:7.91854906;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect21040"
+       width="518.35938"
+       height="147.02422"
+       x="-3450.3245"
+       y="508.99377" />
+    <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       sodipodi:linespacing="125%"
+       id="text21042"
+       y="555.80811"
+       x="-3433.512"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="555.80811"
+         x="-3433.512"
+         id="tspan21044"
+         sodipodi:role="line">UserRepositoryComponent</tspan></text>
+    <g
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       transform="translate(-356.57766,-1239.7519)"
+       id="g21046">
+      <rect
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         style="opacity:1;fill:#bfa2c6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         id="rect21048"
+         width="419.16202"
+         height="69.153419"
+         x="-3044.1482"
+         y="1987.9393"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-2956.6733"
+         y="2033.3428"
+         id="text21050"
+         sodipodi:linespacing="125%"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"><tspan
+           sodipodi:role="line"
+           id="tspan21052"
+           x="-2956.6733"
+           y="2033.3428">userRepository</tspan></text>
+      <rect
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         y="1987.0961"
+         x="-3044.9915"
+         height="70.839958"
+         width="67.796387"
+         id="rect21054"
+         style="opacity:1;fill:#bfcbc6;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:1.15776598;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+         inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/user-repository-services.png" />
+    </g>
+    <rect
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       style="opacity:1;fill:#bfa291;fill-opacity:1;fill-rule:nonzero;stroke:#f34600;stroke-width:2.84430504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.54314719"
+       id="rect21056"
+       width="419.16202"
+       height="69.153419"
+       x="-3400.7258"
+       y="576.57324"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:36px;line-height:125%;font-family:gre;-inkscape-font-specification:gre;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-3385.5237"
+       y="621.59082"
+       id="text21058"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         x="-3385.5237"
+         y="621.59082"
+         id="tspan21060">createUserRepository</tspan></text>
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/Users/didierplaindoux/PersonalWork/oss/talks_n_blog/talks/devoxx/swift_cake/images/components.png"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.28640509;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5.0999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker22092)"
+       d="m -3381.5281,787.2024 -140.4679,1.223 1.2862,-179.1279 117.5325,-0.1328"
+       id="path21062"
+       inkscape:path-effect="#path-effect21064"
+       inkscape:original-d="m -3381.5281,787.2024 -140.4679,1.223 1.2862,-179.1279 117.5325,-0.1328"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

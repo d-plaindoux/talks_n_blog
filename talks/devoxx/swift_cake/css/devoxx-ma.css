@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.devoxx-ma {
+  --who: 'Devoxx Morocco !';
+  --blue: #4285f4;
+  --yellow: #f4b400;
+  --green: #0f9d58;
+  --red: #db4437;
+  --black: #000;
+  --white: #fff;
+  --g1: #263238;
+  --g2: #37424b;
+  --g3: #455a64;
+  --g4: #ebebeb;
+  --g5: #f7f7f7;
+  --alpha1: rgba(0, 0, 0, 0.54);
+  --alpha2: rgba(0, 0, 0, 0.87);
+  --primary: midnightblue;
+  --secondary: var(--white);
+  --fontBody: system, system-ui, sans-serif;
+  --coverFont: 'Permanent Marker', cursive;
+  --titleFont: system, system-ui, sans-serif;
+  --codeFont: code, monospace;
+  --footerFont: code, monospace;
+  --partFont: 'Permanent Marker', cursive;
+  --quoteFont: 'Just Another Hand', cursive;
+  --counterFont: 'Press Start 2P', fantasy;
+  --bgNavbar: var(--white);
+  --fgNavbar: var(--primary);
+  --shadowNavbar: rgba(0, 0, 0, 0.2);
+  --headerHeight: 3rem;
+  --footerHeight: 2rem;
+  --bgSlide: radial-gradient(ellipse at center, transparent, transparent 60%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.3) 100%), var(--secondary);
+  --fgSlide: var(--primary);
+  --bgCover: radial-gradient(ellipse at center, transparent, transparent 60%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.3) 100%), var(--secondary);
+  --fgCover: var(--primary);
+  --bgPart: radial-gradient(ellipse at center, transparent, transparent 60%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.3) 100%), var(--secondary);
+  --fgPart: var(--primary);
+  --headerFontSize: 1.5rem;
+  --bgHeader: var(--primary);
+  --fgHeader: var(--secondary);
+  --bgSlideNav: transparent;
+  --fgSlideNav: rgba(0, 0, 0, 0.2);
+  --navigationWidth: 10vw;
+  --bgCounter: transparend;
+  --fgCounter: var(--secondary);
+  --txtFooter: '#DevoxxMa @ilaborie #CSS #🦄';
+  --logoFooter: url("./assets/devoxx-ma/devoxx-ma-logo2.png");
+  --bgFooter: var(--primary);
+  --fgFooter: var(--secondary);
+  --bgCode: #2b2b2b;
+  --fgCode: #bababa; }
+  .devoxx-ma main section::after {
+    background-origin: unset; }
+  .devoxx-ma main section {
+    background-image: radial-gradient(ellipse at center, transparent, transparent 60%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0.3) 100%), radial-gradient(#f8f7fb 9px, transparent 10px), repeating-radial-gradient(#f8f7fb 0, #f8f7fb 4px, transparent 5px, transparent 20px, #f8f7fb 21px, #f8f7fb 25px, transparent 26px, transparent 50px);
+    background-size: contain, 30px 30px, 90px 90px;
+    background-position: 0 0; }
+  .devoxx-ma main section.part::before {
+    color: var(--primary); }
+  .devoxx-ma main section::after {
+    background: var(--bgFooter); }
+
+main::after {
+  content: '';
+  position: fixed;
+  display: block;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-size: auto 3rem;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-image: url("./assets/devoxx-ma/devoxx-ma-logo2.png"); }
+
+section.cover::before {
+  content: 'Sous le haut patronage de sa Majesté le roi Mohammed VI';
+  display: block;
+  font-size: .8rem;
+  text-transform: uppercase;
+  color: currentColor;
+  font-family: inherit;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.4);
+  text-align: center; }
+
