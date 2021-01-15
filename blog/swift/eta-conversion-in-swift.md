@@ -1,6 +1,6 @@
-# &eta;-conversion inconsistency in Swift v3+
+# &eta;-conversion inconsistency in Swift
 
-**Keywords** Functional paradigm, Swift v3+, Langage design, Expressiveness, &lambda;-calculus, &eta;-conversion
+**Keywords** Functional paradigm, Swift, Langage design, Expressiveness, &lambda;-calculus, &eta;-conversion
 
 In this post we show how &eta;-conversion transformation rule can or cannot be applied in 
 Swift v3+ and what's the impact on the design and the expressiveness.
